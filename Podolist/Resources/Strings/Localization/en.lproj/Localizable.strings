@@ -1,0 +1,39 @@
+//
+//  Localizable.strings
+//  Podolist
+//
+//  Copyright © 2018년 podo. All rights reserved.
+//
+
+// MARK: - Login
+"login.signup" = "Sign Up";
+"login.signin" = "Sign In";
+
+// MARK: - Podolist
+"podolist.title" = "title";
+
+// MARK: - Setting
+"setting.help" = "Help";
+"setting.version" = "Version";
+"setting.feedback" = "Feedback";
+"setting.inquiry" = "Inquiry";
+"setting.logout" = "Logout";
+
+// MARK: - Common
+"common.podolist" = "Podolist";
+"common.ok" = "OK";
+"common.yes" = "Yes";
+"common.no" = "No";
+"common.cancel" = "Cancel";
+"common.submit" = "Submit";
+"common.retry" = "Retry";
+"common.delete" = "Delete";
+"common.remove" = "Remove";
+"common.next" = "Next";
+"common.done" = "Done";
+"common.skip" = "Skip";
+"common.seeall" = "See All";
+
+// MARK: - Error
+"error.email.title" = "Could Not Send Email";
+"error.email.body" = "Your device could not send e-mail.\nPlease check e-mail configuration and try again.";
