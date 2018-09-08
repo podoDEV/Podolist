@@ -7,11 +7,12 @@ branches:
 env:
   - DESTINATION="OS=11.3,name=iPhone 8" SCHEME="Podolist" SDK=iphonesimulator
 before_install:
-  - brew update
-  - brew install swiftlint || true
   - rvm install ruby-2.2.2
   - sudo gem install cocoapods -v '1.5.3'
   - gem install xcpretty -N
+  - brew update
+  - brew install swiftlint || true
+  - pod install --repo-update
 script:
   - set -o pipefail
   - travis_retry xcodebuild -workspace Podolist.xcworkspace -scheme "$SCHEME" -sdk "$SDK" ONLY_ACTIVE_ARCH=NO | xcpretty -c
