@@ -47,6 +47,14 @@
 		2D0F20B821442CAA00B8BDF2 /* ViewModelPodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B721442CAA00B8BDF2 /* ViewModelPodo.swift */; };
 		2D0F20BA21442DB500B8BDF2 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B921442DB500B8BDF2 /* Converter.swift */; };
 		2D0F20BD214432E800B8BDF2 /* PodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20BC214432E800B8BDF2 /* PodoTableViewCell.swift */; };
+		2D0F20D621453AF500B8BDF2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20D521453AF500B8BDF2 /* Setting.storyboard */; };
+		2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */; };
+		2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */; };
+		2D0F20DC21453B2100B8BDF2 /* SettingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */; };
+		2D0F20DE21453B2900B8BDF2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DD21453B2900B8BDF2 /* SettingView.swift */; };
+		2D0F20E021453B3400B8BDF2 /* SettingWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */; };
+		2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */; };
+		2D0F20E521454DC600B8BDF2 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E421454DC600B8BDF2 /* Setting.swift */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
 		CF27ECCE5AFDD750647BF84F /* Pods_Podolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */; };
@@ -123,6 +131,14 @@
 		2D0F20B721442CAA00B8BDF2 /* ViewModelPodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelPodo.swift; sourceTree = "<group>"; };
 		2D0F20B921442DB500B8BDF2 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		2D0F20BC214432E800B8BDF2 /* PodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoTableViewCell.swift; sourceTree = "<group>"; };
+		2D0F20D521453AF500B8BDF2 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInteractor.swift; sourceTree = "<group>"; };
+		2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
+		2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProtocols.swift; sourceTree = "<group>"; };
+		2D0F20DD21453B2900B8BDF2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWireFrame.swift; sourceTree = "<group>"; };
+		2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		2D0F20E421454DC600B8BDF2 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B65A781FD7AD4F3D24E450C /* Pods-PodolistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7180A5385A7DB5B197C1DB8E /* Pods-PodolistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +299,7 @@
 				2D0F2091214415BD00B8BDF2 /* Launch */,
 				2D0F2092214415CB00B8BDF2 /* Login */,
 				2D0F20902144155200B8BDF2 /* Podolist */,
+				2D0F20D421453AC500B8BDF2 /* Setting */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,7 +370,7 @@
 		2D0F20902144155200B8BDF2 /* Podolist */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20BB214432D700B8BDF2 /* cell */,
+				2D0F20BB214432D700B8BDF2 /* cells */,
 				2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */,
 				2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */,
 				2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */,
@@ -425,16 +442,39 @@
 			children = (
 				2D0F20B921442DB500B8BDF2 /* Converter.swift */,
 				2D0F20B721442CAA00B8BDF2 /* ViewModelPodo.swift */,
+				2D0F20E421454DC600B8BDF2 /* Setting.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		2D0F20BB214432D700B8BDF2 /* cell */ = {
+		2D0F20BB214432D700B8BDF2 /* cells */ = {
 			isa = PBXGroup;
 			children = (
 				2D0F20BC214432E800B8BDF2 /* PodoTableViewCell.swift */,
 			);
-			path = cell;
+			path = cells;
+			sourceTree = "<group>";
+		};
+		2D0F20D421453AC500B8BDF2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2D0F20E121454CE700B8BDF2 /* cells */,
+				2D0F20D521453AF500B8BDF2 /* Setting.storyboard */,
+				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
+				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
+				2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */,
+				2D0F20DD21453B2900B8BDF2 /* SettingView.swift */,
+				2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		2D0F20E121454CE700B8BDF2 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		4E8C794971625CD6374BCC4D /* Pods */ = {
@@ -577,6 +617,7 @@
 				2D0F2096214416A200B8BDF2 /* LaunchScreen.storyboard in Resources */,
 				2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */,
 				2D0F20612143984A00B8BDF2 /* Localizable.strings in Resources */,
+				2D0F20D621453AF500B8BDF2 /* Setting.storyboard in Resources */,
 				2D0F20692143984A00B8BDF2 /* SeoulNamsanB.ttf in Resources */,
 				2D0F20622143984A00B8BDF2 /* InfoPlist.strings in Resources */,
 				2D0F20672143984A00B8BDF2 /* SeoulNamsanM.ttf in Resources */,
@@ -773,8 +814,11 @@
 				2D0F20B121441C6800B8BDF2 /* PodoRemoteRepository.swift in Sources */,
 				2D0F20B321441CBE00B8BDF2 /* PodoRepository.swift in Sources */,
 				2D0F20632143984A00B8BDF2 /* InterfaceString.swift in Sources */,
+				2D0F20DC21453B2100B8BDF2 /* SettingProtocols.swift in Sources */,
 				2D0F20682143984A00B8BDF2 /* Fonts.swift in Sources */,
 				2D0F20A8214419DE00B8BDF2 /* ResponsePodo.swift in Sources */,
+				2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */,
+				2D0F20DE21453B2900B8BDF2 /* SettingView.swift in Sources */,
 				2D0F20882143D1DE00B8BDF2 /* JsonResult.swift in Sources */,
 				2D0F209A2144179000B8BDF2 /* PodolistProtocols.swift in Sources */,
 				2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */,
@@ -791,10 +835,14 @@
 				2D0F20AF21441C5500B8BDF2 /* PodoLocalRepository.swift in Sources */,
 				2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */,
 				2D0F20A6214419C800B8BDF2 /* RequestPodo.swift in Sources */,
+				2D0F20E021453B3400B8BDF2 /* SettingWireFrame.swift in Sources */,
 				2D0F20862143D1DE00B8BDF2 /* JSONable.swift in Sources */,
 				2D0F20B821442CAA00B8BDF2 /* ViewModelPodo.swift in Sources */,
+				2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */,
+				2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */,
 				2D0F20892143D1DE00B8BDF2 /* JsonPayload.swift in Sources */,
 				2D0F20642143984A00B8BDF2 /* InterfaceImage.swift in Sources */,
+				2D0F20E521454DC600B8BDF2 /* Setting.swift in Sources */,
 				2D0F20BD214432E800B8BDF2 /* PodoTableViewCell.swift in Sources */,
 				2D0F20AD21441A8700B8BDF2 /* PodoService.swift in Sources */,
 				2D0F20BA21442DB500B8BDF2 /* Converter.swift in Sources */,
