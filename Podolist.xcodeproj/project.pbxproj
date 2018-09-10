@@ -260,8 +260,8 @@
 		2D0F20382143984A00B8BDF2 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20392143984A00B8BDF2 /* Localizable.strings */,
 				2D0F203B2143984A00B8BDF2 /* InfoPlist.strings */,
+				2D0F20392143984A00B8BDF2 /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -348,13 +348,13 @@
 			isa = PBXGroup;
 			children = (
 				2D0F207C2143D1DE00B8BDF2 /* JSONable.swift */,
-				2D0F207D2143D1DE00B8BDF2 /* RoutesProtocol.swift */,
-				2D0F207E2143D1DE00B8BDF2 /* JsonResult.swift */,
 				2D0F207F2143D1DE00B8BDF2 /* JsonPayload.swift */,
-				2D0F20802143D1DE00B8BDF2 /* ApiServiceProtocol.swift */,
-				2D0F20812143D1DE00B8BDF2 /* Router.swift */,
 				2D0F20822143D1DE00B8BDF2 /* JsonHeader.swift */,
+				2D0F207E2143D1DE00B8BDF2 /* JsonResult.swift */,
 				2D0F20832143D1DE00B8BDF2 /* JsonResults.swift */,
+				2D0F20802143D1DE00B8BDF2 /* ApiServiceProtocol.swift */,
+				2D0F207D2143D1DE00B8BDF2 /* RoutesProtocol.swift */,
+				2D0F20812143D1DE00B8BDF2 /* Router.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
