@@ -33,6 +33,7 @@ protocol PodolistPresenterProtocol: class {
     // View -> Presenter
     func viewDidLoad()
 //    func showWishDetail(from view: PodolistViewProtocol, forWish wish: ViewModelPodo)
+    func showSetting(from view: PodolistViewProtocol)
 }
 
 protocol PodolistInteractorProtocol: class {
@@ -47,4 +48,5 @@ protocol PodolistWireFrameProtocol: class {
 
     // Presenter -> WireFrame
 //    func presentPodoDetailScreen(from view: PodolistViewProtocol, forWish wish: ViewModel)
+    func pushSettingScreen(from view: PodolistViewProtocol)
 }

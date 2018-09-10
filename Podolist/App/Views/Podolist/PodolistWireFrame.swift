@@ -35,4 +35,12 @@ class PodolistWireFrame: PodolistWireFrameProtocol {
         }
         return UIViewController()
     }
+
+    func pushSettingScreen(from view: PodolistViewProtocol) {
+        guard let sourceVC = view as? UIViewController else {
+            return
+        }
+        let destinationVC = SettingWireFrame.createSettingModule()
+        sourceVC.navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }

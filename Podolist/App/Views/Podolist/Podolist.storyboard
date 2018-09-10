@@ -53,7 +53,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OfQ-wb-xMl"/>
+                    <navigationItem key="navigationItem" id="OfQ-wb-xMl">
+                        <barButtonItem key="rightBarButtonItem" title="Setting" id="QXl-mQ-fJZ">
+                            <connections>
+                                <action selector="tappedSetting:" destination="BYZ-38-t0r" id="eUw-EN-yPn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="podolistTableView" destination="czE-9C-mXi" id="lNK-cr-upz"/>
                     </connections>

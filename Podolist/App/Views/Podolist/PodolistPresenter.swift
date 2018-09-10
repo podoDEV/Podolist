@@ -12,17 +12,26 @@ class PodolistPresenter: PodolistPresenterProtocol {
     var interactor: PodolistInteractorProtocol?
     var wireFrame: PodolistWireFrameProtocol?
 
+    let disposeBag = DisposeBag()
+
     func viewDidLoad() {
         interactor?.fetchPodolist()?
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { podolist in
-                self.view?.showPodolist(with: podolist)
-            }, onError: { error in
-                print(error)
-            }, onCompleted: {
+            .subscribe(
+                onNext: { podolist in
+                    self.view?.showPodolist(with: podolist)
+                }, onError: { error in
+                    print(error)
+                }, onCompleted: {
 
-            }, onDisposed: {
-                //                disposeBag.insert(self)
-            })
+                }, onDisposed: nil)
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - 
+extension PodolistPresenter {
+    func showSetting(from view: PodolistViewProtocol) {
+        wireFrame?.pushSettingScreen(from: view)
     }
 }
