@@ -22,6 +22,10 @@ class PodolistView: UIViewController {
         presenter?.viewDidLoad()
         showLoading()
     }
+
+    @IBAction func tappedSetting(_ sender: Any) {
+        presenter?.showSetting(from: self)
+    }
 }
 
 // MARK: - PodolistViewProtocol
