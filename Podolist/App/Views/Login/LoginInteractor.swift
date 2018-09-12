@@ -5,4 +5,8 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+class LoginInteractor: LoginInteractorProtocol {
+    var dataSource: PodoDataSource?
+}

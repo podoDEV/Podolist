@@ -13,7 +13,7 @@
         <!--Setting View-->
         <scene sceneID="vaA-aB-1wN">
             <objects>
-                <viewController storyboardIdentifier="SettingController" id="eoh-Lq-7CR" customClass="SettingView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" id="eoh-Lq-7CR" customClass="SettingView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gPW-P3-vpo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

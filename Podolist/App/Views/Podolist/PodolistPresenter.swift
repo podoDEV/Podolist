@@ -29,9 +29,8 @@ class PodolistPresenter: PodolistPresenterProtocol {
     }
 }
 
-// MARK: - 
 extension PodolistPresenter {
     func showSetting(from view: PodolistViewProtocol) {
-        wireFrame?.pushSettingScreen(from: view)
+        wireFrame?.goToSettingScreen(from: view)
     }
 }

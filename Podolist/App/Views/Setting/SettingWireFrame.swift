@@ -9,13 +9,13 @@ import UIKit
 
 class SettingWireFrame: SettingWireFrameProtocol {
 
-    static var mainStoryboard: UIStoryboard {
+    static var settingStoryboard: UIStoryboard {
         return UIStoryboard(name: "Setting", bundle: Bundle.main)
     }
 
     static func createSettingModule() -> UIViewController {
-        let controller = mainStoryboard.instantiateViewController(withIdentifier: "SettingController")
-        if let view = controller as? SettingView {
+        let settingEntry = settingStoryboard.instantiateViewController(withIdentifier: "SettingViewController")
+        if let view = settingEntry as? SettingView {
             let presenter: SettingPresenterProtocol = SettingPresenter()
             let interactor: SettingInteractorProtocol = SettingInteractor()
 //            let dataSource: PodoDataSource = PodoRepository()
@@ -25,13 +25,13 @@ class SettingWireFrame: SettingWireFrameProtocol {
 
             view.presenter = presenter
             presenter.view = view
-            presenter.wireFrame = wireFrame
             presenter.interactor = interactor
+            presenter.wireFrame = wireFrame
 //            interactor.dataSource = dataSource
 //            dataSource.localDataSource = localDataSource
 //            dataSource.remoteDataSource = remoteDataSource
 
-            return controller
+            return settingEntry
         }
         return UIViewController()
     }

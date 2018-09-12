@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 
-// MARK: - UIViewController
 class PodolistView: UIViewController {
 
     @IBOutlet weak var podolistTableView: UITableView!
@@ -23,12 +22,12 @@ class PodolistView: UIViewController {
         showLoading()
     }
 
+    // MARK: - Action
     @IBAction func tappedSetting(_ sender: Any) {
         presenter?.showSetting(from: self)
     }
 }
 
-// MARK: - PodolistViewProtocol
 extension PodolistView: PodolistViewProtocol {
 
     func showPodolist(with podolist: [ViewModelPodo]) {
@@ -42,7 +41,6 @@ extension PodolistView: PodolistViewProtocol {
     }
 }
 
-// MARK: - UITableViewDataSource
 extension PodolistView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +57,6 @@ extension PodolistView: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
 extension PodolistView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

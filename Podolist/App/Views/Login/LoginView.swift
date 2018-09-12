@@ -8,21 +8,24 @@
 import UIKit
 import RxSwift
 
-// MARK: - UIViewController
 class LoginView: UIViewController {
-    
+
     var presenter: LoginPresenterProtocol?
-    
+
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
         presenter?.viewDidLoad()
         showLoading()
     }
+
+    // MARK: - Action
+    @IBAction func tappedLogin(_ sender: Any) {
+        presenter?.goLogin()
+    }
 }
 
-// MARK: - LoginViewProtocol
 extension LoginView: LoginViewProtocol {
-    
+
     func showError() {
         hideLoading()
     }

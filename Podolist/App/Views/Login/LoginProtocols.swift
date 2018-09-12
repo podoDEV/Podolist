@@ -32,7 +32,7 @@ protocol LoginPresenterProtocol: class {
     // View -> Presenter
     func viewDidLoad()
     //    func showWishDetail(from view: PodolistViewProtocol, forWish wish: ViewModelPodo)
-//    func showSetting(from view: LoginViewProtocol)
+    func goLogin()
 }
 
 protocol LoginInteractorProtocol: class {
@@ -47,5 +47,5 @@ protocol LoginWireFrameProtocol: class {
 
     // Presenter -> WireFrame
     //    func presentPodoDetailScreen(from view: PodolistViewProtocol, forWish wish: ViewModel)
-    //    func pushSettingScreen(from view: PodolistViewProtocol)
+    func goToPodolistScreen()
 }
