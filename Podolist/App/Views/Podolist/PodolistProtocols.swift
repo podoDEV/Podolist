@@ -48,5 +48,5 @@ protocol PodolistWireFrameProtocol: class {
 
     // Presenter -> WireFrame
 //    func presentPodoDetailScreen(from view: PodolistViewProtocol, forWish wish: ViewModel)
-    func pushSettingScreen(from view: PodolistViewProtocol)
+    func goToSettingScreen(from view: PodolistViewProtocol)
 }

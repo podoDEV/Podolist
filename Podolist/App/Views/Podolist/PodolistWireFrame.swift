@@ -9,13 +9,13 @@ import UIKit
 
 class PodolistWireFrame: PodolistWireFrameProtocol {
 
-    static var mainStoryboard: UIStoryboard {
+    static var podolistStoryboard: UIStoryboard {
         return UIStoryboard(name: "Podolist", bundle: Bundle.main)
     }
 
     static func createPodolistModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "PodolistNavigationController")
-        if let view = navController.childViewControllers.first as? PodolistView {
+        let podolistEntry = podolistStoryboard.instantiateViewController(withIdentifier: "PodolistNavigationController")
+        if let view = podolistEntry.childViewControllers.first as? PodolistView {
             let presenter: PodolistPresenterProtocol = PodolistPresenter()
             let interactor: PodolistInteractorProtocol = PodolistInteractor()
             let dataSource: PodoDataSource = PodoRepository()
@@ -25,18 +25,18 @@ class PodolistWireFrame: PodolistWireFrameProtocol {
 
             view.presenter = presenter
             presenter.view = view
-            presenter.wireFrame = wireFrame
             presenter.interactor = interactor
+            presenter.wireFrame = wireFrame
             interactor.dataSource = dataSource
             dataSource.localDataSource = localDataSource
             dataSource.remoteDataSource = remoteDataSource
 
-            return navController
+            return podolistEntry
         }
         return UIViewController()
     }
 
-    func pushSettingScreen(from view: PodolistViewProtocol) {
+    func goToSettingScreen(from view: PodolistViewProtocol) {
         guard let sourceVC = view as? UIViewController else {
             return
         }

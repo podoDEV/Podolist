@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 
-// MARK: - UIViewController
 class SettingView: UIViewController {
 
     @IBOutlet weak var settingTableView: UITableView!
@@ -24,7 +23,6 @@ class SettingView: UIViewController {
     }
 }
 
-// MARK: - PodolistViewProtocol
 extension SettingView: SettingViewProtocol {
 
     func showSettings(with settings: [Setting]) {
@@ -38,7 +36,6 @@ extension SettingView: SettingViewProtocol {
     }
 }
 
-// MARK: - UITableViewDataSource
 extension SettingView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +52,6 @@ extension SettingView: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
 extension SettingView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
