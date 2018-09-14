@@ -6,48 +6,108 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var loginScreen: UIViewController?
+    var mainScreen: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        let podolist = PodolistWireFrame.createPodolistModule()
-        let login = LoginWireFrame.createLoginModule()
-        window?.rootViewController = login
+
+        setupEntryScreen()
+        setupPushNotification()
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(AppDelegate.kakaoSessionDidChangeWithNotification),
+                                               name: NSNotification.Name.KOSessionDidChange,
+                                               object: nil)
+
+//        KOSession.shared().clientSecret = SessionConstants.clientSecret;
+
+        reloadRootViewController()
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        KOSession.handleDidEnterBackground()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        KOSession.handleDidBecomeActive()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
     }
 }
 
 extension AppDelegate {
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        if KOSession.isKakaoAgeAuthCallback(url) {
-            return KOSession.handleOpen(url)
+    fileprivate func setupEntryScreen() {
+        loginScreen = LoginWireFrame.createLoginModule()
+        mainScreen = PodolistWireFrame.createPodolistModule()
+    }
+
+    fileprivate func reloadRootViewController() {
+        let isOpened = KOSession.shared().isOpen()
+        if !isOpened {
+            let mainScreen = self.mainScreen as! UINavigationController
+            mainScreen.popToRootViewController(animated: true)
         }
-        return false
+
+        self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
+        self.window?.makeKeyAndVisible()
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+
+    func setupPushNotification() {
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if let error = error as NSError? {
+                print("APNS Authorization failure. \(error)")
+            } else {
+                print("APNS Authorization success.")
+            }
+        }
+        UIApplication.shared.registerForRemoteNotifications()
+    }
+
+    @objc func kakaoSessionDidChangeWithNotification() {
+        reloadRootViewController()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("The notification \"\(notification.request.identifier)\" is presenting. \"\(notification.request.content.body)\"")
+        completionHandler([.alert, .badge, .sound])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("The user responded to the notification \"\(response.notification.request.identifier)\" at \"\(response.notification.date.description(with: .current))\".")
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        completionHandler()
+    }
+}
+
+extension AppDelegate /* For kakao */{
+
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return KOSession.handleOpen(url)
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        return KOSession.handleOpen(url)
     }
 }
