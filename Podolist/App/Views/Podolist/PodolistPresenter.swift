@@ -30,7 +30,7 @@ class PodolistPresenter: PodolistPresenterProtocol {
 }
 
 extension PodolistPresenter {
-    func showSetting(from view: PodolistViewProtocol) {
-        wireFrame?.goToSettingScreen(from: view)
+    func showSetting() {
+        wireFrame?.goToSettingScreen(from: self.view!)
     }
 }

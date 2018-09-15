@@ -24,7 +24,7 @@ class PodolistView: UIViewController {
 
     // MARK: - Action
     @IBAction func tappedSetting(_ sender: Any) {
-        presenter?.showSetting(from: self)
+        presenter?.showSetting()
     }
 }
 

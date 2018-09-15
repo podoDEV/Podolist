@@ -12,7 +12,7 @@ protocol SettingViewProtocol: class {
     var presenter: SettingPresenterProtocol? { get set }
 
     // Presenter -> View 
-    func showSettings(with settings: [Setting])
+    func showSettings(with settings: [ViewModelSettingSection])
 }
 
 extension SettingViewProtocol where Self: UIViewController {
@@ -32,7 +32,10 @@ protocol SettingPresenterProtocol: class {
 
     // View -> Presenter
     func viewDidLoad()
-    //    func showWishDetail(from view: PodolistViewProtocol, forWish wish: ViewModelPodo)
+    func showAccount()
+    func showHelp()
+    func showAbout()
+    func logout()
 }
 
 protocol SettingInteractorProtocol: class {
@@ -46,5 +49,7 @@ protocol SettingWireFrameProtocol: class {
     static func createSettingModule() -> UIViewController
 
     // Presenter -> WireFrame
-    //    func presentPodoDetailScreen(from view: PodolistViewProtocol, forWish wish: ViewModel)
+    func goToAccountScreen(from view: SettingViewProtocol)
+    func goToHelpScreen(from view: SettingViewProtocol)
+    func goToAboutScreen(from view: SettingViewProtocol)
 }

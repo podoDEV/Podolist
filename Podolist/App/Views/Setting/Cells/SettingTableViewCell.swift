@@ -8,12 +8,13 @@
 import UIKit
 
 class SettingTableViewCell: UITableViewCell {
-    static let Identifier = "SettingTableCell"
+    static let Identifier = "SettingTableViewCell"
 
     @IBOutlet weak var titleLabel: UILabel!
 
-    func set(forSetting setting: Setting) {
-        self.selectionStyle = .none
-        titleLabel.text = setting.title
+    var item: ViewModelSettingRow? {
+        didSet {
+            titleLabel.text = item?.title
+        }
     }
 }
