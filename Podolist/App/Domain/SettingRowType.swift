@@ -1,11 +1,11 @@
 //
-//  AttributeType.swift
+//  SettingRowType.swift
 //  Podolist
 //
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-enum AttributeType {
+enum SettingRowType {
     case account
     case help
     case about

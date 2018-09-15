@@ -12,7 +12,7 @@ class SettingTableViewLogoutCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
 
-    var item: Attribute? {
+    var item: ViewModelSettingRow? {
         didSet {
             titleLabel.text = item?.title
             titleLabel.textColor = .red

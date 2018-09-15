@@ -12,7 +12,7 @@ class SettingView: UIViewController {
 
     @IBOutlet weak var settingTableView: UITableView!
     var presenter: SettingPresenterProtocol?
-    var settings: [SettingViewModelItem] = []
+    var settings: [ViewModelSettingSection] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class SettingView: UIViewController {
 
 extension SettingView: SettingViewProtocol {
 
-    func showSettings(with settings: [SettingViewModelItem]) {
+    func showSettings(with settings: [ViewModelSettingSection]) {
         self.settings = settings
         settingTableView.reloadData()
         hideLoading()
@@ -64,18 +64,18 @@ extension SettingView: UITableViewDataSource {
         let item = settings[indexPath.section]
         switch item.type {
         case .account:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.Identifier, for: indexPath) as? SettingTableViewCell, let item = item as? SettingViewModelAccountItem {
-                cell.item = item.attribute
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.Identifier, for: indexPath) as? SettingTableViewCell, let item = item as? ViewModelSettingAccountItem {
+                cell.item = item.row
                 return cell
             }
         case .others:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.Identifier, for: indexPath) as? SettingTableViewCell, let item = item as? SettingViewModelOthersItem {
-                cell.item = item.attributes[indexPath.row]
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.Identifier, for: indexPath) as? SettingTableViewCell, let item = item as? ViewModelSettingOthersItem {
+                cell.item = item.rows[indexPath.row]
                 return cell
             }
         case .logout:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewLogoutCell.Identifier, for: indexPath) as? SettingTableViewLogoutCell, let item = item as? SettingViewModelLogoutItem {
-                cell.item = item.attribute
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewLogoutCell.Identifier, for: indexPath) as? SettingTableViewLogoutCell, let item = item as? ViewModelSettingLogoutItem {
+                cell.item = item.row
                 return cell
             }
         }
@@ -87,22 +87,22 @@ extension SettingView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = settings[indexPath.section]
-        var type: AttributeType?
+        var type: SettingRowType?
         switch item.type {
         case .account:
             type = .account
         case .others:
-            guard let item = item as? SettingViewModelOthersItem else {
+            guard let item = item as? ViewModelSettingOthersItem else {
                 return
             }
-            type = item.attributes[indexPath.row].type
+            type = item.rows[indexPath.row].type
         case .logout:
             type = .logout
         }
         showView(type!)
     }
 
-    func showView(_ type: AttributeType) {
+    func showView(_ type: SettingRowType) {
         switch type {
         case .account:
             presenter?.showAccount()

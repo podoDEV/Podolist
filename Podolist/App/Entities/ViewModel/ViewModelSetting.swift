@@ -6,9 +6,9 @@
 //
 
 class ViewModelSetting {
-    var items = [SettingViewModelItem]()
+    var items = [ViewModelSettingSection]()
 
-    init(items: [SettingViewModelItem]) {
+    init(items: [ViewModelSettingSection]) {
         self.items = items
     }
 }

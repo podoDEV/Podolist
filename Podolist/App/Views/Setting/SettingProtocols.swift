@@ -12,7 +12,7 @@ protocol SettingViewProtocol: class {
     var presenter: SettingPresenterProtocol? { get set }
 
     // Presenter -> View 
-    func showSettings(with settings: [SettingViewModelItem])
+    func showSettings(with settings: [ViewModelSettingSection])
 }
 
 extension SettingViewProtocol where Self: UIViewController {
