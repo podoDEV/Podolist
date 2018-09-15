@@ -20,12 +20,12 @@ class LoginView: UIViewController {
 
     // MARK: - Action
     @IBAction func tappedLogin(_ sender: Any) {
-        let session: KOSession = KOSession.shared();
-        
+        let session: KOSession = KOSession.shared()
+
         if session.isOpen() {
             session.close()
         }
-        
+
         session.open(completionHandler: { (error) -> Void in
 
             if !session.isOpen() {
@@ -39,7 +39,9 @@ class LoginView: UIViewController {
                 }
             }
         })
-//        presenter?.goLogin()
+    }
+    @IBAction func backdoor(_ sender: Any) {
+        presenter?.goLogin()
     }
 }
 

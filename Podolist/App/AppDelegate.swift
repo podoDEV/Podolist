@@ -59,20 +59,6 @@ extension AppDelegate {
         mainScreen = PodolistWireFrame.createPodolistModule()
     }
 
-    fileprivate func reloadRootViewController() {
-        let isOpened = KOSession.shared().isOpen()
-        if !isOpened {
-            let mainScreen = self.mainScreen as! UINavigationController
-            mainScreen.popToRootViewController(animated: true)
-        }
-
-        self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
-        self.window?.makeKeyAndVisible()
-    }
-}
-
-extension AppDelegate: UNUserNotificationCenterDelegate {
-
     func setupPushNotification() {
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
@@ -89,6 +75,20 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         reloadRootViewController()
     }
 
+    fileprivate func reloadRootViewController() {
+        let isOpened = KOSession.shared().isOpen()
+        if !isOpened {
+            let mainScreen = self.mainScreen as! UINavigationController
+            mainScreen.popToRootViewController(animated: false)
+        }
+
+        self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
+        self.window?.makeKeyAndVisible()
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("The notification \"\(notification.request.identifier)\" is presenting. \"\(notification.request.content.body)\"")
         completionHandler([.alert, .badge, .sound])
@@ -104,10 +104,16 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 extension AppDelegate /* For kakao */{
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return KOSession.handleOpen(url)
+        if KOSession.isKakaoAgeAuthCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        return KOSession.handleOpen(url)
+        if KOSession.isKakaoAgeAuthCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        return true
     }
 }

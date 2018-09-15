@@ -33,7 +33,7 @@ protocol PodolistPresenterProtocol: class {
     // View -> Presenter
     func viewDidLoad()
 //    func showWishDetail(from view: PodolistViewProtocol, forWish wish: ViewModelPodo)
-    func showSetting(from view: PodolistViewProtocol)
+    func showSetting()
 }
 
 protocol PodolistInteractorProtocol: class {

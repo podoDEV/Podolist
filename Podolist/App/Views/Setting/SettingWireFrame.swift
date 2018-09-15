@@ -14,7 +14,7 @@ class SettingWireFrame: SettingWireFrameProtocol {
     }
 
     static func createSettingModule() -> UIViewController {
-        let settingEntry = settingStoryboard.instantiateViewController(withIdentifier: "SettingViewController")
+        let settingEntry = settingStoryboard.instantiateViewController(withIdentifier: "SettingView")
         if let view = settingEntry as? SettingView {
             let presenter: SettingPresenterProtocol = SettingPresenter()
             let interactor: SettingInteractorProtocol = SettingInteractor()
@@ -34,5 +34,32 @@ class SettingWireFrame: SettingWireFrameProtocol {
             return settingEntry
         }
         return UIViewController()
+    }
+}
+
+extension SettingWireFrame {
+
+    func goToAccountScreen(from view: SettingViewProtocol) {
+        guard let source = view as? UIViewController else {
+            return
+        }
+        let destination = SettingWireFrame.settingStoryboard.instantiateViewController(withIdentifier: "AccountView")
+        source.navigationController?.pushViewController(destination, animated: true)
+    }
+
+    func goToHelpScreen(from view: SettingViewProtocol) {
+        guard let source = view as? UIViewController else {
+            return
+        }
+        let destination = SettingWireFrame.settingStoryboard.instantiateViewController(withIdentifier: "HelpView")
+        source.navigationController?.pushViewController(destination, animated: true)
+    }
+
+    func goToAboutScreen(from view: SettingViewProtocol) {
+        guard let source = view as? UIViewController else {
+            return
+        }
+        let destination = SettingWireFrame.settingStoryboard.instantiateViewController(withIdentifier: "AboutView")
+        source.navigationController?.pushViewController(destination, animated: true)
     }
 }
