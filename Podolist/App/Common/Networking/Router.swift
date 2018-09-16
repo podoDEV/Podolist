@@ -7,11 +7,11 @@
 
 struct Router: URLRouter {
     static var basePath: String {
-        return "http://happytiger.co.kr/"
+        return (Bundle.main.infoDictionary!["Base url"] as! String).replacingOccurrences(of: "\\", with: "")
     }
 
     struct Podolist: Readable, Creatable, Updatable, Deletable, hasStatuses {
-        var route = "podolist"
+        var route = "items"
         var urlParams: String!
     }
 

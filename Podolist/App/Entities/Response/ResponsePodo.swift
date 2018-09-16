@@ -8,16 +8,28 @@
 import SwiftyJSON
 
 class ResponsePodo: JSONable {
-    var id: String?
+    var id: Int?
     var title: String?
+    var isCompleted: Bool?
+    var startedAt: Int?
+    var endedAt: Int?
+    var updatedAt: Int?
 
-    init(id: String, title: String) {
+    init(id: Int, title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int) {
         self.id = id
         self.title = title
+        self.isCompleted = isCompleted
+        self.startedAt = startedAt
+        self.endedAt = endedAt
+        self.updatedAt = updatedAt
     }
 
     required init(json: JSON) {
-        id = json["id"].stringValue
+        id = json["id"].intValue
         title = json["title"].stringValue
+        isCompleted = json["isCompleted"].boolValue
+        startedAt = json["startedAt"].intValue
+        endedAt = json["endedAt"].intValue
+        updatedAt = json["updatedAt"].intValue
     }
 }
