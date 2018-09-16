@@ -20,18 +20,6 @@ protocol Routable {
     init()
 }
 
-// Allows a route to perform the `.get` method
-protocol Readable: Routable { }
-
-// Allows a route to perform the `.post` method
-protocol Creatable: Routable { }
-
-// Allows a route to perform the `.put` method
-protocol Updatable: Routable { }
-
-// Allows a route to perform the `.delete` method
-protocol Deletable: Routable { }
-
 extension Routable {
 
     // Create instance of Object that conforms to Routable
@@ -44,7 +32,7 @@ extension Routable {
     func nestedRoute(args: String, child: RequestConverterProtocol) -> RequestConverter {
         return RequestConverter(method: child.method,
                                 route: "\(self.route)/\(args)/\(child.route)",
-            parameters: child.parameters)
+                                parameters: child.parameters)
     }
 
     // Generate the URL string for generated nested routes
@@ -53,6 +41,9 @@ extension Routable {
         return nestedRoute
     }
 }
+
+// Allows a route to perform the `.get` method
+protocol Readable: Routable { }
 
 extension Readable where Self: Routable {
 
@@ -71,6 +62,9 @@ extension Readable where Self: Routable {
     }
 }
 
+// Allows a route to perform the `.post` method
+protocol Creatable: Routable { }
+
 extension Creatable where Self: Routable {
 
     // Method that allows route to create an object
@@ -87,6 +81,9 @@ extension Creatable where Self: Routable {
         return RequestConverter(method: .post, route: route, parameters: parameters)
     }
 }
+
+// Allows a route to perform the `.put` method
+protocol Updatable: Routable { }
 
 extension Updatable where Self: Routable {
 
@@ -105,6 +102,9 @@ extension Updatable where Self: Routable {
         return RequestConverter(method: .put, route: route, parameters: parameters)
     }
 }
+
+// Allows a route to perform the `.delete` method
+protocol Deletable: Routable { }
 
 extension Deletable where Self: Routable {
 

@@ -8,19 +8,22 @@
 import SwiftyJSON
 
 class Account: JSONable {
-    var pictureUrl: String?
+    var id: Int?
     var name: String?
-    var email: String?
+    var provider: Int?
+    var providerId: Int?
 
-    init(pictureUrl: String?, name: String, email: String) {
-        self.pictureUrl = pictureUrl
+    init(id: Int?, name: String?, provider: Int?, providerId: Int?) {
+        self.id = id
         self.name = name
-        self.email = email
+        self.provider = provider
+        self.providerId = providerId
     }
 
     required init(json: JSON) {
-        pictureUrl = json["pictureUrl"].stringValue
+        id = json["id"].intValue
         name = json["name"].stringValue
-        email = json["email"].stringValue
+        provider = json["provider"].intValue
+        providerId = json["providerId"].intValue
     }
 }

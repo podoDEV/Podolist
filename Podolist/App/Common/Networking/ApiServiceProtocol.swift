@@ -15,5 +15,5 @@ class ApiService: ApiServiceProtocol {
 
     private init() { }
 
-    typealias ResponseData = JsonPayload
+//    typealias ResponseData = JsonPayload
 }

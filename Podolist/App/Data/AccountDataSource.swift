@@ -1,5 +1,5 @@
 //
-//  PodoDataSource.swift
+//  AccountDataSource.swift
 //  Podolist
 //
 //  Copyright © 2018년 podo. All rights reserved.
@@ -7,19 +7,18 @@
 
 import RxSwift
 
-protocol PodoDataSource: class {
-    var localDataSource: PodoLocalDataSource? { get set }
-    var remoteDataSource: PodoRemoteDataSource? { get set }
+protocol AccountDataSource: class {
+    var localDataSource: AccountLocalDataSource? { get set }
+    var remoteDataSource: AccountRemoteDataSource? { get set }
 
     // Interactor -> DataSource
     func findPodolist() -> Observable<[Podo]>?
-    func findPodo(podoId: Int) -> Observable<Podo>?
     func addPodo(_ podo: Podo)
     func savePodo(id: Int, title: String)
     func removePodo()
 }
 
-protocol PodoLocalDataSource: class {
+protocol AccountLocalDataSource: class {
     // DataSource -> LocalDataSource
     func selectPodolist() throws -> [Podo]
     func insertPodo(_ podo: Podo) throws
@@ -27,10 +26,9 @@ protocol PodoLocalDataSource: class {
     func deletePodo()
 }
 
-protocol PodoRemoteDataSource: class {
+protocol AccountRemoteDataSource: class {
     // DataSource -> RemoteDataSource
     func getPodolist() -> Observable<[Podo]>?
-    func getPodo(podoId: Int) -> Observable<Podo>?
     func postPodo(_ podo: Podo)
     func putPodo()
     func deletePodo()

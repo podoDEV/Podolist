@@ -8,16 +8,16 @@
 import SwiftyJSON
 
 class RequestPodo: JSONable {
-    var id: String?
+    var id: Int?
     var title: String?
 
-    init(id: String, title: String) {
+    init(id: Int, title: String) {
         self.id = id
         self.title = title
     }
 
     required init(json: JSON) {
-        id = json["id"].stringValue
+        id = json["id"].intValue
         title = json["title"].stringValue
     }
 }

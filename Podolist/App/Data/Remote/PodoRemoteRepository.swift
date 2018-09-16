@@ -13,11 +13,18 @@ class PodoRemoteRepository: PodoRemoteDataSource {
 
     func getPodolist() -> Observable<[Podo]>? {
         return PodoService.sharedInstance.getAllPodolist()
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .flatMap({ jsonData -> Observable<[Podo]> in
-                let jsonResults: JsonResults<Podo> = jsonData.result as! JsonResults<Podo>
-                let podolist: [Podo] = jsonResults.contents as! [Podo]
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .flatMap({ responsePodolist -> Observable<[Podo]> in
+                let podolist: [Podo] = responsePodolist.map { Podo(responsePodo: $0) }
                 return Observable.just(podolist)
+            })
+    }
+
+    func getPodo(podoId: Int) -> Observable<Podo>? {
+        return PodoService.sharedInstance.getPodo(podoId: podoId)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .flatMap({ responsePodo -> Observable<Podo> in
+                return Observable.just(Podo(responsePodo: responsePodo))
             })
     }
 
