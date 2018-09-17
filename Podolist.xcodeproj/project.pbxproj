@@ -84,6 +84,8 @@
 		2D9095702146B955009335A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956F2146B955009335A1 /* LoginView.swift */; };
 		2D9095722146B966009335A1 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9095712146B966009335A1 /* LoginWireFrame.swift */; };
 		2DD0695C214BDD0200E0C987 /* UIAlertController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */; };
+		2DD7063C214FDF2100C44E16 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063B214FDF2100C44E16 /* RoundButton.swift */; };
+		2DD7063E214FF15A00C44E16 /* PodoWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */; };
 		2DE08124214804FF004FD99C /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
@@ -201,6 +203,8 @@
 		2D90956F2146B955009335A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2D9095712146B966009335A1 /* LoginWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
 		2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Additions.swift"; sourceTree = "<group>"; };
+		2DD7063B214FDF2100C44E16 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoWriteView.swift; sourceTree = "<group>"; };
 		2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = lib/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		2DE08125214807D9004FD99C /* Podolist-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Podolist-Bridging-Header.h"; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -413,6 +417,7 @@
 		2D0F207A2143D1DE00B8BDF2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2DD7063A214FDEE600C44E16 /* Views */,
 				2D0F207B2143D1DE00B8BDF2 /* Networking */,
 				2D0F20842143D1DE00B8BDF2 /* Extensions */,
 			);
@@ -605,6 +610,15 @@
 				2D41BC51214CD36D00B79BF6 /* Base.release.xcconfig */,
 			);
 			path = BuildConfig;
+			sourceTree = "<group>";
+		};
+		2DD7063A214FDEE600C44E16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2DD7063B214FDF2100C44E16 /* RoundButton.swift */,
+				2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4E8C794971625CD6374BCC4D /* Pods */ = {
@@ -948,6 +962,7 @@
 				2D41BC86214E086F00B79BF6 /* AccountService.swift in Sources */,
 				2D41BC7C214E07A200B79BF6 /* AccountRepository.swift in Sources */,
 				2D41BC66214D58D600B79BF6 /* AccountView.swift in Sources */,
+				2DD7063C214FDF2100C44E16 /* RoundButton.swift in Sources */,
 				2D41BC72214D6D8D00B79BF6 /* ViewModelSettingLogoutItem.swift in Sources */,
 				2D0F20752143984A00B8BDF2 /* PodolistView.swift in Sources */,
 				2D0F20B121441C6800B8BDF2 /* PodoRemoteRepository.swift in Sources */,
@@ -979,6 +994,7 @@
 				2D90956C2146B944009335A1 /* LoginPresenter.swift in Sources */,
 				2D0F20662143984A00B8BDF2 /* Colors.swift in Sources */,
 				2D0F20602143984A00B8BDF2 /* AppDelegate.swift in Sources */,
+				2DD7063E214FF15A00C44E16 /* PodoWriteView.swift in Sources */,
 				2D0F20A42144196400B8BDF2 /* Podo.swift in Sources */,
 				2D41BC68214D642500B79BF6 /* SettingRowType.swift in Sources */,
 				2D0F20AF21441C5500B8BDF2 /* PodoLocalRepository.swift in Sources */,

@@ -48,12 +48,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2Hd-NN-afT"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7K-0K-TYZ" customClass="RoundButton" customModule="Podolist" customModuleProvider="target">
+                                <rect key="frame" x="305" y="708" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="hPX-Mx-xvk"/>
+                                    <constraint firstAttribute="height" constant="50" id="wZl-51-Lmi"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="tappedNew:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdl-60-dHs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="czE-9C-mXi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0F0-hb-p2I"/>
                             <constraint firstItem="czE-9C-mXi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J4V-U0-9r3"/>
                             <constraint firstItem="czE-9C-mXi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QhR-Tj-eBB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U7K-0K-TYZ" secondAttribute="trailing" constant="20" id="jV6-M3-lxr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U7K-0K-TYZ" secondAttribute="bottom" constant="20" id="tII-Hi-VYT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="czE-9C-mXi" secondAttribute="bottom" id="zvJ-qq-8bh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -71,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1076" y="132.26600985221674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ykP-Gl-wJt">

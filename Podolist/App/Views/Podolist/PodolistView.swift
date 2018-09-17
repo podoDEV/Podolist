@@ -11,18 +11,35 @@ import RxSwift
 class PodolistView: UIViewController {
 
     @IBOutlet weak var podolistTableView: UITableView!
+    lazy var writeView: PodoWriteView = {
+        let cgRect = CGRect(x: 0, y: self.view.bounds.height - 60, width: self.view.bounds.width, height: 60)
+        let writeView = PodoWriteView(frame: cgRect)
+        writeView.backgroundColor = .gray
+        return writeView
+    }()
+
     var presenter: PodolistPresenterProtocol?
     var podolist: [ViewModelPodo] = []
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupUI()
+    }
+
+    func setupUI() {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         podolistTableView.tableFooterView = UIView()
-
         presenter?.viewDidLoad()
         showLoading()
     }
 
-    // MARK: - Action
+    @IBAction func tappedNew(_ sender: Any) {
+        self.view.addSubview(writeView)
+    }
+
     @IBAction func tappedSetting(_ sender: Any) {
         presenter?.showSetting()
     }
