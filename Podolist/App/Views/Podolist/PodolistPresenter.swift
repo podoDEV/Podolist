@@ -7,7 +7,7 @@
 
 import RxSwift
 
-class PodolistPresenter: PodolistPresenterProtocol {
+class PodolistPresenter: NSObject, PodolistPresenterProtocol {
     var view: PodolistViewProtocol?
     var interactor: PodolistInteractorProtocol?
     var wireFrame: PodolistWireFrameProtocol?
@@ -33,4 +33,9 @@ extension PodolistPresenter {
     func showSetting() {
         wireFrame?.goToSettingScreen(from: self.view!)
     }
+}
+
+extension PodolistPresenter: UITextFieldDelegate {
+
+    
 }
