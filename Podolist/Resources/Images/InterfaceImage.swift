@@ -15,7 +15,8 @@ enum InterfaceImage: String {
         case disabled
     }
 
-    // MARK: - Common
+    case add = "btn_add"
+    case send = "btn_send"
     case logo = "podolist_logo"
     case back = "back"
 
@@ -34,7 +35,8 @@ enum InterfaceImage: String {
 
     var normalImage: UIImage! {
         switch self {
-        case .back:
+        case .add,
+             .send:
             return pngNamed(self.rawValue)
         default:
             return pngNamed("\(self.rawValue)_normal")
