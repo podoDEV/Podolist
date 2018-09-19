@@ -43,10 +43,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="i1f-CR-lI5"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2Hd-NN-afT"/>
-                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7K-0K-TYZ" customClass="RoundButton" customModule="Podolist" customModuleProvider="target">
                                 <rect key="frame" x="305" y="708" width="50" height="50"/>
@@ -54,9 +50,6 @@
                                     <constraint firstAttribute="width" constant="50" id="hPX-Mx-xvk"/>
                                     <constraint firstAttribute="height" constant="50" id="wZl-51-Lmi"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="tappedNew:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdl-60-dHs"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2HJ-Ve-YJH">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
