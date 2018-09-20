@@ -104,14 +104,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 extension AppDelegate /* For kakao */{
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        if KOSession.isKakaoAgeAuthCallback(url) {
+        if KOSession.isKakaoAccountLoginCallback(url) {
             return KOSession.handleOpen(url)
         }
         return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        if KOSession.isKakaoAgeAuthCallback(url) {
+        if KOSession.isKakaoAccountLoginCallback(url) {
             return KOSession.handleOpen(url)
         }
         return true
