@@ -90,6 +90,9 @@
 		2DE08124214804FF004FD99C /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
 		2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031821512B0600AAAE4C /* AppUtils.swift */; };
 		2DE9031C2151387400AAAE4C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031B2151387400AAAE4C /* Style.swift */; };
+		2DE90BF3215407E800BF8588 /* Base.release(real).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */; };
+		2DE90BF4215407E800BF8588 /* Base.debug(dev).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */; };
+		2DE90BF5215407E800BF8588 /* Base.debug(real).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
 		CF27ECCE5AFDD750647BF84F /* Pods_Podolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */; };
@@ -113,9 +116,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01A1970F85DE784E4EFA3450 /* Pods-PodolistUITests.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.debug(dev).xcconfig"; sourceTree = "<group>"; };
+		0252A960839C5674A2A9B996 /* Pods-PodolistUITests.debug(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.debug(real).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.debug(real).xcconfig"; sourceTree = "<group>"; };
 		02745D99079FE608B1A42CCC /* Pods-Podolist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug.xcconfig"; sourceTree = "<group>"; };
+		0A5AB27A8E6AC1E746B1C148 /* Pods-PodolistTests.debug(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTests.debug(real).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests.debug(real).xcconfig"; sourceTree = "<group>"; };
+		1638994EB566DE5E19E7D1A3 /* Pods-Podolist.release(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.release(real).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.release(real).xcconfig"; sourceTree = "<group>"; };
 		191AED14745F439EFECD8CFE /* Pods-PodolistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodolistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2873050F0790F14D2F7201E3 /* Pods-Podolist.debug(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug(real).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug(real).xcconfig"; sourceTree = "<group>"; };
 		2D0F1FF72143934100B8BDF2 /* Podolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podolist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0F200B2143934700B8BDF2 /* PodolistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodolistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0F200F2143934700B8BDF2 /* PodolistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistTests.swift; sourceTree = "<group>"; };
@@ -174,7 +182,6 @@
 		2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		2D0F20E421454DC600B8BDF2 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		2D3A19CA2152B45B00C9B68B /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
-		2D41BC51214CD36D00B79BF6 /* Base.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.release.xcconfig; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2D41BC55214D173200B79BF6 /* SettingSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionType.swift; sourceTree = "<group>"; };
 		2D41BC57214D186D00B79BF6 /* ViewModelSettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSettingSection.swift; sourceTree = "<group>"; };
@@ -199,8 +206,6 @@
 		2D41BC81214E083D00B79BF6 /* AccountLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLocalRepository.swift; sourceTree = "<group>"; };
 		2D41BC83214E085100B79BF6 /* CommonLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLocalRepository.swift; sourceTree = "<group>"; };
 		2D41BC85214E086F00B79BF6 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
-		2D41BC89214E695100B79BF6 /* Base.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.debug.xcconfig; sourceTree = "<group>"; };
-		2D41BC8A214E6D7800B79BF6 /* Base.mock.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.mock.xcconfig; sourceTree = "<group>"; };
 		2D9095692146B93B009335A1 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		2D90956B2146B944009335A1 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		2D90956D2146B94F009335A1 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
@@ -213,11 +218,20 @@
 		2DE08125214807D9004FD99C /* Podolist-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Podolist-Bridging-Header.h"; sourceTree = "<group>"; };
 		2DE9031821512B0600AAAE4C /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		2DE9031B2151387400AAAE4C /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(real).xcconfig"; sourceTree = "<group>"; };
+		2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.debug(dev).xcconfig"; sourceTree = "<group>"; };
+		2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.debug(real).xcconfig"; sourceTree = "<group>"; };
+		2DE90BF62154097500BF8588 /* Base.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.debug.xcconfig; sourceTree = "<group>"; };
+		2DE90BF721540A6200BF8588 /* Base.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.release.xcconfig; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		361ADACEE3373DB2922831BC /* Pods-Podolist.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug(dev).xcconfig"; sourceTree = "<group>"; };
 		3B65A781FD7AD4F3D24E450C /* Pods-PodolistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7180A5385A7DB5B197C1DB8E /* Pods-PodolistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodolistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA477229EA580C358BED7710 /* Pods-PodolistTests.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTests.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests.debug(dev).xcconfig"; sourceTree = "<group>"; };
 		CF71FF8DCD92241F27CA28E5 /* Pods-PodolistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E02FD67C4AD3C0F454142BE3 /* Pods-PodolistUITests.release(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.release(real).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.release(real).xcconfig"; sourceTree = "<group>"; };
+		E5C9BE7CBA89F96353F99659 /* Pods-PodolistTests.release(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTests.release(real).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests.release(real).xcconfig"; sourceTree = "<group>"; };
 		F5EC30344951FA14776DEF55 /* Pods-Podolist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -615,9 +629,11 @@
 		2DCCDD9021494BEB00CC3B00 /* BuildConfig */ = {
 			isa = PBXGroup;
 			children = (
-				2D41BC8A214E6D7800B79BF6 /* Base.mock.xcconfig */,
-				2D41BC89214E695100B79BF6 /* Base.debug.xcconfig */,
-				2D41BC51214CD36D00B79BF6 /* Base.release.xcconfig */,
+				2DE90BF62154097500BF8588 /* Base.debug.xcconfig */,
+				2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */,
+				2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */,
+				2DE90BF721540A6200BF8588 /* Base.release.xcconfig */,
+				2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */,
 			);
 			path = BuildConfig;
 			sourceTree = "<group>";
@@ -663,6 +679,15 @@
 				7180A5385A7DB5B197C1DB8E /* Pods-PodolistTests.release.xcconfig */,
 				CF71FF8DCD92241F27CA28E5 /* Pods-PodolistUITests.debug.xcconfig */,
 				3B65A781FD7AD4F3D24E450C /* Pods-PodolistUITests.release.xcconfig */,
+				361ADACEE3373DB2922831BC /* Pods-Podolist.debug(dev).xcconfig */,
+				2873050F0790F14D2F7201E3 /* Pods-Podolist.debug(real).xcconfig */,
+				1638994EB566DE5E19E7D1A3 /* Pods-Podolist.release(real).xcconfig */,
+				BA477229EA580C358BED7710 /* Pods-PodolistTests.debug(dev).xcconfig */,
+				0A5AB27A8E6AC1E746B1C148 /* Pods-PodolistTests.debug(real).xcconfig */,
+				E5C9BE7CBA89F96353F99659 /* Pods-PodolistTests.release(real).xcconfig */,
+				01A1970F85DE784E4EFA3450 /* Pods-PodolistUITests.debug(dev).xcconfig */,
+				0252A960839C5674A2A9B996 /* Pods-PodolistUITests.debug(real).xcconfig */,
+				E02FD67C4AD3C0F454142BE3 /* Pods-PodolistUITests.release(real).xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -794,7 +819,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0F2098214416FA00B8BDF2 /* Podolist.storyboard in Resources */,
+				2DE90BF3215407E800BF8588 /* Base.release(real).xcconfig in Resources */,
 				2D0F20942144161A00B8BDF2 /* Login.storyboard in Resources */,
+				2DE90BF5215407E800BF8588 /* Base.debug(real).xcconfig in Resources */,
 				2D0F2096214416A200B8BDF2 /* LaunchScreen.storyboard in Resources */,
 				2D41BC74214D728600B79BF6 /* SettingTableViewCell.xib in Resources */,
 				2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */,
@@ -803,6 +830,7 @@
 				2D0F20D621453AF500B8BDF2 /* Setting.storyboard in Resources */,
 				2D0F20692143984A00B8BDF2 /* SeoulNamsanB.ttf in Resources */,
 				2D0F20622143984A00B8BDF2 /* InfoPlist.strings in Resources */,
+				2DE90BF4215407E800BF8588 /* Base.debug(dev).xcconfig in Resources */,
 				2D0F20672143984A00B8BDF2 /* SeoulNamsanM.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1119,71 +1147,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2D0F201D2143934700B8BDF2 /* Mock */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D41BC8A214E6D7800B79BF6 /* Base.mock.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Mock;
-		};
 		2D0F201E2143934700B8BDF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D41BC51214CD36D00B79BF6 /* Base.release.xcconfig */;
+			baseConfigurationReference = 2DE90BF721540A6200BF8588 /* Base.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1237,45 +1203,6 @@
 			};
 			name = Release;
 		};
-		2D0F20202143934700B8BDF2 /* Mock */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02745D99079FE608B1A42CCC /* Pods-Podolist.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PVPJ87SLWN;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/lib",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Alamofire\"",
-					"-framework",
-					"\"KeychainAccess\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SwiftyJSON\"",
-					"-all_load",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.podo.Podolist;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/App/Podolist-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Mock;
-		};
 		2D0F20212143934700B8BDF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5EC30344951FA14776DEF55 /* Pods-Podolist.release.xcconfig */;
@@ -1315,28 +1242,6 @@
 			};
 			name = Release;
 		};
-		2D0F20232143934700B8BDF2 /* Mock */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 191AED14745F439EFECD8CFE /* Pods-PodolistTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PVPJ87SLWN;
-				INFOPLIST_FILE = PodolistTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.podo.PodolistTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podolist.app/Podolist";
-			};
-			name = Mock;
-		};
 		2D0F20242143934700B8BDF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7180A5385A7DB5B197C1DB8E /* Pods-PodolistTests.release.xcconfig */;
@@ -1358,27 +1263,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podolist.app/Podolist";
 			};
 			name = Release;
-		};
-		2D0F20262143934700B8BDF2 /* Mock */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF71FF8DCD92241F27CA28E5 /* Pods-PodolistUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PVPJ87SLWN;
-				INFOPLIST_FILE = PodolistUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.podo.PodolistUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Podolist;
-			};
-			name = Mock;
 		};
 		2D0F20272143934700B8BDF2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1403,7 +1287,7 @@
 		};
 		2D41BC8B214E6DB800B79BF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D41BC89214E695100B79BF6 /* Base.debug.xcconfig */;
+			baseConfigurationReference = 2DE90BF62154097500BF8588 /* Base.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1545,15 +1429,443 @@
 			};
 			name = Debug;
 		};
+		2DE90BE4215405DD00BF8588 /* Debug(DEV) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug(DEV)";
+		};
+		2DE90BE5215405DD00BF8588 /* Debug(DEV) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 361ADACEE3373DB2922831BC /* Pods-Podolist.debug(dev).xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"KeychainAccess\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.Podolist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/App/Podolist-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug(DEV)";
+		};
+		2DE90BE6215405DD00BF8588 /* Debug(DEV) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA477229EA580C358BED7710 /* Pods-PodolistTests.debug(dev).xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				INFOPLIST_FILE = PodolistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.PodolistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podolist.app/Podolist";
+			};
+			name = "Debug(DEV)";
+		};
+		2DE90BE7215405DD00BF8588 /* Debug(DEV) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A1970F85DE784E4EFA3450 /* Pods-PodolistUITests.debug(dev).xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				INFOPLIST_FILE = PodolistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.PodolistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Podolist;
+			};
+			name = "Debug(DEV)";
+		};
+		2DE90BE8215405F600BF8588 /* Debug(REAL) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug(REAL)";
+		};
+		2DE90BE9215405F600BF8588 /* Debug(REAL) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2873050F0790F14D2F7201E3 /* Pods-Podolist.debug(real).xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"KeychainAccess\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.Podolist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/App/Podolist-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug(REAL)";
+		};
+		2DE90BEA215405F600BF8588 /* Debug(REAL) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A5AB27A8E6AC1E746B1C148 /* Pods-PodolistTests.debug(real).xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				INFOPLIST_FILE = PodolistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.PodolistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podolist.app/Podolist";
+			};
+			name = "Debug(REAL)";
+		};
+		2DE90BEB215405F600BF8588 /* Debug(REAL) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0252A960839C5674A2A9B996 /* Pods-PodolistUITests.debug(real).xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				INFOPLIST_FILE = PodolistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.PodolistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Podolist;
+			};
+			name = "Debug(REAL)";
+		};
+		2DE90BEC2154060600BF8588 /* Release(REAL) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release(REAL)";
+		};
+		2DE90BED2154060600BF8588 /* Release(REAL) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1638994EB566DE5E19E7D1A3 /* Pods-Podolist.release(real).xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"KeychainAccess\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.Podolist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/App/Podolist-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Release(REAL)";
+		};
+		2DE90BEE2154060600BF8588 /* Release(REAL) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5C9BE7CBA89F96353F99659 /* Pods-PodolistTests.release(real).xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				INFOPLIST_FILE = PodolistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.PodolistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Podolist.app/Podolist";
+			};
+			name = "Release(REAL)";
+		};
+		2DE90BEF2154060600BF8588 /* Release(REAL) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E02FD67C4AD3C0F454142BE3 /* Pods-PodolistUITests.release(real).xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PVPJ87SLWN;
+				INFOPLIST_FILE = PodolistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.PodolistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Podolist;
+			};
+			name = "Release(REAL)";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D0F1FF22143934100B8BDF2 /* Build configuration list for PBXProject "Podolist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D0F201D2143934700B8BDF2 /* Mock */,
 				2D41BC8B214E6DB800B79BF6 /* Debug */,
+				2DE90BE4215405DD00BF8588 /* Debug(DEV) */,
+				2DE90BE8215405F600BF8588 /* Debug(REAL) */,
 				2D0F201E2143934700B8BDF2 /* Release */,
+				2DE90BEC2154060600BF8588 /* Release(REAL) */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1561,9 +1873,11 @@
 		2D0F201F2143934700B8BDF2 /* Build configuration list for PBXNativeTarget "Podolist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D0F20202143934700B8BDF2 /* Mock */,
 				2D41BC8C214E6DB800B79BF6 /* Debug */,
+				2DE90BE5215405DD00BF8588 /* Debug(DEV) */,
+				2DE90BE9215405F600BF8588 /* Debug(REAL) */,
 				2D0F20212143934700B8BDF2 /* Release */,
+				2DE90BED2154060600BF8588 /* Release(REAL) */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1571,9 +1885,11 @@
 		2D0F20222143934700B8BDF2 /* Build configuration list for PBXNativeTarget "PodolistTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D0F20232143934700B8BDF2 /* Mock */,
 				2D41BC8D214E6DB800B79BF6 /* Debug */,
+				2DE90BE6215405DD00BF8588 /* Debug(DEV) */,
+				2DE90BEA215405F600BF8588 /* Debug(REAL) */,
 				2D0F20242143934700B8BDF2 /* Release */,
+				2DE90BEE2154060600BF8588 /* Release(REAL) */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1581,9 +1897,11 @@
 		2D0F20252143934700B8BDF2 /* Build configuration list for PBXNativeTarget "PodolistUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D0F20262143934700B8BDF2 /* Mock */,
 				2D41BC8E214E6DB800B79BF6 /* Debug */,
+				2DE90BE7215405DD00BF8588 /* Debug(DEV) */,
+				2DE90BEB215405F600BF8588 /* Debug(REAL) */,
 				2D0F20272143934700B8BDF2 /* Release */,
+				2DE90BEF2154060600BF8588 /* Release(REAL) */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

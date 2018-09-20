@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" id="OfQ-wb-xMl">
                         <barButtonItem key="rightBarButtonItem" title="Setting" id="QXl-mQ-fJZ">
                             <connections>
-                                <action selector="tappedSetting:" destination="BYZ-38-t0r" id="eUw-EN-yPn"/>
+                                <action selector="pressSetting:" destination="BYZ-38-t0r" id="RTf-Fl-fK0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
