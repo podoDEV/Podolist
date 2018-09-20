@@ -90,6 +90,9 @@
 		2DE08124214804FF004FD99C /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
 		2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031821512B0600AAAE4C /* AppUtils.swift */; };
 		2DE9031C2151387400AAAE4C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031B2151387400AAAE4C /* Style.swift */; };
+		2DE90BF3215407E800BF8588 /* Base.release(real).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */; };
+		2DE90BF4215407E800BF8588 /* Base.debug(dev).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */; };
+		2DE90BF5215407E800BF8588 /* Base.debug(real).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
 		CF27ECCE5AFDD750647BF84F /* Pods_Podolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */; };
@@ -215,6 +218,11 @@
 		2DE08125214807D9004FD99C /* Podolist-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Podolist-Bridging-Header.h"; sourceTree = "<group>"; };
 		2DE9031821512B0600AAAE4C /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		2DE9031B2151387400AAAE4C /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(real).xcconfig"; sourceTree = "<group>"; };
+		2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.debug(dev).xcconfig"; sourceTree = "<group>"; };
+		2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.debug(real).xcconfig"; sourceTree = "<group>"; };
+		2DE90BF62154097500BF8588 /* Base.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.debug.xcconfig; sourceTree = "<group>"; };
+		2DE90BF721540A6200BF8588 /* Base.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.release.xcconfig; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		361ADACEE3373DB2922831BC /* Pods-Podolist.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug(dev).xcconfig"; sourceTree = "<group>"; };
 		3B65A781FD7AD4F3D24E450C /* Pods-PodolistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -621,6 +629,11 @@
 		2DCCDD9021494BEB00CC3B00 /* BuildConfig */ = {
 			isa = PBXGroup;
 			children = (
+				2DE90BF62154097500BF8588 /* Base.debug.xcconfig */,
+				2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */,
+				2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */,
+				2DE90BF721540A6200BF8588 /* Base.release.xcconfig */,
+				2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */,
 			);
 			path = BuildConfig;
 			sourceTree = "<group>";
@@ -806,7 +819,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0F2098214416FA00B8BDF2 /* Podolist.storyboard in Resources */,
+				2DE90BF3215407E800BF8588 /* Base.release(real).xcconfig in Resources */,
 				2D0F20942144161A00B8BDF2 /* Login.storyboard in Resources */,
+				2DE90BF5215407E800BF8588 /* Base.debug(real).xcconfig in Resources */,
 				2D0F2096214416A200B8BDF2 /* LaunchScreen.storyboard in Resources */,
 				2D41BC74214D728600B79BF6 /* SettingTableViewCell.xib in Resources */,
 				2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */,
@@ -815,6 +830,7 @@
 				2D0F20D621453AF500B8BDF2 /* Setting.storyboard in Resources */,
 				2D0F20692143984A00B8BDF2 /* SeoulNamsanB.ttf in Resources */,
 				2D0F20622143984A00B8BDF2 /* InfoPlist.strings in Resources */,
+				2DE90BF4215407E800BF8588 /* Base.debug(dev).xcconfig in Resources */,
 				2D0F20672143984A00B8BDF2 /* SeoulNamsanM.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1133,6 +1149,7 @@
 /* Begin XCBuildConfiguration section */
 		2D0F201E2143934700B8BDF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE90BF721540A6200BF8588 /* Base.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1270,6 +1287,7 @@
 		};
 		2D41BC8B214E6DB800B79BF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE90BF62154097500BF8588 /* Base.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1413,6 +1431,7 @@
 		};
 		2DE90BE4215405DD00BF8588 /* Debug(DEV) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1556,6 +1575,7 @@
 		};
 		2DE90BE8215405F600BF8588 /* Debug(REAL) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1699,6 +1719,7 @@
 		};
 		2DE90BEC2154060600BF8588 /* Release(REAL) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
