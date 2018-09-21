@@ -90,9 +90,6 @@
 		2DE08124214804FF004FD99C /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
 		2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031821512B0600AAAE4C /* AppUtils.swift */; };
 		2DE9031C2151387400AAAE4C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031B2151387400AAAE4C /* Style.swift */; };
-		2DE90BF3215407E800BF8588 /* Base.release(real).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */; };
-		2DE90BF4215407E800BF8588 /* Base.debug(dev).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */; };
-		2DE90BF5215407E800BF8588 /* Base.debug(real).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */; };
 		2DE90BF92154D27D00BF8588 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90BF82154D27D00BF8588 /* BaseView.swift */; };
 		2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0021552B6600BF8588 /* EntryViewType.swift */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
@@ -825,9 +822,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0F2098214416FA00B8BDF2 /* Podolist.storyboard in Resources */,
-				2DE90BF3215407E800BF8588 /* Base.release(real).xcconfig in Resources */,
 				2D0F20942144161A00B8BDF2 /* Login.storyboard in Resources */,
-				2DE90BF5215407E800BF8588 /* Base.debug(real).xcconfig in Resources */,
 				2D0F2096214416A200B8BDF2 /* LaunchScreen.storyboard in Resources */,
 				2D41BC74214D728600B79BF6 /* SettingTableViewCell.xib in Resources */,
 				2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */,
@@ -836,7 +831,6 @@
 				2D0F20D621453AF500B8BDF2 /* Setting.storyboard in Resources */,
 				2D0F20692143984A00B8BDF2 /* SeoulNamsanB.ttf in Resources */,
 				2D0F20622143984A00B8BDF2 /* InfoPlist.strings in Resources */,
-				2DE90BF4215407E800BF8588 /* Base.debug(dev).xcconfig in Resources */,
 				2D0F20672143984A00B8BDF2 /* SeoulNamsanM.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
