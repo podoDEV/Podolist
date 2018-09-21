@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eoh-Lq-7CR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eoh-Lq-7CR">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +13,7 @@
         <!--Setting View-->
         <scene sceneID="vaA-aB-1wN">
             <objects>
-                <viewController storyboardIdentifier="SettingView" id="eoh-Lq-7CR" customClass="SettingView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setting" id="eoh-Lq-7CR" customClass="SettingView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gPW-P3-vpo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkr-kg-U3b">
-                                                    <rect key="frame" x="14" y="1" width="260" height="44"/>
+                                                    <rect key="frame" x="14" y="1.3333333333333321" width="260" height="43.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -73,25 +72,10 @@
             </objects>
             <point key="canvasLocation" x="1672.8" y="-356.89655172413796"/>
         </scene>
-        <!--Account View-->
-        <scene sceneID="2Uf-nx-PZg">
-            <objects>
-                <viewController storyboardIdentifier="AccountView" id="1eF-3Q-MGg" customClass="AccountView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V1d-sO-XKQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="vOk-Oh-O0E"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YqT-3S-liQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2398" y="-357"/>
-        </scene>
         <!--Help View-->
         <scene sceneID="h6n-MN-Xnd">
             <objects>
-                <viewController storyboardIdentifier="HelpView" id="uib-qW-aCX" customClass="HelpView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="help" id="uib-qW-aCX" customClass="HelpView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cmX-Na-tIf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,12 +85,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hu3-50-dfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3102" y="-357"/>
+            <point key="canvasLocation" x="3087" y="-358"/>
         </scene>
         <!--About View-->
         <scene sceneID="IYA-F1-tcp">
             <objects>
-                <viewController storyboardIdentifier="AboutView" id="I0c-5H-FpC" customClass="AboutView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="about" id="I0c-5H-FpC" customClass="AboutView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xz-hu-d8t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,6 +101,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsr-kb-ckE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3839" y="-358"/>
+        </scene>
+        <!--Account View-->
+        <scene sceneID="Jgz-1h-7ZD">
+            <objects>
+                <viewController storyboardIdentifier="account" id="4iC-wh-wlB" customClass="AccountView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rRm-fu-lZN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ACT-g1-jPV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwF-GP-Xpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2375" y="-358"/>
         </scene>
     </scenes>
 </document>

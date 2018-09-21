@@ -90,9 +90,8 @@
 		2DE08124214804FF004FD99C /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
 		2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031821512B0600AAAE4C /* AppUtils.swift */; };
 		2DE9031C2151387400AAAE4C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031B2151387400AAAE4C /* Style.swift */; };
-		2DE90BF3215407E800BF8588 /* Base.release(real).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */; };
-		2DE90BF4215407E800BF8588 /* Base.debug(dev).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF1215407E800BF8588 /* Base.debug(dev).xcconfig */; };
-		2DE90BF5215407E800BF8588 /* Base.debug(real).xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */; };
+		2DE90BF92154D27D00BF8588 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90BF82154D27D00BF8588 /* BaseView.swift */; };
+		2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0021552B6600BF8588 /* EntryViewType.swift */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
 		CF27ECCE5AFDD750647BF84F /* Pods_Podolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */; };
@@ -223,6 +222,8 @@
 		2DE90BF2215407E800BF8588 /* Base.debug(real).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.debug(real).xcconfig"; sourceTree = "<group>"; };
 		2DE90BF62154097500BF8588 /* Base.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.debug.xcconfig; sourceTree = "<group>"; };
 		2DE90BF721540A6200BF8588 /* Base.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.release.xcconfig; sourceTree = "<group>"; };
+		2DE90BF82154D27D00BF8588 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		2DE90C0021552B6600BF8588 /* EntryViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewType.swift; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		361ADACEE3373DB2922831BC /* Pods-Podolist.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug(dev).xcconfig"; sourceTree = "<group>"; };
 		3B65A781FD7AD4F3D24E450C /* Pods-PodolistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -576,8 +577,8 @@
 		2D0F20D421453AC500B8BDF2 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				2D41BC64214D58BF00B79BF6 /* Views */,
 				2D0F20E121454CE700B8BDF2 /* Cells */,
+				2D41BC64214D58BF00B79BF6 /* Views */,
 				2D0F20D521453AF500B8BDF2 /* Setting.storyboard */,
 				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
 				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
@@ -612,6 +613,8 @@
 		2D41BC61214D510200B79BF6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2DE90BF82154D27D00BF8588 /* BaseView.swift */,
+				2DE90C0021552B6600BF8588 /* EntryViewType.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -819,9 +822,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0F2098214416FA00B8BDF2 /* Podolist.storyboard in Resources */,
-				2DE90BF3215407E800BF8588 /* Base.release(real).xcconfig in Resources */,
 				2D0F20942144161A00B8BDF2 /* Login.storyboard in Resources */,
-				2DE90BF5215407E800BF8588 /* Base.debug(real).xcconfig in Resources */,
 				2D0F2096214416A200B8BDF2 /* LaunchScreen.storyboard in Resources */,
 				2D41BC74214D728600B79BF6 /* SettingTableViewCell.xib in Resources */,
 				2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */,
@@ -830,7 +831,6 @@
 				2D0F20D621453AF500B8BDF2 /* Setting.storyboard in Resources */,
 				2D0F20692143984A00B8BDF2 /* SeoulNamsanB.ttf in Resources */,
 				2D0F20622143984A00B8BDF2 /* InfoPlist.strings in Resources */,
-				2DE90BF4215407E800BF8588 /* Base.debug(dev).xcconfig in Resources */,
 				2D0F20672143984A00B8BDF2 /* SeoulNamsanM.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1078,6 +1078,7 @@
 				2D0F20B821442CAA00B8BDF2 /* ViewModelPodo.swift in Sources */,
 				2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */,
 				2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */,
+				2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */,
 				2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */,
 				2D41BC78214E077B00B79BF6 /* CommonRepository.swift in Sources */,
 				2D0F20892143D1DE00B8BDF2 /* JsonPayload.swift in Sources */,
@@ -1087,6 +1088,7 @@
 				2D0F20BD214432E800B8BDF2 /* PodoTableViewCell.swift in Sources */,
 				2D0F20AD21441A8700B8BDF2 /* PodoService.swift in Sources */,
 				2D9095702146B955009335A1 /* LoginView.swift in Sources */,
+				2DE90BF92154D27D00BF8588 /* BaseView.swift in Sources */,
 				2D9095722146B966009335A1 /* LoginWireFrame.swift in Sources */,
 				2D41BC6A214D69D900B79BF6 /* HelpView.swift in Sources */,
 			);

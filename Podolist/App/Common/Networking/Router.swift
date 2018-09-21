@@ -7,7 +7,7 @@
 
 struct Router: URLRouter {
     static var basePath: String {
-        return (Bundle.main.infoDictionary!["Base url"] as! String).replacingOccurrences(of: "\\", with: "")
+        return (Bundle.main.infoDictionary!["BASE_URL"] as! String).replacingOccurrences(of: "\\", with: "")
     }
 
     struct Podolist: Readable, Creatable, Updatable, Deletable, hasStatuses {

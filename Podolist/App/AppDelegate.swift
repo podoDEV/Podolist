@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        setupAnalytics()
         setupEntryScreen()
         setupPushNotification()
 
@@ -53,6 +54,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+
+    func setupAnalytics() {
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+            return
+        }
+        let trackingId = Bundle.main.infoDictionary?["GA_TRACKING_ID"] as! String
+        gai.tracker(withTrackingId: trackingId)
+        gai.trackUncaughtExceptions = true
+
+        #if DEBUG
+            gai.logger.logLevel = .verbose
+        #endif
+    }
 
     fileprivate func setupEntryScreen() {
         loginScreen = LoginWireFrame.createLoginModule()

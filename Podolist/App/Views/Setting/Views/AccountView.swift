@@ -7,13 +7,9 @@
 
 import UIKit
 
-class AccountView: UIViewController {
+class AccountView: BaseView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        settingTableView.tableFooterView = UIView()
-
-//        presenter?.viewDidLoad()
-//        showLoading()
     }
 }

@@ -14,7 +14,7 @@ class PodolistWireFrame: PodolistWireFrameProtocol {
     }
 
     static func createPodolistModule() -> UIViewController {
-        let podolistEntry = podolistStoryboard.instantiateViewController(withIdentifier: "PodolistNavigationController")
+        let podolistEntry = podolistStoryboard.instantiateViewController(withIdentifier: EntryViewType.podolist.rawValue)
         if let view = podolistEntry.childViewControllers.first as? PodolistView {
             let presenter: PodolistPresenterProtocol = PodolistPresenter()
             let interactor: PodolistInteractorProtocol = PodolistInteractor()

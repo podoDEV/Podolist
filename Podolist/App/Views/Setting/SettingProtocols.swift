@@ -32,9 +32,7 @@ protocol SettingPresenterProtocol: class {
 
     // View -> Presenter
     func viewDidLoad()
-    func showAccount()
-    func showHelp()
-    func showAbout()
+    func showDetail(type: SettingRowType)
     func logout()
 }
 
@@ -49,7 +47,5 @@ protocol SettingWireFrameProtocol: class {
     static func createSettingModule() -> UIViewController
 
     // Presenter -> WireFrame
-    func goToAccountScreen(from view: SettingViewProtocol)
-    func goToHelpScreen(from view: SettingViewProtocol)
-    func goToAboutScreen(from view: SettingViewProtocol)
+    func goToDetailScreen(from source: SettingViewProtocol, to type: SettingRowType)
 }

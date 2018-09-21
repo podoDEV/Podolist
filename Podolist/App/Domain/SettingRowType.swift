@@ -5,7 +5,7 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-enum SettingRowType {
+enum SettingRowType: String {
     case account
     case help
     case about
