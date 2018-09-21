@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class PodolistView: UIViewController {
+class PodolistView: BaseView {
     var presenter: PodolistPresenterProtocol?
     var podolist: [ViewModelPodo] = [] {
         didSet {

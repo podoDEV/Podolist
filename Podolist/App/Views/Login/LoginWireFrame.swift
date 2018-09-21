@@ -14,7 +14,7 @@ class LoginWireFrame: LoginWireFrameProtocol {
     }
 
     static func createLoginModule() -> UIViewController {
-        let loginEntry = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+        let loginEntry = loginStoryboard.instantiateViewController(withIdentifier: EntryViewType.login.rawValue)
         if let view = loginEntry as? LoginView {
             let presenter: LoginPresenterProtocol = LoginPresenter()
             let interactor: LoginInteractorProtocol = LoginInteractor()

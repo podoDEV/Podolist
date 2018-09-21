@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class SettingView: UIViewController {
+class SettingView: BaseView {
 
     @IBOutlet weak var settingTableView: UITableView!
     var presenter: SettingPresenterProtocol?
@@ -104,12 +104,10 @@ extension SettingView: UITableViewDelegate {
 
     func showView(_ type: SettingRowType) {
         switch type {
-        case .account:
-            presenter?.showAccount()
-        case .help:
-            presenter?.showHelp()
-        case .about:
-            presenter?.showAbout()
+        case .account,
+             .help,
+             .about:
+            presenter?.showDetail(type: type)
         case .sync:
             break
         case .logout:

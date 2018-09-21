@@ -35,16 +35,8 @@ class SettingPresenter: SettingPresenterProtocol {
 
 extension SettingPresenter {
 
-    func showAccount() {
-        wireFrame?.goToAccountScreen(from: self.view!)
-    }
-
-    func showHelp() {
-        wireFrame?.goToHelpScreen(from: self.view!)
-    }
-
-    func showAbout() {
-        wireFrame?.goToAboutScreen(from: self.view!)
+    func showDetail(type: SettingRowType) {
+        wireFrame?.goToDetailScreen(from: self.view!, to: type)
     }
 
     func logout() {

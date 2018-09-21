@@ -91,7 +91,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ykP-Gl-wJt">
             <objects>
-                <navigationController storyboardIdentifier="PodolistNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="3MK-fa-Lb6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="podolist" automaticallyAdjustsScrollViewInsets="NO" id="3MK-fa-Lb6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VyD-Rl-UtY">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>

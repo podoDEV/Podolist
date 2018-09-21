@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class LoginView: UIViewController {
+class LoginView: BaseView {
 
     var presenter: LoginPresenterProtocol?
 
