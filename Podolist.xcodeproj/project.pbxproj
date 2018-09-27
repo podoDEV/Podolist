@@ -970,6 +970,9 @@
 						LastSwiftMigration = 1000;
 						TestTargetID = 2D0F1FF62143934100B8BDF2;
 					};
+					2D95489A215D1E74006C51E1 = {
+						LastSwiftMigration = 1000;
+					};
 				};
 			};
 			buildConfigurationList = 2D0F1FF22143934100B8BDF2 /* Build configuration list for PBXProject "Podolist" */;
