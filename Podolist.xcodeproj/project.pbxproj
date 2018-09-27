@@ -92,6 +92,9 @@
 		2DE9031C2151387400AAAE4C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031B2151387400AAAE4C /* Style.swift */; };
 		2DE90BF92154D27D00BF8588 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90BF82154D27D00BF8588 /* BaseView.swift */; };
 		2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0021552B6600BF8588 /* EntryViewType.swift */; };
+		2DE90C032155656A00BF8588 /* AccessTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */; };
+		2DE90C0521556F4700BF8588 /* ApiSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0421556F4700BF8588 /* ApiSessionService.swift */; };
+		2DE90C072155730200BF8588 /* PodoKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* PodoKeychain.swift */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
 		CF27ECCE5AFDD750647BF84F /* Pods_Podolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */; };
@@ -224,6 +227,9 @@
 		2DE90BF721540A6200BF8588 /* Base.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.release.xcconfig; sourceTree = "<group>"; };
 		2DE90BF82154D27D00BF8588 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		2DE90C0021552B6600BF8588 /* EntryViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewType.swift; sourceTree = "<group>"; };
+		2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAdapter.swift; sourceTree = "<group>"; };
+		2DE90C0421556F4700BF8588 /* ApiSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSessionService.swift; sourceTree = "<group>"; };
+		2DE90C062155730200BF8588 /* PodoKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoKeychain.swift; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		361ADACEE3373DB2922831BC /* Pods-Podolist.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug(dev).xcconfig"; sourceTree = "<group>"; };
 		3B65A781FD7AD4F3D24E450C /* Pods-PodolistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -423,7 +429,7 @@
 		2D0F20792143D14A00B8BDF2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20A921441A4B00B8BDF2 /* API */,
+				2D0F20A921441A4B00B8BDF2 /* Service */,
 				2D0F20AA21441A5600B8BDF2 /* Local */,
 				2D0F20AB21441A6500B8BDF2 /* Remote */,
 				2D41BC79214E079600B79BF6 /* AccountDataSource.swift */,
@@ -523,13 +529,16 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
-		2D0F20A921441A4B00B8BDF2 /* API */ = {
+		2D0F20A921441A4B00B8BDF2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */,
+				2DE90C0421556F4700BF8588 /* ApiSessionService.swift */,
 				2D41BC85214E086F00B79BF6 /* AccountService.swift */,
 				2D0F20AC21441A8700B8BDF2 /* PodoService.swift */,
+				2DE90C062155730200BF8588 /* PodoKeychain.swift */,
 			);
-			path = API;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		2D0F20AA21441A5600B8BDF2 /* Local */ = {
@@ -1035,6 +1044,7 @@
 				2D41BC84214E085100B79BF6 /* CommonLocalRepository.swift in Sources */,
 				2D0F20DC21453B2100B8BDF2 /* SettingProtocols.swift in Sources */,
 				2D0F20682143984A00B8BDF2 /* Fonts.swift in Sources */,
+				2DE90C032155656A00BF8588 /* AccessTokenAdapter.swift in Sources */,
 				2D0F20A8214419DE00B8BDF2 /* ResponsePodo.swift in Sources */,
 				2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */,
 				2D0F20DE21453B2900B8BDF2 /* SettingView.swift in Sources */,
@@ -1068,6 +1078,7 @@
 				2D41BC7E214E07FF00B79BF6 /* AccountRemoteRepository.swift in Sources */,
 				2D41BC6E214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift in Sources */,
 				2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */,
+				2DE90C072155730200BF8588 /* PodoKeychain.swift in Sources */,
 				2D41BC7A214E079600B79BF6 /* AccountDataSource.swift in Sources */,
 				2D41BC5E214D1B4E00B79BF6 /* ViewModelSettingRow.swift in Sources */,
 				2D0F20A6214419C800B8BDF2 /* RequestPodo.swift in Sources */,
@@ -1078,6 +1089,7 @@
 				2D0F20B821442CAA00B8BDF2 /* ViewModelPodo.swift in Sources */,
 				2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */,
 				2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */,
+				2DE90C0521556F4700BF8588 /* ApiSessionService.swift in Sources */,
 				2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */,
 				2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */,
 				2D41BC78214E077B00B79BF6 /* CommonRepository.swift in Sources */,

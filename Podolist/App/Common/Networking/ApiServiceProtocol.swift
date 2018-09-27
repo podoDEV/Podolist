@@ -6,7 +6,6 @@
 //
 
 protocol ApiServiceProtocol {
-
     //    associatedtype ResponseData
 }
 
