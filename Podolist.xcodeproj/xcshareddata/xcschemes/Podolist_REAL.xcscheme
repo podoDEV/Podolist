@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
-               BuildableName = "Podolist.app"
-               BlueprintName = "Podolist"
+               BlueprintIdentifier = "2D95489A215D1E74006C51E1"
+               BuildableName = "Podolist.DEV.app"
+               BlueprintName = "Podolist.DEV"
                ReferencedContainer = "container:Podolist.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,33 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D0F200A2143934700B8BDF2"
-               BuildableName = "PodolistTests.xctest"
-               BlueprintName = "PodolistTests"
-               ReferencedContainer = "container:Podolist.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D0F20152143934700B8BDF2"
-               BuildableName = "PodolistUITests.xctest"
-               BlueprintName = "PodolistUITests"
-               ReferencedContainer = "container:Podolist.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
-            BuildableName = "Podolist.app"
-            BlueprintName = "Podolist"
+            BlueprintIdentifier = "2D95489A215D1E74006C51E1"
+            BuildableName = "Podolist.DEV.app"
+            BlueprintName = "Podolist.DEV"
             ReferencedContainer = "container:Podolist.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
-            BuildableName = "Podolist.app"
-            BlueprintName = "Podolist"
+            BlueprintIdentifier = "2D95489A215D1E74006C51E1"
+            BuildableName = "Podolist.DEV.app"
+            BlueprintName = "Podolist.DEV"
             ReferencedContainer = "container:Podolist.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -90,16 +70,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
-            BuildableName = "Podolist.app"
-            BlueprintName = "Podolist"
+            BlueprintIdentifier = "2D95489A215D1E74006C51E1"
+            BuildableName = "Podolist.DEV.app"
+            BlueprintName = "Podolist.DEV"
             ReferencedContainer = "container:Podolist.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug(REAL)">

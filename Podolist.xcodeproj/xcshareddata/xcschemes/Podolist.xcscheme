@@ -20,34 +20,6 @@
                ReferencedContainer = "container:Podolist.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D0F200A2143934700B8BDF2"
-               BuildableName = "PodolistTests.xctest"
-               BlueprintName = "PodolistTests"
-               ReferencedContainer = "container:Podolist.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D0F20152143934700B8BDF2"
-               BuildableName = "PodolistUITests.xctest"
-               BlueprintName = "PodolistUITests"
-               ReferencedContainer = "container:Podolist.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

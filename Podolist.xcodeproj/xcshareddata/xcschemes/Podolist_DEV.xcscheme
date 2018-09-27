@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
-               BuildableName = "Podolist.app"
-               BlueprintName = "Podolist"
+               BlueprintIdentifier = "2D95489A215D1E74006C51E1"
+               BuildableName = "Podolist.DEV.app"
+               BlueprintName = "Podolist.DEV"
                ReferencedContainer = "container:Podolist.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
-            BuildableName = "Podolist.app"
-            BlueprintName = "Podolist"
+            BlueprintIdentifier = "2D95489A215D1E74006C51E1"
+            BuildableName = "Podolist.DEV.app"
+            BlueprintName = "Podolist.DEV"
             ReferencedContainer = "container:Podolist.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
-            BuildableName = "Podolist.app"
-            BlueprintName = "Podolist"
+            BlueprintIdentifier = "2D95489A215D1E74006C51E1"
+            BuildableName = "Podolist.DEV.app"
+            BlueprintName = "Podolist.DEV"
             ReferencedContainer = "container:Podolist.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -65,27 +65,17 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Release(DEV)"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
-            BuildableName = "Podolist.app"
-            BlueprintName = "Podolist"
-            ReferencedContainer = "container:Podolist.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug(DEV)">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Release(DEV)"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
