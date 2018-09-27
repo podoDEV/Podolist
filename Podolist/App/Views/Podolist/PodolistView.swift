@@ -20,6 +20,7 @@ class PodolistView: BaseView {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var floatingButton: RoundButton!
     var writeView: PodoWriteView?
+    var calendarView: PodoCalendar?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,6 +37,11 @@ class PodolistView: BaseView {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         presenter?.viewWillDisappear()
+    }
+
+    @IBAction func pressCal(_ sender: Any) {
+        calendarView = PodoCalendar(frame: CGRect(x: 0, y: view.bounds.height - Style.Podo.Calendar.height, width: view.bounds.width, height: Style.Podo.Calendar.height))
+        view.addSubview(calendarView!)
     }
 
     @IBAction func pressSetting(_ sender: Any) {
@@ -76,7 +82,7 @@ extension PodolistView: PodolistViewProtocol {
         case .write:
             emptyView.isHidden = false
             floatingButton.isHidden = true
-            writeView = PodoWriteView(frame: CGRect(x: 0, y: view.frame.height - Style.Podo.Write.height, width: view.frame.width, height: Style.Podo.Write.height))
+            writeView = PodoWriteView(frame: CGRect(x: 0, y: view.bounds.height - Style.Podo.Write.height, width: view.bounds.width, height: Style.Podo.Write.height))
             writeView?.delegate = self
             view.addSubview(writeView!)
         }
