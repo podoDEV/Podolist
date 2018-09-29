@@ -45,7 +45,9 @@ class PodolistView: BaseView {
     }
 
     @IBAction func pressSetting(_ sender: Any) {
-        presenter?.showSetting()
+        calendarView = PodoCalendar(frame: CGRect(x: 0, y: view.bounds.height - Style.Podo.Calendar.height, width: view.bounds.width, height: Style.Podo.Calendar.height))
+        view.addSubview(calendarView!)
+//        presenter?.showSetting()
     }
 }
 

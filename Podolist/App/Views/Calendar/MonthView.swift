@@ -29,8 +29,8 @@ class MonthView: UIView {
     func setup() {
         for _ in 0..<6 {
             let week = WeekView()
-            weeks.append(week)
             addSubview(week)
+            weeks.append(week)
         }
     }
 
@@ -46,6 +46,7 @@ class MonthView: UIView {
     func updateWeeks() {
         var date = self.date?.dateAt(.startOfWeek)
         for week in weeks {
+            week.year = self.date?.year
             week.month = self.date?.month
             week.date = date
             date = date?.dateAt(.nextWeek)

@@ -54,7 +54,7 @@ class WeekLabelView: UIView {
             super.init(frame: .zero)
             text = day
             textAlignment = .center
-            textColor = .black
+            textColor = .normalDayTextColor
             font = .boldSystemFont(ofSize: 10)
         }
     }

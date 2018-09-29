@@ -15,6 +15,7 @@ class WeekView: UIView {
             updateDays()
         }
     }
+    var year: Int?
     var month: Int?
 
     required init?(coder aDecoder: NSCoder) {
@@ -30,8 +31,8 @@ class WeekView: UIView {
     func setup() {
         for _ in 0..<7 {
             let day = DayView()
-            days.append(day)
             addSubview(day)
+            days.append(day)
         }
     }
 
@@ -47,10 +48,9 @@ class WeekView: UIView {
     func updateDays() {
         var date = self.date!
         for day in days {
-            day.day = Day(day: date.day)
-            day.isSameMonth = (date.month == self.month)
-            day.isSelected = false
+            day.isSameMonth = (date.year == self.year && date.month == self.month)
             day.isToday = date.isToday
+            day.date = date
             date = date.dateAt(.tomorrow)
         }
     }

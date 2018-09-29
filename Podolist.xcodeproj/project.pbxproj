@@ -172,8 +172,6 @@
 		2D9548F5215D1E74006C51E1 /* SeoulNamsanM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20482143984A00B8BDF2 /* SeoulNamsanM.ttf */; };
 		2D954919215D35D0006C51E1 /* PodoCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954912215D35D0006C51E1 /* PodoCalendar.swift */; };
 		2D95491A215D35D0006C51E1 /* PodoCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954912215D35D0006C51E1 /* PodoCalendar.swift */; };
-		2D95491B215D35D0006C51E1 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954913215D35D0006C51E1 /* Day.swift */; };
-		2D95491C215D35D0006C51E1 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954913215D35D0006C51E1 /* Day.swift */; };
 		2D95491D215D35D0006C51E1 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954914215D35D0006C51E1 /* MonthView.swift */; };
 		2D95491E215D35D0006C51E1 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954914215D35D0006C51E1 /* MonthView.swift */; };
 		2D95491F215D35D0006C51E1 /* WeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954915215D35D0006C51E1 /* WeekLabelView.swift */; };
@@ -319,7 +317,6 @@
 		2D95490B215D1F47006C51E1 /* Base.release(testflight).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(testflight).xcconfig"; sourceTree = "<group>"; };
 		2D95490C215D1F48006C51E1 /* Base.release(dev).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(dev).xcconfig"; sourceTree = "<group>"; };
 		2D954912215D35D0006C51E1 /* PodoCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodoCalendar.swift; sourceTree = "<group>"; };
-		2D954913215D35D0006C51E1 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		2D954914215D35D0006C51E1 /* MonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
 		2D954915215D35D0006C51E1 /* WeekLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekLabelView.swift; sourceTree = "<group>"; };
 		2D954916215D35D0006C51E1 /* WeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -796,11 +793,10 @@
 			isa = PBXGroup;
 			children = (
 				2D954912215D35D0006C51E1 /* PodoCalendar.swift */,
-				2D954913215D35D0006C51E1 /* Day.swift */,
-				2D954914215D35D0006C51E1 /* MonthView.swift */,
 				2D954915215D35D0006C51E1 /* WeekLabelView.swift */,
-				2D954916215D35D0006C51E1 /* WeekView.swift */,
 				2D954917215D35D0006C51E1 /* CalendarView.swift */,
+				2D954914215D35D0006C51E1 /* MonthView.swift */,
+				2D954916215D35D0006C51E1 /* WeekView.swift */,
 				2D954918215D35D0006C51E1 /* DayView.swift */,
 			);
 			path = Calendar;
@@ -1356,7 +1352,6 @@
 				2D0F20872143D1DE00B8BDF2 /* RoutesProtocol.swift in Sources */,
 				2DE9031C2151387400AAAE4C /* Style.swift in Sources */,
 				2D3A19CB2152B45B00C9B68B /* Mode.swift in Sources */,
-				2D95491B215D35D0006C51E1 /* Day.swift in Sources */,
 				2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */,
 				2D0F208D2143D1DE00B8BDF2 /* JsonResults.swift in Sources */,
 				2D90956A2146B93B009335A1 /* LoginInteractor.swift in Sources */,
@@ -1460,7 +1455,6 @@
 				2D9548BC215D1E74006C51E1 /* RoutesProtocol.swift in Sources */,
 				2D9548BD215D1E74006C51E1 /* Style.swift in Sources */,
 				2D9548BE215D1E74006C51E1 /* Mode.swift in Sources */,
-				2D95491C215D35D0006C51E1 /* Day.swift in Sources */,
 				2D9548BF215D1E74006C51E1 /* AppUtils.swift in Sources */,
 				2D9548C0215D1E74006C51E1 /* JsonResults.swift in Sources */,
 				2D9548C1215D1E74006C51E1 /* LoginInteractor.swift in Sources */,
