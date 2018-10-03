@@ -21,36 +21,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="czE-9C-mXi">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PodoTableCell" id="2kY-qB-FuT" customClass="PodoTableViewCell" customModule="Podolist" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2kY-qB-FuT" id="21Q-70-Thu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHv-A3-a3u">
-                                                    <rect key="frame" x="15" y="11" width="167" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="aHv-A3-a3u" id="Vn5-fU-X8Q"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7K-0K-TYZ" customClass="RoundButton" customModule="Podolist" customModuleProvider="target">
-                                <rect key="frame" x="305" y="708" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="hPX-Mx-xvk"/>
-                                    <constraint firstAttribute="height" constant="50" id="wZl-51-Lmi"/>
-                                </constraints>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2HJ-Ve-YJH">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" red="0.61978505710659892" green="0.61679092639593902" blue="0.62277918781725883" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
@@ -64,9 +35,7 @@
                             <constraint firstItem="2HJ-Ve-YJH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OPx-a8-9sV"/>
                             <constraint firstItem="czE-9C-mXi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QhR-Tj-eBB"/>
                             <constraint firstItem="2HJ-Ve-YJH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WKz-Fm-tY4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U7K-0K-TYZ" secondAttribute="trailing" constant="20" id="jV6-M3-lxr"/>
                             <constraint firstItem="2HJ-Ve-YJH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nhe-8G-n3F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U7K-0K-TYZ" secondAttribute="bottom" constant="20" id="tII-Hi-VYT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="czE-9C-mXi" secondAttribute="bottom" id="zvJ-qq-8bh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -80,7 +49,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emptyView" destination="2HJ-Ve-YJH" id="r9n-tf-e9Z"/>
-                        <outlet property="floatingButton" destination="U7K-0K-TYZ" id="g2U-CG-5Qm"/>
                         <outlet property="podolistTableView" destination="czE-9C-mXi" id="lNK-cr-upz"/>
                     </connections>
                 </viewController>

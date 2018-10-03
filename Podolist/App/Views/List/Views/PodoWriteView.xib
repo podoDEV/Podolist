@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PodoWriteView" customModule="Podolist" customModuleProvider="target">
+            <connections>
+                <outlet property="optionButton" destination="wjb-4s-u4n" id="QSB-9m-tQ1"/>
+                <outlet property="roundView" destination="8MG-Hz-luF" id="ETg-ak-qb2"/>
+                <outlet property="titleView" destination="Kzm-ru-CIg" id="o2j-fU-gXL"/>
+                <outlet property="writeButton" destination="n5e-BC-REh" id="wLq-pL-a5O"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PodoWriteView" customModule="Podolist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="322"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MG-Hz-luF">
+                    <rect key="frame" x="15" y="10" width="345" height="35.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjb-4s-u4n">
+                            <rect key="frame" x="5" y="6" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="Dmq-wj-fjP"/>
+                                <constraint firstAttribute="width" constant="24" id="dCw-pa-3lI"/>
+                                <constraint firstAttribute="width" secondItem="wjb-4s-u4n" secondAttribute="height" multiplier="1:1" id="hr5-ay-uSa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" backgroundImage="btn_add"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85R-Uq-wh9">
+                            <rect key="frame" x="316" y="6" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="85R-Uq-wh9" secondAttribute="height" multiplier="1:1" id="3Vo-af-Jnq"/>
+                                <constraint firstAttribute="width" constant="24" id="ZRs-EZ-bT4"/>
+                                <constraint firstAttribute="height" constant="24" id="Zfn-2t-e9P"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="btn_send"/>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="자기 전에 애플 인터뷰 연습" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kzm-ru-CIg">
+                            <rect key="frame" x="34" y="0.0" width="277" height="35.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Kzm-ru-CIg" firstAttribute="leading" secondItem="wjb-4s-u4n" secondAttribute="trailing" constant="5" id="12y-Zx-unP"/>
+                        <constraint firstItem="wjb-4s-u4n" firstAttribute="leading" secondItem="8MG-Hz-luF" secondAttribute="leading" constant="5" id="K9Q-PV-lub"/>
+                        <constraint firstAttribute="trailing" secondItem="85R-Uq-wh9" secondAttribute="trailing" constant="5" id="KZg-6j-zI0"/>
+                        <constraint firstItem="wjb-4s-u4n" firstAttribute="centerY" secondItem="8MG-Hz-luF" secondAttribute="centerY" id="bDm-gf-SaV"/>
+                        <constraint firstItem="Kzm-ru-CIg" firstAttribute="top" secondItem="8MG-Hz-luF" secondAttribute="top" id="cfp-N5-bBc"/>
+                        <constraint firstAttribute="bottom" secondItem="Kzm-ru-CIg" secondAttribute="bottom" id="gZg-2J-kta"/>
+                        <constraint firstItem="85R-Uq-wh9" firstAttribute="centerY" secondItem="8MG-Hz-luF" secondAttribute="centerY" id="n5e-BC-REh"/>
+                        <constraint firstItem="85R-Uq-wh9" firstAttribute="leading" secondItem="Kzm-ru-CIg" secondAttribute="trailing" constant="5" id="vko-s9-ccO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8MG-Hz-luF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="K4K-Lm-sva"/>
+                <constraint firstAttribute="trailing" secondItem="8MG-Hz-luF" secondAttribute="trailing" constant="15" id="MVv-jY-i2G"/>
+                <constraint firstItem="8MG-Hz-luF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="XS0-Tt-ar1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="138.40000000000001" y="309.44527736131937"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_add" width="48" height="48"/>
+        <image name="btn_send" width="24" height="24"/>
+    </resources>
+</document>

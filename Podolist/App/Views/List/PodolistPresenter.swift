@@ -67,13 +67,6 @@ extension PodolistPresenter: UITableViewDelegate {
     }
 }
 
-extension PodolistPresenter: RoundButtonDelegate {
-
-    func didPressFloatingButton() {
-        self.mode = .write
-        view?.updateUI(mode: mode)
-    }
-}
 extension PodolistPresenter {
 
     @objc func keyboardWillAppear(notification: NSNotification?) {

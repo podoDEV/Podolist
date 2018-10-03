@@ -10,7 +10,7 @@ import Foundation
 struct Style {
     struct Podo {
         struct Write {
-            static let height: CGFloat = 60
+            static let height: CGFloat = 55
         }
 
         struct Calendar {

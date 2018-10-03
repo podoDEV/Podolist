@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountView: BaseView {
+class AccountView: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
