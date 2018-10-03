@@ -19,8 +19,6 @@ def common_pods
 
     # Pods for Account Managing
     pod 'KeychainAccess', '~> 3.1.1'
-
-    pod 'SwiftDate'
 end
 
 def analytics_pods
@@ -28,6 +26,7 @@ def analytics_pods
 end
 
 def ui_pods
+    pod 'PodoCalendar', '~> 0.2.2'
 end
 
 def spec_pods

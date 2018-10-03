@@ -9,6 +9,10 @@ import UIKit
 
 private struct PodolistColors {
 
+    static var selectedDayBackgroundColor = UIColor(hex: 0xD6ABFB)
+    static var todayBackgroundColor = UIColor(hex: 0xF9F9F9)
+    static var normalDayTextColor = UIColor(hex: 0x9000FE)
+
     static let appColor = UIColor(hex: 0xF86A0E)
     static let appColorLight = UIColor(hex: 0xFDCDAE)
 
@@ -30,3 +34,4 @@ extension UIColor {
     static var grayF4: UIColor { return PodolistColors.grayF4 }
     static var modalBackground: UIColor { return PodolistColors.modalBackground }
 }
+
