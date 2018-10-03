@@ -514,7 +514,7 @@
 				2D41BC61214D510200B79BF6 /* Base */,
 				2D0F2091214415BD00B8BDF2 /* Launch */,
 				2D0F2092214415CB00B8BDF2 /* Login */,
-				2D0F20902144155200B8BDF2 /* Podolist */,
+				2D0F20902144155200B8BDF2 /* List */,
 				2D0F20D421453AC500B8BDF2 /* Setting */,
 			);
 			path = Views;
@@ -593,7 +593,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2D0F20902144155200B8BDF2 /* Podolist */ = {
+		2D0F20902144155200B8BDF2 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				2D0F20BB214432D700B8BDF2 /* Cells */,
@@ -605,7 +605,7 @@
 				2D0F205D2143984A00B8BDF2 /* PodolistView.swift */,
 				2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */,
 			);
-			path = Podolist;
+			path = List;
 			sourceTree = "<group>";
 		};
 		2D0F2091214415BD00B8BDF2 /* Launch */ = {
@@ -1192,16 +1192,20 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Podolist/Pods-Podolist-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/PodoCalendar/PodoCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PodoCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1218,16 +1222,20 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Podolist.DEV/Pods-Podolist.DEV-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/PodoCalendar/PodoCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PodoCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

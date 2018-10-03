@@ -23,7 +23,7 @@ class RoundButton: UIButton {
 
     func setupUI() {
         setImage(InterfaceImage.add.image(.normal), for: .normal)
-        self.backgroundColor = .appColor()
+        self.backgroundColor = .appColor
         tintColor = .white
         layer.cornerRadius = frame.width/2
         layer.masksToBounds = true

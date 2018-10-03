@@ -8,22 +8,30 @@
 import UIKit
 
 private struct PodolistColors {
-    static let appColor: UIColor = UIColor(hex: 0xF86A0E)
-    static let appColorLight: UIColor = UIColor(hex: 0xFDCDAE)
-    static let grayF1: UIColor = UIColor(hex: 0xF1F1F1)
-    static let grayF2: UIColor = UIColor(hex: 0xF2F2F2)
-    static let grayF4: UIColor = UIColor(hex: 0xF4F4F4)
-    static let modalBackground: UIColor = UIColor(white: 0x000000, alpha: 0.7)
+
+    static var selectedDayBackgroundColor = UIColor(hex: 0xD6ABFB)
+    static var todayBackgroundColor = UIColor(hex: 0xF9F9F9)
+    static var normalDayTextColor = UIColor(hex: 0x9000FE)
+
+    static let appColor = UIColor(hex: 0xF86A0E)
+    static let appColorLight = UIColor(hex: 0xFDCDAE)
+
+    static let gray3 = UIColor(hex: 0x333333)
+    static let grayA = UIColor(hex: 0xAAAAAA)
+    static let grayC = UIColor(hex: 0xCCCCCC)
+    static let grayF4 = UIColor(hex: 0xF4F4F4)
+    static let modalBackground = UIColor(white: 0x000000, alpha: 0.7)
 }
 
 extension UIColor {
 
-    class func appColor() -> UIColor { return PodolistColors.appColor }
-    class func appColorLight() -> UIColor { return PodolistColors.appColorLight }
+    static var appColor: UIColor { return PodolistColors.appColor }
+    static var appColorLight: UIColor { return PodolistColors.appColorLight }
 
-    // MARK: - Common
-    class func grayF1() -> UIColor { return PodolistColors.grayF1 }
-    class func grayF2() -> UIColor { return PodolistColors.grayF2 }
-    class func grayF4() -> UIColor { return PodolistColors.grayF4 }
-    class func modalBackground() -> UIColor { return PodolistColors.modalBackground }
+    static var gray3: UIColor { return PodolistColors.gray3 }
+    static var grayA: UIColor { return PodolistColors.grayA }
+    static var grayC: UIColor { return PodolistColors.grayC }
+    static var grayF4: UIColor { return PodolistColors.grayF4 }
+    static var modalBackground: UIColor { return PodolistColors.modalBackground }
 }
+

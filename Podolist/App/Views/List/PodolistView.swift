@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import PodoCalendar
 
 class PodolistView: BaseView {
     var presenter: PodolistPresenterProtocol?
@@ -20,6 +21,7 @@ class PodolistView: BaseView {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var floatingButton: RoundButton!
     var writeView: PodoWriteView?
+    var calendarView: PodoCalendarView?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -38,8 +40,16 @@ class PodolistView: BaseView {
         presenter?.viewWillDisappear()
     }
 
+    @IBAction func pressCal(_ sender: Any) {
+        calendarView = PodoCalendarView(frame: CGRect(x: 0, y: view.bounds.height - Style.Podo.Calendar.height, width: view.bounds.width, height: Style.Podo.Calendar.height))
+        view.addSubview(calendarView!)
+    }
+
     @IBAction func pressSetting(_ sender: Any) {
-        presenter?.showSetting()
+        calendarView = PodoCalendarView(frame: CGRect(x: 0, y: view.bounds.height - Style.Podo.Calendar.height, width: view.bounds.width, height: Style.Podo.Calendar.height))
+        calendarView?.delegate = self
+        view.addSubview(calendarView!)
+//        presenter?.showSetting()
     }
 }
 
@@ -76,7 +86,7 @@ extension PodolistView: PodolistViewProtocol {
         case .write:
             emptyView.isHidden = false
             floatingButton.isHidden = true
-            writeView = PodoWriteView(frame: CGRect(x: 0, y: view.frame.height - Style.Podo.Write.height, width: view.frame.width, height: Style.Podo.Write.height))
+            writeView = PodoWriteView(frame: CGRect(x: 0, y: view.bounds.height - Style.Podo.Write.height, width: view.bounds.width, height: Style.Podo.Write.height))
             writeView?.delegate = self
             view.addSubview(writeView!)
         }
@@ -128,5 +138,16 @@ extension PodolistView: UITextFieldDelegate {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         presenter?.writeWillFinish()
+    }
+}
+
+extension PodolistView: PodoCalendarViewDelegate {
+    func calendarView(_ calendarView: PodoCalendarView, startedAt startDate: Date, finishedAt finishDate: Date) {
+        
+    }
+
+
+    func calendarView(_ calendarView: PodoCalendarView, didSelectDate date: Date) {
+        print(date.toString())
     }
 }

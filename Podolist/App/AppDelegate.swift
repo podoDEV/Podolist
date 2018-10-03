@@ -16,16 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var mainScreen: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         setupAnalytics()
         setupEntryScreen()
         setupPushNotification()
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(AppDelegate.kakaoSessionDidChangeWithNotification),
-                                               name: NSNotification.Name.KOSessionDidChange,
-                                               object: nil)
-
+        setupObserver()
 //        KOSession.shared().clientSecret = SessionConstants.clientSecret;
 
         reloadRootViewController()
@@ -84,6 +78,13 @@ extension AppDelegate {
             }
         }
         UIApplication.shared.registerForRemoteNotifications()
+    }
+
+    func setupObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(kakaoSessionDidChangeWithNotification),
+                                               name: NSNotification.Name.KOSessionDidChange,
+                                               object: nil)
     }
 
     @objc func kakaoSessionDidChangeWithNotification() {

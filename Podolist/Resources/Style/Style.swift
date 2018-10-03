@@ -12,5 +12,9 @@ struct Style {
         struct Write {
             static let height: CGFloat = 60
         }
+
+        struct Calendar {
+            static let height: CGFloat = 320
+        }
     }
 }
