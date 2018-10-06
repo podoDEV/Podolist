@@ -16,12 +16,21 @@ enum PodolistFonts {
 }
 
 extension UIFont {
+
     class func appFontB(size: CGFloat) -> UIFont {
-        return UIFont(name: "SeoulNamsanB", size: size)!
+        return UIFont(name: "NotoSans-Bold", size: size)!
+    }
+
+    class func appFontL(size: CGFloat) -> UIFont {
+        return UIFont(name: "NotoSans-Light", size: size)!
     }
 
     class func appFontM(size: CGFloat) -> UIFont {
-        return UIFont(name: "SeoulNamsanM", size: size)!
+        return UIFont(name: "NotoSans-Medium", size: size)!
+    }
+
+    class func appFontR(size: CGFloat) -> UIFont {
+        return UIFont(name: "NotoSans-Regular", size: size)!
     }
 
     class func preferredFont(textStyle: PodolistFonts) -> UIFont {
@@ -29,11 +38,11 @@ extension UIFont {
         case .logo:
             return UIFont.boldSystemFont(ofSize: 36.0)
         case .navigation:
-            return UIFont.appFontB(size: 18.0)
+            return UIFont.appFontR(size: 18.0)
         case .podoTitle:
-            return UIFont.appFontB(size: 15.0)
+            return UIFont.appFontR(size: 15.0)
         case .podoSubTitle:
-            return UIFont.appFontB(size: 14.0)
+            return UIFont.appFontR(size: 14.0)
         default:
             return UIFont.appFontM(size: 15.0)
         }

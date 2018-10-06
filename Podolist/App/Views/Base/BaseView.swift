@@ -20,10 +20,10 @@ class BaseView: UIView {
         setupUI()
     }
 
-    init() {
-        super.init(frame: .zero)
-        setupUI()
-    }
+//    init() {
+//        super.init(frame: .zero)
+//        setupUI()
+//    }
 
     func setupUI() {
 

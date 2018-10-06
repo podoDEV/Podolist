@@ -8,38 +8,46 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Medium.ttf">
+            <string>NotoSans-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PodoWriteCalendarView" customModule="Podolist" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="8N8-4K-I41">
-            <rect key="frame" x="0.0" y="0.0" width="350" height="273"/>
+        <view contentMode="scaleToFill" id="8N8-4K-I41" customClass="PodoWriteCalendarView" customModule="Podolist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="431"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0s-MC-dOr">
-                    <rect key="frame" x="15" y="5" width="22.5" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0s-MC-dOr">
+                    <rect key="frame" x="0.0" y="0.0" width="21" height="15"/>
+                    <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="11"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rih-h0-LSq" customClass="PodoCalendarView" customModule="PodoCalendar">
-                    <rect key="frame" x="15" y="26" width="320" height="213.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUC-u1-wmK" customClass="PodoCalendarView" customModule="PodoCalendar">
+                    <rect key="frame" x="0.0" y="19" width="410" height="190"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="Rih-h0-LSq" secondAttribute="height" multiplier="3:2" id="m3e-sD-Dvt"/>
+                        <constraint firstAttribute="height" constant="190" id="8WS-ky-7ez"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="J0s-MC-dOr" firstAttribute="top" secondItem="8N8-4K-I41" secondAttribute="top" constant="5" id="3lv-Ud-DIy"/>
-                <constraint firstItem="Rih-h0-LSq" firstAttribute="leading" secondItem="8N8-4K-I41" secondAttribute="leading" constant="15" id="HYW-a7-EOM"/>
-                <constraint firstAttribute="trailing" secondItem="Rih-h0-LSq" secondAttribute="trailing" constant="15" id="Ud2-rb-OnN"/>
-                <constraint firstItem="J0s-MC-dOr" firstAttribute="leading" secondItem="8N8-4K-I41" secondAttribute="leading" constant="15" id="ZHV-yE-ntg"/>
-                <constraint firstItem="Rih-h0-LSq" firstAttribute="top" secondItem="J0s-MC-dOr" secondAttribute="bottom" constant="5" id="pdf-FI-ee2"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rih-h0-LSq" secondAttribute="bottom" constant="10" id="zZ3-bw-lXY"/>
+                <constraint firstItem="IUC-u1-wmK" firstAttribute="top" secondItem="J0s-MC-dOr" secondAttribute="bottom" constant="4" id="1YC-Z3-7Sw"/>
+                <constraint firstItem="J0s-MC-dOr" firstAttribute="top" secondItem="8N8-4K-I41" secondAttribute="top" id="3lv-Ud-DIy"/>
+                <constraint firstAttribute="trailing" secondItem="IUC-u1-wmK" secondAttribute="trailing" id="L6f-Qk-YWW"/>
+                <constraint firstItem="J0s-MC-dOr" firstAttribute="leading" secondItem="8N8-4K-I41" secondAttribute="leading" id="ZHV-yE-ntg"/>
+                <constraint firstItem="IUC-u1-wmK" firstAttribute="leading" secondItem="8N8-4K-I41" secondAttribute="leading" id="jmG-KU-rJp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="403.19999999999999" y="94.002998500749626"/>
+            <connections>
+                <outlet property="calendarView" destination="IUC-u1-wmK" id="0Ba-W2-1B5"/>
+                <outlet property="titleLabel" destination="J0s-MC-dOr" id="0Ct-Du-vDL"/>
+            </connections>
+            <point key="canvasLocation" x="451.19999999999999" y="163.26836581709148"/>
         </view>
     </objects>
 </document>

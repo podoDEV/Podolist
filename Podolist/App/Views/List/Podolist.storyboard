@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3MK-fa-Lb6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3MK-fa-Lb6">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +13,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PodolistView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pIB-cN-zD5"/>
+                        <viewControllerLayoutGuide type="bottom" id="340-xN-Phm"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,16 +32,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="czE-9C-mXi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0F0-hb-p2I"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2HJ-Ve-YJH" secondAttribute="bottom" id="Dhf-cx-cnF"/>
-                            <constraint firstItem="czE-9C-mXi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J4V-U0-9r3"/>
-                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OPx-a8-9sV"/>
-                            <constraint firstItem="czE-9C-mXi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QhR-Tj-eBB"/>
-                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WKz-Fm-tY4"/>
-                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nhe-8G-n3F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="czE-9C-mXi" secondAttribute="bottom" id="zvJ-qq-8bh"/>
+                            <constraint firstItem="czE-9C-mXi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0F0-hb-p2I"/>
+                            <constraint firstItem="340-xN-Phm" firstAttribute="top" secondItem="2HJ-Ve-YJH" secondAttribute="bottom" id="Dhf-cx-cnF"/>
+                            <constraint firstItem="czE-9C-mXi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="J4V-U0-9r3"/>
+                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="OPx-a8-9sV"/>
+                            <constraint firstItem="czE-9C-mXi" firstAttribute="top" secondItem="pIB-cN-zD5" secondAttribute="bottom" id="QhR-Tj-eBB"/>
+                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="top" secondItem="pIB-cN-zD5" secondAttribute="bottom" id="WKz-Fm-tY4"/>
+                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nhe-8G-n3F"/>
+                            <constraint firstItem="340-xN-Phm" firstAttribute="top" secondItem="czE-9C-mXi" secondAttribute="bottom" id="zvJ-qq-8bh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="OfQ-wb-xMl">
                         <barButtonItem key="rightBarButtonItem" title="Setting" id="QXl-mQ-fJZ">
@@ -54,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="132.26600985221674"/>
+            <point key="canvasLocation" x="1075.3623188405797" y="131.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ykP-Gl-wJt">

@@ -16,31 +16,34 @@ class PodolistView: BaseViewController {
             podolistTableView.reloadData()
         }
     }
-
-    @IBOutlet weak var podolistTableView: UITableView!
-    @IBOutlet weak var emptyView: UIView!
-    private let writeView = PodoWriteView().loadNib() as! PodoWriteView
-    var safeAreaInset: UIEdgeInsets = .zero
-
-    //    var calendarView: PodoCalendarView?
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        presenter?.viewWillAppear()
+    var safeAreaInset: UIEdgeInsets = .zero {
+        didSet {
+            writeView.frame = CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Normal.height + safeAreaInset.bottom)
+        }
     }
 
+    var normalFrame: CGRect {
+        return CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Normal.height + safeAreaInset.bottom)
+    }
+
+    var detailWriteFrame: CGRect {
+        return CGRect(x: 0, y: view.frame.height - Style.Write.Detail.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Detail.height + safeAreaInset.bottom)
+    }
+
+    // MARK: - Views
+    @IBOutlet weak var podolistTableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
+    lazy var writeView: PodoWriteView = {
+        let view = PodoWriteView(frame: CGRect(x: 0, y: self.view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom, width: self.view.frame.width, height: 400/*total height*/))
+        view.delegate = self
+        return view
+    }()
+
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoading()
         presenter?.viewDidLoad()
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        safeAreaInset = view.layoutInsets()
-        writeView.frame = CGRect(x: 0, y: view.bounds.height - Style.Podo.Write.height - safeAreaInset.bottom, width: view.bounds.width, height: Style.Podo.Write.height + safeAreaInset.bottom)
-        writeView.roundCorners([.topLeft, .topRight], radius: 17.25)
-        writeView.delegate = self
     }
 
     override func setupUI() {
@@ -48,27 +51,48 @@ class PodolistView: BaseViewController {
         podolistTableView.rowHeight = UITableViewAutomaticDimension
         podolistTableView.separatorStyle = .none
         podolistTableView.dataSource = self
-        podolistTableView.delegate = presenter as? UITableViewDelegate
+        podolistTableView.delegate = self
         podolistTableView.tableFooterView = UIView()
         podolistTableView.register(UINib(nibName: PodolistTableViewCell.Identifier, bundle: nil), forCellReuseIdentifier: PodolistTableViewCell.Identifier)
-        view.addSubview(writeView)
+
+        writeView.roundCorners([.topLeft, .topRight], radius: 17.25)
+        writeView.backgroundColor = .backgroundColor1
+        self.view.addSubview(writeView)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+    }
+
+    @available(iOS 11.0, *)
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        safeAreaInset = view.layoutInsets()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         presenter?.viewWillDisappear()
     }
+}
 
-    @IBAction func pressCal(_ sender: Any) {
-//        calendarView = PodoCalendarView(frame: CGRect(x: 0, y: view.bounds.height - Style.Podo.Calendar.height, width: view.bounds.width, height: Style.Podo.Calendar.height))
-//        view.addSubview(calendarView!)
+extension PodolistView: WriteViewDelegate {
+
+    func didTappedDetail() {
+        presenter?.didTappedDetail()
+    }
+
+    func didTappedSend() {
+
     }
 
     @IBAction func pressSetting(_ sender: Any) {
-//        calendarView = PodoCalendarView(frame: CGRect(x: 0, y: view.bounds.height - Style.Podo.Calendar.height, width: view.bounds.width, height: Style.Podo.Calendar.height))
-//        calendarView?.delegate = self
-//        view.addSubview(calendarView!)
         presenter?.showSetting()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        presenter?.writeWillFinish()
     }
 }
 
@@ -83,42 +107,31 @@ extension PodolistView: PodolistViewProtocol {
         hideLoading()
     }
 
-    func updateUI(mode: Mode) {
+    func updateUI(mode: Mode, keyboardHeight: CGFloat? = nil) {
         switch mode {
         case .normal:
             emptyView.isHidden = true
-//            floatingButton.isHidden = false
-//            if let writeView = writeView {
-//                writeView.removeFromSuperview()
-//            }
+            UIView.animate(withDuration: 0.3) {
+                self.writeView.frame = self.normalFrame
+            }
             view.endEditing(true)
-        case .detail:
-            emptyView.isHidden = false
-//            floatingButton.isHidden = true
-            writeView.frame = CGRect(x: 0, y: view.bounds.height - Style.Podo.Write.height, width: view.bounds.width, height: Style.Podo.Write.height)
-//            view.bounds.height - Style.Podo.Write.height - safeAreaInset.bottom
-//            view.addSubview(writeView!)
-        }
-    }
-
-    func updateUI(status: KeyboardStatus, keyboardHeight: CGFloat?) {
-        switch status {
-        case .show:
+        case .write:
             emptyView.isHidden = false
             guard let keyboardHeight = keyboardHeight else {
                 return
             }
-            writeView.frame.origin.y = view.frame.height - Style.Podo.Write.height - keyboardHeight
-            writeView.frame.size.height = Style.Podo.Write.height
-        case .hide:
-            emptyView.isHidden = true
-            writeView.frame.origin.y = view.bounds.height - Style.Podo.Write.height - safeAreaInset.bottom
-            writeView.frame.size.height = Style.Podo.Write.height + safeAreaInset.bottom
+            writeView.frame = CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - keyboardHeight, width: view.frame.width, height: Style.Write.Normal.height)
+        case .detail:
+            emptyView.isHidden = false
+            UIView.animate(withDuration: 0.3) {
+                self.writeView.frame = self.detailWriteFrame
+            }
         }
+        writeView.mode = mode
     }
 }
 
-extension PodolistView: UITableViewDataSource {
+extension PodolistView: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podolist.count
@@ -132,27 +145,8 @@ extension PodolistView: UITableViewDataSource {
 
         return cell
     }
-}
 
-extension PodolistView: UITextViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        if textField.isEqual(writeView?.titleField) {
-//            writeView?.titleField.resignFirstResponder()
-//        }
-        return true
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        presenter?.writeWillFinish()
-    }
-}
-
-extension PodolistView: PodoCalendarViewDelegate {
-    func calendarView(_ calendarView: PodoCalendarView, startedAt startDate: Date, finishedAt finishDate: Date) {
-    }
-
-    func calendarView(_ calendarView: PodoCalendarView, didSelectDate date: Date) {
-        print(date.toString())
     }
 }
