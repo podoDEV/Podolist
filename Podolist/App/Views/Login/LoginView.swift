@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class LoginView: BaseView {
+class LoginView: BaseViewController {
 
     var presenter: LoginPresenterProtocol?
 
@@ -16,6 +16,10 @@ class LoginView: BaseView {
         super.viewDidLoad()
         presenter?.viewDidLoad()
         showLoading()
+    }
+
+    override func setupUI() {
+        super.setupUI()
     }
 
     // MARK: - Action

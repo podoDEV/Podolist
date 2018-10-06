@@ -7,49 +7,85 @@
 
 import UIKit
 
-class PodoWriteView: UIView {
+class PodoWriteView: BaseView {
 
-    var delegate: UITextFieldDelegate? {
+    private let titleView = PodoWriteTitleView().loadNib() as! PodoWriteTitleView
+    private var priorityView: PodoWritePriorityView!
+    private var calendarView: PodoWriteCalendarView!
+
+    weak var delegate: WriteViewDelegate? {
         didSet {
-            self.titleField.delegate = delegate
-            self.titleField.becomeFirstResponder()
+            titleView.delegate = delegate
         }
     }
 
-    var y: CGFloat = CGFloat() {
-        didSet {
-            self.frame.origin.y = y
+    var mode: Mode?
+
+    override func setupUI() {
+        super.setupUI()
+        titleView.backgroundColor = .white
+        titleView.layer.cornerRadius = 17.25
+        titleView.clipsToBounds = true
+        addSubview(titleView)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateUI(mode: mode)
+    }
+
+    func updateUI(mode: Mode?) {
+        guard let mode = mode else {
+            return
         }
-    }
 
-    var height: CGFloat = CGFloat() {
-        didSet {
-            self.frame.size.height = height
+        switch mode {
+        case .normal:
+            titleView.frame = CGRect(x: 12, y: 8, width: frame.width - 24, height: 32)
+        case .detail:
+            titleView.frame = CGRect(x: 12, y: 8, width: frame.width - 24, height: 32)
+            priorityView = PodoWritePriorityView().loadNib() as! PodoWritePriorityView
+            priorityView.backgroundColor = .clear
+            addSubview(priorityView)
+            priorityView.frame = CGRect(x: 12, y: titleView.frame.maxY + 8, width: frame.width - 24, height: 50)
+
+            calendarView = PodoWriteCalendarView().loadNib() as! PodoWriteCalendarView
+            calendarView.backgroundColor = .clear
+            addSubview(calendarView)
+            calendarView.frame = CGRect(x: 12, y: priorityView.frame.maxY + 8, width: frame.width - 24, height: 200)
+
+        default:
+            break
         }
+//        switch mode {
+//        case .normal:
+//            break
+//        case .detail:
+//            break
+//            frame: CGRect(x: roundView.frame.origin.x, y: self.frame.origin.y + roundView.frame.height, width: roundView.frame.width, height: Style.Write.Priority.height)
+//            let priorityView = PodoWritePriorityView()
+//            addSubview(priorityView)
+//            addSubview(calendarView)
+//            self.view.addSubview(priorityView)
+//            priorityView = PodoWritePriorityView().loadNib() as? PodoWritePriorityView
+//            priorityView!.frame = CGRect(x: roundView.frame.origin.x, y: roundView.frame.origin.y + roundView.frame.height, width: roundView.frame.width, height: Style.Write.Priority.height)
+//            calendarView = PodoWriteCalendarView().loadNib() as? PodoWriteCalendarView
+//            calendarView!.frame = CGRect(x: priorityView!.frame.origin.x, y: priorityView!.frame.origin.y + priorityView!.frame.height, width: roundView.frame.width, height: Style.Write.Calendar.height)
+//            addSubview(priorityView!)
+//            addSubview(calendarView!)
+//            self.backgroundColor = .grayE
+//            break
+//        }
     }
+//
+//    @IBAction func pressOption() {
+//        if let delegate = delegate {
+//            delegate.pressOption()
+//        }
+//    }
+}
 
-    lazy var titleField: UITextField = {
-        let cgRect = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        let titleField = UITextField(frame: cgRect)
-        titleField.backgroundColor = .white
-        return titleField
-    }()
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupUI()
-    }
-
-    func setupUI() {
-        self.backgroundColor = .white
-        self.addSubview(titleField)
-    }
-
-    func updateUI() {
-
-    }
+protocol WriteViewDelegate: class {
+    func didTappedDetail()
+    func didTappedSend()
 }

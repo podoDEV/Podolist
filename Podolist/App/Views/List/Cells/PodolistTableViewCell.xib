@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PodolistTableViewCell" rowHeight="130" id="RxR-E9-giI" customClass="PodolistTableViewCell" customModule="Podolist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RxR-E9-giI" id="2Dn-ad-Tte">
+                <rect key="frame" x="0.0" y="0.0" width="372" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN3-0b-BxE">
+                        <rect key="frame" x="20" y="57.5" width="15" height="15"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="2cu-dn-Bxf"/>
+                            <constraint firstAttribute="width" constant="15" id="WTf-cE-sGX"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcA-fa-j9k">
+                        <rect key="frame" x="53" y="26" width="280.5" height="77.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-Tr-8MQ">
+                                <rect key="frame" x="20" y="10" width="240.5" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.56425291300000002" green="0.0" blue="0.99614375830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Mc4-Tr-8MQ" firstAttribute="top" secondItem="BcA-fa-j9k" secondAttribute="top" constant="10" id="0eW-xw-hxk"/>
+                            <constraint firstAttribute="bottom" secondItem="Mc4-Tr-8MQ" secondAttribute="bottom" constant="10" id="3Xu-aB-CDx"/>
+                            <constraint firstItem="Mc4-Tr-8MQ" firstAttribute="centerY" secondItem="BcA-fa-j9k" secondAttribute="centerY" id="6Ck-xS-Q9e"/>
+                            <constraint firstItem="Mc4-Tr-8MQ" firstAttribute="leading" secondItem="BcA-fa-j9k" secondAttribute="leading" constant="20" id="FIQ-M4-qcn"/>
+                            <constraint firstAttribute="trailing" secondItem="Mc4-Tr-8MQ" secondAttribute="trailing" constant="20" id="y7e-MC-zxW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iN3-0b-BxE" firstAttribute="leading" secondItem="2Dn-ad-Tte" secondAttribute="leading" constant="20" id="1xc-c5-l0K"/>
+                    <constraint firstItem="iN3-0b-BxE" firstAttribute="centerY" secondItem="2Dn-ad-Tte" secondAttribute="centerY" id="DaO-Sq-g1Z"/>
+                    <constraint firstItem="BcA-fa-j9k" firstAttribute="leading" secondItem="iN3-0b-BxE" secondAttribute="trailing" constant="18" id="InC-qR-M2U"/>
+                    <constraint firstItem="BcA-fa-j9k" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2Dn-ad-Tte" secondAttribute="top" constant="10" id="YPi-IC-Hu8"/>
+                    <constraint firstItem="BcA-fa-j9k" firstAttribute="centerY" secondItem="2Dn-ad-Tte" secondAttribute="centerY" id="bMR-8l-YPq"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BcA-fa-j9k" secondAttribute="bottom" constant="10" id="iqr-ql-qFx"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BcA-fa-j9k" secondAttribute="trailing" constant="35" id="xyf-ZA-Q8h"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="priorityView" destination="iN3-0b-BxE" id="Iem-GB-OmZ"/>
+                <outlet property="roundView" destination="BcA-fa-j9k" id="5eX-WP-3AR"/>
+                <outlet property="titleLabel" destination="Mc4-Tr-8MQ" id="Pms-m9-fpU"/>
+            </connections>
+            <point key="canvasLocation" x="-44.799999999999997" y="169.11544227886057"/>
+        </tableViewCell>
+    </objects>
+</document>

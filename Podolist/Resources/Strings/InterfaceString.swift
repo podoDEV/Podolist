@@ -13,7 +13,19 @@ struct InterfaceString {
         static let SignIn: String = NSLocalizedString("login.signin", comment: "")
     }
     struct Podolist {
-        static let Title: String = NSLocalizedString("podolist.title", comment: "Home tab title")
+        static let Title: String = NSLocalizedString("podolist.title", comment: "")
+    }
+
+    struct Write {
+        static let Priority: String = NSLocalizedString("write.priority", comment: "")
+        static let Date: String = NSLocalizedString("write.date", comment: "")
+    }
+
+    struct Priority {
+        static let Urgent: String = NSLocalizedString("priority.urgent", comment: "")
+        static let High: String = NSLocalizedString("priority.high", comment: "")
+        static let Medium: String = NSLocalizedString("priority.medium", comment: "")
+        static let Low: String = NSLocalizedString("priority.low", comment: "")
     }
 
     struct Setting {

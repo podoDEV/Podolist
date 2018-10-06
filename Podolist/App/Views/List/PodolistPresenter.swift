@@ -17,12 +17,7 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
     var podolist: [ViewModelPodo] = []
     var mode: Mode = .normal
 
-    func viewWillAppear() {
-        setupObserver()
-    }
-
     func viewDidLoad() {
-        view?.updateUI(mode: mode)
         interactor?.fetchPodolist()?
             .observeOn(MainScheduler.instance)
             .subscribe(
@@ -35,6 +30,11 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
 
                 }, onDisposed: nil)
             .disposed(by: disposeBag)
+        view?.updateUI(mode: mode, keyboardHeight: nil)
+    }
+
+    func viewWillAppear() {
+        setupObserver()
     }
 
     func viewWillDisappear() {
@@ -51,45 +51,43 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
 
-    func showSetting() {
-        wireFrame?.goToSettingScreen(from: self.view!)
-    }
-
-    func writeWillFinish() {
-        view?.updateUI(mode: .normal)
-    }
-}
-
-extension PodolistPresenter: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
-}
-
-extension PodolistPresenter: RoundButtonDelegate {
-
-    func didPressFloatingButton() {
-        self.mode = .write
-        view?.updateUI(mode: mode)
-    }
-}
-extension PodolistPresenter {
-
     @objc func keyboardWillAppear(notification: NSNotification?) {
         guard let keyboardFrame = notification?.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
             return
         }
         let keyboardHeight = keyboardFrame.cgRectValue.height
-        view?.updateUI(status: .show, keyboardHeight: keyboardHeight)
+        self.mode = .write
+        view?.updateUI(mode: mode, keyboardHeight: keyboardHeight)
     }
 
     @objc func keyboardWillDisappear(notification: NSNotification?) {
-        view?.updateUI(status: .hide, keyboardHeight: nil)
+        self.mode = .normal
+        view?.updateUI(mode: mode, keyboardHeight: nil)
     }
-}
 
-enum KeyboardStatus {
-    case show
-    case hide
+    func showSetting() {
+        wireFrame?.goToSettingScreen(from: self.view!)
+    }
+
+    func writeWillFinish() {
+        self.mode = .normal
+        view?.updateUI(mode: mode, keyboardHeight: nil)
+    }
+
+    func modeWillChanged() {
+        switch self.mode {
+        case .normal:
+            mode = .detail
+        case .detail:
+            mode = .normal
+        default:
+            break
+        }
+        view?.updateUI(mode: mode, keyboardHeight: nil)
+    }
+
+    func didTappedDetail() {
+        self.mode = .detail
+        view?.updateUI(mode: mode, keyboardHeight: nil)
+    }
 }

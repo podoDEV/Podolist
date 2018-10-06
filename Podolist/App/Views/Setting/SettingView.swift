@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class SettingView: BaseView {
+class SettingView: BaseViewController {
 
     @IBOutlet weak var settingTableView: UITableView!
     var presenter: SettingPresenterProtocol?
@@ -16,14 +16,13 @@ class SettingView: BaseView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCells()
-        settingTableView.tableFooterView = UIView()
-
         presenter?.viewDidLoad()
         showLoading()
     }
 
-    func setCells() {
+    override func setupUI() {
+        super.setupUI()
+        settingTableView.tableFooterView = UIView()
         settingTableView.register(UINib(nibName: SettingTableViewLogoutCell.Identifier, bundle: nil), forCellReuseIdentifier: SettingTableViewLogoutCell.Identifier)
         settingTableView.register(UINib(nibName: SettingTableViewCell.Identifier, bundle: nil), forCellReuseIdentifier: SettingTableViewCell.Identifier)
     }

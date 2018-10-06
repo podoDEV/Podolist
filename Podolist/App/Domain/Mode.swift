@@ -8,4 +8,5 @@
 enum Mode {
     case normal
     case write
+    case detail
 }
