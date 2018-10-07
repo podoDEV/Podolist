@@ -68,6 +68,8 @@
 		2D31DE9E2168F8CE00977507 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DE9C2168F8CE00977507 /* Priority.swift */; };
 		2D31DEA321690E5900977507 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA221690E5900977507 /* String+Additions.swift */; };
 		2D31DEA421690E5900977507 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA221690E5900977507 /* String+Additions.swift */; };
+		2D31DEA72169DF2E00977507 /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA62169DF2E00977507 /* MainTopView.swift */; };
+		2D31DEA82169DF2E00977507 /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA62169DF2E00977507 /* MainTopView.swift */; };
 		2D3A19CB2152B45B00C9B68B /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3A19CA2152B45B00C9B68B /* Mode.swift */; };
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC55214D173200B79BF6 /* SettingSectionType.swift */; };
@@ -304,6 +306,7 @@
 		2D31DE952168F40E00977507 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		2D31DE9C2168F8CE00977507 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		2D31DEA221690E5900977507 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		2D31DEA62169DF2E00977507 /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopView.swift; sourceTree = "<group>"; };
 		2D3A19CA2152B45B00C9B68B /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2D41BC55214D173200B79BF6 /* SettingSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionType.swift; sourceTree = "<group>"; };
@@ -555,6 +558,7 @@
 		2D0F205C2143984A00B8BDF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D31DEA52169DCEA00977507 /* Common */,
 				2D41BC61214D510200B79BF6 /* Base */,
 				2D0F2091214415BD00B8BDF2 /* Launch */,
 				2D0F2092214415CB00B8BDF2 /* Login */,
@@ -605,8 +609,7 @@
 		2D0F207A2143D1DE00B8BDF2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2DE9031721512AED00AAAE4C /* AppUtils */,
-				2DD7063A214FDEE600C44E16 /* Views */,
+				2DE9031721512AED00AAAE4C /* Utils */,
 				2D0F207B2143D1DE00B8BDF2 /* Networking */,
 				2D0F20842143D1DE00B8BDF2 /* Extensions */,
 			);
@@ -643,7 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				2D0F20BB214432D700B8BDF2 /* Cells */,
-				2DE9031E2151563000AAAE4C /* Views */,
+				2DE9031E2151563000AAAE4C /* Write */,
 				2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */,
 				2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */,
 				2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */,
@@ -772,6 +775,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		2D31DEA52169DCEA00977507 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2DD7063B214FDF2100C44E16 /* PriorityButton.swift */,
+				2D31DEA62169DF2E00977507 /* MainTopView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		2D41BC54214D170300B79BF6 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -834,20 +846,12 @@
 			path = BuildConfig;
 			sourceTree = "<group>";
 		};
-		2DD7063A214FDEE600C44E16 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2DD7063B214FDF2100C44E16 /* PriorityButton.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		2DE9031721512AED00AAAE4C /* AppUtils */ = {
+		2DE9031721512AED00AAAE4C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				2DE9031821512B0600AAAE4C /* AppUtils.swift */,
 			);
-			path = AppUtils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		2DE9031A2151384700AAAE4C /* Style */ = {
@@ -858,7 +862,7 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
-		2DE9031E2151563000AAAE4C /* Views */ = {
+		2DE9031E2151563000AAAE4C /* Write */ = {
 			isa = PBXGroup;
 			children = (
 				2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */,
@@ -869,7 +873,7 @@
 				2D55999F216512CC00FFA64A /* PodoWriteCalendarView.swift */,
 				2D5599A5216512FE00FFA64A /* PodoWriteCalendarView.xib */,
 			);
-			path = Views;
+			path = Write;
 			sourceTree = "<group>";
 		};
 		4E8C794971625CD6374BCC4D /* Pods */ = {
@@ -1432,6 +1436,7 @@
 				2D0F20AD21441A8700B8BDF2 /* PodoService.swift in Sources */,
 				2D9095702146B955009335A1 /* LoginView.swift in Sources */,
 				2DE90BF92154D27D00BF8588 /* BaseViewController.swift in Sources */,
+				2D31DEA72169DF2E00977507 /* MainTopView.swift in Sources */,
 				2D9095722146B966009335A1 /* LoginWireFrame.swift in Sources */,
 				2D41BC6A214D69D900B79BF6 /* HelpView.swift in Sources */,
 			);
@@ -1537,6 +1542,7 @@
 				2D9548E2215D1E74006C51E1 /* PodoService.swift in Sources */,
 				2D9548E3215D1E74006C51E1 /* LoginView.swift in Sources */,
 				2D9548E4215D1E74006C51E1 /* BaseViewController.swift in Sources */,
+				2D31DEA82169DF2E00977507 /* MainTopView.swift in Sources */,
 				2D9548E5215D1E74006C51E1 /* LoginWireFrame.swift in Sources */,
 				2D9548E6215D1E74006C51E1 /* HelpView.swift in Sources */,
 			);

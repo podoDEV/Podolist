@@ -21,10 +21,10 @@ class PodoWriteView: BaseView {
 
     var mode: Mode?
 
-    override func setupUI() {
-        super.setupUI()
+    override func setup() {
+        super.setup()
         titleView.backgroundColor = .white
-        titleView.layer.cornerRadius = 17.25
+        titleView.layer.cornerRadius = 15
         titleView.clipsToBounds = true
         addSubview(titleView)
     }
@@ -44,12 +44,12 @@ class PodoWriteView: BaseView {
             titleView.frame = CGRect(x: 12, y: 8, width: frame.width - 24, height: 32)
         case .detail:
             titleView.frame = CGRect(x: 12, y: 8, width: frame.width - 24, height: 32)
-            priorityView = PodoWritePriorityView().loadNib() as! PodoWritePriorityView
+            priorityView = PodoWritePriorityView().loadNib() as? PodoWritePriorityView
             priorityView.backgroundColor = .clear
             addSubview(priorityView)
             priorityView.frame = CGRect(x: 12, y: titleView.frame.maxY + 8, width: frame.width - 24, height: 50)
 
-            calendarView = PodoWriteCalendarView().loadNib() as! PodoWriteCalendarView
+            calendarView = PodoWriteCalendarView().loadNib() as? PodoWriteCalendarView
             calendarView.backgroundColor = .clear
             addSubview(calendarView)
             calendarView.frame = CGRect(x: 12, y: priorityView.frame.maxY + 8, width: frame.width - 24, height: 200)

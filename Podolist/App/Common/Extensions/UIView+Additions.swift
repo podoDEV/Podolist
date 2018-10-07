@@ -2,7 +2,6 @@
 //  UIView+Additions.swift
 //  Podolist
 //
-//  Created by NHNEnt on 03/10/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 
@@ -21,6 +20,9 @@ extension UIView {
         var layoutInset: UIEdgeInsets = .zero
         if #available(iOS 11.0, *) {
             layoutInset = (UIApplication.shared.keyWindow?.safeAreaInsets)!
+//            if let inset = UIApplication.shared.keyWindow?.safeAreaInsets {
+//                layoutInset = inset
+//            }
         } else {
             switch UIDevice.current.orientation {
             case .portrait:

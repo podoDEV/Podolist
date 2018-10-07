@@ -14,6 +14,9 @@ private struct PodolistColors {
     static let appColor3 = UIColor(hex: 0xD6ACFB) // 달력 날짜 선택
     static let appColor4 = UIColor(hex: 0xDEB9FF) // 투두리스트 완료
 
+    static let gradationStart = UIColor(hex: 0xC32BFF)
+    static let gradationEnd = UIColor(hex: 0x9013fe)
+
     static let priorityColor1 = UIColor(hex: 0xD0021B) // 매우 중요
     static let priorityColor2 = UIColor(hex: 0xF5A623) // 중요
     static let priorityColor3 = UIColor(hex: 0x7ED321) // 보통
@@ -37,6 +40,9 @@ extension UIColor {
     static var appColor2: UIColor { return PodolistColors.appColor2 }
     static var appColor3: UIColor { return PodolistColors.appColor3 }
     static var appColor4: UIColor { return PodolistColors.appColor4 }
+
+    static var gradationStart: UIColor { return PodolistColors.gradationStart }
+    static var gradationEnd: UIColor { return PodolistColors.gradationEnd }
 
     static var priorityColor1: UIColor { return PodolistColors.priorityColor1 }
     static var priorityColor2: UIColor { return PodolistColors.priorityColor2 }

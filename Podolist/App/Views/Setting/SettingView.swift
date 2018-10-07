@@ -20,8 +20,8 @@ class SettingView: BaseViewController {
         showLoading()
     }
 
-    override func setupUI() {
-        super.setupUI()
+    override func setup() {
+        super.setup()
         settingTableView.tableFooterView = UIView()
         settingTableView.register(UINib(nibName: SettingTableViewLogoutCell.Identifier, bundle: nil), forCellReuseIdentifier: SettingTableViewLogoutCell.Identifier)
         settingTableView.register(UINib(nibName: SettingTableViewCell.Identifier, bundle: nil), forCellReuseIdentifier: SettingTableViewCell.Identifier)

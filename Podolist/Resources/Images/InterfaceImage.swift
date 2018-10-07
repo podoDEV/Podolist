@@ -15,10 +15,10 @@ enum InterfaceImage: String {
         case disabled
     }
 
-    case add = "btn_add"
-    case send = "btn_send"
     case logo = "podolist_logo"
-    case back = "back"
+    case add = "ic_add"
+    case create = "ic_create"
+    case dropdown = "ic_dropdown"
 
     func image(_ style: Style) -> UIImage? {
         switch style {
@@ -36,7 +36,8 @@ enum InterfaceImage: String {
     var normalImage: UIImage! {
         switch self {
         case .add,
-             .send:
+             .create,
+             .dropdown:
             return pngNamed(self.rawValue)
         default:
             return pngNamed("\(self.rawValue)_normal")
@@ -45,7 +46,9 @@ enum InterfaceImage: String {
 
     var selectedImage: UIImage! {
         switch self {
-        case .back:
+        case .add,
+             .create,
+             .dropdown:
             return pngNamed(self.rawValue)
         default:
             return pngNamed("\(self.rawValue)_selected")
@@ -54,7 +57,7 @@ enum InterfaceImage: String {
 
     var whiteImage: UIImage? {
         switch self {
-        case .back:
+        case .add:
             return pngNamed("\(self.rawValue)_white")
         default:
             return nil
@@ -63,7 +66,7 @@ enum InterfaceImage: String {
 
     var disabledImage: UIImage? {
         switch self {
-        case .back:
+        case .add:
             return pngNamed("\(self.rawValue)_disabled")
         default:
             return nil

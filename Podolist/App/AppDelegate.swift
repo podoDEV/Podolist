@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        KOSession.shared().clientSecret = SessionConstants.clientSecret;
 
         reloadRootViewController()
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
         return true
     }
 
@@ -94,12 +95,11 @@ extension AppDelegate {
     fileprivate func reloadRootViewController() {
         let isOpened = KOSession.shared().isOpen()
         if !isOpened {
-            let mainScreen = self.mainScreen as! UINavigationController
-            mainScreen.popToRootViewController(animated: false)
+//            let mainScreen = self.mainScreen
+//            mainScreen.popToRootViewController(animated: false)
         }
-
         self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
-        self.window?.makeKeyAndVisible()
+//        self.window?.makeKeyAndVisible()
     }
 }
 

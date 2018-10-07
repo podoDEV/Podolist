@@ -8,6 +8,11 @@
 import Foundation
 
 struct Style {
+    struct List {
+        struct Top {
+            static let height: CGFloat = 100
+        }
+    }
     struct Write {
         struct Normal {
             static let height: CGFloat = 50

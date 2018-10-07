@@ -17,7 +17,7 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
     var podolist: [ViewModelPodo] = []
     var mode: Mode = .normal
 
-    func viewDidLoad() {
+    func refresh() {
         interactor?.fetchPodolist()?
             .observeOn(MainScheduler.instance)
             .subscribe(

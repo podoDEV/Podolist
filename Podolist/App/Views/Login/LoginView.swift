@@ -18,8 +18,8 @@ class LoginView: BaseViewController {
         showLoading()
     }
 
-    override func setupUI() {
-        super.setupUI()
+    override func setup() {
+        super.setup()
     }
 
     // MARK: - Action

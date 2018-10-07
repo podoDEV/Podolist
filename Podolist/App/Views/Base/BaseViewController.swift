@@ -9,6 +9,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let tracker = GAI.sharedInstance()?.defaultTracker else {
@@ -23,10 +27,10 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setup()
     }
 
-    func setupUI() {
+    func setup() {
 
     }
 }

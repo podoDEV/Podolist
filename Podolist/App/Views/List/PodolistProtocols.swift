@@ -32,7 +32,7 @@ protocol PodolistPresenterProtocol: class {
     var wireFrame: PodolistWireFrameProtocol? { get set }
 
     // View -> Presenter
-    func viewDidLoad()
+    func refresh()
     func viewWillAppear()
     func viewWillDisappear()
     func showSetting()

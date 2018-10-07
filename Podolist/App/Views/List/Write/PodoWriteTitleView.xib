@@ -32,11 +32,11 @@
                         <action selector="detailAction:" destination="nYz-os-Cjh" eventType="touchUpInside" id="qHn-gG-Zny"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUa-ZY-ngQ">
-                    <rect key="frame" x="371" y="4" width="24" height="24"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUa-ZY-ngQ">
+                    <rect key="frame" x="368" y="0.0" width="32" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="De8-sF-yRA"/>
-                        <constraint firstAttribute="width" constant="24" id="QfV-QF-9kT"/>
+                        <constraint firstAttribute="height" constant="32" id="De8-sF-yRA"/>
+                        <constraint firstAttribute="width" constant="32" id="QfV-QF-9kT"/>
                         <constraint firstAttribute="width" secondItem="EUa-ZY-ngQ" secondAttribute="height" multiplier="1:1" id="zDg-dl-5Fc"/>
                     </constraints>
                     <connections>
@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="자기 전에 애플 인터뷰 연습" translatesAutoresizingMaskIntoConstraints="NO" id="Voh-zP-3Ao">
-                    <rect key="frame" x="31" y="-1" width="335" height="34"/>
+                    <rect key="frame" x="31" y="-1" width="332" height="34"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="13"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
@@ -55,15 +55,15 @@
                 <constraint firstItem="EUa-ZY-ngQ" firstAttribute="leading" secondItem="Voh-zP-3Ao" secondAttribute="trailing" constant="5" id="E63-ec-px8"/>
                 <constraint firstItem="EUa-ZY-ngQ" firstAttribute="centerY" secondItem="nYz-os-Cjh" secondAttribute="centerY" id="Hdy-cX-Z1h"/>
                 <constraint firstItem="Voh-zP-3Ao" firstAttribute="leading" secondItem="Onf-j7-MTT" secondAttribute="trailing" constant="5" id="PCS-4x-rZH"/>
-                <constraint firstAttribute="trailing" secondItem="EUa-ZY-ngQ" secondAttribute="trailing" constant="5" id="QEz-fL-suD"/>
+                <constraint firstAttribute="trailing" secondItem="EUa-ZY-ngQ" secondAttribute="trailing" id="QEz-fL-suD"/>
                 <constraint firstItem="Onf-j7-MTT" firstAttribute="centerY" secondItem="nYz-os-Cjh" secondAttribute="centerY" id="Sc8-3Z-THj"/>
                 <constraint firstItem="Voh-zP-3Ao" firstAttribute="centerY" secondItem="nYz-os-Cjh" secondAttribute="centerY" id="eEM-dE-ULs"/>
                 <constraint firstItem="Onf-j7-MTT" firstAttribute="leading" secondItem="nYz-os-Cjh" secondAttribute="leading" constant="10" id="fDz-Sn-JP6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="createButton" destination="EUa-ZY-ngQ" id="Gfe-gB-yHf"/>
                 <outlet property="detailButton" destination="Onf-j7-MTT" id="WhJ-8s-Zr1"/>
-                <outlet property="sendButton" destination="EUa-ZY-ngQ" id="Cch-sV-tr9"/>
                 <outlet property="titleView" destination="Voh-zP-3Ao" id="dgE-iw-fQi"/>
             </connections>
             <point key="canvasLocation" x="-248.80000000000001" y="398.50074962518744"/>

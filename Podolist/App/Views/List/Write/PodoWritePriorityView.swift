@@ -27,8 +27,8 @@ class PodoWritePriorityView: BaseView {
         }
     }
 
-    override func setupUI() {
-        super.setupUI()
+    override func setup() {
+        super.setup()
         for priority in priorities {
             let button = PriorityButton(priority: priority)
             if button.priority == .medium {

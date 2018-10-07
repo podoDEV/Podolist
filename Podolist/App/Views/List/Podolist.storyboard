@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3MK-fa-Lb6">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Myd-yv-RAX">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,68 +14,35 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PodolistView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pIB-cN-zD5"/>
-                        <viewControllerLayoutGuide type="bottom" id="340-xN-Phm"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="czE-9C-mXi">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2HJ-Ve-YJH">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <color key="backgroundColor" red="0.61978505710659892" green="0.61679092639593902" blue="0.62277918781725883" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="czE-9C-mXi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0F0-hb-p2I"/>
-                            <constraint firstItem="340-xN-Phm" firstAttribute="top" secondItem="2HJ-Ve-YJH" secondAttribute="bottom" id="Dhf-cx-cnF"/>
-                            <constraint firstItem="czE-9C-mXi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="J4V-U0-9r3"/>
-                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="OPx-a8-9sV"/>
-                            <constraint firstItem="czE-9C-mXi" firstAttribute="top" secondItem="pIB-cN-zD5" secondAttribute="bottom" id="QhR-Tj-eBB"/>
-                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="top" secondItem="pIB-cN-zD5" secondAttribute="bottom" id="WKz-Fm-tY4"/>
-                            <constraint firstItem="2HJ-Ve-YJH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nhe-8G-n3F"/>
-                            <constraint firstItem="340-xN-Phm" firstAttribute="top" secondItem="czE-9C-mXi" secondAttribute="bottom" id="zvJ-qq-8bh"/>
-                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tyI-bd-zr7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OfQ-wb-xMl">
-                        <barButtonItem key="rightBarButtonItem" title="Setting" id="QXl-mQ-fJZ">
-                            <connections>
-                                <action selector="pressSetting:" destination="BYZ-38-t0r" id="RTf-Fl-fK0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="emptyView" destination="2HJ-Ve-YJH" id="r9n-tf-e9Z"/>
-                        <outlet property="podolistTableView" destination="czE-9C-mXi" id="lNK-cr-upz"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="Zn8-vv-7jc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075.3623188405797" y="131.25"/>
+            <point key="canvasLocation" x="1984.057971014493" y="130.58035714285714"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ykP-Gl-wJt">
+        <scene sceneID="CNS-fO-7Vj">
             <objects>
-                <navigationController storyboardIdentifier="podolist" automaticallyAdjustsScrollViewInsets="NO" id="3MK-fa-Lb6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="podolist" automaticallyAdjustsScrollViewInsets="NO" id="Myd-yv-RAX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VyD-Rl-UtY">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uQP-np-cNi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yoL-cU-Spv"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6IE-Qf-5dJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xlE-Vp-tYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFj-9D-reJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="214" y="134"/>
+            <point key="canvasLocation" x="1073.913043478261" y="130.58035714285714"/>
         </scene>
     </scenes>
 </document>

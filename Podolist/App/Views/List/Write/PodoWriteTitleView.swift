@@ -21,10 +21,12 @@ class PodoWriteTitleView: BaseView {
             titleView.font = .appFontM(size: 13)
         }
     }
-    @IBOutlet weak var sendButton: UIButton! {
+    @IBOutlet weak var createButton: UIButton! {
         didSet {
-            sendButton.setBackgroundImage(InterfaceImage.send.image(.normal), for: .normal)
-            sendButton.setBackgroundImage(InterfaceImage.send.image(.normal), for: .selected)
+            createButton.layer.cornerRadius = createButton.bounds.width/2
+            createButton.clipsToBounds = true
+            createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+            createButton.backgroundColor = .appColor1
         }
     }
 }
