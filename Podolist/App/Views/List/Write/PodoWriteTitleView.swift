@@ -11,8 +11,7 @@ class PodoWriteTitleView: BaseView {
 
     @IBOutlet weak var detailButton: UIButton! {
         didSet {
-            detailButton.setBackgroundImage(InterfaceImage.add.image(.normal), for: .normal)
-            detailButton.setBackgroundImage(InterfaceImage.add.image(.normal), for: .selected)
+            detailButton.setImage(InterfaceImage.add.image(.normal), for: .normal)
         }
     }
     @IBOutlet weak var titleView: UITextView! {

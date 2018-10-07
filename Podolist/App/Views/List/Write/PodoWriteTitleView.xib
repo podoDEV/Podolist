@@ -21,11 +21,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onf-j7-MTT">
-                    <rect key="frame" x="10" y="8" width="16" height="16"/>
+                    <rect key="frame" x="0.0" y="2" width="28" height="28"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="9xo-bY-JBU"/>
+                        <constraint firstAttribute="height" constant="28" id="9xo-bY-JBU"/>
                         <constraint firstAttribute="width" secondItem="Onf-j7-MTT" secondAttribute="height" multiplier="1:1" id="VBT-he-5Hf"/>
-                        <constraint firstAttribute="width" constant="16" id="bqb-5i-uts"/>
+                        <constraint firstAttribute="width" constant="28" id="bqb-5i-uts"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <connections>
@@ -33,10 +33,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUa-ZY-ngQ">
-                    <rect key="frame" x="368" y="0.0" width="32" height="32"/>
+                    <rect key="frame" x="372" y="2" width="28" height="28"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="De8-sF-yRA"/>
-                        <constraint firstAttribute="width" constant="32" id="QfV-QF-9kT"/>
+                        <constraint firstAttribute="height" constant="28" id="De8-sF-yRA"/>
+                        <constraint firstAttribute="width" constant="28" id="QfV-QF-9kT"/>
                         <constraint firstAttribute="width" secondItem="EUa-ZY-ngQ" secondAttribute="height" multiplier="1:1" id="zDg-dl-5Fc"/>
                     </constraints>
                     <connections>
@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="자기 전에 애플 인터뷰 연습" translatesAutoresizingMaskIntoConstraints="NO" id="Voh-zP-3Ao">
-                    <rect key="frame" x="31" y="-1" width="332" height="34"/>
+                    <rect key="frame" x="33" y="-1" width="334" height="34"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="13"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet"/>
@@ -58,7 +58,7 @@
                 <constraint firstAttribute="trailing" secondItem="EUa-ZY-ngQ" secondAttribute="trailing" id="QEz-fL-suD"/>
                 <constraint firstItem="Onf-j7-MTT" firstAttribute="centerY" secondItem="nYz-os-Cjh" secondAttribute="centerY" id="Sc8-3Z-THj"/>
                 <constraint firstItem="Voh-zP-3Ao" firstAttribute="centerY" secondItem="nYz-os-Cjh" secondAttribute="centerY" id="eEM-dE-ULs"/>
-                <constraint firstItem="Onf-j7-MTT" firstAttribute="leading" secondItem="nYz-os-Cjh" secondAttribute="leading" constant="10" id="fDz-Sn-JP6"/>
+                <constraint firstItem="Onf-j7-MTT" firstAttribute="leading" secondItem="nYz-os-Cjh" secondAttribute="leading" id="fDz-Sn-JP6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

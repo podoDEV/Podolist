@@ -13,7 +13,7 @@ class MainTopView: BaseView {
     let titleView = UIView()
     let titleLabel = UILabel()
     let dropdownView = UIImageView()
-    let calendarView = UIView()
+    let calendarView = PodoCalendarView()
     let gradient = CAGradientLayer()
 
     var title: String? {
@@ -58,11 +58,11 @@ class MainTopView: BaseView {
         calendarView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         calendarView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         calendarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        calendarView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        calendarView.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
-        titleView.bottomAnchor.constraint(equalTo: self.calendarView.topAnchor, constant: -16).isActive = true
+        titleView.bottomAnchor.constraint(equalTo: self.calendarView.topAnchor, constant: -4).isActive = true
         titleView.heightAnchor.constraint(equalTo: titleLabel.heightAnchor).isActive = true
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

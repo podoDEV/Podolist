@@ -18,6 +18,7 @@ class PodolistTableViewCell: UITableViewCell {
         didSet {
             titleLabel.text = item?.title
             titleLabel.textColor = .white
+            titleLabel.font = .appFontR(size: 12)
             roundView.layer.cornerRadius = 17.25
             roundView.clipsToBounds = true
             priorityView.layer.cornerRadius = priorityView.bounds.width/2

@@ -15,7 +15,7 @@ private struct PodolistColors {
     static let appColor4 = UIColor(hex: 0xDEB9FF) // 투두리스트 완료
 
     static let gradationStart = UIColor(hex: 0xC32BFF)
-    static let gradationEnd = UIColor(hex: 0x9013fe)
+    static let gradationEnd = UIColor(hex: 0x9013FE)
 
     static let priorityColor1 = UIColor(hex: 0xD0021B) // 매우 중요
     static let priorityColor2 = UIColor(hex: 0xF5A623) // 중요

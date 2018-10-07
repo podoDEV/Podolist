@@ -19,7 +19,10 @@ extension UIView {
     func layoutInsets() -> UIEdgeInsets {
         var layoutInset: UIEdgeInsets = .zero
         if #available(iOS 11.0, *) {
-            layoutInset = (UIApplication.shared.keyWindow?.safeAreaInsets)!
+            if let inset = UIApplication.shared.keyWindow?.safeAreaInsets {
+                layoutInset = inset
+            }
+
             if layoutInset.top > 20 {
                 layoutInset.top -= 20
             }

@@ -2,7 +2,6 @@
 //  PodoWriteCalendarView.swift
 //  Podolist
 //
-//  Created by NHNEnt on 04/10/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 
@@ -18,7 +17,7 @@ class PodoWriteCalendarView: BaseView {
             titleLabel.font = .appFontM(size: 11)
         }
     }
-    @IBOutlet weak var calendarView: PodoCalendarView! {
+    @IBOutlet weak var calendarView: PodoCalendar! {
         didSet {
             calendarView.layer.cornerRadius = 17.25
             calendarView.clipsToBounds = true

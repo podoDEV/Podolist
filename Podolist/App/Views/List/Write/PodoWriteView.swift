@@ -43,18 +43,17 @@ class PodoWriteView: BaseView {
 
         switch mode {
         case .normal:
-            titleView.frame = CGRect(x: 12, y: 8, width: frame.width - 24, height: 32)
+            titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
             priorityView.isHidden = true
             calendarView.isHidden = true
         case .detail:
-            titleView.frame = CGRect(x: 12, y: 8, width: frame.width - 24, height: 32)
-            priorityView.frame = CGRect(x: 12, y: titleView.frame.maxY + 8, width: frame.width - 24, height: 50)
+            titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
+            priorityView.frame = CGRect(x: 8, y: titleView.frame.maxY + 8, width: frame.width - 16, height: 50)
             priorityView.backgroundColor = .clear
             priorityView.isHidden = false
-            calendarView.frame = CGRect(x: 12, y: priorityView.frame.maxY + 8, width: frame.width - 24, height: 200)
+            calendarView.frame = CGRect(x: 8, y: priorityView.frame.maxY + 8, width: frame.width - 16, height: 200)
             calendarView.backgroundColor = .clear
             calendarView.isHidden = false
-
         default:
             break
         }
