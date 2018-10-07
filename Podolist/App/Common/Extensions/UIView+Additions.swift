@@ -20,17 +20,11 @@ extension UIView {
         var layoutInset: UIEdgeInsets = .zero
         if #available(iOS 11.0, *) {
             layoutInset = (UIApplication.shared.keyWindow?.safeAreaInsets)!
-//            if let inset = UIApplication.shared.keyWindow?.safeAreaInsets {
-//                layoutInset = inset
-//            }
-        } else {
-            switch UIDevice.current.orientation {
-            case .portrait:
-                layoutInset.top += 20
-            default:
-                break
+            if layoutInset.top > 20 {
+                layoutInset.top -= 20
             }
         }
+        layoutInset.top += 20
         return layoutInset
     }
 

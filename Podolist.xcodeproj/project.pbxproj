@@ -69,7 +69,7 @@
 		2D31DEA321690E5900977507 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA221690E5900977507 /* String+Additions.swift */; };
 		2D31DEA421690E5900977507 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA221690E5900977507 /* String+Additions.swift */; };
 		2D31DEA72169DF2E00977507 /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA62169DF2E00977507 /* MainTopView.swift */; };
-		2D31DEA82169DF2E00977507 /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA62169DF2E00977507 /* MainTopView.swift */; };
+		2D31DEAC216A4A6600977507 /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEA62169DF2E00977507 /* MainTopView.swift */; };
 		2D3A19CB2152B45B00C9B68B /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3A19CA2152B45B00C9B68B /* Mode.swift */; };
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC55214D173200B79BF6 /* SettingSectionType.swift */; };
@@ -1542,7 +1542,7 @@
 				2D9548E2215D1E74006C51E1 /* PodoService.swift in Sources */,
 				2D9548E3215D1E74006C51E1 /* LoginView.swift in Sources */,
 				2D9548E4215D1E74006C51E1 /* BaseViewController.swift in Sources */,
-				2D31DEA82169DF2E00977507 /* MainTopView.swift in Sources */,
+				2D31DEAC216A4A6600977507 /* MainTopView.swift in Sources */,
 				2D9548E5215D1E74006C51E1 /* LoginWireFrame.swift in Sources */,
 				2D9548E6215D1E74006C51E1 /* HelpView.swift in Sources */,
 			);

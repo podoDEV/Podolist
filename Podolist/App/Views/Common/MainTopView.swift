@@ -5,8 +5,6 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
-import Foundation
-
 class MainTopView: BaseView {
 
     weak var delegate: TopViewDelegate?
