@@ -26,7 +26,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUC-u1-wmK" customClass="PodoCalendarView" customModule="PodoCalendar">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUC-u1-wmK" customClass="PodoCalendar" customModule="PodoCalendar">
                     <rect key="frame" x="0.0" y="19" width="410" height="190"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -44,7 +44,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="calendarView" destination="IUC-u1-wmK" id="0Ba-W2-1B5"/>
+                <outlet property="calendarView" destination="IUC-u1-wmK" id="xez-D2-yhD"/>
                 <outlet property="titleLabel" destination="J0s-MC-dOr" id="0Ct-Du-vDL"/>
             </connections>
             <point key="canvasLocation" x="451.19999999999999" y="163.26836581709148"/>

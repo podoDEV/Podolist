@@ -97,7 +97,6 @@ extension AppDelegate {
             let mainScreen = self.mainScreen as! UINavigationController
             mainScreen.popToRootViewController(animated: false)
         }
-
         self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
         self.window?.makeKeyAndVisible()
     }

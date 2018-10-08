@@ -10,8 +10,8 @@ import UIKit
 class PodoWriteView: BaseView {
 
     private let titleView = PodoWriteTitleView().loadNib() as! PodoWriteTitleView
-    private var priorityView: PodoWritePriorityView!
-    private var calendarView: PodoWriteCalendarView!
+    private let priorityView = PodoWritePriorityView().loadNib() as! PodoWritePriorityView
+    private let calendarView = PodoWriteCalendarView().loadNib() as! PodoWriteCalendarView
 
     weak var delegate: WriteViewDelegate? {
         didSet {
@@ -21,12 +21,14 @@ class PodoWriteView: BaseView {
 
     var mode: Mode?
 
-    override func setupUI() {
-        super.setupUI()
+    override func setup() {
+        super.setup()
         titleView.backgroundColor = .white
-        titleView.layer.cornerRadius = 17.25
+        titleView.layer.cornerRadius = 15
         titleView.clipsToBounds = true
         addSubview(titleView)
+        addSubview(priorityView)
+        addSubview(calendarView)
     }
 
     override func layoutSubviews() {
@@ -41,19 +43,17 @@ class PodoWriteView: BaseView {
 
         switch mode {
         case .normal:
-            titleView.frame = CGRect(x: 12, y: 8, width: frame.width - 24, height: 32)
+            titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
+            priorityView.isHidden = true
+            calendarView.isHidden = true
         case .detail:
-            titleView.frame = CGRect(x: 12, y: 8, width: frame.width - 24, height: 32)
-            priorityView = PodoWritePriorityView().loadNib() as! PodoWritePriorityView
+            titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
+            priorityView.frame = CGRect(x: 8, y: titleView.frame.maxY + 8, width: frame.width - 16, height: 50)
             priorityView.backgroundColor = .clear
-            addSubview(priorityView)
-            priorityView.frame = CGRect(x: 12, y: titleView.frame.maxY + 8, width: frame.width - 24, height: 50)
-
-            calendarView = PodoWriteCalendarView().loadNib() as! PodoWriteCalendarView
+            priorityView.isHidden = false
+            calendarView.frame = CGRect(x: 8, y: priorityView.frame.maxY + 8, width: frame.width - 16, height: 200)
             calendarView.backgroundColor = .clear
-            addSubview(calendarView)
-            calendarView.frame = CGRect(x: 12, y: priorityView.frame.maxY + 8, width: frame.width - 24, height: 200)
-
+            calendarView.isHidden = false
         default:
             break
         }

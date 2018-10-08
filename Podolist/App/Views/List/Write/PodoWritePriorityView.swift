@@ -2,7 +2,6 @@
 //  PodoWritePriorityView.swift
 //  Podolist
 //
-//  Created by NHNEnt on 04/10/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 
@@ -27,8 +26,8 @@ class PodoWritePriorityView: BaseView {
         }
     }
 
-    override func setupUI() {
-        super.setupUI()
+    override func setup() {
+        super.setup()
         for priority in priorities {
             let button = PriorityButton(priority: priority)
             if button.priority == .medium {

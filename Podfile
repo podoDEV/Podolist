@@ -26,7 +26,7 @@ def analytics_pods
 end
 
 def ui_pods
-    pod 'PodoCalendar', '~> 0.2.2'
+    pod 'PodoCalendar', '~> 0.2.4'
 end
 
 def spec_pods

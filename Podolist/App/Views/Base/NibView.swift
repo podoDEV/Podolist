@@ -2,7 +2,6 @@
 //  NibView.swift
 //  Podolist
 //
-//  Created by NHNEnt on 05/10/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 
@@ -19,22 +18,22 @@ class NibView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
-        setupUI()
+        setup()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
-        setupUI()
+        setup()
     }
 
     init() {
         super.init(frame: .zero)
         xibSetup()
-        setupUI()
+        setup()
     }
 
-    func setupUI() {
+    func setup() {
 
     }
 }

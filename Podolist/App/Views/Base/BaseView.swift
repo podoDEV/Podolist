@@ -2,7 +2,6 @@
 //  BaseView.swift
 //  Podolist
 //
-//  Created by NHNEnt on 04/10/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 
@@ -12,20 +11,20 @@ class BaseView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupUI()
+        setup()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
+        setup()
     }
 
-//    init() {
-//        super.init(frame: .zero)
-//        setupUI()
-//    }
+    init() {
+        super.init(frame: .zero)
+        setup()
+    }
 
-    func setupUI() {
+    func setup() {
 
     }
 }

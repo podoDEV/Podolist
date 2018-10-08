@@ -11,20 +11,21 @@ class PodoWriteTitleView: BaseView {
 
     @IBOutlet weak var detailButton: UIButton! {
         didSet {
-            detailButton.setBackgroundImage(InterfaceImage.add.image(.normal), for: .normal)
-            detailButton.setBackgroundImage(InterfaceImage.add.image(.normal), for: .selected)
+            detailButton.setImage(InterfaceImage.add.image(.normal), for: .normal)
         }
     }
-    @IBOutlet weak var titleView: UITextView! {
+    @IBOutlet weak var titleField: UITextField! {
         didSet {
-            titleView.textColor = .appColor1
-            titleView.font = .appFontM(size: 13)
+            titleField.textColor = .appColor1
+            titleField.font = .appFontM(size: 13)
         }
     }
-    @IBOutlet weak var sendButton: UIButton! {
+    @IBOutlet weak var createButton: UIButton! {
         didSet {
-            sendButton.setBackgroundImage(InterfaceImage.send.image(.normal), for: .normal)
-            sendButton.setBackgroundImage(InterfaceImage.send.image(.normal), for: .selected)
+            createButton.layer.cornerRadius = createButton.bounds.width/2
+            createButton.clipsToBounds = true
+            createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+            createButton.backgroundColor = .appColor1
         }
     }
 }
