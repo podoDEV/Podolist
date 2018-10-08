@@ -12,6 +12,8 @@ class PodoCalendarView: BaseView {
 
     public weak var delegate: PodoCalendarViewDelegate?
 
+    var date: Date = Date()
+
     lazy var calendarView: CalendarView = {
         let view = CalendarView()
         view.delegate = self
@@ -19,6 +21,9 @@ class PodoCalendarView: BaseView {
     }()
 
     override func setup() {
+        let dateInRegion = DateInRegion().dateAt(.startOfDay)
+        self.date = dateInRegion.date
+
         addSubview(calendarView)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onSelected(notification:)),
@@ -30,7 +35,7 @@ class PodoCalendarView: BaseView {
         super.layoutSubviews()
         calendarView.frame = self.bounds
         calendarView.contentOffset.x = bounds.width
-        calendarView.selectDate(date: DateInRegion().dateAt(.startOfDay))
+        calendarView.selectDate(date: DateInRegion(date, region: .UTC))
     }
 
     @objc private func onSelected(notification: NSNotification) {
@@ -38,6 +43,7 @@ class PodoCalendarView: BaseView {
             return
         }
 
+        self.date = date.date
         calendarView.selectDate(date: date)
         if let delegate = delegate {
             delegate.calendarView(self, didSelectDate: date.date)

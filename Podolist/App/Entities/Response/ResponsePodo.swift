@@ -14,14 +14,16 @@ class ResponsePodo: JSONable {
     var startedAt: Int?
     var endedAt: Int?
     var updatedAt: Int?
+    var priority: Priority?
 
-    init(id: Int, title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int) {
+    init(id: Int, title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int, priority: Priority) {
         self.id = id
         self.title = title
         self.isCompleted = isCompleted
         self.startedAt = startedAt
         self.endedAt = endedAt
         self.updatedAt = updatedAt
+        self.priority = priority
     }
 
     required init(json: JSON) {
@@ -31,5 +33,6 @@ class ResponsePodo: JSONable {
         startedAt = json["startedAt"].intValue
         endedAt = json["endedAt"].intValue
         updatedAt = json["updatedAt"].intValue
+        priority = Priority(rawValue: json["priority"].stringValue)
     }
 }

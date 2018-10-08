@@ -595,6 +595,7 @@
 				2D0F20B621442C7600B8BDF2 /* ViewModel */,
 				2D0F20A12144194A00B8BDF2 /* Request */,
 				2D0F20A22144195200B8BDF2 /* Response */,
+				2D31DE9C2168F8CE00977507 /* Priority.swift */,
 				2D41BC52214D0DF000B79BF6 /* Account.swift */,
 				2D0F20A32144196400B8BDF2 /* Podo.swift */,
 				2D0F20E421454DC600B8BDF2 /* Setting.swift */,
@@ -814,7 +815,6 @@
 				2D41BC67214D642500B79BF6 /* SettingRowType.swift */,
 				2D41BC55214D173200B79BF6 /* SettingSectionType.swift */,
 				2D3A19CA2152B45B00C9B68B /* Mode.swift */,
-				2D31DE9C2168F8CE00977507 /* Priority.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";

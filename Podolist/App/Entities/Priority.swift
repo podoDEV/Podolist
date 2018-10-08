@@ -5,7 +5,7 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
-enum Priority {
+enum Priority: String {
     case urgent
     case high
     case medium

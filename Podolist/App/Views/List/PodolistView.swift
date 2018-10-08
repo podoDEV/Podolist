@@ -47,7 +47,7 @@ class PodolistView: BaseViewController {
 
     func setupTopView() {
         topView = MainTopView()
-        topView.title = "August"
+        topView.delegate = self
         view.addSubview(topView)
     }
 
@@ -107,25 +107,6 @@ class PodolistView: BaseViewController {
     }
 }
 
-extension PodolistView: WriteViewDelegate {
-
-    func didTappedDetail() {
-        presenter?.didTappedDetail()
-    }
-
-    func didTappedSend() {
-
-    }
-
-    @IBAction func pressSetting(_ sender: Any) {
-        presenter?.showSetting()
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        presenter?.writeWillFinish()
-    }
-}
-
 extension PodolistView: PodolistViewProtocol {
 
     func showPodolist(with podolist: [ViewModelPodo]) {
@@ -161,6 +142,13 @@ extension PodolistView: PodolistViewProtocol {
     }
 }
 
+extension PodolistView: MainTopViewDelegate {
+
+    func didSelectDate(date: Date) {
+        presenter?.refresh()
+    }
+}
+
 extension PodolistView: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -178,5 +166,24 @@ extension PodolistView: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+    }
+}
+
+extension PodolistView: WriteViewDelegate {
+
+    func didTappedDetail() {
+        presenter?.didTappedDetail()
+    }
+
+    func didTappedSend() {
+
+    }
+
+    @IBAction func pressSetting(_ sender: Any) {
+        presenter?.showSetting()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        presenter?.writeWillFinish()
     }
 }

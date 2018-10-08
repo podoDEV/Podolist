@@ -14,10 +14,10 @@ class PodoWriteTitleView: BaseView {
             detailButton.setImage(InterfaceImage.add.image(.normal), for: .normal)
         }
     }
-    @IBOutlet weak var titleView: UITextView! {
+    @IBOutlet weak var titleField: UITextField! {
         didSet {
-            titleView.textColor = .appColor1
-            titleView.font = .appFontM(size: 13)
+            titleField.textColor = .appColor1
+            titleField.font = .appFontM(size: 13)
         }
     }
     @IBOutlet weak var createButton: UIButton! {

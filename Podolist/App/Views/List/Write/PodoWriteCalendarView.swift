@@ -10,6 +10,8 @@ import PodoCalendar
 
 class PodoWriteCalendarView: BaseView {
 
+//    weak var delegate: PodoCalendarViewDelegate?
+
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = InterfaceString.Write.Date
@@ -24,3 +26,5 @@ class PodoWriteCalendarView: BaseView {
         }
     }
 }
+
+//extension PodoWriteCalendarView:

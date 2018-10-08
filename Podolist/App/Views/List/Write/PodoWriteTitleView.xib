@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NotoSans-Regular.ttf">
-            <string>NotoSans-Regular</string>
+        <array key="NotoSans-Medium.ttf">
+            <string>NotoSans-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onf-j7-MTT">
-                    <rect key="frame" x="0.0" y="2" width="28" height="28"/>
+                    <rect key="frame" x="4" y="2" width="28" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="9xo-bY-JBU"/>
                         <constraint firstAttribute="width" secondItem="Onf-j7-MTT" secondAttribute="height" multiplier="1:1" id="VBT-he-5Hf"/>
@@ -43,28 +43,29 @@
                         <action selector="sendAction:" destination="nYz-os-Cjh" eventType="touchUpInside" id="dOm-bu-Ww2"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="자기 전에 애플 인터뷰 연습" translatesAutoresizingMaskIntoConstraints="NO" id="Voh-zP-3Ao">
-                    <rect key="frame" x="33" y="-1" width="334" height="34"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="13"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet"/>
-                </textView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g., Buy gift tomorrow at 6pm" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-xs-8XA">
+                    <rect key="frame" x="37" y="0.0" width="330" height="32"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="EUa-ZY-ngQ" firstAttribute="leading" secondItem="Voh-zP-3Ao" secondAttribute="trailing" constant="5" id="E63-ec-px8"/>
                 <constraint firstItem="EUa-ZY-ngQ" firstAttribute="centerY" secondItem="nYz-os-Cjh" secondAttribute="centerY" id="Hdy-cX-Z1h"/>
-                <constraint firstItem="Voh-zP-3Ao" firstAttribute="leading" secondItem="Onf-j7-MTT" secondAttribute="trailing" constant="5" id="PCS-4x-rZH"/>
+                <constraint firstItem="EUa-ZY-ngQ" firstAttribute="leading" secondItem="PG8-xs-8XA" secondAttribute="trailing" constant="5" id="I4j-jZ-RG7"/>
+                <constraint firstAttribute="bottom" secondItem="PG8-xs-8XA" secondAttribute="bottom" id="Kyv-RF-dIV"/>
                 <constraint firstAttribute="trailing" secondItem="EUa-ZY-ngQ" secondAttribute="trailing" id="QEz-fL-suD"/>
                 <constraint firstItem="Onf-j7-MTT" firstAttribute="centerY" secondItem="nYz-os-Cjh" secondAttribute="centerY" id="Sc8-3Z-THj"/>
-                <constraint firstItem="Voh-zP-3Ao" firstAttribute="centerY" secondItem="nYz-os-Cjh" secondAttribute="centerY" id="eEM-dE-ULs"/>
-                <constraint firstItem="Onf-j7-MTT" firstAttribute="leading" secondItem="nYz-os-Cjh" secondAttribute="leading" id="fDz-Sn-JP6"/>
+                <constraint firstItem="Onf-j7-MTT" firstAttribute="leading" secondItem="nYz-os-Cjh" secondAttribute="leading" constant="4" id="fDz-Sn-JP6"/>
+                <constraint firstItem="PG8-xs-8XA" firstAttribute="leading" secondItem="Onf-j7-MTT" secondAttribute="trailing" constant="5" id="lIv-6l-496"/>
+                <constraint firstItem="PG8-xs-8XA" firstAttribute="top" secondItem="nYz-os-Cjh" secondAttribute="top" id="mQ7-FX-d7m"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="createButton" destination="EUa-ZY-ngQ" id="Gfe-gB-yHf"/>
                 <outlet property="detailButton" destination="Onf-j7-MTT" id="WhJ-8s-Zr1"/>
-                <outlet property="titleView" destination="Voh-zP-3Ao" id="dgE-iw-fQi"/>
+                <outlet property="titleField" destination="PG8-xs-8XA" id="PdR-Dj-dXU"/>
             </connections>
             <point key="canvasLocation" x="-248.80000000000001" y="398.50074962518744"/>
         </view>

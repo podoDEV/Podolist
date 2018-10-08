@@ -23,7 +23,7 @@ class PodolistTableViewCell: UITableViewCell {
             roundView.clipsToBounds = true
             priorityView.layer.cornerRadius = priorityView.bounds.width/2
             priorityView.clipsToBounds = true
-            priorityView.backgroundColor = .red
+            priorityView.backgroundColor = item?.priority?.backgroundColor()
         }
     }
 }

@@ -5,9 +5,13 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
+protocol MainTopViewDelegate: class {
+    func didSelectDate(date: Date)
+}
+
 class MainTopView: BaseView {
 
-    weak var delegate: TopViewDelegate?
+    weak var delegate: MainTopViewDelegate?
 
     let backgroundView = UIImageView()
     let titleView = UIView()
@@ -16,17 +20,17 @@ class MainTopView: BaseView {
     let calendarView = PodoCalendarView()
     let gradient = CAGradientLayer()
 
-    var title: String? {
+    var date: Date? {
         didSet {
-            titleLabel.text = title
+            titleLabel.text = date?.monthName(.default)
         }
     }
 
-    var image: UIImage? {
-        didSet {
-            dropdownView.image = image
-        }
-    }
+//    var title: String? {
+//        didSet {
+//            titleLabel.text = title
+//        }
+//    }
 
     override func setup() {
         super.setup()
@@ -38,15 +42,19 @@ class MainTopView: BaseView {
         gradient.locations = [0, 1]
         backgroundView.layer.addSublayer(gradient)
         addSubview(backgroundView)
+
+        calendarView.delegate = self
         addSubview(calendarView)
         addSubview(titleView)
 
-        titleView.addSubview(titleLabel)
         titleLabel.textColor = .white
         titleLabel.font = UIFont.appFontB(size: 20)
+        titleView.addSubview(titleLabel)
 
+//        dropdownView.image = InterfaceImage.dropdown.normalImage
         titleView.addSubview(dropdownView)
-        dropdownView.image = InterfaceImage.dropdown.normalImage
+
+        date = calendarView.date
     }
 
     override func layoutSubviews() {
@@ -77,6 +85,11 @@ class MainTopView: BaseView {
     }
 }
 
-protocol TopViewDelegate: class {
-    func didHomeAction()
+extension MainTopView: PodoCalendarViewDelegate {
+    func calendarView(_ calendarView: PodoCalendarView, didSelectDate date: Date) {
+        self.date = date
+        if let delegate = delegate {
+            delegate.didSelectDate(date: date.date)
+        }
+    }
 }
