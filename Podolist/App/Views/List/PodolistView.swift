@@ -11,6 +11,7 @@ import PodoCalendar
 
 class PodolistView: BaseViewController {
     var presenter: PodolistPresenterProtocol?
+    var podo: Podo = Podo()
     var podolist: [ViewModelPodo] = [] {
         didSet {
             tableView.reloadData()
@@ -19,9 +20,16 @@ class PodolistView: BaseViewController {
     var normalFrame: CGRect {
         return CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Normal.height + safeAreaInset.bottom)
     }
+    var writeFrame: CGRect {
+        if let keyboardHeight = keyboardHeight {
+            return CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - keyboardHeight, width: view.frame.width, height: Style.Write.Normal.height)
+        }
+        return normalFrame
+    }
     var detailWriteFrame: CGRect {
         return CGRect(x: 0, y: view.frame.height - Style.Write.Detail.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Detail.height + safeAreaInset.bottom)
     }
+    var keyboardHeight: CGFloat?
 
     // MARK: - Views
     var topView: MainTopView!
@@ -91,19 +99,31 @@ class PodolistView: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.viewWillAppear()
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(notification:)), name: .UIKeyboardWillShow, object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        presenter?.viewWillDisappear()
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+    }
+
+    @objc func keyboardWillAppear(notification: NSNotification?) {
+        guard let keyboardFrame = notification?.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
+        keyboardHeight = keyboardFrame.cgRectValue.height
+        presenter?.didTappedWrite()
     }
 
     @objc func refresh(_ sender: Any) {
         presenter?.refresh()
         refreshControl.endRefreshing()
+    }
+
+    @IBAction func pressSetting(_ sender: Any) {
+        presenter?.showSetting()
     }
 }
 
@@ -118,20 +138,18 @@ extension PodolistView: PodolistViewProtocol {
         hideLoading()
     }
 
-    func updateUI(mode: Mode, keyboardHeight: CGFloat? = nil) {
+    func updateUI(mode: Mode) {
         switch mode {
         case .normal:
             hidingView.isHidden = true
             UIView.animate(withDuration: 0.2) {
                 self.writeView.frame = self.normalFrame
             }
-            view.endEditing(true)
         case .write:
             hidingView.isHidden = false
-            guard let keyboardHeight = keyboardHeight else {
-                return
+            UIView.animate(withDuration: 0.2) {
+                self.writeView.frame = self.writeFrame
             }
-            writeView.frame = CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - keyboardHeight, width: view.frame.width, height: Style.Write.Normal.height)
         case .detail:
             hidingView.isHidden = false
             UIView.animate(withDuration: 0.2) {
@@ -171,19 +189,27 @@ extension PodolistView: UITableViewDataSource, UITableViewDelegate {
 
 extension PodolistView: WriteViewDelegate {
 
+    func textFieldDidChange(text: String) {
+        podo.title = text
+    }
+
     func didTappedDetail() {
         presenter?.didTappedDetail()
+        view.endEditing(true)
     }
 
-    func didTappedSend() {
-
+    func didTappedCreate() {
+        presenter?.didTappedCreate()
+        view.endEditing(true)
     }
 
-    @IBAction func pressSetting(_ sender: Any) {
-        presenter?.showSetting()
+    // TODO: - 필요하지 않을수도 있음.
+    func didTappedExit() {
+
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         presenter?.writeWillFinish()
+        view.endEditing(true)
     }
 }

@@ -54,7 +54,6 @@ class DayView: BaseView {
     }
 
     func setupBackgroundView() {
-
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         backgroundView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         backgroundView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true

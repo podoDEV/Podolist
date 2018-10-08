@@ -19,6 +19,7 @@ enum InterfaceImage: String {
     case add = "ic_add"
     case create = "ic_create"
     case dropdown = "ic_dropdown"
+    case calendar = "bg_calendar"
 
     func image(_ style: Style) -> UIImage? {
         switch style {
@@ -37,7 +38,8 @@ enum InterfaceImage: String {
         switch self {
         case .add,
              .create,
-             .dropdown:
+             .dropdown,
+             .calendar:
             return pngNamed(self.rawValue)
         default:
             return pngNamed("\(self.rawValue)_normal")
@@ -48,7 +50,8 @@ enum InterfaceImage: String {
         switch self {
         case .add,
              .create,
-             .dropdown:
+             .dropdown,
+             .calendar:
             return pngNamed(self.rawValue)
         default:
             return pngNamed("\(self.rawValue)_selected")

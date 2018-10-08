@@ -7,16 +7,18 @@
 
 import SwiftyJSON
 
-class Podo: JSONable {
+struct Podo {
     var id: Int?
     var title: String?
-    var isCompleted: Bool?
-    var startedAt: Int?
-    var endedAt: Int?
+    var isCompleted = false
+    var startedAt = Int(Date().timeIntervalSince1970)
+    var endedAt = Int(Date().timeIntervalSince1970)
     var updatedAt: Int?
-    var priority: Priority?
+    var priority: Priority? = .medium
 
-    init(id: Int?, title: String?, isCompleted: Bool?, startedAt: Int?, endedAt: Int?, updatedAt: Int?, priority: Priority?) {
+    init() {}
+
+    init(id: Int, title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int, priority: Priority) {
         self.id = id
         self.title = title
         self.isCompleted = isCompleted
@@ -26,23 +28,27 @@ class Podo: JSONable {
         self.priority = priority
     }
 
-    required init(json: JSON) {
-        id = json["itemId"].intValue
-        title = json["description"].stringValue
-        isCompleted = json["isCompleted"].boolValue
-        startedAt = json["startedAt"].intValue
-        endedAt = json["endedAt"].intValue
-        updatedAt = json["updatedAt"].intValue
-        priority = Priority(rawValue: json["priority"].stringValue)
-    }
+//    convenience init() {
+//        self.init(id: <#T##Int?#>, title: <#T##String?#>, isCompleted: <#T##Bool?#>, startedAt: <#T##Int?#>, endedAt: <#T##Int?#>, updatedAt: <#T##Int?#>, priority: <#T##Priority?#>)
+//    }
 
-    convenience init(responsePodo: ResponsePodo) {
-        self.init(id: responsePodo.id,
-                  title: responsePodo.title,
-                  isCompleted: responsePodo.isCompleted,
-                  startedAt: responsePodo.startedAt,
-                  endedAt: responsePodo.endedAt,
-                  updatedAt: responsePodo.updatedAt,
-                  priority: responsePodo.priority)
+//    init(json: JSON) {
+//        id = json["itemId"].intValue
+//        title = json["description"].stringValue
+//        isCompleted = json["isCompleted"].boolValue
+//        startedAt = json["startedAt"].intValue
+//        endedAt = json["endedAt"].intValue
+//        updatedAt = json["updatedAt"].intValue
+//        priority = Priority(rawValue: json["priority"].stringValue)
+//    }
+
+    init(responsePodo: ResponsePodo) {
+        self.init(id: responsePodo.id!,
+                  title: responsePodo.title!,
+                  isCompleted: responsePodo.isCompleted!,
+                  startedAt: responsePodo.startedAt!,
+                  endedAt: responsePodo.endedAt!,
+                  updatedAt: responsePodo.updatedAt!,
+                  priority: responsePodo.priority!)
     }
 }
