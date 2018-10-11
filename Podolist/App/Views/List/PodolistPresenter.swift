@@ -47,11 +47,21 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
         view?.updateUI(mode: mode)
     }
 
-    func didTappedCreate() {
+    func didTappedCreate(podo: Podo) {
+        interactor?.createPodo(podo: podo)?
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onCompleted: {
+                    self.refresh()
+                }, onError: { error in
+
+                })
+            .disposed(by: disposeBag)
         // item create
         // item clear
-        self.mode = .normal
-        view?.updateUI(mode: mode)
+//        interactor.
+//        self.mode = .normal
+//        view?.updateUI(mode: mode)
     }
 
     func writeWillFinish() {

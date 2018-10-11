@@ -9,26 +9,24 @@ import Alamofire
 
 final class ApiSessionService: ApiServiceProtocol {
     static let shared = ApiSessionService()
-    var podoService: SessionManager?
+    var service: SessionManager?
     private init() {}
 
     func api() -> SessionManager {
-        if let podoService = podoService {
-            return podoService
-        }
-        podoService = SessionManager()
+        PodoKeychain.shared.saveToken(token: "temp")
+        service = SessionManager()
         guard PodoKeychain.shared.hasToken() else {
-            return podoService!
+            return service!
         }
 
         PodoKeychain.shared.findToken(
             onSuccess: { accessToken in
                 if let accessToken = accessToken {
-                    self.podoService?.adapter = AccessTokenAdapter(accessToken: accessToken)
+                    self.service!.adapter = AccessTokenAdapter(accessToken: accessToken)
                 }
             }, onError: { error in
 
             })
-        return podoService!
+        return service!
     }
 }

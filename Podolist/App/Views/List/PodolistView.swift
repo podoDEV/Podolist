@@ -193,13 +193,18 @@ extension PodolistView: WriteViewDelegate {
         podo.title = text
     }
 
+    func dateDidChange(date: Date) {
+        podo.startedAt = Int(date.timeIntervalSince1970)
+        podo.endedAt = Int(date.timeIntervalSince1970)
+    }
+
     func didTappedDetail() {
         presenter?.didTappedDetail()
         view.endEditing(true)
     }
 
     func didTappedCreate() {
-        presenter?.didTappedCreate()
+        presenter?.didTappedCreate(podo: self.podo)
         view.endEditing(true)
     }
 

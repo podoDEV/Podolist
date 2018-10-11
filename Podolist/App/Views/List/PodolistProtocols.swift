@@ -37,7 +37,7 @@ protocol PodolistPresenterProtocol: class {
 
     func didTappedWrite()
     func didTappedDetail()
-    func didTappedCreate()
+    func didTappedCreate(podo: Podo)
     func writeWillFinish()
 }
 
@@ -46,6 +46,7 @@ protocol PodolistInteractorProtocol: class {
 
     // Presenter -> Interactor
     func fetchPodolist() -> Observable<[ViewModelPodo]>?
+    func createPodo(podo: Podo) -> Completable?
 }
 
 protocol PodolistWireFrameProtocol: class {

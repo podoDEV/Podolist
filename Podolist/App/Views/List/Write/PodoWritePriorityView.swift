@@ -9,6 +9,8 @@ import UIKit
 
 class PodoWritePriorityView: BaseView {
 
+    weak var delegate: WriteViewDelegate?
+
     var priorities: [Priority] = [.urgent, .high, .medium, .low]
     var priorityButtons = [PriorityButton]()
 

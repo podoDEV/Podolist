@@ -9,6 +9,7 @@ import UIKit
 
 protocol WriteViewDelegate: class {
     func textFieldDidChange(text: String)
+    func dateDidChange(date: Date)
     func didTappedDetail()
     func didTappedCreate()
 }
@@ -22,6 +23,7 @@ class PodoWriteView: BaseView {
     weak var delegate: WriteViewDelegate? {
         didSet {
             titleView.delegate = delegate
+            priorityView.delegate = delegate
         }
     }
 

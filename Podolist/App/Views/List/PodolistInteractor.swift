@@ -13,8 +13,12 @@ class PodolistInteractor: PodolistInteractorProtocol {
     func fetchPodolist() -> Observable<[ViewModelPodo]>? {
         return dataSource?.findPodolist()!
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .map({ podolist -> [ViewModelPodo] in
+            .map { podolist -> [ViewModelPodo] in
                 return podolist.map { ViewModelPodo(podo: $0) }
-            })
+            }
+    }
+
+    func createPodo(podo: Podo) -> Completable? {
+        return dataSource?.addPodo(podo)
     }
 }

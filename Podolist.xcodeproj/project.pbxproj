@@ -711,7 +711,7 @@
 		2D0F20A921441A4B00B8BDF2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */,
+				2D89895F216FB28F003D97EC /* Adapter */,
 				2DE90C0421556F4700BF8588 /* ApiSessionService.swift */,
 				2D41BC85214E086F00B79BF6 /* AccountService.swift */,
 				2D0F20AC21441A8700B8BDF2 /* PodoService.swift */,
@@ -838,6 +838,14 @@
 				2D41BC6B214D69E100B79BF6 /* AboutView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2D89895F216FB28F003D97EC /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 		2D954898215D1E56006C51E1 /* AppStore */ = {

@@ -16,16 +16,6 @@ class ResponsePodo: JSONable {
     var updatedAt: Int?
     var priority: Priority?
 
-    init(id: Int, title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int, priority: Priority) {
-        self.id = id
-        self.title = title
-        self.isCompleted = isCompleted
-        self.startedAt = startedAt
-        self.endedAt = endedAt
-        self.updatedAt = updatedAt
-        self.priority = priority
-    }
-
     required init(json: JSON) {
         id = json["id"].intValue
         title = json["title"].stringValue
