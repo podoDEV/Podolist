@@ -20,10 +20,10 @@ class PodoRemoteRepository: PodoRemoteDataSource {
     func getPodo(podoId: Int) -> Observable<Podo>? {
         return PodoService.shared.getPodo(podoId: podoId)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .map({ Podo(responsePodo: $0) })
+            .map { Podo(responsePodo: $0) }
     }
 
-    func postPodo(_ podo: Podo) -> Completable? {
+    func postPodo(_ podo: Podo) -> Observable<Int>? {
         return PodoService.shared.postPodo(requestPodo: RequestPodo(podo: podo))
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
     }

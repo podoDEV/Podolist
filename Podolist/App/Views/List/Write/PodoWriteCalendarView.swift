@@ -26,6 +26,10 @@ class PodoWriteCalendarView: BaseView {
             calendarView.clipsToBounds = true
         }
     }
+
+    func clear() {
+//        calendarView.
+    }
 }
 
 extension PodoWriteCalendarView: PodoCalendarDelegate {

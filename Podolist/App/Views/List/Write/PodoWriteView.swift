@@ -27,8 +27,6 @@ class PodoWriteView: BaseView {
         }
     }
 
-    var mode: Mode?
-
     override func setup() {
         super.setup()
         titleView.backgroundColor = .white
@@ -39,36 +37,25 @@ class PodoWriteView: BaseView {
         addSubview(calendarView)
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        updateUI(mode: mode)
+    func updateUI() {
+        titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
+        priorityView.isHidden = true
+        calendarView.isHidden = true
     }
 
-    func updateUI(mode: Mode?) {
-        guard let mode = mode else {
-            return
-        }
-
-        switch mode {
-        case .normal:
-            titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
-            priorityView.isHidden = true
-            calendarView.isHidden = true
-        case .detail:
-            titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
-            titleView.titleField.resignFirstResponder()
-            priorityView.frame = CGRect(x: 8, y: titleView.frame.maxY + 8, width: frame.width - 16, height: 50)
-            priorityView.backgroundColor = .clear
-            priorityView.isHidden = false
-            calendarView.frame = CGRect(x: 8, y: priorityView.frame.maxY + 8, width: frame.width - 16, height: 200)
-            calendarView.backgroundColor = .clear
-            calendarView.isHidden = false
-        default:
-            break
-        }
+    func updateUIToDetail() {
+        titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
+        titleView.titleField.resignFirstResponder()
+        priorityView.frame = CGRect(x: 8, y: titleView.frame.maxY + 8, width: frame.width - 16, height: 50)
+        priorityView.backgroundColor = .clear
+        priorityView.isHidden = false
+        calendarView.frame = CGRect(x: 8, y: priorityView.frame.maxY + 8, width: frame.width - 16, height: 200)
+        calendarView.backgroundColor = .clear
+        calendarView.isHidden = false
     }
 
-    func set(podo: Podo) {
-//        podo
+    func clear() {
+        titleView.clear()
+        priorityView.clear()
     }
 }

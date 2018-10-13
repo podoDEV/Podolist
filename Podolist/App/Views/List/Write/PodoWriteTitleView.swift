@@ -47,7 +47,7 @@ class PodoWriteTitleView: BaseView {
         }
     }
 
-    func reset() {
+    func clear() {
         // detailButton init
         titleField.text = ""
         canCreate = false

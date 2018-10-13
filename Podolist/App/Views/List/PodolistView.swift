@@ -7,7 +7,6 @@
 
 import UIKit
 import RxSwift
-import PodoCalendar
 
 class PodolistView: BaseViewController {
     var presenter: PodolistPresenterProtocol?
@@ -114,7 +113,7 @@ class PodolistView: BaseViewController {
             return
         }
         keyboardHeight = keyboardFrame.cgRectValue.height
-        presenter?.didTappedWrite()
+        updateUIToWrite()
     }
 
     @objc func refresh(_ sender: Any) {
@@ -134,29 +133,38 @@ extension PodolistView: PodolistViewProtocol {
         hideLoading()
     }
 
-    func showError() {
-        hideLoading()
+    func updateUI() {
+        hidingView.isHidden = true
+        UIView.animate(withDuration: 0.2) {
+            self.writeView.frame = self.normalFrame
+        }
+        writeView.updateUI()
     }
 
-    func updateUI(mode: Mode) {
-        switch mode {
-        case .normal:
-            hidingView.isHidden = true
-            UIView.animate(withDuration: 0.2) {
-                self.writeView.frame = self.normalFrame
-            }
-        case .write:
-            hidingView.isHidden = false
-            UIView.animate(withDuration: 0.2) {
-                self.writeView.frame = self.writeFrame
-            }
-        case .detail:
-            hidingView.isHidden = false
-            UIView.animate(withDuration: 0.2) {
-                self.writeView.frame = self.detailWriteFrame
-            }
+    func updateUIToWrite() {
+        hidingView.isHidden = false
+        UIView.animate(withDuration: 0.2) {
+            self.writeView.frame = self.writeFrame
         }
-        writeView.mode = mode
+    }
+
+    func updateUIToDetail() {
+        hidingView.isHidden = false
+        UIView.animate(withDuration: 0.2) {
+            self.writeView.frame = self.detailWriteFrame
+        }
+        writeView.updateUIToDetail()
+    }
+
+    func resetUI() {
+        podo = Podo()
+        writeView.clear()
+        view.endEditing(true)
+        scrollToBottom()
+    }
+
+    func showError() {
+        hideLoading()
     }
 }
 
@@ -185,6 +193,11 @@ extension PodolistView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
+
+    func scrollToBottom() {
+        let indexPath = IndexPath(row: podolist.count - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
 }
 
 extension PodolistView: WriteViewDelegate {
@@ -199,13 +212,12 @@ extension PodolistView: WriteViewDelegate {
     }
 
     func didTappedDetail() {
-        presenter?.didTappedDetail()
+        updateUIToDetail()
         view.endEditing(true)
     }
 
     func didTappedCreate() {
         presenter?.didTappedCreate(podo: self.podo)
-        view.endEditing(true)
     }
 
     // TODO: - 필요하지 않을수도 있음.
@@ -214,7 +226,7 @@ extension PodolistView: WriteViewDelegate {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        presenter?.writeWillFinish()
+        updateUI()
         view.endEditing(true)
     }
 }

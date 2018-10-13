@@ -13,13 +13,13 @@ final class ApiSessionService: ApiServiceProtocol {
     private init() {}
 
     func api() -> SessionManager {
-        PodoKeychain.shared.saveToken(token: "temp")
+        KeychainService.shared.saveToken(token: "temp")
         service = SessionManager()
-        guard PodoKeychain.shared.hasToken() else {
+        guard KeychainService.shared.hasToken() else {
             return service!
         }
 
-        PodoKeychain.shared.findToken(
+        KeychainService.shared.findToken(
             onSuccess: { accessToken in
                 if let accessToken = accessToken {
                     self.service!.adapter = AccessTokenAdapter(accessToken: accessToken)

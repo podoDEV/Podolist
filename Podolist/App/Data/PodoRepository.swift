@@ -20,7 +20,7 @@ class PodoRepository: PodoDataSource {
         return remoteDataSource?.getPodo(podoId: podoId)
     }
 
-    func addPodo(_ podo: Podo) -> Completable? {
+    func addPodo(_ podo: Podo) -> Observable<Int>? {
         return remoteDataSource?.postPodo(podo)
     }
 

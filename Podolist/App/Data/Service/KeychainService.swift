@@ -1,5 +1,5 @@
 //
-//  PodoKeychain.swift
+//  KeychainService.swift
 //  Podolist
 //
 //  Copyright © 2018년 podo. All rights reserved.
@@ -7,9 +7,9 @@
 
 import KeychainAccess
 
-final class PodoKeychain {
+final class KeychainService {
 
-    static let shared = PodoKeychain()
+    static let shared = KeychainService()
     let keychain: Keychain
 
     private init() {

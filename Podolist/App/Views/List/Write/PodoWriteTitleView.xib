@@ -43,7 +43,7 @@
                         <action selector="createAction:" destination="nYz-os-Cjh" eventType="touchUpInside" id="eHa-dg-Mg8"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g., Buy gift tomorrow at 6pm" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-xs-8XA">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g., Buy gift tomorrow at 6pm" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-xs-8XA">
                     <rect key="frame" x="37" y="0.0" width="330" height="32"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="12"/>

@@ -171,7 +171,7 @@
 		2D9548CB215D1E74006C51E1 /* AccountRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC7D214E07FF00B79BF6 /* AccountRemoteRepository.swift */; };
 		2D9548CC215D1E74006C51E1 /* SettingTableViewLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6D214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift */; };
 		2D9548CD215D1E74006C51E1 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20852143D1DE00B8BDF2 /* UIColor+Additions.swift */; };
-		2D9548CE215D1E74006C51E1 /* PodoKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* PodoKeychain.swift */; };
+		2D9548CE215D1E74006C51E1 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* KeychainService.swift */; };
 		2D9548CF215D1E74006C51E1 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC79214E079600B79BF6 /* AccountDataSource.swift */; };
 		2D9548D0215D1E74006C51E1 /* ViewModelSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC5D214D1B4E00B79BF6 /* ViewModelSettingRow.swift */; };
 		2D9548D1215D1E74006C51E1 /* RequestPodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A5214419C800B8BDF2 /* RequestPodo.swift */; };
@@ -218,7 +218,7 @@
 		2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0021552B6600BF8588 /* EntryViewType.swift */; };
 		2DE90C032155656A00BF8588 /* AccessTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */; };
 		2DE90C0521556F4700BF8588 /* ApiSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0421556F4700BF8588 /* ApiSessionService.swift */; };
-		2DE90C072155730200BF8588 /* PodoKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* PodoKeychain.swift */; };
+		2DE90C072155730200BF8588 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* KeychainService.swift */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		580060400A425C25B8B99205 /* Pods_Podolist_DEV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CF32177F2DB6D041ECDA4D /* Pods_Podolist_DEV.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
@@ -377,7 +377,7 @@
 		2DE90C0021552B6600BF8588 /* EntryViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewType.swift; sourceTree = "<group>"; };
 		2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAdapter.swift; sourceTree = "<group>"; };
 		2DE90C0421556F4700BF8588 /* ApiSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSessionService.swift; sourceTree = "<group>"; };
-		2DE90C062155730200BF8588 /* PodoKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoKeychain.swift; sourceTree = "<group>"; };
+		2DE90C062155730200BF8588 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B65A781FD7AD4F3D24E450C /* Pods-PodolistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3F9E331C39A1B2DC616E61A8 /* Pods-Podolist.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug(dev).xcconfig"; sourceTree = "<group>"; };
@@ -658,9 +658,10 @@
 		2D0F20902144155200B8BDF2 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20BB214432D700B8BDF2 /* Cells */,
+				2D434B42217214B8008E1A43 /* Top */,
 				2DE9031E2151563000AAAE4C /* Write */,
 				2D31DEE4216A680600977507 /* Calendar */,
+				2D0F20BB214432D700B8BDF2 /* Cells */,
 				2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */,
 				2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */,
 				2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */,
@@ -715,7 +716,7 @@
 				2DE90C0421556F4700BF8588 /* ApiSessionService.swift */,
 				2D41BC85214E086F00B79BF6 /* AccountService.swift */,
 				2D0F20AC21441A8700B8BDF2 /* PodoService.swift */,
-				2DE90C062155730200BF8588 /* PodoKeychain.swift */,
+				2DE90C062155730200BF8588 /* KeychainService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -793,7 +794,6 @@
 			isa = PBXGroup;
 			children = (
 				2DD7063B214FDF2100C44E16 /* PriorityButton.swift */,
-				2D31DEA62169DF2E00977507 /* MainTopView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -801,10 +801,10 @@
 		2D31DEE4216A680600977507 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				2D31DEE5216A687400977507 /* DayView.swift */,
-				2D31DEE8216A68B600977507 /* WeekView.swift */,
-				2D31DEEB216A68DE00977507 /* CalendarView.swift */,
 				2D31DEF2216A736900977507 /* PodoCalendarView.swift */,
+				2D31DEEB216A68DE00977507 /* CalendarView.swift */,
+				2D31DEE8216A68B600977507 /* WeekView.swift */,
+				2D31DEE5216A687400977507 /* DayView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -838,6 +838,14 @@
 				2D41BC6B214D69E100B79BF6 /* AboutView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2D434B42217214B8008E1A43 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				2D31DEA62169DF2E00977507 /* MainTopView.swift */,
+			);
+			path = Top;
 			sourceTree = "<group>";
 		};
 		2D89895F216FB28F003D97EC /* Adapter */ = {
@@ -1446,7 +1454,7 @@
 				2D41BC7E214E07FF00B79BF6 /* AccountRemoteRepository.swift in Sources */,
 				2D41BC6E214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift in Sources */,
 				2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */,
-				2DE90C072155730200BF8588 /* PodoKeychain.swift in Sources */,
+				2DE90C072155730200BF8588 /* KeychainService.swift in Sources */,
 				2D41BC7A214E079600B79BF6 /* AccountDataSource.swift in Sources */,
 				2D41BC5E214D1B4E00B79BF6 /* ViewModelSettingRow.swift in Sources */,
 				2D0F20A6214419C800B8BDF2 /* RequestPodo.swift in Sources */,
@@ -1556,7 +1564,7 @@
 				2D9548CB215D1E74006C51E1 /* AccountRemoteRepository.swift in Sources */,
 				2D9548CC215D1E74006C51E1 /* SettingTableViewLogoutCell.swift in Sources */,
 				2D9548CD215D1E74006C51E1 /* UIColor+Additions.swift in Sources */,
-				2D9548CE215D1E74006C51E1 /* PodoKeychain.swift in Sources */,
+				2D9548CE215D1E74006C51E1 /* KeychainService.swift in Sources */,
 				2D9548CF215D1E74006C51E1 /* AccountDataSource.swift in Sources */,
 				2D9548D0215D1E74006C51E1 /* ViewModelSettingRow.swift in Sources */,
 				2D9548D1215D1E74006C51E1 /* RequestPodo.swift in Sources */,

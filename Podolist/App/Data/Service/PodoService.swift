@@ -17,11 +17,14 @@ protocol PodoServiceProtocol: ApiServiceProtocol {
 
 class PodoService: PodoServiceProtocol {
     static let shared = PodoService()
-    private init() { }
+    var sessionService: ApiSessionService
+    private init() {
+        sessionService = ApiSessionService.shared
+    }
 
     func getAllPodolist() -> Observable<[ResponsePodo]> {
         return Observable<[ResponsePodo]>.create { observer in
-            let request = ApiSessionService.shared.api().request(Router.Podolist.get(params: ""))
+            let request = self.sessionService.api().request(Router.Podolist.get(params: ""))
                 .validate(statusCode: 200..<300)
                 .responseJSON { response in
                     switch response.result {
@@ -46,7 +49,7 @@ class PodoService: PodoServiceProtocol {
 
     func getPodo(podoId: Int) -> Observable<ResponsePodo> {
         return Observable<ResponsePodo>.create { observer in
-            let request = Alamofire.request(Router.Podolist.get(params: String(podoId)))
+            let request = self.sessionService.api().request(Router.Podolist.get(params: String(podoId)))
                 .validate(statusCode: 200..<300)
                 .responseJSON { response in
                     switch response.result {
@@ -65,16 +68,17 @@ class PodoService: PodoServiceProtocol {
         }
     }
 
-    func postPodo(requestPodo: RequestPodo) -> Completable {
-        return Completable.create { completable in
-            let request = ApiSessionService.shared.api().request(Router.Podolist.create(parameters: requestPodo.dict))
+    func postPodo(requestPodo: RequestPodo) -> Observable<Int> {
+        return Observable<Int>.create { observer in
+            let request = self.sessionService.api().request(Router.Podolist.create(parameters: requestPodo.dict))
                 .validate(statusCode: 200..<300)
-                .responseData { response in
+                .responseJSON { response in
                     switch response.result {
-                    case .success:
-                        completable(.completed)
+                    case .success(let value):
+                        let id = value as! Int
+                        observer.onNext(id)
                     case .failure(let error):
-                        completable(.error(error))
+                        observer.onError(error)
                     }
                 }
             request.resume()

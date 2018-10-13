@@ -14,7 +14,7 @@ protocol PodoDataSource: class {
     // Interactor -> DataSource
     func findPodolist() -> Observable<[Podo]>?
     func findPodo(podoId: Int) -> Observable<Podo>?
-    func addPodo(_ podo: Podo) -> Completable?
+    func addPodo(_ podo: Podo) -> Observable<Int>?
     func savePodo(id: Int, title: String)
     func removePodo()
 }
@@ -31,7 +31,7 @@ protocol PodoRemoteDataSource: class {
     // DataSource -> RemoteDataSource
     func getPodolist() -> Observable<[Podo]>?
     func getPodo(podoId: Int) -> Observable<Podo>?
-    func postPodo(_ podo: Podo) -> Completable?
+    func postPodo(_ podo: Podo) -> Observable<Int>?
     func putPodo()
     func deletePodo()
 }

@@ -15,10 +15,10 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
     let disposeBag = DisposeBag()
 
     var podolist: [ViewModelPodo] = []
-    var mode: Mode = .normal
 
     func refresh() {
-        interactor?.fetchPodolist()?
+        view?.updateUI()
+        interactor?.fetchPodolist()!
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { podolist in
@@ -26,46 +26,30 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
                     self.view?.showPodolist(with: podolist)
                 }, onError: { error in
                     print(error)
-                }, onCompleted: {
-
-                }, onDisposed: nil)
+                })
             .disposed(by: disposeBag)
-        view?.updateUI(mode: mode)
-    }
-
-    func showSetting() {
-        wireFrame?.goToSettingScreen(from: self.view!)
-    }
-
-    func didTappedWrite() {
-        self.mode = .write
-        view?.updateUI(mode: mode)
-    }
-
-    func didTappedDetail() {
-        self.mode = .detail
-        view?.updateUI(mode: mode)
     }
 
     func didTappedCreate(podo: Podo) {
-        interactor?.createPodo(podo: podo)?
+        interactor?.createPodo(podo: podo)!
+            .flatMap { (self.interactor?.fetchPodo(podoId: $0))! }
             .observeOn(MainScheduler.instance)
             .subscribe(
-                onCompleted: {
-                    self.refresh()
+                onNext: { podo in
+                    self.podolist.append(podo)
+                    self.view?.showPodolist(with: self.podolist)
+                    self.view?.resetUI()
+                    self.view?.updateUI()
                 }, onError: { error in
-
+                    print(error)
                 })
             .disposed(by: disposeBag)
-        // item create
-        // item clear
-//        interactor.
-//        self.mode = .normal
-//        view?.updateUI(mode: mode)
     }
+}
 
-    func writeWillFinish() {
-        self.mode = .normal
-        view?.updateUI(mode: mode)
+extension PodolistPresenter {
+
+    func showSetting() {
+        wireFrame?.goToSettingScreen(from: view!)
     }
 }

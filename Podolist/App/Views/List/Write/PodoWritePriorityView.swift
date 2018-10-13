@@ -50,4 +50,10 @@ class PodoWritePriorityView: BaseView {
             x = button.frame.maxX + 4
         }
     }
+
+    func clear() {
+        // detailButton init
+//        titleField.text = ""
+//        canCreate = false
+    }
 }
