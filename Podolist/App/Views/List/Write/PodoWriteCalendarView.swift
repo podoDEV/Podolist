@@ -36,7 +36,7 @@ extension PodoWriteCalendarView: PodoCalendarDelegate {
 
     func calendarView(_ calendarView: PodoCalendar, didSelectDate date: Date) {
         if let delegate = delegate {
-            delegate.dateDidChange(date: date)
+            delegate.didChangedDate(date: date)
         }
     }
 

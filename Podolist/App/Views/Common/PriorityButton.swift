@@ -7,13 +7,9 @@
 
 import UIKit
 
-protocol PriorityButtonDelegate: class {
-    func didPressPriorityButton()
-}
-
 class PriorityButton: UIButton {
 
-    weak var delegate: PriorityButtonDelegate?
+//    weak var delegate: PriorityButtonDelegate?
     var priority: Priority = .medium
     var isSelectedButton: Bool = false {
         didSet {
@@ -23,18 +19,16 @@ class PriorityButton: UIButton {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupUI()
-        setupAction()
+        setup()
     }
 
     init(priority: Priority) {
         super.init(frame: .zero)
         self.priority = priority
-        setupUI()
-        setupAction()
+        setup()
     }
 
-    func setupUI() {
+    func setup() {
         backgroundColor = .backgroundColor2
         setTitle(priority.toString(), for: .normal)
         setTitleColor(.white, for: .normal)
@@ -53,13 +47,5 @@ class PriorityButton: UIButton {
             return
         }
         backgroundColor = priority.backgroundColor()
-    }
-
-    func setupAction() {
-        self.addTarget(self, action: #selector(handlePress(sender:)), for: .touchUpInside)
-    }
-
-    @objc func handlePress(sender: UIButton) {
-        delegate?.didPressPriorityButton()
     }
 }

@@ -78,6 +78,8 @@
 		2D31DEED216A68DE00977507 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEEB216A68DE00977507 /* CalendarView.swift */; };
 		2D31DEF3216A736900977507 /* PodoCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEF2216A736900977507 /* PodoCalendarView.swift */; };
 		2D31DEF4216A736900977507 /* PodoCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEF2216A736900977507 /* PodoCalendarView.swift */; };
+		2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3404FC2173301300EC3862 /* PriorityView.swift */; };
+		2D3404FE2173301300EC3862 /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3404FC2173301300EC3862 /* PriorityView.swift */; };
 		2D3A19CB2152B45B00C9B68B /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3A19CA2152B45B00C9B68B /* Mode.swift */; };
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC55214D173200B79BF6 /* SettingSectionType.swift */; };
@@ -319,6 +321,7 @@
 		2D31DEE8216A68B600977507 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		2D31DEEB216A68DE00977507 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		2D31DEF2216A736900977507 /* PodoCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoCalendarView.swift; sourceTree = "<group>"; };
+		2D3404FC2173301300EC3862 /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
 		2D3A19CA2152B45B00C9B68B /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2D41BC55214D173200B79BF6 /* SettingSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionType.swift; sourceTree = "<group>"; };
@@ -658,7 +661,6 @@
 		2D0F20902144155200B8BDF2 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				2D434B42217214B8008E1A43 /* Top */,
 				2DE9031E2151563000AAAE4C /* Write */,
 				2D31DEE4216A680600977507 /* Calendar */,
 				2D0F20BB214432D700B8BDF2 /* Cells */,
@@ -793,6 +795,8 @@
 		2D31DEA52169DCEA00977507 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2D31DEA62169DF2E00977507 /* MainTopView.swift */,
+				2D3404FC2173301300EC3862 /* PriorityView.swift */,
 				2DD7063B214FDF2100C44E16 /* PriorityButton.swift */,
 			);
 			path = Common;
@@ -838,14 +842,6 @@
 				2D41BC6B214D69E100B79BF6 /* AboutView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		2D434B42217214B8008E1A43 /* Top */ = {
-			isa = PBXGroup;
-			children = (
-				2D31DEA62169DF2E00977507 /* MainTopView.swift */,
-			);
-			path = Top;
 			sourceTree = "<group>";
 		};
 		2D89895F216FB28F003D97EC /* Adapter */ = {
@@ -1422,6 +1418,7 @@
 				2D5599A0216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
 				2D0F209A2144179000B8BDF2 /* PodolistProtocols.swift in Sources */,
 				2D41BC5A214D18F600B79BF6 /* ViewModelSettingAccountItem.swift in Sources */,
+				2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */,
 				2D0F208B2143D1DE00B8BDF2 /* Router.swift in Sources */,
 				2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */,
@@ -1532,6 +1529,7 @@
 				2D5599A1216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
 				2D9548B2215D1E74006C51E1 /* PodolistProtocols.swift in Sources */,
 				2D9548B3215D1E74006C51E1 /* ViewModelSettingAccountItem.swift in Sources */,
+				2D3404FE2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D9548B4215D1E74006C51E1 /* PodolistPresenter.swift in Sources */,
 				2D9548B5215D1E74006C51E1 /* Router.swift in Sources */,
 				2D9548B6215D1E74006C51E1 /* PodolistWireFrame.swift in Sources */,

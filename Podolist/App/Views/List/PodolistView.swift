@@ -206,7 +206,11 @@ extension PodolistView: WriteViewDelegate {
         podo.title = text
     }
 
-    func dateDidChange(date: Date) {
+    func didChangedPriority(priority: Priority) {
+        podo.priority = priority
+    }
+
+    func didChangedDate(date: Date) {
         podo.startedAt = Int(date.timeIntervalSince1970)
         podo.endedAt = Int(date.timeIntervalSince1970)
     }

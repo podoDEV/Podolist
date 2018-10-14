@@ -9,7 +9,8 @@ import UIKit
 
 protocol WriteViewDelegate: class {
     func textFieldDidChange(text: String)
-    func dateDidChange(date: Date)
+    func didChangedPriority(priority: Priority)
+    func didChangedDate(date: Date)
     func didTappedDetail()
     func didTappedCreate()
 }
@@ -24,6 +25,7 @@ class PodoWriteView: BaseView {
         didSet {
             titleView.delegate = delegate
             priorityView.delegate = delegate
+            calendarView.delegate = delegate
         }
     }
 
