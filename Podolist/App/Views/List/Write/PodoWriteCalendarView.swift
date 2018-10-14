@@ -10,7 +10,7 @@ import PodoCalendar
 
 class PodoWriteCalendarView: BaseView {
 
-//    weak var delegate: PodoCalendarViewDelegate?
+    weak var delegate: WriteViewDelegate?
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -21,10 +21,26 @@ class PodoWriteCalendarView: BaseView {
     }
     @IBOutlet weak var calendarView: PodoCalendar! {
         didSet {
+            calendarView.delegate = self
             calendarView.layer.cornerRadius = 17.25
             calendarView.clipsToBounds = true
         }
     }
+
+    func clear() {
+//        calendarView.
+    }
 }
 
-//extension PodoWriteCalendarView:
+extension PodoWriteCalendarView: PodoCalendarDelegate {
+
+    func calendarView(_ calendarView: PodoCalendar, didSelectDate date: Date) {
+        if let delegate = delegate {
+            delegate.didChangedDate(date: date)
+        }
+    }
+
+    func calendarView(_ calendarView: PodoCalendar, startedAt startDate: Date, finishedAt finishDate: Date) {
+
+    }
+}

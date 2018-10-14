@@ -20,8 +20,8 @@ class PodoRepository: PodoDataSource {
         return remoteDataSource?.getPodo(podoId: podoId)
     }
 
-    func addPodo(_ podo: Podo) {
-        remoteDataSource?.postPodo(podo)
+    func addPodo(_ podo: Podo) -> Observable<Int>? {
+        return remoteDataSource?.postPodo(podo)
     }
 
     func savePodo(id: Int, title: String) {

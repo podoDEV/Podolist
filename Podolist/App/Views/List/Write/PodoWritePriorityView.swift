@@ -9,8 +9,7 @@ import UIKit
 
 class PodoWritePriorityView: BaseView {
 
-    var priorities: [Priority] = [.urgent, .high, .medium, .low]
-    var priorityButtons = [PriorityButton]()
+    weak var delegate: WriteViewDelegate?
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -20,32 +19,25 @@ class PodoWritePriorityView: BaseView {
         }
     }
 
-    @IBOutlet weak var priorityView: UIView! {
+    @IBOutlet weak var priorityView: PriorityView! {
         didSet {
             priorityView.backgroundColor = .clear
+            priorityView.delegate = self
         }
     }
 
-    override func setup() {
-        super.setup()
-        for priority in priorities {
-            let button = PriorityButton(priority: priority)
-            if button.priority == .medium {
-                button.isSelectedButton = true
-            } else {
-                button.isSelectedButton = false
-            }
-            addSubview(button)
-            priorityButtons.append(button)
-        }
+    func clear() {
+        // detailButton init
+//        titleField.text = ""
+//        canCreate = false
     }
+}
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        var x: CGFloat = 0
-        for button in priorityButtons {
-            button.frame = CGRect(x: x, y: titleLabel.frame.maxY + 4, width: 64, height: bounds.size.height - titleLabel.frame.height - 4)
-            x = button.frame.maxX + 4
+extension PodoWritePriorityView: PriorityViewDelegate {
+
+    func didChangedPriority(priority: Priority) {
+        if let delegate = delegate {
+            delegate.didChangedPriority(priority: priority)
         }
     }
 }

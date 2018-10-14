@@ -13,7 +13,10 @@ protocol PodolistViewProtocol: class {
 
     // Presenter -> View 
     func showPodolist(with podolist: [ViewModelPodo])
-    func updateUI(mode: Mode, keyboardHeight: CGFloat?)
+    func updateUI()
+    func updateUIToWrite()
+    func updateUIToDetail()
+    func resetUI()
 }
 
 extension PodolistViewProtocol where Self: UIViewController {
@@ -33,13 +36,8 @@ protocol PodolistPresenterProtocol: class {
 
     // View -> Presenter
     func refresh()
-    func viewWillAppear()
-    func viewWillDisappear()
+    func didTappedCreate(podo: Podo)
     func showSetting()
-    func writeWillFinish()
-    func modeWillChanged()
-
-    func didTappedDetail()
 }
 
 protocol PodolistInteractorProtocol: class {
@@ -47,6 +45,8 @@ protocol PodolistInteractorProtocol: class {
 
     // Presenter -> Interactor
     func fetchPodolist() -> Observable<[ViewModelPodo]>?
+    func fetchPodo(podoId: Int) -> Observable<ViewModelPodo>?
+    func createPodo(podo: Podo) -> Observable<Int>?
 }
 
 protocol PodolistWireFrameProtocol: class {

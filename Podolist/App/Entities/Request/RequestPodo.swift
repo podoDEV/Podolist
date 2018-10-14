@@ -5,19 +5,37 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-import SwiftyJSON
+struct RequestPodo {
+    let title: String
+    let isCompleted: Bool
+    let startedAt: Int
+    let endedAt: Int
+    let updatedAt: Int?
+    let priority: Priority
 
-class RequestPodo: JSONable {
-    var id: Int?
-    var title: String?
-
-    init(id: Int, title: String) {
-        self.id = id
+    init(title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int?, priority: Priority) {
         self.title = title
+        self.isCompleted = isCompleted
+        self.startedAt = startedAt
+        self.endedAt = endedAt
+        self.updatedAt = updatedAt
+        self.priority = priority
     }
 
-    required init(json: JSON) {
-        id = json["id"].intValue
-        title = json["title"].stringValue
+    init(podo: Podo) {
+        self.init(title: podo.title!,
+                  isCompleted: podo.isCompleted,
+                  startedAt: podo.startedAt,
+                  endedAt: podo.endedAt,
+                  updatedAt: podo.updatedAt,
+                  priority: podo.priority)
+    }
+
+    var dict: [String: Any] {
+        return ["title": title,
+                "isCompleted": isCompleted,
+                "startedAt": startedAt,
+                "endedAt": endedAt,
+                "priority": priority.rawValue]
     }
 }

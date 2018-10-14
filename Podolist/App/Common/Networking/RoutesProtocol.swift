@@ -154,8 +154,8 @@ struct RequestConverter: RequestConverterProtocol {
     // Throws: An `Error` if the underlying `URLRequest` is `nil`.
     func asURLRequest() throws -> URLRequest {
         let url = try Router.basePath.asURL()
-        let urlRequest = URLRequest(url: url.appendingPathComponent(route))
+        let urlRequest = try URLRequest(url: url.appendingPathComponent(route), method: method)
 
-        return try URLEncoding.default.encode(urlRequest, with: parameters)
+        return try JSONEncoding.default.encode(urlRequest, with: parameters)
     }
 }

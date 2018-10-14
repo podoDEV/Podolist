@@ -20,6 +20,11 @@ class AccessTokenAdapter: RequestAdapter {
         if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(Router.basePath) {
             urlRequest.setValue(accessToken, forHTTPHeaderField: "Authorization")
         }
+
+        if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+
         return urlRequest
     }
 }

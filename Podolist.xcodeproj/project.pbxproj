@@ -78,6 +78,8 @@
 		2D31DEED216A68DE00977507 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEEB216A68DE00977507 /* CalendarView.swift */; };
 		2D31DEF3216A736900977507 /* PodoCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEF2216A736900977507 /* PodoCalendarView.swift */; };
 		2D31DEF4216A736900977507 /* PodoCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEF2216A736900977507 /* PodoCalendarView.swift */; };
+		2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3404FC2173301300EC3862 /* PriorityView.swift */; };
+		2D3404FE2173301300EC3862 /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3404FC2173301300EC3862 /* PriorityView.swift */; };
 		2D3A19CB2152B45B00C9B68B /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3A19CA2152B45B00C9B68B /* Mode.swift */; };
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC55214D173200B79BF6 /* SettingSectionType.swift */; };
@@ -171,7 +173,7 @@
 		2D9548CB215D1E74006C51E1 /* AccountRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC7D214E07FF00B79BF6 /* AccountRemoteRepository.swift */; };
 		2D9548CC215D1E74006C51E1 /* SettingTableViewLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6D214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift */; };
 		2D9548CD215D1E74006C51E1 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20852143D1DE00B8BDF2 /* UIColor+Additions.swift */; };
-		2D9548CE215D1E74006C51E1 /* PodoKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* PodoKeychain.swift */; };
+		2D9548CE215D1E74006C51E1 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* KeychainService.swift */; };
 		2D9548CF215D1E74006C51E1 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC79214E079600B79BF6 /* AccountDataSource.swift */; };
 		2D9548D0215D1E74006C51E1 /* ViewModelSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC5D214D1B4E00B79BF6 /* ViewModelSettingRow.swift */; };
 		2D9548D1215D1E74006C51E1 /* RequestPodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A5214419C800B8BDF2 /* RequestPodo.swift */; };
@@ -218,7 +220,7 @@
 		2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0021552B6600BF8588 /* EntryViewType.swift */; };
 		2DE90C032155656A00BF8588 /* AccessTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */; };
 		2DE90C0521556F4700BF8588 /* ApiSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0421556F4700BF8588 /* ApiSessionService.swift */; };
-		2DE90C072155730200BF8588 /* PodoKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* PodoKeychain.swift */; };
+		2DE90C072155730200BF8588 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* KeychainService.swift */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		580060400A425C25B8B99205 /* Pods_Podolist_DEV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CF32177F2DB6D041ECDA4D /* Pods_Podolist_DEV.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
@@ -319,6 +321,7 @@
 		2D31DEE8216A68B600977507 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		2D31DEEB216A68DE00977507 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		2D31DEF2216A736900977507 /* PodoCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoCalendarView.swift; sourceTree = "<group>"; };
+		2D3404FC2173301300EC3862 /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
 		2D3A19CA2152B45B00C9B68B /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2D41BC55214D173200B79BF6 /* SettingSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionType.swift; sourceTree = "<group>"; };
@@ -377,7 +380,7 @@
 		2DE90C0021552B6600BF8588 /* EntryViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewType.swift; sourceTree = "<group>"; };
 		2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAdapter.swift; sourceTree = "<group>"; };
 		2DE90C0421556F4700BF8588 /* ApiSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSessionService.swift; sourceTree = "<group>"; };
-		2DE90C062155730200BF8588 /* PodoKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoKeychain.swift; sourceTree = "<group>"; };
+		2DE90C062155730200BF8588 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B65A781FD7AD4F3D24E450C /* Pods-PodolistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3F9E331C39A1B2DC616E61A8 /* Pods-Podolist.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug(dev).xcconfig"; sourceTree = "<group>"; };
@@ -658,9 +661,9 @@
 		2D0F20902144155200B8BDF2 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20BB214432D700B8BDF2 /* Cells */,
 				2DE9031E2151563000AAAE4C /* Write */,
 				2D31DEE4216A680600977507 /* Calendar */,
+				2D0F20BB214432D700B8BDF2 /* Cells */,
 				2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */,
 				2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */,
 				2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */,
@@ -711,11 +714,11 @@
 		2D0F20A921441A4B00B8BDF2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */,
+				2D89895F216FB28F003D97EC /* Adapter */,
 				2DE90C0421556F4700BF8588 /* ApiSessionService.swift */,
 				2D41BC85214E086F00B79BF6 /* AccountService.swift */,
 				2D0F20AC21441A8700B8BDF2 /* PodoService.swift */,
-				2DE90C062155730200BF8588 /* PodoKeychain.swift */,
+				2DE90C062155730200BF8588 /* KeychainService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -792,8 +795,9 @@
 		2D31DEA52169DCEA00977507 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2DD7063B214FDF2100C44E16 /* PriorityButton.swift */,
 				2D31DEA62169DF2E00977507 /* MainTopView.swift */,
+				2D3404FC2173301300EC3862 /* PriorityView.swift */,
+				2DD7063B214FDF2100C44E16 /* PriorityButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -801,10 +805,10 @@
 		2D31DEE4216A680600977507 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				2D31DEE5216A687400977507 /* DayView.swift */,
-				2D31DEE8216A68B600977507 /* WeekView.swift */,
-				2D31DEEB216A68DE00977507 /* CalendarView.swift */,
 				2D31DEF2216A736900977507 /* PodoCalendarView.swift */,
+				2D31DEEB216A68DE00977507 /* CalendarView.swift */,
+				2D31DEE8216A68B600977507 /* WeekView.swift */,
+				2D31DEE5216A687400977507 /* DayView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -838,6 +842,14 @@
 				2D41BC6B214D69E100B79BF6 /* AboutView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2D89895F216FB28F003D97EC /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				2DE90C022155656A00BF8588 /* AccessTokenAdapter.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 		2D954898215D1E56006C51E1 /* AppStore */ = {
@@ -1406,6 +1418,7 @@
 				2D5599A0216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
 				2D0F209A2144179000B8BDF2 /* PodolistProtocols.swift in Sources */,
 				2D41BC5A214D18F600B79BF6 /* ViewModelSettingAccountItem.swift in Sources */,
+				2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */,
 				2D0F208B2143D1DE00B8BDF2 /* Router.swift in Sources */,
 				2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */,
@@ -1438,7 +1451,7 @@
 				2D41BC7E214E07FF00B79BF6 /* AccountRemoteRepository.swift in Sources */,
 				2D41BC6E214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift in Sources */,
 				2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */,
-				2DE90C072155730200BF8588 /* PodoKeychain.swift in Sources */,
+				2DE90C072155730200BF8588 /* KeychainService.swift in Sources */,
 				2D41BC7A214E079600B79BF6 /* AccountDataSource.swift in Sources */,
 				2D41BC5E214D1B4E00B79BF6 /* ViewModelSettingRow.swift in Sources */,
 				2D0F20A6214419C800B8BDF2 /* RequestPodo.swift in Sources */,
@@ -1516,6 +1529,7 @@
 				2D5599A1216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
 				2D9548B2215D1E74006C51E1 /* PodolistProtocols.swift in Sources */,
 				2D9548B3215D1E74006C51E1 /* ViewModelSettingAccountItem.swift in Sources */,
+				2D3404FE2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D9548B4215D1E74006C51E1 /* PodolistPresenter.swift in Sources */,
 				2D9548B5215D1E74006C51E1 /* Router.swift in Sources */,
 				2D9548B6215D1E74006C51E1 /* PodolistWireFrame.swift in Sources */,
@@ -1548,7 +1562,7 @@
 				2D9548CB215D1E74006C51E1 /* AccountRemoteRepository.swift in Sources */,
 				2D9548CC215D1E74006C51E1 /* SettingTableViewLogoutCell.swift in Sources */,
 				2D9548CD215D1E74006C51E1 /* UIColor+Additions.swift in Sources */,
-				2D9548CE215D1E74006C51E1 /* PodoKeychain.swift in Sources */,
+				2D9548CE215D1E74006C51E1 /* KeychainService.swift in Sources */,
 				2D9548CF215D1E74006C51E1 /* AccountDataSource.swift in Sources */,
 				2D9548D0215D1E74006C51E1 /* ViewModelSettingRow.swift in Sources */,
 				2D9548D1215D1E74006C51E1 /* RequestPodo.swift in Sources */,

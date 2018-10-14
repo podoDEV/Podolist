@@ -26,12 +26,6 @@ class MainTopView: BaseView {
         }
     }
 
-//    var title: String? {
-//        didSet {
-//            titleLabel.text = title
-//        }
-//    }
-
     override func setup() {
         super.setup()
 

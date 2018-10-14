@@ -40,14 +40,18 @@
                         <constraint firstAttribute="width" secondItem="EUa-ZY-ngQ" secondAttribute="height" multiplier="1:1" id="zDg-dl-5Fc"/>
                     </constraints>
                     <connections>
-                        <action selector="sendAction:" destination="nYz-os-Cjh" eventType="touchUpInside" id="dOm-bu-Ww2"/>
+                        <action selector="createAction:" destination="nYz-os-Cjh" eventType="touchUpInside" id="eHa-dg-Mg8"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g., Buy gift tomorrow at 6pm" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-xs-8XA">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g., Buy gift tomorrow at 6pm" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-xs-8XA">
                     <rect key="frame" x="37" y="0.0" width="330" height="32"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textFieldDidChange:" destination="nYz-os-Cjh" eventType="editingChanged" id="EoN-Pc-4AB"/>
+                        <action selector="textFieldDidChange:" destination="nYz-os-Cjh" eventType="valueChanged" id="q6n-Zq-ld1"/>
+                    </connections>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
