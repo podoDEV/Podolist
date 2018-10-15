@@ -44,7 +44,7 @@ target 'Podolist' do
     analytics_pods
 end
 
-target 'Podolist.DEV' do
+target 'PodolistTest' do
     common_pods
     ui_pods
     analytics_pods
