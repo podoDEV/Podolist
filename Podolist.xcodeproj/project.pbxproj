@@ -2121,7 +2121,7 @@
 		};
 		2D954901215D1EEC006C51E1 /* Release(DEV) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DE90BF721540A6200BF8588 /* Base.release.xcconfig */;
+			baseConfigurationReference = 2D95490C215D1F48006C51E1 /* Base.release(dev).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -2300,7 +2300,7 @@
 		};
 		2D954906215D1EF4006C51E1 /* Release(TestFlight) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DE90BF0215407E800BF8588 /* Base.release(real).xcconfig */;
+			baseConfigurationReference = 2D95490B215D1F47006C51E1 /* Base.release(testflight).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
