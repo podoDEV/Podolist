@@ -5,64 +5,106 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
-import Foundation
+import CocoaLumberjack
+import Then
 
-class Logger {
-
-    class func t(message: String, function: String = #function, file: String = #file, line: Int = #line, callStack: [String] = Thread.callStackSymbols) {
-        logging(level: .trace, message: message, function: function, file: file, line: line, callStack: callStack)
-    }
-
-    class func d(message: String, function: String = #function, file: String = #file, line: Int = #line) {
-        logging(level: .debug, message: message, function: function, file: file, line: line)
-    }
-
-    class func i(message: String, function: String = #function, file: String = #file, line: Int = #line) {
-        logging(level: .info, message: message, function: function, file: file, line: line)
-    }
-
-    class func w(message: String, function: String = #function, file: String = #file, line: Int = #line) {
-        logging(level: .warning, message: message, function: function, file: file, line: line)
-    }
-
-    class func e(message: String, function: String = #function, file: String = #file, line: Int = #line, callStack: [String] = Thread.callStackSymbols) {
-        logging(level: .error, message: message, function: function, file: file, line: line, callStack: callStack)
-    }
-
-    class func f(message: String, function: String = #function, file: String = #file, line: Int = #line, callStack: [String] = Thread.callStackSymbols) {
-        logging(level: .fatal, message: message, function: function, file: file, line: line, callStack: callStack)
+extension DDLogFlag {
+    public var level: String {
+        switch self {
+        case DDLogFlag.error: return "❤️ ERROR"
+        case DDLogFlag.warning: return "💛 WARNING"
+        case DDLogFlag.info: return "💙 INFO"
+        case DDLogFlag.debug: return "💚 DEBUG"
+        case DDLogFlag.verbose: return "💜 VERBOSE"
+        default: return "☠️ UNKNOWN"
+        }
     }
 }
 
-private extension Logger {
+private class LogFormatter: NSObject, DDLogFormatter {
 
-    class func logging(level: LogLevel, message: String, function: String, file: String, line: Int, callStack: [String] = []) {
-        let now = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "ko_KR")
-        dateFormatter.timeStyle = .medium
-        dateFormatter.dateStyle = .medium
+    static let dateFormatter = DateFormatter().then {
+        $0.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+    }
 
-        let nowdate = dateFormatter.string(from: now)
+    public func format(message logMessage: DDLogMessage) -> String? {
+        let timestamp = LogFormatter.dateFormatter.string(from: logMessage.timestamp)
+        let level = logMessage.flag.level
+        let filename = logMessage.fileName
+        let function = logMessage.function ?? ""
+        let line = logMessage.line
+        let message = logMessage.message.components(separatedBy: "\n").joined(separator: "\n    ")
+        return "\(timestamp) \(level) \(filename).\(function):\(line) - \(message)"
+    }
 
-        var filename = file
-        if let match = filename.range(of: "[^/]*$", options: .regularExpression) {
-            filename = String(filename[match])
+    private func formattedDate(from date: Date) -> String {
+        return LogFormatter.dateFormatter.string(from: date)
+    }
+
+}
+
+/// A shared instance of `Logger`.
+let log = Logger()
+
+final class Logger {
+
+    init() {
+        setenv("XcodeColors", "YES", 0)
+
+        // TTY = Xcode console
+        DDTTYLogger.sharedInstance.do {
+            $0.logFormatter = LogFormatter()
+            $0.colorsEnabled = false /*true*/ // Note: doesn't work in Xcode 8
+            $0.setForegroundColor(DDMakeColor(30, 121, 214), backgroundColor: nil, for: .info)
+            $0.setForegroundColor(DDMakeColor(50, 143, 72), backgroundColor: nil, for: .debug)
+            DDLog.add($0)
         }
 
-        print("[\(level.description)] \(nowdate) \(function) in \(filename):\(line) :: \(message)")
+        // File logger
+        DDFileLogger().do {
+            $0.rollingFrequency = TimeInterval(60 * 60 * 24)  // 24 hours
+            $0.logFileManager.maximumNumberOfLogFiles = 7
+            DDLog.add($0)
+        }
     }
-}
 
-enum LogLevel: String {
-    case trace
-    case debug
-    case info
-    case warning
-    case error
-    case fatal
-
-    var description: String {
-        return String(describing: self).uppercased()
+    func e(_ items: Any..., file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+        let message = self.message(from: items)
+        DDLogError(message, file: file, function: function, line: line)
     }
+
+    func w(_ items: Any..., file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+        let message = self.message(from: items)
+        DDLogWarn(message, file: file, function: function, line: line)
+    }
+
+    func i(_ items: Any..., file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+        let message = self.message(from: items)
+        DDLogInfo(message, file: file, function: function, line: line)
+    }
+
+    func d(_ items: Any..., file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+        let message = self.message(from: items)
+        DDLogDebug(message, file: file, function: function, line: line)
+    }
+
+    func v(_ items: Any..., file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+        let message = self.message(from: items)
+        DDLogVerbose(message, file: file, function: function, line: line)
+    }
+
+    private func message(from items: [Any]) -> String {
+        return items
+            .map { String(describing: $0) }
+            .joined(separator: " ")
+    }
+
 }
+//
+//func gaAction(_ value: String) {
+//    guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+//    tracker.set(kGAIEventAction, value: value)
+//
+//    guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+//    tracker.send(builder.build() as [NSObject: AnyObject])
+//}
