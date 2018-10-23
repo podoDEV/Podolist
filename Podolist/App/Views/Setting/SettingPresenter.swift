@@ -15,10 +15,6 @@ class SettingPresenter: SettingPresenterProtocol {
     var items = [ViewModelSettingSection]()
 
     func viewDidLoad() {
-//        var settings: [Setting] = []
-//        settings.append(Setting(title: "김"))
-//        settings.append(Setting(title: "희범"))
-//        settings.append(Setting(title: "쵝오"))
         let accountItem = ViewModelSettingAccountItem(row: ViewModelSettingRow(type: .account, title: "계정", imageUrl: " "))
         items.append(accountItem)
 

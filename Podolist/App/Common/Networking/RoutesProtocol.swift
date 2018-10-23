@@ -75,7 +75,7 @@ extension Creatable where Self: Routable {
     //
     // Router.User.create(parameters: ["username":"initFabian", "github":"https://github.com/initFabian"])
     //
-    static func create(parameters: Parameters) -> RequestConverter {
+    static func create(parameters: Parameters = [:]) -> RequestConverter {
         let temp = Self.init()
         let route = "\(temp.route)"
         return RequestConverter(method: .post, route: route, parameters: parameters)

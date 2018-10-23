@@ -12,6 +12,8 @@ class LoginView: BaseViewController {
 
     var presenter: LoginPresenterProtocol?
 
+    var launchView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
@@ -20,32 +22,37 @@ class LoginView: BaseViewController {
 
     override func setup() {
         super.setup()
+        launchView = Bundle.main.loadNibNamed("Launch", owner: self, options: nil)?.first as? UIView
+        view.addSubview(launchView)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        launchView.frame = view.bounds
+    }
+
+    func showLogin() {
+        launchView.removeFromSuperview()
+        KOSession.shared().logoutAndClose { _, _ in }
     }
 
     // MARK: - Action
     @IBAction func tappedLogin(_ sender: Any) {
-        let session: KOSession = KOSession.shared()
-
+        guard let session = KOSession.shared() else { return }
         if session.isOpen() {
             session.close()
         }
 
-        session.open(completionHandler: { (error) -> Void in
-
-            if !session.isOpen() {
+        session.open { error in
+            guard session.isOpen() else {
                 if let error = error as NSError? {
-                    switch error.code {
-                    case Int(KOErrorCancelled.rawValue):
-                        break
-                    default:
-                        UIAlertController.showMessage(error.description)
-                    }
+                    UIAlertController.showMessage(error.description)
                 }
+                return
             }
-        })
-    }
-    @IBAction func backdoor(_ sender: Any) {
-        presenter?.goLogin()
+
+            self.presenter?.login(accessToken: session.token)
+        }
     }
 }
 

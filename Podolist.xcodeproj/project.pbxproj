@@ -83,6 +83,10 @@
 		2D34050121733BD200EC3862 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3404FF21733BD200EC3862 /* Launch.xib */; };
 		2D35496921742B8F0014D8CF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35496821742B8F0014D8CF /* Logger.swift */; };
 		2D35496A21742B8F0014D8CF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35496821742B8F0014D8CF /* Logger.swift */; };
+		2D3D6431217C5852001CF919 /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseAccount.swift */; };
+		2D3D6432217C5852001CF919 /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseAccount.swift */; };
+		2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D643A217C6C5E001CF919 /* AccessToken.swift */; };
+		2D3D643C217C6C5E001CF919 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D643A217C6C5E001CF919 /* AccessToken.swift */; };
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC55214D173200B79BF6 /* SettingSectionType.swift */; };
 		2D41BC58214D186D00B79BF6 /* ViewModelSettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC57214D186D00B79BF6 /* ViewModelSettingSection.swift */; };
@@ -323,6 +327,8 @@
 		2D3404FC2173301300EC3862 /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
 		2D3404FF21733BD200EC3862 /* Launch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		2D35496821742B8F0014D8CF /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2D3D6430217C5852001CF919 /* ResponseAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAccount.swift; sourceTree = "<group>"; };
+		2D3D643A217C6C5E001CF919 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2D41BC55214D173200B79BF6 /* SettingSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionType.swift; sourceTree = "<group>"; };
 		2D41BC57214D186D00B79BF6 /* ViewModelSettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSettingSection.swift; sourceTree = "<group>"; };
@@ -707,6 +713,7 @@
 			isa = PBXGroup;
 			children = (
 				2D0F20A7214419DE00B8BDF2 /* ResponsePodo.swift */,
+				2D3D6430217C5852001CF919 /* ResponseAccount.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -714,10 +721,7 @@
 		2D0F20A921441A4B00B8BDF2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2D89895F216FB28F003D97EC /* Adapter */,
-				2DE90C0421556F4700BF8588 /* ApiSessionService.swift */,
-				2D41BC85214E086F00B79BF6 /* AccountService.swift */,
-				2D0F20AC21441A8700B8BDF2 /* PodoService.swift */,
+				2D34AFDA217F5C0400E78562 /* API */,
 				2DE90C062155730200BF8588 /* KeychainService.swift */,
 			);
 			path = Service;
@@ -813,9 +817,21 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		2D34AFDA217F5C0400E78562 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2D89895F216FB28F003D97EC /* Adapter */,
+				2DE90C0421556F4700BF8588 /* ApiSessionService.swift */,
+				2D41BC85214E086F00B79BF6 /* AccountService.swift */,
+				2D0F20AC21441A8700B8BDF2 /* PodoService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		2D41BC54214D170300B79BF6 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				2D3D643A217C6C5E001CF919 /* AccessToken.swift */,
 				2D41BC67214D642500B79BF6 /* SettingRowType.swift */,
 				2D41BC55214D173200B79BF6 /* SettingSectionType.swift */,
 			);
@@ -1411,6 +1427,7 @@
 				2D41BC72214D6D8D00B79BF6 /* ViewModelSettingLogoutItem.swift in Sources */,
 				2D0F20752143984A00B8BDF2 /* PodolistView.swift in Sources */,
 				2D0F20B121441C6800B8BDF2 /* PodoRemoteRepository.swift in Sources */,
+				2D3D6431217C5852001CF919 /* ResponseAccount.swift in Sources */,
 				2D0F20B321441CBE00B8BDF2 /* PodoRepository.swift in Sources */,
 				2D0F20632143984A00B8BDF2 /* InterfaceString.swift in Sources */,
 				2D41BC84214E085100B79BF6 /* CommonLocalRepository.swift in Sources */,
@@ -1428,6 +1445,7 @@
 				2D0F209A2144179000B8BDF2 /* PodolistProtocols.swift in Sources */,
 				2D41BC5A214D18F600B79BF6 /* ViewModelSettingAccountItem.swift in Sources */,
 				2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */,
+				2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */,
 				2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */,
 				2D0F208B2143D1DE00B8BDF2 /* Router.swift in Sources */,
 				2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */,
@@ -1522,6 +1540,7 @@
 				2D9548A4215D1E74006C51E1 /* ViewModelSettingLogoutItem.swift in Sources */,
 				2D9548A5215D1E74006C51E1 /* PodolistView.swift in Sources */,
 				2D9548A6215D1E74006C51E1 /* PodoRemoteRepository.swift in Sources */,
+				2D3D6432217C5852001CF919 /* ResponseAccount.swift in Sources */,
 				2D9548A7215D1E74006C51E1 /* PodoRepository.swift in Sources */,
 				2D9548A8215D1E74006C51E1 /* InterfaceString.swift in Sources */,
 				2D9548A9215D1E74006C51E1 /* CommonLocalRepository.swift in Sources */,
@@ -1539,6 +1558,7 @@
 				2D9548B2215D1E74006C51E1 /* PodolistProtocols.swift in Sources */,
 				2D9548B3215D1E74006C51E1 /* ViewModelSettingAccountItem.swift in Sources */,
 				2D3404FE2173301300EC3862 /* PriorityView.swift in Sources */,
+				2D3D643C217C6C5E001CF919 /* AccessToken.swift in Sources */,
 				2D9548B4215D1E74006C51E1 /* PodolistPresenter.swift in Sources */,
 				2D9548B5215D1E74006C51E1 /* Router.swift in Sources */,
 				2D9548B6215D1E74006C51E1 /* PodolistWireFrame.swift in Sources */,

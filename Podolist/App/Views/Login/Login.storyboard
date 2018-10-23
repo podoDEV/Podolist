@@ -30,27 +30,11 @@
                                             <action selector="tappedLogin:" destination="jD4-WP-8ND" eventType="touchUpInside" id="Bsj-Zh-Y5R"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amz-YY-jQb">
-                                        <rect key="frame" x="41" y="725" width="293" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="SDW-5R-BXl"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backdoor:" destination="jD4-WP-8ND" eventType="touchUpInside" id="DTr-uc-I61"/>
-                                            <action selector="tappedLogin:" destination="jD4-WP-8ND" eventType="touchUpInside" id="8An-RL-ufw"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="Amz-YY-jQb" firstAttribute="centerX" secondItem="poq-Aa-itp" secondAttribute="centerX" id="Ngq-an-1qS"/>
-                                    <constraint firstItem="Amz-YY-jQb" firstAttribute="top" secondItem="z5S-AS-ADa" secondAttribute="bottom" constant="33" id="ODa-n8-kbX"/>
                                     <constraint firstItem="z5S-AS-ADa" firstAttribute="leading" secondItem="poq-Aa-itp" secondAttribute="leading" constant="41" id="bSE-0f-hs6"/>
                                     <constraint firstItem="z5S-AS-ADa" firstAttribute="centerX" secondItem="poq-Aa-itp" secondAttribute="centerX" id="buJ-J8-gCT"/>
-                                    <constraint firstItem="Amz-YY-jQb" firstAttribute="leading" secondItem="z5S-AS-ADa" secondAttribute="leading" id="gw1-wH-Qru"/>
                                     <constraint firstAttribute="bottom" secondItem="z5S-AS-ADa" secondAttribute="bottom" constant="120" id="zEF-dQ-RFL"/>
                                 </constraints>
                             </view>

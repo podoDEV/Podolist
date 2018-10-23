@@ -12,10 +12,8 @@ protocol CommonDataSource: class {
     var remoteDataSource: CommonRemoteDataSource? { get set }
 
     // Interactor -> DataSource
-    func findPodolist() -> Observable<[Podo]>?
-    func addPodo(_ podo: Podo)
-    func savePodo(id: Int, title: String)
-    func removePodo()
+    func hasSession() -> Completable?
+    func saveSession() -> Completable?
 }
 
 protocol CommonLocalDataSource: class {
