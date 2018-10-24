@@ -30,7 +30,7 @@ class LoginWireFrame: LoginWireFrameProtocol {
         return UIViewController()
     }
 
-    func goToPodolistScreen() {
+    func goToPodolistScreen(from view: LoginViewProtocol) {
         let destinationVC = PodolistWireFrame.createPodolistModule()
         UIApplication.shared.keyWindow?.rootViewController = destinationVC
     }

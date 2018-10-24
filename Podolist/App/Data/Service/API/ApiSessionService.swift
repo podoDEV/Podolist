@@ -13,7 +13,7 @@ final class ApiSessionService: ApiServiceProtocol {
     private init() {}
 
     func api() -> SessionManager {
-        KeychainService.shared.saveToken(token: "temp")
+//        KeychainService.shared.saveToken(token: "temp")
         service = SessionManager()
         guard KeychainService.shared.hasToken() else {
             return service!

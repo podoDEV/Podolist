@@ -17,6 +17,7 @@ class LoginView: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+
         showLoading()
     }
 
@@ -51,7 +52,7 @@ class LoginView: BaseViewController {
                 return
             }
 
-            self.presenter?.login(accessToken: session.token)
+            self.presenter?.login(accessToken: AccessToken(id: session.token.accessToken))
         }
     }
 }

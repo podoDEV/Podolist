@@ -32,7 +32,7 @@ protocol LoginPresenterProtocol: class {
 
     // View -> Presenter
     func viewDidLoad()
-    func login(accessToken: Any)
+    func login(accessToken: AccessToken)
     //    func showWishDetail(from view: PodolistViewProtocol, forWish wish: ViewModelPodo)
 //    func goLogin()
 }
@@ -42,7 +42,7 @@ protocol LoginInteractorProtocol: class {
 
     // Presenter -> Interactor
     func hasSession() -> Completable?
-    func makeSession() -> Completable?
+    func makeSession(accessToken: AccessToken) -> Completable?
 //    func fetchPodolist() -> Observable<[ViewModelPodo]>?
 }
 

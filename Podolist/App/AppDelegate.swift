@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupAnalytics()
         setupEntryScreen()
         setupPushNotification()
-        setupObserver()
+//        setupObserver()
 //        KOSession.shared().clientSecret = SessionConstants.clientSecret;
 
         reloadRootViewController()
@@ -80,24 +80,25 @@ extension AppDelegate {
         UIApplication.shared.registerForRemoteNotifications()
     }
 
-    func setupObserver() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(kakaoSessionDidChangeWithNotification),
-                                               name: NSNotification.Name.KOSessionDidChange,
-                                               object: nil)
-    }
+//    func setupObserver() {
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(kakaoSessionDidChangeWithNotification),
+//                                               name: NSNotification.Name.KOSessionDidChange,
+//                                               object: nil)
+//    }
 
-    @objc func kakaoSessionDidChangeWithNotification() {
-        reloadRootViewController()
-    }
+//    @objc func kakaoSessionDidChangeWithNotification() {
+//        reloadRootViewController()
+//    }
 
     fileprivate func reloadRootViewController() {
-        let isOpened = KOSession.shared().isOpen()
-        if !isOpened {
-            let mainScreen = self.mainScreen as! UINavigationController
-            mainScreen.popToRootViewController(animated: false)
-        }
-        self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
+//        let isOpened = KOSession.shared().isOpen()
+//        if !isOpened {
+//            let mainScreen = self.mainScreen as! UINavigationController
+//            mainScreen.popToRootViewController(animated: false)
+//        }
+//        self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
+        self.window?.rootViewController = self.loginScreen
         self.window?.makeKeyAndVisible()
     }
 }

@@ -11,29 +11,31 @@ import SwiftyJSON
 
 protocol AccountServiceProtocol: ApiServiceProtocol {
 
-    func login(accessToken: AccessToken) -> Observable<ResponseAccount>
+    func login(accessToken: AccessToken) -> Observable<Account>
     func logout() -> Completable
 }
 
 class AccountService: AccountServiceProtocol {
     static let shared = AccountService()
-    var sessionService: ApiSessionService
-    private init() {
-        sessionService = ApiSessionService.shared
-    }
+//    var sessionService: ApiSessionService
+//    private init() {
+//        sessionService = ApiSessionService.shared
+//    }
 
-    func login(accessToken: AccessToken) -> Observable<ResponseAccount> {
-        return Observable<ResponseAccount>.create { observer in
-            let request = self.sessionService.api().request(Router.Login.create(parameters: accessToken.asDicsionary))
+    func login(accessToken: AccessToken) -> Observable<Account> {
+        return Observable<Account>.create { observer in
+            let request = Alamofire.request(Router.Login.create(parameters: accessToken.asDicsionary))
                 .validate()
                 .responseJSON { response in
+                    KeychainService.shared.saveToken(token: response.response?.allHeaderFields["Set-Cookie"] as! String)
                     switch response.result {
                     case .success(let value):
-                        guard let responseAccount = JSON(value).to(type: ResponseAccount.self) as? ResponseAccount else {
+                        guard let account = JSON(value).to(type: Account.self) as? Account else {
+//                        guard let responseAccount = JSON(value).to(type: ResponseAccount.self) as? ResponseAccount else {
                             observer.onError(NSError())
                             return
                         }
-                        observer.onNext(responseAccount)
+                        observer.onNext(account)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
@@ -48,7 +50,7 @@ class AccountService: AccountServiceProtocol {
 
     func logout() -> Completable {
         return Completable.create { completable in
-            let request = self.sessionService.api().request(Router.Logout.create())
+            let request = Alamofire.request(Router.Logout.create())
                 .validate()
                 .responseData { response in
                     switch response.result {

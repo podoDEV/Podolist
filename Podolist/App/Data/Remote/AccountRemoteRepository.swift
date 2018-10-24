@@ -12,7 +12,7 @@ class AccountRemoteRepository: AccountRemoteDataSource {
     func login(accessToken: AccessToken) -> Observable<Account>? {
         return AccountService.shared.login(accessToken: accessToken)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .map { Account(responseAccount: $0) }
+//            .map { Account(responseAccount: $0) }
     }
 
     func logout() -> Completable? {
