@@ -20,10 +20,28 @@ class LoginWireFrame: LoginWireFrameProtocol {
             let interactor: LoginInteractorProtocol = LoginInteractor()
             let wireFrame: LoginWireFrameProtocol = LoginWireFrame()
 
+            // CommonDataSrouce
+            let commonDataSource: CommonDataSource = CommonRepository()
+            let commonLocalDataSource: CommonLocalDataSource = CommonLocalRepository()
+            let commonRemoteDataSource: CommonRemoteDataSource = CommonRemoteRepository()
+
+            // AccountDataSrouce
+            let accountDataSource: AccountDataSource = AccountRepository()
+            let accountLocalDataSource: AccountLocalDataSource = AccountLocalRepository()
+            let accountRemoteDataSource: AccountRemoteDataSource = AccountRemoteRepository()
+
             view.presenter = presenter
             presenter.view = view
             presenter.interactor = interactor
             presenter.wireFrame = wireFrame
+            interactor.commonDataSource = commonDataSource
+            interactor.accountDataSource = accountDataSource
+
+            commonDataSource.localDataSource = commonLocalDataSource
+            commonDataSource.remoteDataSource = commonRemoteDataSource
+
+            accountDataSource.localDataSource = accountLocalDataSource
+            accountDataSource.remoteDataSource = accountRemoteDataSource
 
             return loginEntry
         }

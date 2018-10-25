@@ -18,10 +18,10 @@ class PodolistWireFrame: PodolistWireFrameProtocol {
         if let view = podolistEntry.childViewControllers.first as? PodolistView {
             let presenter: PodolistPresenterProtocol = PodolistPresenter()
             let interactor: PodolistInteractorProtocol = PodolistInteractor()
+            let wireFrame: PodolistWireFrameProtocol = PodolistWireFrame()
             let dataSource: PodoDataSource = PodoRepository()
             let localDataSource: PodoLocalDataSource = PodoLocalRepository()
             let remoteDataSource: PodoRemoteDataSource = PodoRemoteRepository()
-            let wireFrame: PodolistWireFrameProtocol = PodolistWireFrame()
 
             view.presenter = presenter
             presenter.view = view

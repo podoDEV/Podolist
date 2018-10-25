@@ -13,21 +13,22 @@ protocol CommonDataSource: class {
 
     // Interactor -> DataSource
     func hasSession() -> Completable?
-    func saveSession() -> Completable?
+//    func saveSession() -> Completable?
 }
 
 protocol CommonLocalDataSource: class {
     // DataSource -> LocalDataSource
-    func selectPodolist() throws -> [Podo]
-    func insertPodo(_ podo: Podo) throws
-    func updatePodo()
-    func deletePodo()
+    func hasSession() -> Completable?
+//    func selectPodolist() throws -> [Podo]
+//    func insertPodo(_ podo: Podo) throws
+//    func updatePodo()
+//    func deletePodo()
 }
 
 protocol CommonRemoteDataSource: class {
     // DataSource -> RemoteDataSource
-    func getPodolist() -> Observable<[Podo]>?
-    func postPodo(_ podo: Podo)
-    func putPodo()
-    func deletePodo()
+//    func getPodolist() -> Observable<[Podo]>?
+//    func postPodo(_ podo: Podo)
+//    func putPodo()
+//    func deletePodo()
 }

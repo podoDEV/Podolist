@@ -12,11 +12,15 @@ class AccountRepository: AccountDataSource {
     var localDataSource: AccountLocalDataSource?
     var remoteDataSource: AccountRemoteDataSource?
 
-    func login(accessToken: AccessToken) -> Observable<Account>? {
-        return remoteDataSource?.login(accessToken: accessToken)
+    func addAccount(_ account: Account) -> Completable? {
+        return localDataSource?.insertAccount(account)
     }
 
-    func logout() -> Completable? {
-        return remoteDataSource?.logout()
-    }
+//    func login(accessToken: AccessToken) -> Observable<Account>? {
+//        return remoteDataSource?.login(accessToken: accessToken)
+//    }
+//
+//    func logout() -> Completable? {
+//        return remoteDataSource?.logout()
+//    }
 }

@@ -9,14 +9,14 @@ import Alamofire
 import RxSwift
 import SwiftyJSON
 
-protocol AccountServiceProtocol: ApiServiceProtocol {
+protocol SessionServiceProtocol: ApiServiceProtocol {
 
     func login(accessToken: AccessToken) -> Observable<Account>
     func logout() -> Completable
 }
 
-class AccountService: AccountServiceProtocol {
-    static let shared = AccountService()
+class SessionService: SessionServiceProtocol {
+    static let shared = SessionService()
 //    var sessionService: ApiSessionService
 //    private init() {
 //        sessionService = ApiSessionService.shared
@@ -27,11 +27,10 @@ class AccountService: AccountServiceProtocol {
             let request = Alamofire.request(Router.Login.create(parameters: accessToken.asDicsionary))
                 .validate()
                 .responseJSON { response in
-                    KeychainService.shared.saveToken(token: response.response?.allHeaderFields["Set-Cookie"] as! String)
+                    KeychainService.shared.saveValue(key: "session", value: response.response?.allHeaderFields["Set-Cookie"] as! String)
                     switch response.result {
                     case .success(let value):
                         guard let account = JSON(value).to(type: Account.self) as? Account else {
-//                        guard let responseAccount = JSON(value).to(type: ResponseAccount.self) as? ResponseAccount else {
                             observer.onError(NSError())
                             return
                         }
@@ -54,7 +53,7 @@ class AccountService: AccountServiceProtocol {
                 .validate()
                 .responseData { response in
                     switch response.result {
-                    case .success(_):
+                    case .success:
                         completable(.completed)
                     case .failure(let error):
                         completable(.error(error))

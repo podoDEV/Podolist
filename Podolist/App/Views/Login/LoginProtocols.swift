@@ -38,7 +38,8 @@ protocol LoginPresenterProtocol: class {
 }
 
 protocol LoginInteractorProtocol: class {
-    var dataSource: AccountDataSource? { get set }
+    var commonDataSource: CommonDataSource? { get set }
+    var accountDataSource: AccountDataSource? { get set }
 
     // Presenter -> Interactor
     func hasSession() -> Completable?

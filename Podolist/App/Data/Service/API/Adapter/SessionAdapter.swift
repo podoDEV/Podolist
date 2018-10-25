@@ -1,5 +1,5 @@
 //
-//  AccessTokenAdapter.swift
+//  SessionAdapter.swift
 //  Podolist
 //
 //  Copyright © 2018년 podo. All rights reserved.
@@ -7,18 +7,18 @@
 
 import Alamofire
 
-class AccessTokenAdapter: RequestAdapter {
-    private let accessToken: String
+class SessionAdapter: RequestAdapter {
+    private let session: String
 
-    init(accessToken: String) {
-        self.accessToken = accessToken
+    init(session: String) {
+        self.session = session
     }
 
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
         var urlRequest = urlRequest
 
         if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(Router.basePath) {
-            urlRequest.setValue(accessToken, forHTTPHeaderField: "Cookie")
+            urlRequest.setValue(session, forHTTPHeaderField: "Cookie")
         }
 
         if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {

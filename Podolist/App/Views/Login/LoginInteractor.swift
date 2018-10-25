@@ -8,7 +8,6 @@
 import RxSwift
 
 class LoginInteractor: LoginInteractorProtocol {
-    var dataSource: AccountDataSource?
 
     var accountDataSource: AccountDataSource?
     var commonDataSource: CommonDataSource?
@@ -18,9 +17,9 @@ class LoginInteractor: LoginInteractorProtocol {
     }
 
     func makeSession(accessToken: AccessToken) -> Completable? {
-        return AccountService.shared.login(accessToken: accessToken)
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)).ignoreElements()
-//            .flatMap { common }
+        return SessionService.shared.login(accessToken: accessToken)
+            .debug()
+            .flatMap { (self.accountDataSource?.addAccount($0))!.asObservable() }
+            .asCompletable()
     }
-
 }

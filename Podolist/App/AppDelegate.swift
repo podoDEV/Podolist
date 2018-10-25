@@ -12,8 +12,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var loginScreen: UIViewController?
-    var mainScreen: UIViewController?
+//    var loginScreen: UIViewController?
+//    var mainScreen: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupAnalytics()
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        setupObserver()
 //        KOSession.shared().clientSecret = SessionConstants.clientSecret;
 
-        reloadRootViewController()
+//        reloadRootViewController()
         return true
     }
 
@@ -64,8 +64,10 @@ extension AppDelegate {
     }
 
     fileprivate func setupEntryScreen() {
-        loginScreen = LoginWireFrame.createLoginModule()
-        mainScreen = PodolistWireFrame.createPodolistModule()
+        let loginScreen = LoginWireFrame.createLoginModule()
+        self.window?.rootViewController = loginScreen
+        self.window?.makeKeyAndVisible()
+//        mainScreen = PodolistWireFrame.createPodolistModule()
     }
 
     func setupPushNotification() {
@@ -91,16 +93,16 @@ extension AppDelegate {
 //        reloadRootViewController()
 //    }
 
-    fileprivate func reloadRootViewController() {
+//    fileprivate func reloadRootViewController() {
 //        let isOpened = KOSession.shared().isOpen()
 //        if !isOpened {
 //            let mainScreen = self.mainScreen as! UINavigationController
 //            mainScreen.popToRootViewController(animated: false)
 //        }
 //        self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
-        self.window?.rootViewController = self.loginScreen
-        self.window?.makeKeyAndVisible()
-    }
+//        self.window?.rootViewController = self.loginScreen
+//        self.window?.makeKeyAndVisible()
+//    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
@@ -117,19 +119,19 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
 }
 
-extension AppDelegate /* For kakao */{
-
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        if KOSession.isKakaoAccountLoginCallback(url) {
-            return KOSession.handleOpen(url)
-        }
-        return true
-    }
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        if KOSession.isKakaoAccountLoginCallback(url) {
-            return KOSession.handleOpen(url)
-        }
-        return true
-    }
-}
+//extension AppDelegate /* For kakao */{
+//
+//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//        if KOSession.isKakaoAccountLoginCallback(url) {
+//            return KOSession.handleOpen(url)
+//        }
+//        return true
+//    }
+//
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+//        if KOSession.isKakaoAccountLoginCallback(url) {
+//            return KOSession.handleOpen(url)
+//        }
+//        return true
+//    }
+//}

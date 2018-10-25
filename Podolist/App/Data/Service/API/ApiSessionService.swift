@@ -13,16 +13,16 @@ final class ApiSessionService: ApiServiceProtocol {
     private init() {}
 
     func api() -> SessionManager {
-//        KeychainService.shared.saveToken(token: "temp")
+        
         service = SessionManager()
-        guard KeychainService.shared.hasToken() else {
+        guard KeychainService.shared.hasValue(key: "session") else {
             return service!
         }
 
-        KeychainService.shared.findToken(
-            onSuccess: { accessToken in
-                if let accessToken = accessToken {
-                    self.service!.adapter = AccessTokenAdapter(accessToken: accessToken)
+        KeychainService.shared.findValue(
+            onSuccess: { session in
+                if let session = session {
+                    self.service!.adapter = SessionAdapter(session: session)
                 }
             }, onError: { error in
 
