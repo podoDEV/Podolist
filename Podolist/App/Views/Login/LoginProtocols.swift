@@ -10,8 +10,8 @@ import RxSwift
 protocol LoginViewProtocol: class {
     var presenter: LoginPresenterProtocol? { get set }
 
-    // Presenter -> View 
-//    func showPodolist(with podolist: [ViewModelPodo])
+    // Presenter -> View
+    func showLogin()
 }
 
 extension LoginViewProtocol where Self: UIViewController {
@@ -31,21 +31,21 @@ protocol LoginPresenterProtocol: class {
 
     // View -> Presenter
     func viewDidLoad()
-    //    func showWishDetail(from view: PodolistViewProtocol, forWish wish: ViewModelPodo)
-    func goLogin()
+    func login(accessToken: AccessToken)
 }
 
 protocol LoginInteractorProtocol: class {
-    var dataSource: PodoDataSource? { get set }
+    var commonDataSource: CommonDataSource? { get set }
+    var accountDataSource: AccountDataSource? { get set }
 
     // Presenter -> Interactor
-//    func fetchPodolist() -> Observable<[ViewModelPodo]>?
+    func hasSession() -> Completable?
+    func makeSession(accessToken: AccessToken) -> Completable?
 }
 
 protocol LoginWireFrameProtocol: class {
     static func createLoginModule() -> UIViewController
 
     // Presenter -> WireFrame
-    //    func presentPodoDetailScreen(from view: PodolistViewProtocol, forWish wish: ViewModel)
-    func goToPodolistScreen()
+    func goToPodolistScreen(from view: LoginViewProtocol)
 }

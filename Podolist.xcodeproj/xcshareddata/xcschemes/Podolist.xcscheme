@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
+            BuildableName = "Podolist.app"
+            BlueprintName = "Podolist"
+            ReferencedContainer = "container:Podolist.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

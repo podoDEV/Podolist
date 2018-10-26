@@ -15,12 +15,32 @@ class LoginPresenter: LoginPresenterProtocol {
     let disposeBag = DisposeBag()
 
     func viewDidLoad() {
+        interactor?.hasSession()!
+            .observeOn(MainScheduler.instance)
+            .subscribe { completable in
+                switch completable {
+                case .completed:
+                    self.wireFrame?.goToPodolistScreen(from: self.view!)
+                case .error:
+                    self.view?.showLogin()
+                }
+            }.disposed(by: disposeBag)
+    }
 
+    func login(accessToken: AccessToken) {
+        interactor?.makeSession(accessToken: accessToken)!
+            .observeOn(MainScheduler.instance)
+            .subscribe { completable in
+                switch completable {
+                case .completed:
+                    self.wireFrame?.goToPodolistScreen(from: self.view!)
+                case .error:
+                    log.d("Invalid Session")
+                    self.view?.showLogin()
+                }
+            }.disposed(by: disposeBag)
     }
 }
 
 extension LoginPresenter {
-    func goLogin() {
-        wireFrame?.goToPodolistScreen()
-    }
 }

@@ -1,27 +1,19 @@
 //
-//  Account.swift
+//  ResponseAccount.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Copyright © 2018 podo. All rights reserved.
 //
 
 import SwiftyJSON
 
-struct Account: JSONable {
+class ResponseAccount: JSONable {
     var id: Int?
     var name: String?
     var provider: Int?
     var providerId: Int?
 
-//    init(name: String?) {
-//        self.name = name
-//    }
-//
-//    init(responseAccount: ResponseAccount) {
-//        self.init(name: responseAccount.name)
-//    }
-
-    init(json: JSON) {
+    required init(json: JSON) {
         id = json["id"].intValue
         name = json["name"].stringValue
         provider = json["provider"].intValue

@@ -8,9 +8,15 @@
 import UIKit
 import RxSwift
 
+// MARK: - Lifecycle
 class LoginView: BaseViewController {
 
     var presenter: LoginPresenterProtocol?
+
+    lazy var launchView: UIView! = {
+        let view = Bundle.main.loadNibNamed("Launch", owner: self, options: nil)?.first as? UIView
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,36 +26,43 @@ class LoginView: BaseViewController {
 
     override func setup() {
         super.setup()
+        view.addSubview(launchView)
     }
 
-    // MARK: - Action
-    @IBAction func tappedLogin(_ sender: Any) {
-        let session: KOSession = KOSession.shared()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        launchView.frame = view.bounds
+    }
+}
 
+// MARK: - Action
+extension LoginView {
+
+    @IBAction func tappedLogin(_ sender: Any) {
+        guard let session = KOSession.shared() else { return }
         if session.isOpen() {
             session.close()
         }
 
-        session.open(completionHandler: { (error) -> Void in
-
-            if !session.isOpen() {
+        session.open { error in
+            guard session.isOpen() else {
                 if let error = error as NSError? {
-                    switch error.code {
-                    case Int(KOErrorCancelled.rawValue):
-                        break
-                    default:
-                        UIAlertController.showMessage(error.description)
-                    }
+                    UIAlertController.showMessage(error.description)
                 }
+                return
             }
-        })
-    }
-    @IBAction func backdoor(_ sender: Any) {
-        presenter?.goLogin()
+
+            self.presenter?.login(accessToken: AccessToken(id: session.token.accessToken))
+        }
     }
 }
 
 extension LoginView: LoginViewProtocol {
+
+    func showLogin() {
+        launchView.removeFromSuperview()
+        KOSession.shared().logoutAndClose { _, _ in }
+    }
 
     func showError() {
         hideLoading()

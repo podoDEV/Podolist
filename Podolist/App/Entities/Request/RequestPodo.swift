@@ -31,7 +31,7 @@ struct RequestPodo {
                   priority: podo.priority)
     }
 
-    var dict: [String: Any] {
+    var asDicsionary: [String: Any] {
         return ["title": title,
                 "isCompleted": isCompleted,
                 "startedAt": startedAt,

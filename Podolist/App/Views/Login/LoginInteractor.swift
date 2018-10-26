@@ -8,5 +8,16 @@
 import RxSwift
 
 class LoginInteractor: LoginInteractorProtocol {
-    var dataSource: PodoDataSource?
+    var accountDataSource: AccountDataSource?
+    var commonDataSource: CommonDataSource?
+
+    func hasSession() -> Completable? {
+        return commonDataSource?.hasSession()
+    }
+
+    func makeSession(accessToken: AccessToken) -> Completable? {
+        return SessionService.shared.login(accessToken: accessToken)
+            .flatMap { (self.accountDataSource?.addAccount($0))!.asObservable() }
+            .asCompletable()
+    }
 }

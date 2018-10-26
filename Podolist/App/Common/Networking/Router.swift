@@ -10,7 +10,17 @@ struct Router: URLRouter {
         return (Bundle.main.infoDictionary!["BASE_URL"] as! String).replacingOccurrences(of: "\\", with: "")
     }
 
-    struct Podolist: Readable, Creatable, Updatable, Deletable, hasStatuses {
+    struct Login: Creatable {
+        var route = "login"
+        var urlParams: String!
+    }
+
+    struct Logout: Creatable {
+        var route = "logout"
+        var urlParams: String!
+    }
+
+    struct Podolist: Readable, Creatable, Updatable, Deletable {
         var route = "items"
         var urlParams: String!
     }
