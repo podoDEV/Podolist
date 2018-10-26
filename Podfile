@@ -5,57 +5,55 @@ workspace 'Podolist'
 inhibit_all_warnings!
 use_frameworks!
 
-def common_pods
-    # Pods for Reactive
+def common
+    # Rx
     pod 'RxSwift', '~> 4.1.2'
     pod 'RxCocoa', '~> 4.1.2'
 
-    # Pods for Networking
+    # Networking
     pod 'Alamofire', '~> 4.7.2'
     pod 'SwiftyJSON', '~> 4.1.0'
 
-    # Pods for Code consistency
-    pod 'SwiftLint'
+    # Logging
+    pod 'CocoaLumberjack/Swift'
 
-    # Pods for Account Managing
+    # Etc
+    pod 'Then'
+    pod 'SwiftLint'
     pod 'KeychainAccess', '~> 3.1.1'
 end
 
-def analytics_pods
+def ui
+    pod 'PodoCalendar', '~> 0.2.5'
+end
+
+def analytics
     pod 'GoogleAnalytics'
 end
 
-def ui_pods
-    pod 'PodoCalendar', '~> 0.2.4'
-end
-
-def spec_pods
-    # Pods for testing
+def spec
     pod 'Quick', '~> 1.3.0'
     pod 'Nimble', '~> 7.1.1'
-
-    # Pods for testing
-    pod 'RxNimble', '~> 4.1.0'
 end
 
 target 'Podolist' do
-    common_pods
-    ui_pods
-    analytics_pods
+    common
+    ui
+    analytics
 end
 
-target 'Podolist.DEV' do
-    common_pods
-    ui_pods
-    analytics_pods
+target 'PodolistTest' do
+    common
+    ui
+    analytics
 end
 
 target 'PodolistTests' do
-    common_pods
-    spec_pods
+    common
+    spec
 end
 
 target 'PodolistUITests' do
-    common_pods
-    spec_pods
+    common
+    spec
 end
