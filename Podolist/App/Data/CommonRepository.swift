@@ -8,7 +8,6 @@
 import RxSwift
 
 class CommonRepository: CommonDataSource {
-
     var localDataSource: CommonLocalDataSource?
     var remoteDataSource: CommonRemoteDataSource?
 

@@ -8,11 +8,15 @@
 import UIKit
 import RxSwift
 
+// MARK: - Lifecycle
 class LoginView: BaseViewController {
 
     var presenter: LoginPresenterProtocol?
 
-    var launchView: UIView!
+    lazy var launchView: UIView! = {
+        let view = Bundle.main.loadNibNamed("Launch", owner: self, options: nil)?.first as? UIView
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +26,6 @@ class LoginView: BaseViewController {
 
     override func setup() {
         super.setup()
-        launchView = Bundle.main.loadNibNamed("Launch", owner: self, options: nil)?.first as? UIView
         view.addSubview(launchView)
     }
 
@@ -30,13 +33,11 @@ class LoginView: BaseViewController {
         super.viewDidLayoutSubviews()
         launchView.frame = view.bounds
     }
+}
 
-    func showLogin() {
-        launchView.removeFromSuperview()
-        KOSession.shared().logoutAndClose { _, _ in }
-    }
+// MARK: - Action
+extension LoginView {
 
-    // MARK: - Action
     @IBAction func tappedLogin(_ sender: Any) {
         guard let session = KOSession.shared() else { return }
         if session.isOpen() {
@@ -57,6 +58,11 @@ class LoginView: BaseViewController {
 }
 
 extension LoginView: LoginViewProtocol {
+
+    func showLogin() {
+        launchView.removeFromSuperview()
+        KOSession.shared().logoutAndClose { _, _ in }
+    }
 
     func showError() {
         hideLoading()
