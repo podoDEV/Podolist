@@ -37,6 +37,7 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
                 onNext: { podo in
                     self.podolist.append(podo)
                     self.view?.showPodolist(with: self.podolist)
+                    self.view?.updateTopView(podo.startedAt!)
                     self.view?.resetUI()
                     self.view?.updateUI()
                 }, onError: { error in

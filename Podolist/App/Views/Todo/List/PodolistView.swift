@@ -41,7 +41,6 @@ class PodolistView: BaseViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Zones.current)
         showLoading()
         presenter?.refresh()
     }
@@ -153,6 +152,11 @@ extension PodolistView: PodolistViewProtocol {
             self.writeView.frame = self.detailWriteFrame
         }
         writeView.updateUIToDetail()
+        view.endEditing(true)
+    }
+
+    func updateTopView(_ date: Date) {
+        topView.update(date)
     }
 
     func resetUI() {
@@ -220,7 +224,6 @@ extension PodolistView: WriteViewDelegate {
 
     func didTappedDetail() {
         updateUIToDetail()
-        view.endEditing(true)
     }
 
     func didTappedCreate() {

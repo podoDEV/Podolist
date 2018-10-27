@@ -90,6 +90,11 @@ class MainTopView: BaseView {
         calendarView.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 
+    func update(_ date: Date) {
+        self.date = date
+        calendarView.update(date)
+    }
+
     @objc func didTappedSetting() {
         delegate?.didTappedSetting()
     }

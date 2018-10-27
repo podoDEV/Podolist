@@ -41,7 +41,7 @@ class PodoCalendarView: BaseView {
         weekLabel.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 14)
         calendarView.frame = CGRect(x: 0, y: 14, width: bounds.width, height: bounds.height - 14)
         calendarView.contentOffset.x = bounds.width
-        calendarView.selectDate(date: DateInRegion(date, region: DateUtils.region))
+        calendarView.selectDate(date: date.convertTo(region: DateUtils.region))
     }
 
     @objc private func onSelected(notification: NSNotification) {
@@ -54,6 +54,10 @@ class PodoCalendarView: BaseView {
         if let delegate = delegate {
             delegate.calendarView(self, didSelectDate: date.date)
         }
+    }
+
+    func update(_ date: Date) {
+        calendarView.update(date.convertTo(region: DateUtils.region))
     }
 }
 

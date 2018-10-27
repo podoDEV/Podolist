@@ -16,6 +16,7 @@ protocol PodolistViewProtocol: class {
     func updateUI()
     func updateUIToWrite()
     func updateUIToDetail()
+    func updateTopView(_ date: Date)
     func resetUI()
 }
 
