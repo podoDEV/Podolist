@@ -2,7 +2,6 @@
 //  PodoCalendarView.swift
 //  Podolist
 //
-//  Created by NHNEnt on 08/10/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 
@@ -14,6 +13,12 @@ class PodoCalendarView: BaseView {
 
     var date: Date = Date()
 
+    lazy var weekLabel: WeekLabelView = {
+        let view = WeekLabelView()
+        view.backgroundColor = .clear
+        return view
+    }()
+
     lazy var calendarView: CalendarView = {
         let view = CalendarView()
         view.delegate = self
@@ -21,9 +26,9 @@ class PodoCalendarView: BaseView {
     }()
 
     override func setup() {
-        let dateInRegion = DateInRegion().dateAt(.startOfDay)
-        self.date = dateInRegion.date
+        self.date = DateUtils.todayRegion.date
 
+        addSubview(weekLabel)
         addSubview(calendarView)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onSelected(notification:)),
@@ -33,9 +38,10 @@ class PodoCalendarView: BaseView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        calendarView.frame = self.bounds
+        weekLabel.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 14)
+        calendarView.frame = CGRect(x: 0, y: 14, width: bounds.width, height: bounds.height - 14)
         calendarView.contentOffset.x = bounds.width
-        calendarView.selectDate(date: DateInRegion(date, region: .UTC))
+        calendarView.selectDate(date: DateInRegion(date, region: DateUtils.region))
     }
 
     @objc private func onSelected(notification: NSNotification) {

@@ -26,18 +26,15 @@ class PodoWritePriorityView: BaseView {
         }
     }
 
-    func clear() {
+    func update(_ priority: Priority) {
         // detailButton init
-//        titleField.text = ""
-//        canCreate = false
+        priorityView.update(priority)
     }
 }
 
 extension PodoWritePriorityView: PriorityViewDelegate {
 
     func didChangedPriority(priority: Priority) {
-        if let delegate = delegate {
-            delegate.didChangedPriority(priority: priority)
-        }
+        delegate?.didChangedPriority(priority: priority)
     }
 }

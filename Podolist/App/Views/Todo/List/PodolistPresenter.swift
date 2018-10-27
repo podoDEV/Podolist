@@ -32,7 +32,6 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
 
     func didTappedCreate(podo: Podo) {
         interactor?.createPodo(podo: podo)!
-            .flatMap { (self.interactor?.fetchPodo(podoId: $0))! }
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { podo in

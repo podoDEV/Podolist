@@ -71,7 +71,7 @@ class PodoService: PodoServiceProtocol {
     func postPodo(requestPodo: RequestPodo) -> Observable<Int> {
         return Observable<Int>.create { observer in
             let request = self.sessionService.api().request(Router.Podolist.create(parameters: requestPodo.asDicsionary))
-                .validate(statusCode: 200..<300)
+                .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):

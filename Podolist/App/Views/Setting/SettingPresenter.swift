@@ -12,6 +12,8 @@ class SettingPresenter: SettingPresenterProtocol {
     var interactor: SettingInteractorProtocol?
     var wireFrame: SettingWireFrameProtocol?
 
+    let disposeBag = DisposeBag()
+
     var items = [ViewModelSettingSection]()
 
     func viewDidLoad() {
@@ -27,17 +29,25 @@ class SettingPresenter: SettingPresenterProtocol {
         items.append(logoutItem)
         view?.showSettings(with: items)
     }
+
+    func logout() {
+        KOSession.shared().logoutAndClose { _, _ in}
+        interactor?.removeSession()!
+            .observeOn(MainScheduler.instance)
+            .subscribe { completable in
+                switch completable {
+                case .completed:
+                    self.wireFrame?.goToLoginScreen()
+                case .error:
+                    log.d("Invalid Session")
+                }
+            }.disposed(by: disposeBag)
+    }
 }
 
 extension SettingPresenter {
 
     func showDetail(type: SettingRowType) {
         wireFrame?.goToDetailScreen(from: self.view!, to: type)
-    }
-
-    func logout() {
-        KOSession.shared().logoutAndClose { success, error in
-
-        }
     }
 }

@@ -15,6 +15,7 @@ protocol AccountDataSource: class {
 //    func login(accessToken: AccessToken) -> Observable<Account>?
 //    func logout() -> Completable?
     func addAccount(_ account: Account) -> Completable?
+//    func removeAccount
 //    func addAccount(_ account: Account) -> Completable?
 //    func savePodo(id: Int, title: String)
 //    func removePodo()

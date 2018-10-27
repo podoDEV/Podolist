@@ -10,6 +10,7 @@ enum Priority: String {
     case high
     case medium
     case low
+    case none
 }
 
 extension Priority {
@@ -24,6 +25,8 @@ extension Priority {
             return InterfaceString.Priority.Medium
         case .low:
             return InterfaceString.Priority.Low
+        default:
+            return ""
         }
     }
 
@@ -37,6 +40,8 @@ extension Priority {
             return .priorityColor3
         case .low:
             return .priorityColor4
+        default:
+            return .backgroundColor2
         }
     }
 }

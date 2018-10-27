@@ -17,12 +17,9 @@ class PodolistInteractor: PodolistInteractorProtocol {
             }
     }
 
-    func fetchPodo(podoId: Int) -> Observable<ViewModelPodo>? {
-        return dataSource?.findPodo(podoId: podoId)!
+    func createPodo(podo: Podo) -> Observable<ViewModelPodo>? {
+        return dataSource?.addPodo(podo)!
+            .flatMap { (self.dataSource?.findPodo(podoId: $0))! }
             .map { ViewModelPodo(podo: $0)}
-    }
-
-    func createPodo(podo: Podo) -> Observable<Int>? {
-        return dataSource?.addPodo(podo)
     }
 }

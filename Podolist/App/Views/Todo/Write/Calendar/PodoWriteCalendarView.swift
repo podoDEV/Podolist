@@ -27,7 +27,7 @@ class PodoWriteCalendarView: BaseView {
         }
     }
 
-    func clear() {
+    func update() {
 //        calendarView.
     }
 }
@@ -35,9 +35,7 @@ class PodoWriteCalendarView: BaseView {
 extension PodoWriteCalendarView: PodoCalendarDelegate {
 
     func calendarView(_ calendarView: PodoCalendar, didSelectDate date: Date) {
-        if let delegate = delegate {
-            delegate.didChangedDate(date: date)
-        }
+        delegate?.didChangedDate(date: date)
     }
 
     func calendarView(_ calendarView: PodoCalendar, startedAt startDate: Date, finishedAt finishDate: Date) {

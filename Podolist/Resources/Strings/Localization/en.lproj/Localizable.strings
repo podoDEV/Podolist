@@ -41,10 +41,18 @@
 "error.email.title" = "Could Not Send Email";
 "error.email.body" = "Your device could not send e-mail.\nPlease check e-mail configuration and try again.";
 
-"SUN" = "SUN";
-"MON" = "MON";
-"TUE" = "TUE";
-"WED" = "WED";
-"THU" = "THU";
-"FRI" = "FRI";
-"SAT" = "SAT";
+//"SUN" = "SUN";
+//"MON" = "MON";
+//"TUE" = "TUE";
+//"WED" = "WED";
+//"THU" = "THU";
+//"FRI" = "FRI";
+//"SAT" = "SAT";
+
+"SUN" = "sun";
+"MON" = "mon";
+"TUE" = "tue";
+"WED" = "wed";
+"THU" = "thu";
+"FRI" = "fri";
+"SAT" = "sat";

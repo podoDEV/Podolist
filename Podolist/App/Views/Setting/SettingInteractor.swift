@@ -9,4 +9,9 @@ import RxSwift
 
 class SettingInteractor: SettingInteractorProtocol {
 
+    func removeSession() -> Completable? {
+        return SessionService.shared.logout()
+//            .flatMap { (self.accountDataSource?.addAccount($0))!.asObservable() }
+//            .asCompletable()
+    }
 }

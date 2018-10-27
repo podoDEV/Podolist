@@ -45,14 +45,12 @@ protocol PodolistInteractorProtocol: class {
 
     // Presenter -> Interactor
     func fetchPodolist() -> Observable<[ViewModelPodo]>?
-    func fetchPodo(podoId: Int) -> Observable<ViewModelPodo>?
-    func createPodo(podo: Podo) -> Observable<Int>?
+    func createPodo(podo: Podo) -> Observable<ViewModelPodo>?
 }
 
 protocol PodolistWireFrameProtocol: class {
     static func createPodolistModule() -> UIViewController
 
     // Presenter -> WireFrame
-//    func presentPodoDetailScreen(from view: PodolistViewProtocol, forWish wish: ViewModel)
     func goToSettingScreen(from view: PodolistViewProtocol)
 }
