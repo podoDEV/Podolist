@@ -47,10 +47,11 @@ class PodoWriteTitleView: BaseView {
         }
     }
 
-    func clear() {
+    func update(_ title: String?) {
         // detailButton init
-        titleField.text = ""
-        canCreate = false
+        let text = title ?? ""
+        titleField.text = text
+        canCreate = !text.isEmpty
     }
 }
 
@@ -60,20 +61,14 @@ extension PodoWriteTitleView {
         let title = sender.text ?? ""
         canCreate = !title.isEmpty
 
-        if let delegate = delegate {
-            delegate.textFieldDidChange(text: title)
-        }
+        delegate?.textFieldDidChange(text: title)
     }
 
     @IBAction func detailAction(_ sender: Any) {
-        if let delegate = delegate {
-            delegate.didTappedDetail()
-        }
+        delegate?.didTappedDetail()
     }
 
     @IBAction func createAction(_ sender: Any) {
-        if let delegate = delegate {
-            delegate.didTappedCreate()
-        }
+        delegate?.didTappedCreate()
     }
 }

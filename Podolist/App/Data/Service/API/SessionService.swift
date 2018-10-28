@@ -52,6 +52,7 @@ class SessionService: SessionServiceProtocol {
             let request = Alamofire.request(Router.Logout.create())
                 .validate()
                 .responseData { response in
+                    KeychainService.shared.deleteValue(key: "session")
                     switch response.result {
                     case .success:
                         completable(.completed)

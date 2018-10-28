@@ -40,12 +40,13 @@ protocol SettingInteractorProtocol: class {
 //    var dataSource: PodoDataSource? { get set }
 
     // Presenter -> Interactor
-//    func fetchPodolist() -> Observable<[ViewModelPodo]>?
+    func removeSession() -> Completable?
 }
 
 protocol SettingWireFrameProtocol: class {
     static func createSettingModule() -> UIViewController
 
     // Presenter -> WireFrame
+    func goToLoginScreen()
     func goToDetailScreen(from source: SettingViewProtocol, to type: SettingRowType)
 }

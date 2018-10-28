@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import SwiftDate
 
 class PodolistView: BaseViewController {
     var presenter: PodolistPresenterProtocol?
@@ -120,10 +121,6 @@ class PodolistView: BaseViewController {
         presenter?.refresh()
         refreshControl.endRefreshing()
     }
-
-    @IBAction func pressSetting(_ sender: Any) {
-        presenter?.showSetting()
-    }
 }
 
 extension PodolistView: PodolistViewProtocol {
@@ -139,6 +136,7 @@ extension PodolistView: PodolistViewProtocol {
             self.writeView.frame = self.normalFrame
         }
         writeView.updateUI()
+        view.endEditing(true)
     }
 
     func updateUIToWrite() {
@@ -154,11 +152,16 @@ extension PodolistView: PodolistViewProtocol {
             self.writeView.frame = self.detailWriteFrame
         }
         writeView.updateUIToDetail()
+        view.endEditing(true)
+    }
+
+    func updateTopView(_ date: Date) {
+        topView.update(date)
     }
 
     func resetUI() {
         podo = Podo()
-        writeView.clear()
+        writeView.update(podo)
         view.endEditing(true)
         scrollToBottom()
     }
@@ -169,6 +172,10 @@ extension PodolistView: PodolistViewProtocol {
 }
 
 extension PodolistView: MainTopViewDelegate {
+
+    func didTappedSetting() {
+        presenter?.showSetting()
+    }
 
     func didSelectDate(date: Date) {
         presenter?.refresh()
@@ -217,7 +224,6 @@ extension PodolistView: WriteViewDelegate {
 
     func didTappedDetail() {
         updateUIToDetail()
-        view.endEditing(true)
     }
 
     func didTappedCreate() {
@@ -231,6 +237,5 @@ extension PodolistView: WriteViewDelegate {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         updateUI()
-        view.endEditing(true)
     }
 }

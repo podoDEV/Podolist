@@ -12,7 +12,7 @@ struct Podo {
     var startedAt = Int(Date().timeIntervalSince1970)
     var endedAt = Int(Date().timeIntervalSince1970)
     var updatedAt: Int?
-    var priority: Priority = .medium
+    var priority: Priority = .none
 
     init() {}
 

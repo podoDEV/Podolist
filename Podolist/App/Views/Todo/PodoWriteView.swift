@@ -56,8 +56,15 @@ class PodoWriteView: BaseView {
         calendarView.isHidden = false
     }
 
-    func clear() {
-        titleView.clear()
-        priorityView.clear()
+    func update(_ podo: Podo) {
+        titleView.update(podo.title)
+        priorityView.update(podo.priority)
+        calendarView.update()
+    }
+
+    override func resignFirstResponder() -> Bool {
+        super.resignFirstResponder()
+        titleView.titleField.resignFirstResponder()
+        return true
     }
 }

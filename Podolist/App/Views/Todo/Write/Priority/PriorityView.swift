@@ -13,6 +13,7 @@ class PriorityView: BaseView {
 
     weak var delegate: PriorityViewDelegate?
 
+//    var selectedPriority: Priority?
     var priorities: [Priority] = [.urgent, .high, .medium, .low]
     var priorityButtons = [PriorityButton]()
 
@@ -20,11 +21,6 @@ class PriorityView: BaseView {
         super.setup()
         for priority in priorities {
             let button = PriorityButton(priority: priority)
-            if button.priority == .medium {
-                button.isSelectedButton = true
-            } else {
-                button.isSelectedButton = false
-            }
             button.addTarget(self, action: #selector(handlePress(sender:)), for: .touchUpInside)
             addSubview(button)
             priorityButtons.append(button)
@@ -40,12 +36,25 @@ class PriorityView: BaseView {
         }
     }
 
+    func update(_ priority: Priority) {
+        for button in priorityButtons {
+            if priority == button.priority {
+                button.isSelectedButton = true
+            } else {
+                button.isSelectedButton = false
+            }
+        }
+    }
+
     @objc func handlePress(sender: UIButton) {
         for button in priorityButtons {
             if sender.isEqual(button) {
-                button.isSelectedButton = true
-                if let delegate = delegate {
-                    delegate.didChangedPriority(priority: button.priority)
+                if button.isSelectedButton {
+                    button.isSelectedButton = false
+                    delegate?.didChangedPriority(priority: .none)
+                } else {
+                    button.isSelectedButton = true
+                    delegate?.didChangedPriority(priority: button.priority)
                 }
             } else {
                 button.isSelectedButton = false

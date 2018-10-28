@@ -28,7 +28,7 @@ class CalendarView: UIScrollView {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
 
-        var date = DateInRegion().dateAt(.prevWeek)
+        var date = DateUtils.todayRegion.dateAt(.prevWeek)
         for _ in 0..<3 {
             let week = WeekView()
             week.date = date
@@ -36,6 +36,15 @@ class CalendarView: UIScrollView {
             weeks.append(week)
             date = date.dateAt(.nextWeek)
         }
+    }
+
+    func update(_ dateInRegion: DateInRegion) {
+        var date = dateInRegion.dateAt(.prevWeek)
+        for week in weeks {
+            week.date = date
+            date = date.dateAt(.nextWeek)
+        }
+        selectDate(date: dateInRegion)
     }
 
     override func layoutSubviews() {

@@ -74,9 +74,9 @@ final class KeychainService {
         }
     }
 
-    func deleteValue(onCompleted: (() -> Void)? = nil, onError: ((Error) -> Void)? = nil) {
+    func deleteValue(key: String, onCompleted: (() -> Void)? = nil, onError: ((Error) -> Void)? = nil) {
         do {
-            try keychain.remove(sessionKey)
+            try keychain.remove(key)
         } catch let error {
             if let onError = onError {
                 onError(error)

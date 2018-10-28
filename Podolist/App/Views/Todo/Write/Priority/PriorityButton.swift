@@ -9,7 +9,6 @@ import UIKit
 
 class PriorityButton: UIButton {
 
-//    weak var delegate: PriorityButtonDelegate?
     var priority: Priority = .medium
     var isSelectedButton: Bool = false {
         didSet {

@@ -39,6 +39,11 @@ class SettingWireFrame: SettingWireFrameProtocol {
 
 extension SettingWireFrame {
 
+    func goToLoginScreen() {
+        let destinationVC = LoginWireFrame.createLoginModule()
+        UIApplication.shared.keyWindow?.rootViewController = destinationVC
+    }
+
     func goToDetailScreen(from source: SettingViewProtocol, to type: SettingRowType) {
         guard let source = source as? UIViewController else {
             return
