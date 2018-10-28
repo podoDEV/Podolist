@@ -10,7 +10,7 @@ import UIKit
 class SettingWireFrame: SettingWireFrameProtocol {
 
     static var settingStoryboard: UIStoryboard {
-        return UIStoryboard(name: "Setting", bundle: Bundle.main)
+        return UIStoryboard(name: "Podolist", bundle: Bundle.main)
     }
 
     static func createSettingModule() -> UIViewController {

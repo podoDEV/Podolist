@@ -5,8 +5,6 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
-import UIKit
-
 extension UIView {
 
     func loadNib() -> UIView {
@@ -23,7 +21,7 @@ extension UIView {
                 layoutInset = inset
             }
 
-            if layoutInset.top > 20 {
+            if layoutInset.top >= 20 {
                 layoutInset.top -= 20
             }
         }

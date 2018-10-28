@@ -10,7 +10,7 @@ import Foundation
 struct Style {
     struct List {
         struct Top {
-            static let height: CGFloat = 110
+            static let height: CGFloat = 133
         }
     }
     struct Write {

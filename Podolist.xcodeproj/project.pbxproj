@@ -82,6 +82,8 @@
 		2D34050121733BD200EC3862 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3404FF21733BD200EC3862 /* Launch.xib */; };
 		2D35496921742B8F0014D8CF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35496821742B8F0014D8CF /* Logger.swift */; };
 		2D35496A21742B8F0014D8CF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35496821742B8F0014D8CF /* Logger.swift */; };
+		2D37EB4B2196CF2D001B4274 /* CommonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */; };
+		2D37EB4C2196CF2D001B4274 /* CommonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */; };
 		2D3996E02188B36900CB0E4D /* DefaultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */; };
 		2D3996E12188B36900CB0E4D /* DefaultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */; };
 		2D3D6431217C5852001CF919 /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseAccount.swift */; };
@@ -212,6 +214,10 @@
 		2D9548F4215D1E74006C51E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F203B2143984A00B8BDF2 /* InfoPlist.strings */; };
 		2DAC8BAF2166668F007A2997 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC8BAE2166668F007A2997 /* NibView.swift */; };
 		2DAC8BB02166668F007A2997 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC8BAE2166668F007A2997 /* NibView.swift */; };
+		2DAE36C6219FBB2100F03488 /* SettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C5219FBB2100F03488 /* SettingTopView.swift */; };
+		2DAE36C7219FBB2100F03488 /* SettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C5219FBB2100F03488 /* SettingTopView.swift */; };
+		2DAE36C9219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */; };
+		2DAE36CA219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */; };
 		2DB43251218C7B6B002AEEBA /* PodoAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */; };
 		2DB43252218C7B6B002AEEBA /* PodoAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */; };
 		2DB43254218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */; };
@@ -330,6 +336,7 @@
 		2D3404FC2173301300EC3862 /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
 		2D3404FF21733BD200EC3862 /* Launch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		2D35496821742B8F0014D8CF /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebViewController.swift; sourceTree = "<group>"; };
 		2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequest.swift; sourceTree = "<group>"; };
 		2D3D6430217C5852001CF919 /* ResponseAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAccount.swift; sourceTree = "<group>"; };
 		2D3D643A217C6C5E001CF919 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
@@ -375,6 +382,8 @@
 		2D95490B215D1F47006C51E1 /* Base.release(testflight).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(testflight).xcconfig"; sourceTree = "<group>"; };
 		2D95490C215D1F48006C51E1 /* Base.release(dev).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(dev).xcconfig"; sourceTree = "<group>"; };
 		2DAC8BAE2166668F007A2997 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		2DAE36C5219FBB2100F03488 /* SettingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTopView.swift; sourceTree = "<group>"; };
+		2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Additions.swift"; sourceTree = "<group>"; };
 		2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoAPIType.swift; sourceTree = "<group>"; };
 		2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistSectionCell.swift; sourceTree = "<group>"; };
 		2DB43256218C8EF1002AEEBA /* PodolistSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodolistSectionCell.xib; sourceTree = "<group>"; };
@@ -587,7 +596,7 @@
 		2D0F205C2143984A00B8BDF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2D31DEA52169DCEA00977507 /* Common */,
+				2D37EB492196CF1F001B4274 /* Common */,
 				2D41BC61214D510200B79BF6 /* Base */,
 				2D0F2091214415BD00B8BDF2 /* Launch */,
 				2D0F2092214415CB00B8BDF2 /* Login */,
@@ -664,6 +673,7 @@
 				2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */,
 				2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */,
 				2D31DEA221690E5900977507 /* String+Additions.swift */,
+				2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -779,14 +789,8 @@
 		2D0F20D421453AC500B8BDF2 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20E121454CE700B8BDF2 /* Cells */,
-				2D41BC64214D58BF00B79BF6 /* Views */,
-				2D0F20D521453AF500B8BDF2 /* Setting.storyboard */,
-				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
-				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
-				2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */,
-				2D0F20DD21453B2900B8BDF2 /* SettingView.swift */,
-				2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */,
+				2DAE36C3219FBAD100F03488 /* Top */,
+				2DAE36C4219FBADC00F03488 /* List */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -845,13 +849,6 @@
 			path = Todo;
 			sourceTree = "<group>";
 		};
-		2D31DEA52169DCEA00977507 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		2D31DEE4216A680600977507 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -869,6 +866,14 @@
 				2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		2D37EB492196CF1F001B4274 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		2D41BC54214D170300B79BF6 /* Domain */ = {
@@ -935,6 +940,29 @@
 				2D9548FF215D1EBB006C51E1 /* Info.plist */,
 			);
 			path = Inhouse;
+			sourceTree = "<group>";
+		};
+		2DAE36C3219FBAD100F03488 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				2DAE36C5219FBB2100F03488 /* SettingTopView.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		2DAE36C4219FBADC00F03488 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				2D41BC64214D58BF00B79BF6 /* Views */,
+				2D0F20E121454CE700B8BDF2 /* Cells */,
+				2D0F20D521453AF500B8BDF2 /* Setting.storyboard */,
+				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
+				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
+				2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */,
+				2D0F20DD21453B2900B8BDF2 /* SettingView.swift */,
+				2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		2DCCDD9021494BEB00CC3B00 /* BuildConfig */ = {
@@ -1502,8 +1530,10 @@
 				2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */,
 				2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */,
+				2D37EB4B2196CF2D001B4274 /* CommonWebViewController.swift in Sources */,
 				2DB43251218C7B6B002AEEBA /* PodoAPIType.swift in Sources */,
 				2D0F208B2143D1DE00B8BDF2 /* Router.swift in Sources */,
+				2DAE36C6219FBB2100F03488 /* SettingTopView.swift in Sources */,
 				2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */,
 				2D41BC60214D1C3D00B79BF6 /* ViewModelSetting.swift in Sources */,
 				2D5121FF216782BF00977966 /* PodoWriteTitleView.swift in Sources */,
@@ -1556,6 +1586,7 @@
 				2D0F20BD214432E800B8BDF2 /* PodolistRowCell.swift in Sources */,
 				2D0F20AD21441A8700B8BDF2 /* PodoService.swift in Sources */,
 				2D9095702146B955009335A1 /* LoginView.swift in Sources */,
+				2DAE36C9219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */,
 				2DE90BF92154D27D00BF8588 /* BaseViewController.swift in Sources */,
 				2DB4325B218C9003002AEEBA /* GroupHeader.swift in Sources */,
 				2D31DEA72169DF2E00977507 /* MainTopView.swift in Sources */,
@@ -1617,8 +1648,10 @@
 				2D3404FE2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D3D643C217C6C5E001CF919 /* AccessToken.swift in Sources */,
 				2D9548B4215D1E74006C51E1 /* PodolistPresenter.swift in Sources */,
+				2D37EB4C2196CF2D001B4274 /* CommonWebViewController.swift in Sources */,
 				2DB43252218C7B6B002AEEBA /* PodoAPIType.swift in Sources */,
 				2D9548B5215D1E74006C51E1 /* Router.swift in Sources */,
+				2DAE36C7219FBB2100F03488 /* SettingTopView.swift in Sources */,
 				2D9548B6215D1E74006C51E1 /* PodolistWireFrame.swift in Sources */,
 				2D9548B7215D1E74006C51E1 /* ViewModelSetting.swift in Sources */,
 				2D512200216782BF00977966 /* PodoWriteTitleView.swift in Sources */,
@@ -1671,6 +1704,7 @@
 				2D9548E1215D1E74006C51E1 /* PodolistRowCell.swift in Sources */,
 				2D9548E2215D1E74006C51E1 /* PodoService.swift in Sources */,
 				2D9548E3215D1E74006C51E1 /* LoginView.swift in Sources */,
+				2DAE36CA219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */,
 				2D9548E4215D1E74006C51E1 /* BaseViewController.swift in Sources */,
 				2DB4325C218C9003002AEEBA /* GroupHeader.swift in Sources */,
 				2D31DEAC216A4A6600977507 /* MainTopView.swift in Sources */,

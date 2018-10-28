@@ -21,18 +21,21 @@
                         <viewLayoutGuide key="safeArea" id="tyI-bd-zr7"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zn8-vv-7jc"/>
+                    <connections>
+                        <segue destination="zfg-g5-8Tl" kind="show" identifier="setting" id="Ske-Zh-fCo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1984.057971014493" y="130.58035714285714"/>
+            <point key="canvasLocation" x="1959" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CNS-fO-7Vj">
             <objects>
-                <navigationController storyboardIdentifier="podolist" automaticallyAdjustsScrollViewInsets="NO" id="Myd-yv-RAX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="podolist" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Myd-yv-RAX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uQP-np-cNi">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="uQP-np-cNi">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -43,6 +46,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFj-9D-reJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1073.913043478261" y="130.58035714285714"/>
+        </scene>
+        <!--Setting View-->
+        <scene sceneID="5mg-Xg-LGV">
+            <objects>
+                <viewController storyboardIdentifier="setting" id="zfg-g5-8Tl" customClass="SettingView" customModule="Podolist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pQP-bC-PC7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Aa6-JQ-XAA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icb-Ia-pL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877" y="131"/>
         </scene>
     </scenes>
 </document>
