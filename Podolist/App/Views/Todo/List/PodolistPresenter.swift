@@ -15,6 +15,7 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
     let disposeBag = DisposeBag()
 
     var podolist: [ViewModelPodo] = []
+    var podoGroup: PodoGroup = [:]
 
     func refresh() {
         view?.updateUI()
@@ -28,6 +29,30 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
                     print(error)
                 })
             .disposed(by: disposeBag)
+    }
+
+    func refresh(date: Date) {
+        view?.updateUI()
+        var observable: Observable<PodoGroup>?
+//        if date.isToday {
+            observable = interactor?.fetchTodayPodolist(date: date)// fetchTodayPodolist()
+//        }
+//        else if 과거 {
+//        }
+//        else if 미래
+//        }
+
+        observable?
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { podoGroup in
+                    self.podoGroup = podoGroup
+                    self.view?.showPodolist(with: podoGroup)
+                }, onError: { error in
+                    print(error)
+                })
+            .disposed(by: disposeBag)
+
     }
 
     func didTappedCreate(podo: Podo) {
@@ -51,5 +76,20 @@ extension PodolistPresenter {
 
     func showSetting() {
         wireFrame?.goToSettingScreen(from: view!)
+    }
+}
+
+extension PodolistPresenter {
+
+    func fetchTodayPodolist() -> Observable<[ViewModelPodo]>? {
+        return interactor?.fetchPodolist()
+    }
+
+    func fetchPastPodolist() -> Observable<[ViewModelPodo]>? {
+        return interactor?.fetchPodolist()
+    }
+
+    func fetchFuturePodolist() -> Observable<[ViewModelPodo]>? {
+        return interactor?.fetchPodolist()
     }
 }

@@ -13,19 +13,49 @@ protocol PodoServiceProtocol: ApiServiceProtocol {
 
     func getAllPodolist() -> Observable<[ResponsePodo]>
     func getPodo(podoId: Int) -> Observable<ResponsePodo>
+    func getPodolist(page: Int, params: PodoParams) -> Observable<[ResponsePodo]>
 }
 
 class PodoService: PodoServiceProtocol {
     static let shared = PodoService()
+//    var api: PodoApi
     var sessionService: ApiSessionService
     private init() {
+//        api = PodoApi.shared
         sessionService = ApiSessionService.shared
+    }
+
+    func getPodolist(page: Int, params: PodoParams) -> Observable<[ResponsePodo]> {
+        return Observable<[ResponsePodo]>.create { observer in
+//            self.api.request()
+            let parameters = PodoAPIType.makePodoParams(page: page, params: params)
+            let request = self.sessionService.api().request(Router.Podolist.get(parameters: parameters))
+                .validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(let value):
+                        var responsePodolist = [ResponsePodo]()
+                        for jsonPodo in JSON(value).arrayValue {
+                            let content = jsonPodo.to(type: ResponsePodo.self) as! ResponsePodo
+                            responsePodolist.append(content)
+                        }
+                        observer.onNext(responsePodolist)
+                        observer.onCompleted()
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+            }
+            request.resume()
+            return Disposables.create {
+                request.cancel()
+            }
+        }
     }
 
     func getAllPodolist() -> Observable<[ResponsePodo]> {
         return Observable<[ResponsePodo]>.create { observer in
-            let request = self.sessionService.api().request(Router.Podolist.get(params: ""))
-                .validate(statusCode: 200..<300)
+            let request = self.sessionService.api().request(Router.Podolist.get(param: ""))
+                .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):
@@ -49,8 +79,8 @@ class PodoService: PodoServiceProtocol {
 
     func getPodo(podoId: Int) -> Observable<ResponsePodo> {
         return Observable<ResponsePodo>.create { observer in
-            let request = self.sessionService.api().request(Router.Podolist.get(params: String(podoId)))
-                .validate(statusCode: 200..<300)
+            let request = self.sessionService.api().request(Router.Podolist.get(param: String(podoId)))
+                .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):

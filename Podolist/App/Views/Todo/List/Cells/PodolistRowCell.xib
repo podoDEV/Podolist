@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PodolistTableViewCell" rowHeight="102" id="RxR-E9-giI" customClass="PodolistTableViewCell" customModule="Podolist" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PodolistRowCell" rowHeight="102" id="RxR-E9-giI" customClass="PodolistRowCell" customModule="Podolist" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="372" height="102"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RxR-E9-giI" id="2Dn-ad-Tte">
@@ -61,7 +61,7 @@
                 <outlet property="roundView" destination="BcA-fa-j9k" id="5eX-WP-3AR"/>
                 <outlet property="titleLabel" destination="Mc4-Tr-8MQ" id="Pms-m9-fpU"/>
             </connections>
-            <point key="canvasLocation" x="-44.799999999999997" y="156.52173913043478"/>
+            <point key="canvasLocation" x="-44.799999999999997" y="155.62218890554723"/>
         </tableViewCell>
     </objects>
 </document>

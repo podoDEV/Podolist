@@ -17,6 +17,12 @@ class PodolistView: BaseViewController {
             tableView.reloadData()
         }
     }
+    var podoGroup: PodoGroup = [:] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     var normalFrame: CGRect {
         return CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Normal.height + safeAreaInset.bottom)
     }
@@ -42,7 +48,7 @@ class PodolistView: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoading()
-        presenter?.refresh()
+        presenter?.refresh(date: Date())
     }
 
     override func setup() {
@@ -60,13 +66,16 @@ class PodolistView: BaseViewController {
     }
 
     func setupTableView() {
-        tableView = UITableView()
+        tableView = UITableView(frame: .zero, style: .grouped)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .white
+        tableView.sectionFooterHeight = 0
         tableView.tableFooterView = UIView()
-        tableView.register(UINib(nibName: PodolistTableViewCell.Identifier, bundle: nil), forCellReuseIdentifier: PodolistTableViewCell.Identifier)
+        tableView.register(UINib(nibName: PodolistSectionCell.Identifier, bundle: nil), forCellReuseIdentifier: PodolistSectionCell.Identifier)
+        tableView.register(UINib(nibName: PodolistRowCell.Identifier, bundle: nil), forCellReuseIdentifier: PodolistRowCell.Identifier)
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -130,6 +139,11 @@ extension PodolistView: PodolistViewProtocol {
         hideLoading()
     }
 
+    func showPodolist(with podolist: PodoGroup) {
+        self.podoGroup = podolist
+        hideLoading()
+    }
+
     func updateUI() {
         hidingView.isHidden = true
         UIView.animate(withDuration: 0.2) {
@@ -178,20 +192,33 @@ extension PodolistView: MainTopViewDelegate {
     }
 
     func didSelectDate(date: Date) {
-        presenter?.refresh()
+        presenter?.refresh(date: date)
     }
 }
 
 extension PodolistView: UITableViewDataSource, UITableViewDelegate {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return podoGroup.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return podolist.count
+        return podoGroup.filter { $0.key.priority! == section }.first!.value.count
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PodolistSectionCell.Identifier) as! PodolistSectionCell
+
+        let group = podoGroup.filter { $0.key.priority! == section }.first!.key
+        cell.item = group
+
+        return cell
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PodolistTableViewCell.Identifier, for: indexPath) as! PodolistTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PodolistRowCell.Identifier, for: indexPath) as! PodolistRowCell
 
-        let podo = podolist[indexPath.row]
+        let podo = podoGroup.filter { $0.key.priority! == indexPath.section }.first!.value[indexPath.row]
         cell.item = podo
 
         return cell

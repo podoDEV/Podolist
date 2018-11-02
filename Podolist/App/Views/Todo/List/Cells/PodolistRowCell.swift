@@ -7,8 +7,8 @@
 
 import UIKit
 
-class PodolistTableViewCell: UITableViewCell {
-    static let Identifier = "PodolistTableViewCell"
+class PodolistRowCell: UITableViewCell {
+    static let Identifier = "PodolistRowCell"
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priorityView: UIView!

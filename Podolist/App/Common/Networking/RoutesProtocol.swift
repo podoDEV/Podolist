@@ -15,6 +15,7 @@ protocol URLRouter {
 // Typically this is conformed to by methods routes.
 protocol Routable {
     typealias Parameters = [String: Any]
+    typealias Query = String
     var route: String { get set }
     var urlParams: String! { get set }
     init()
@@ -55,10 +56,16 @@ extension Readable where Self: Routable {
     //
     // Router.User.get(params: "2")
     //
-    static func get(params: String) -> RequestConverter {
+    static func get(param: String) -> RequestConverter {
         let temp = Self.init()
-        let route = "\(temp.route)/\(params)"
+        let route = "\(temp.route)/\(param)"
         return RequestConverter(method: .get, route: route)
+    }
+
+    static func get(parameters: Parameters) -> RequestConverter {
+        let temp = Self.init()
+        let route = "\(temp.route)"
+        return RequestConverter(method: .get, route: route, parameters: parameters)
     }
 }
 
