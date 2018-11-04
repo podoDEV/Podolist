@@ -31,9 +31,16 @@ class PodoRemoteRepository: PodoRemoteDataSource {
             .map { Podo(responsePodo: $0) }
     }
 
-    func postPodo(_ podo: Podo) -> Observable<Int>? {
+    func postPodo(_ podo: Podo) -> Observable<Podo>? {
         return PodoService.shared.postPodo(requestPodo: RequestPodo(podo: podo))
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .map { Podo(responsePodo: $0) }
+    }
+
+    func putPodo(id: Int, podo: Podo) -> Observable<Podo>? {
+        return PodoService.shared.putPodo(id: id, requestPodo: RequestPodo(podo: podo))
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .map { Podo(responsePodo: $0) }
     }
 
     func putPodo() {

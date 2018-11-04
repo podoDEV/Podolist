@@ -13,7 +13,7 @@ class PodolistSectionCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
 
-    var item: ViewModelPodoGroup? {
+    var item: GroupHeader? {
         didSet {
             self.backgroundColor = .white
             titleLabel.text = item?.title

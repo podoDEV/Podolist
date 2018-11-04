@@ -41,6 +41,7 @@ protocol PodolistPresenterProtocol: class {
 //    func refresh()
     func refresh(date: Date)
     func didTappedCreate(podo: Podo)
+    func didTappedComplete(id: Int, completed: Bool)
     func showSetting()
 }
 
@@ -51,7 +52,8 @@ protocol PodolistInteractorProtocol: class {
     func fetchPastPodolist(date: Date) -> Observable<[PodoGroup]>?
     func fetchTodayPodolist(date: Date) -> Observable<[PodoGroup]>?
     func fetchFuturePodolist(date: Date) -> Observable<[PodoGroup]>?
-    func createPodo(podo: Podo) -> Observable<ViewModelPodo>?
+    func createPodo(podo: Podo) -> Observable<Podo>?
+    func updatePodo(id: Int, podo: Podo) -> Observable<Podo>?
 }
 
 protocol PodolistWireFrameProtocol: class {
@@ -61,4 +63,4 @@ protocol PodolistWireFrameProtocol: class {
     func goToSettingScreen(from view: PodolistViewProtocol)
 }
 
-typealias PodoGroup = (ViewModelPodoGroup, [ViewModelPodo])
+typealias PodoGroup = (GroupHeader, [Podo])

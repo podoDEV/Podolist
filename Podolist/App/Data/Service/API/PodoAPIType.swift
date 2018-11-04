@@ -55,7 +55,11 @@ final class PodoAPIType {
         case .completedAt:
             parameters["completedAtFrom"] = dateParam.value.dateAt(.startOfDay).date.timeIntervalSince1970
             parameters["completedAtTo"] = dateParam.value.dateAt(.endOfDay).date.timeIntervalSince1970
+//            parameters["completedAtFrom"] = dateParam.value.timeIntervalSince1970
+//            parameters["completedAtTo"] = dateParam.value.dateAt(.tomorrow).timeIntervalSince1970
         case .dueAt:
+//            parameters["dueAtFrom"] = dateParam.value.timeIntervalSince1970
+//            parameters["dueAtTo"] = dateParam.value.dateAt(.tomorrow).timeIntervalSince1970
             parameters["dueAtFrom"] = dateParam.value.dateAt(.startOfDay).date.timeIntervalSince1970
             parameters["dueAtTo"] = dateParam.value.dateAt(.endOfDay).date.timeIntervalSince1970
         }

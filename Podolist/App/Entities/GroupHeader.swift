@@ -1,12 +1,12 @@
 //
-//  ViewModelPodoGroup.swift
+//  GroupHeader.swift
 //  Podolist
 //
 //  Created by NHNEnt on 02/11/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 
-class ViewModelPodoGroup {
+class GroupHeader {
 
 //    var priority: Int?
     var title: String?
@@ -17,12 +17,12 @@ class ViewModelPodoGroup {
     }
 }
 
-extension ViewModelPodoGroup: Equatable, Hashable {
+extension GroupHeader: Equatable, Hashable {
     var hashValue: Int {
         return title.hashValue
     }
 
-    static func == (lhs: ViewModelPodoGroup, rhs: ViewModelPodoGroup) -> Bool {
+    static func == (lhs: GroupHeader, rhs: GroupHeader) -> Bool {
         return lhs.title == rhs.title
     }
 }

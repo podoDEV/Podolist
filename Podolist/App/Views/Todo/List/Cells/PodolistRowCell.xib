@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.56425291300000002" green="0.0" blue="0.99614375830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.58039215686274503" green="0.25490196078431371" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Mc4-Tr-8MQ" firstAttribute="top" secondItem="BcA-fa-j9k" secondAttribute="top" constant="8" id="0eW-xw-hxk"/>
                             <constraint firstAttribute="bottom" secondItem="Mc4-Tr-8MQ" secondAttribute="bottom" constant="8" id="3Xu-aB-CDx"/>
@@ -82,6 +82,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="completeImage" destination="Wkp-ek-Cfv" id="bAQ-tz-ZWU"/>
+                <outlet property="completeView" destination="8a1-Im-29c" id="md1-kb-bxS"/>
                 <outlet property="priorityView" destination="iN3-0b-BxE" id="qX9-B6-2zl"/>
                 <outlet property="roundView" destination="BcA-fa-j9k" id="2P4-Vs-Bye"/>
                 <outlet property="titleLabel" destination="Mc4-Tr-8MQ" id="gw8-kK-JWg"/>

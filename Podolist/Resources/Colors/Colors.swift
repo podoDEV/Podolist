@@ -17,6 +17,9 @@ private struct PodolistColors {
     static let gradationStart = UIColor(hex: 0xC32BFF)
     static let gradationEnd = UIColor(hex: 0x9013FE)
 
+    static let todoBackground1 = UIColor(hex: 0x9441F5) // normal
+    static let todoBackground2 = UIColor(hex: 0xDCC3FC) // completed
+
     static let priorityColor1 = UIColor(hex: 0xD0021B) // 매우 중요
     static let priorityColor2 = UIColor(hex: 0xF5A623) // 중요
     static let priorityColor3 = UIColor(hex: 0x7ED321) // 보통
@@ -43,6 +46,9 @@ extension UIColor {
 
     static var gradationStart: UIColor { return PodolistColors.gradationStart }
     static var gradationEnd: UIColor { return PodolistColors.gradationEnd }
+
+    static var todoBackground1: UIColor { return PodolistColors.todoBackground1 }
+    static var todoBackground2: UIColor { return PodolistColors.todoBackground2 }
 
     static var priorityColor1: UIColor { return PodolistColors.priorityColor1 }
     static var priorityColor2: UIColor { return PodolistColors.priorityColor2 }

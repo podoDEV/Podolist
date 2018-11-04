@@ -97,19 +97,39 @@ class PodoService: PodoServiceProtocol {
         }
     }
 
-    func postPodo(requestPodo: RequestPodo) -> Observable<Int> {
-        return Observable<Int>.create { observer in
+    func postPodo(requestPodo: RequestPodo) -> Observable<ResponsePodo> {
+        return Observable<ResponsePodo>.create { observer in
             let request = self.sessionService.api().request(Router.Podolist.create(parameters: requestPodo.asDicsionary))
                 .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):
-                        let id = value as! Int
-                        observer.onNext(id)
+                        let responsePodo = JSON(value).to(type: ResponsePodo.self) as! ResponsePodo
+                        observer.onNext(responsePodo)
+                        observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
                     }
                 }
+            request.resume()
+            return Disposables.create {}
+        }
+    }
+
+    func putPodo(id: Int, requestPodo: RequestPodo) -> Observable<ResponsePodo> {
+        return Observable<ResponsePodo>.create { observer in
+            let request = self.sessionService.api().request(Router.Podolist.update(params: String(id), parameters: requestPodo.asDicsionary))
+                .validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(let value):
+                        let responsePodo = JSON(value).to(type: ResponsePodo.self) as! ResponsePodo
+                        observer.onNext(responsePodo)
+                        observer.onCompleted()
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+            }
             request.resume()
             return Disposables.create {}
         }

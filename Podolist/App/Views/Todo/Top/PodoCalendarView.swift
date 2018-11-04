@@ -55,6 +55,7 @@ class PodoCalendarView: BaseView {
     }
 
     func update(_ date: Date) {
+        self.date = date
         calendarView.update(DateInRegion(date))
     }
 }

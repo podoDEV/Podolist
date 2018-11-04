@@ -193,7 +193,7 @@ extension PodolistView: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return podoGroups.count
+        return podoGroups[section].1.count
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -210,6 +210,7 @@ extension PodolistView: UITableViewDataSource, UITableViewDelegate {
 
         let podo = podoGroups[indexPath.section].1[indexPath.row]
         cell.item = podo
+        cell.presenter = presenter
 
         return cell
     }
