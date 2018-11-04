@@ -24,7 +24,7 @@ def common
 end
 
 def ui
-    pod 'PodoCalendar', '~> 0.2.5'
+    pod 'PodoCalendar', '~> 0.2.6'
 end
 
 def analytics
