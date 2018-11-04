@@ -2,17 +2,15 @@
 //  PodoAPI.swift
 //  Podolist
 //
-//  Created by NHNEnt on 02/11/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 
 import Alamofire
-import Foundation
 
 typealias FilterParam = (filterType: FilterType, value: Bool)
 //typealias SortParam = SortType
 typealias DateParam = (dateType: DateType, value: Date)
-typealias PodoParams = (filterParam: FilterParam, dateParam: DateParam)
+typealias PodoParams = (filterParams: [FilterParam], dateParam: DateParam)
 
 enum FilterType: String {
     case complete
@@ -39,25 +37,27 @@ final class PodoAPIType {
 
     static func makePodoParams(page: Int, params: PodoParams) -> Parameters {
         var parameters = Parameters()
-        parameters["page"] = page
-        parameters["size"] = 100
+//        parameters["page"] = page
+//        parameters["size"] = 100
 
-        let filterParam = params.filterParam
-        switch filterParam.filterType {
-        case .complete:
-            parameters["isCompleted"] = String(filterParam.value)
-        case .delay:
-            parameters["isDelayed"] = String(filterParam.value)
+        let filterParams = params.filterParams
+        for filter in filterParams {
+            switch filter.filterType {
+            case .complete:
+                parameters["isCompleted"] = filter.value
+            case .delay:
+                parameters["isDelayed"] = filter.value
+            }
         }
 
         let dateParam = params.dateParam
         switch dateParam.dateType {
         case .completedAt:
-            parameters["completedAtFrom"] = Int(Date().timeIntervalSince1970) //dateParam.value.
-            parameters["completedAtTo"] = Int(Date().timeIntervalSince1970) //dateParam.value
+            parameters["completedAtFrom"] = dateParam.value.dateAt(.startOfDay).date.timeIntervalSince1970
+            parameters["completedAtTo"] = dateParam.value.dateAt(.endOfDay).date.timeIntervalSince1970
         case .dueAt:
-            parameters["dueAtFrom"] = Int(Date().timeIntervalSince1970) //dateParam.value
-            parameters["dueAtTo"] = Int(Date().timeIntervalSince1970) //dateParam.value
+            parameters["dueAtFrom"] = dateParam.value.dateAt(.startOfDay).date.timeIntervalSince1970
+            parameters["dueAtTo"] = dateParam.value.dateAt(.endOfDay).date.timeIntervalSince1970
         }
 
         return parameters

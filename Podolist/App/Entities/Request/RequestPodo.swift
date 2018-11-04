@@ -25,8 +25,8 @@ struct RequestPodo {
     init(podo: Podo) {
         self.init(title: podo.title!,
                   isCompleted: podo.isCompleted,
-                  startedAt: podo.startedAt,
-                  endedAt: podo.endedAt,
+                  startedAt: Int(podo.startedAt.timeIntervalSince1970),
+                  endedAt: Int(podo.endedAt.timeIntervalSince1970),
                   updatedAt: podo.updatedAt,
                   priority: podo.priority)
     }

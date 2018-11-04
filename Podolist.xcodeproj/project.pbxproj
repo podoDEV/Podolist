@@ -59,8 +59,8 @@
 		2D2E08B8218476E400DEF92A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEEB216A68DE00977507 /* CalendarView.swift */; };
 		2D2E08BA21847B1000DEF92A /* WeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08B921847B1000DEF92A /* WeekLabelView.swift */; };
 		2D2E08BB21847B1000DEF92A /* WeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08B921847B1000DEF92A /* WeekLabelView.swift */; };
-		2D2E08BD2184C9A100DEF92A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08BC2184C9A100DEF92A /* DateUtils.swift */; };
-		2D2E08BE2184C9A100DEF92A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08BC2184C9A100DEF92A /* DateUtils.swift */; };
+		2D2E08BD2184C9A100DEF92A /* CalendarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08BC2184C9A100DEF92A /* CalendarUtils.swift */; };
+		2D2E08BE2184C9A100DEF92A /* CalendarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08BC2184C9A100DEF92A /* CalendarUtils.swift */; };
 		2D31DE912168F3CD00977507 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D31DE902168F3CD00977507 /* NotoSans-Regular.ttf */; };
 		2D31DE922168F3CD00977507 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D31DE902168F3CD00977507 /* NotoSans-Regular.ttf */; };
 		2D31DE962168F40E00977507 /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D31DE932168F40E00977507 /* NotoSans-Medium.ttf */; };
@@ -89,8 +89,6 @@
 		2D35496A21742B8F0014D8CF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35496821742B8F0014D8CF /* Logger.swift */; };
 		2D3996E02188B36900CB0E4D /* DefaultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */; };
 		2D3996E12188B36900CB0E4D /* DefaultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */; };
-		2D3996E62188BCDD00CB0E4D /* QueryCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3996E52188BCDD00CB0E4D /* QueryCondition.swift */; };
-		2D3996E72188BCDD00CB0E4D /* QueryCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3996E52188BCDD00CB0E4D /* QueryCondition.swift */; };
 		2D3D6431217C5852001CF919 /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseAccount.swift */; };
 		2D3D6432217C5852001CF919 /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseAccount.swift */; };
 		2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D643A217C6C5E001CF919 /* AccessToken.swift */; };
@@ -334,7 +332,7 @@
 		2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodolistRowCell.xib; sourceTree = "<group>"; };
 		2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		2D2E08B921847B1000DEF92A /* WeekLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekLabelView.swift; sourceTree = "<group>"; };
-		2D2E08BC2184C9A100DEF92A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		2D2E08BC2184C9A100DEF92A /* CalendarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUtils.swift; sourceTree = "<group>"; };
 		2D31DE902168F3CD00977507 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		2D31DE932168F40E00977507 /* NotoSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Medium.ttf"; sourceTree = "<group>"; };
 		2D31DE942168F40E00977507 /* NotoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Light.ttf"; sourceTree = "<group>"; };
@@ -350,7 +348,6 @@
 		2D3404FF21733BD200EC3862 /* Launch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		2D35496821742B8F0014D8CF /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequest.swift; sourceTree = "<group>"; };
-		2D3996E52188BCDD00CB0E4D /* QueryCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCondition.swift; sourceTree = "<group>"; };
 		2D3D6430217C5852001CF919 /* ResponseAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAccount.swift; sourceTree = "<group>"; };
 		2D3D643A217C6C5E001CF919 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -937,7 +934,6 @@
 			children = (
 				2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */,
 				2D47E3ED2187621400899B12 /* PodoRequest.swift */,
-				2D3996E52188BCDD00CB0E4D /* QueryCondition.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -984,7 +980,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE9031821512B0600AAAE4C /* AppUtils.swift */,
-				2D2E08BC2184C9A100DEF92A /* DateUtils.swift */,
+				2D2E08BC2184C9A100DEF92A /* CalendarUtils.swift */,
 				2D35496821742B8F0014D8CF /* Logger.swift */,
 			);
 			path = Utils;
@@ -1524,7 +1520,6 @@
 				2D0F20DE21453B2900B8BDF2 /* SettingView.swift in Sources */,
 				2DD0695C214BDD0200E0C987 /* UIAlertController+Additions.swift in Sources */,
 				2D0F20882143D1DE00B8BDF2 /* JsonResult.swift in Sources */,
-				2D3996E62188BCDD00CB0E4D /* QueryCondition.swift in Sources */,
 				2D47E3EE2187621400899B12 /* PodoRequest.swift in Sources */,
 				2D35496921742B8F0014D8CF /* Logger.swift in Sources */,
 				2D5599A0216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
@@ -1548,7 +1543,7 @@
 				2D0F20872143D1DE00B8BDF2 /* RoutesProtocol.swift in Sources */,
 				2DE9031C2151387400AAAE4C /* Style.swift in Sources */,
 				2D55999A2165115100FFA64A /* BaseView.swift in Sources */,
-				2D2E08BD2184C9A100DEF92A /* DateUtils.swift in Sources */,
+				2D2E08BD2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
 				2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */,
 				2D0F208D2143D1DE00B8BDF2 /* JsonResults.swift in Sources */,
 				2DAC8BAF2166668F007A2997 /* NibView.swift in Sources */,
@@ -1646,7 +1641,6 @@
 				2D9548AF215D1E74006C51E1 /* SettingView.swift in Sources */,
 				2D9548B0215D1E74006C51E1 /* UIAlertController+Additions.swift in Sources */,
 				2D9548B1215D1E74006C51E1 /* JsonResult.swift in Sources */,
-				2D3996E72188BCDD00CB0E4D /* QueryCondition.swift in Sources */,
 				2D47E3EF2187621400899B12 /* PodoRequest.swift in Sources */,
 				2D35496A21742B8F0014D8CF /* Logger.swift in Sources */,
 				2D5599A1216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
@@ -1670,7 +1664,7 @@
 				2D9548BC215D1E74006C51E1 /* RoutesProtocol.swift in Sources */,
 				2D9548BD215D1E74006C51E1 /* Style.swift in Sources */,
 				2D55999B2165115100FFA64A /* BaseView.swift in Sources */,
-				2D2E08BE2184C9A100DEF92A /* DateUtils.swift in Sources */,
+				2D2E08BE2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
 				2D9548BF215D1E74006C51E1 /* AppUtils.swift in Sources */,
 				2D9548C0215D1E74006C51E1 /* JsonResults.swift in Sources */,
 				2DAC8BB02166668F007A2997 /* NibView.swift in Sources */,

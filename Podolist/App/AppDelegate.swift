@@ -12,8 +12,6 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-//    var loginScreen: UIViewController?
-//    var mainScreen: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupAnalytics()
@@ -67,7 +65,6 @@ extension AppDelegate {
         let loginScreen = LoginWireFrame.createLoginModule()
         self.window?.rootViewController = loginScreen
         self.window?.makeKeyAndVisible()
-//        mainScreen = PodolistWireFrame.createPodolistModule()
     }
 
     func setupPushNotification() {

@@ -26,8 +26,8 @@ class ViewModelPodo {
         self.init(id: podo.id,
                   title: podo.title,
                   isCompleted: podo.isCompleted,
-                  startedAt: Date(seconds: TimeInterval(podo.startedAt), region: DateUtils.region),
-                  endedAt: Date(seconds: TimeInterval(podo.endedAt), region: DateUtils.region),
+                  startedAt: podo.startedAt,
+                  endedAt: podo.endedAt,
                   priority: podo.priority)
     }
 }

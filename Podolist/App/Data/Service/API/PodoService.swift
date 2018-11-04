@@ -27,7 +27,6 @@ class PodoService: PodoServiceProtocol {
 
     func getPodolist(page: Int, params: PodoParams) -> Observable<[ResponsePodo]> {
         return Observable<[ResponsePodo]>.create { observer in
-//            self.api.request()
             let parameters = PodoAPIType.makePodoParams(page: page, params: params)
             let request = self.sessionService.api().request(Router.Podolist.get(parameters: parameters))
                 .validate()

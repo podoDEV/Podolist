@@ -9,8 +9,8 @@ struct Podo {
     var id: Int?
     var title: String?
     var isCompleted = false
-    var startedAt = Int(Date().timeIntervalSince1970)
-    var endedAt = Int(Date().timeIntervalSince1970)
+    var startedAt = Date()
+    var endedAt = Date()
     var updatedAt: Int?
     var priority: Priority = .none
 
@@ -20,8 +20,8 @@ struct Podo {
         self.id = id
         self.title = title
         self.isCompleted = isCompleted
-        self.startedAt = startedAt
-        self.endedAt = endedAt
+        self.startedAt = Date(seconds: TimeInterval(startedAt))
+        self.endedAt = Date(seconds: TimeInterval(endedAt))
         self.updatedAt = updatedAt
         self.priority = priority
     }

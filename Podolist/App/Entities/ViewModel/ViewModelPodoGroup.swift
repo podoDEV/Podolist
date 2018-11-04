@@ -8,18 +8,18 @@
 
 class ViewModelPodoGroup {
 
-    var priority: Int?
+//    var priority: Int?
     var title: String?
 
-    init(priority: Int?, title: String?) {
-        self.priority = priority
+    init(title: String?) {
+//        self.priority = priority
         self.title = title
     }
 }
 
 extension ViewModelPodoGroup: Equatable, Hashable {
     var hashValue: Int {
-        return priority.hashValue ^ title.hashValue
+        return title.hashValue
     }
 
     static func == (lhs: ViewModelPodoGroup, rhs: ViewModelPodoGroup) -> Bool {
