@@ -6,13 +6,15 @@
 //
 
 import RxSwift
+import SwiftDate
 import SwiftyJSON
 
 protocol PodolistViewProtocol: class {
     var presenter: PodolistPresenterProtocol? { get set }
 
     // Presenter -> View 
-    func showPodolist(with podolist: [ViewModelPodo])
+//    func showPodolist(with podolist: [ViewModelPodo])
+    func showPodolist(with podoGroups: [PodoGroup])
     func updateUI()
     func updateUIToWrite()
     func updateUIToDetail()
@@ -36,7 +38,8 @@ protocol PodolistPresenterProtocol: class {
     var wireFrame: PodolistWireFrameProtocol? { get set }
 
     // View -> Presenter
-    func refresh()
+//    func refresh()
+    func refresh(date: Date)
     func didTappedCreate(podo: Podo)
     func showSetting()
 }
@@ -45,7 +48,9 @@ protocol PodolistInteractorProtocol: class {
     var dataSource: PodoDataSource? { get set }
 
     // Presenter -> Interactor
-    func fetchPodolist() -> Observable<[ViewModelPodo]>?
+    func fetchPastPodolist(date: Date) -> Observable<[PodoGroup]>?
+    func fetchTodayPodolist(date: Date) -> Observable<[PodoGroup]>?
+    func fetchFuturePodolist(date: Date) -> Observable<[PodoGroup]>?
     func createPodo(podo: Podo) -> Observable<ViewModelPodo>?
 }
 
@@ -55,3 +60,5 @@ protocol PodolistWireFrameProtocol: class {
     // Presenter -> WireFrame
     func goToSettingScreen(from view: PodolistViewProtocol)
 }
+
+typealias PodoGroup = (ViewModelPodoGroup, [ViewModelPodo])

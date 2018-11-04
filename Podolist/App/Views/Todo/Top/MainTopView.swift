@@ -104,6 +104,6 @@ extension MainTopView: PodoCalendarViewDelegate {
 
     func calendarView(_ calendarView: PodoCalendarView, didSelectDate date: Date) {
         self.date = date
-        delegate?.didSelectDate(date: date.date)
+        delegate?.didSelectDate(date: date)
     }
 }

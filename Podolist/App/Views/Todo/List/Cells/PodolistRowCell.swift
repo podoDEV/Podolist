@@ -1,5 +1,5 @@
 //
-//  PodolistTableViewCell.swift
+//  PodolistRowCell.swift
 //  Podolist
 //
 //  Copyright © 2018년 podo. All rights reserved.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class PodolistTableViewCell: UITableViewCell {
-    static let Identifier = "PodolistTableViewCell"
+class PodolistRowCell: UITableViewCell {
+    static let Identifier = "PodolistRowCell"
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priorityView: UIView!
