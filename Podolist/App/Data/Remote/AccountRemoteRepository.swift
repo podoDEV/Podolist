@@ -9,14 +9,7 @@ import RxSwift
 
 class AccountRemoteRepository: AccountRemoteDataSource {
 
-//    func login(accessToken: AccessToken) -> Observable<Account>? {
-//        return SessionService.shared.login(accessToken: accessToken)
-//            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-//            .map { Account(responseAccount: $0) }
-//    }
+//    func putAccount() -> Observable<Account>? {
 //
-//    func logout() -> Completable? {
-//        return SessionService.shared.logout()
-//            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
 //    }
 }

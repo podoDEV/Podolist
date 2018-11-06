@@ -12,8 +12,7 @@ import SwiftyJSON
 protocol PodolistViewProtocol: class {
     var presenter: PodolistPresenterProtocol? { get set }
 
-    // Presenter -> View 
-//    func showPodolist(with podolist: [ViewModelPodo])
+    // Presenter -> View
     func showPodolist(with podoGroups: [PodoGroup])
     func updateUI()
     func updateUIToWrite()
@@ -38,7 +37,6 @@ protocol PodolistPresenterProtocol: class {
     var wireFrame: PodolistWireFrameProtocol? { get set }
 
     // View -> Presenter
-//    func refresh()
     func refresh(date: Date)
     func didTappedCreate(podo: Podo)
     func didTappedComplete(id: Int, completed: Bool)

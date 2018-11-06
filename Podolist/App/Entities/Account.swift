@@ -13,14 +13,6 @@ struct Account: JSONable {
     var provider: Int?
     var providerId: Int?
 
-//    init(name: String?) {
-//        self.name = name
-//    }
-//
-//    init(responseAccount: ResponseAccount) {
-//        self.init(name: responseAccount.name)
-//    }
-
     init(json: JSON) {
         id = json["id"].intValue
         name = json["name"].stringValue

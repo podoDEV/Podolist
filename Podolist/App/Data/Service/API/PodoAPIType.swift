@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import SwiftDate
 
 typealias FilterParam = (filterType: FilterType, value: Bool)
 //typealias SortParam = SortType
@@ -53,43 +54,13 @@ final class PodoAPIType {
         let dateParam = params.dateParam
         switch dateParam.dateType {
         case .completedAt:
-            parameters["completedAtFrom"] = dateParam.value.dateAt(.startOfDay).date.timeIntervalSince1970
-            parameters["completedAtTo"] = dateParam.value.dateAt(.endOfDay).date.timeIntervalSince1970
-//            parameters["completedAtFrom"] = dateParam.value.timeIntervalSince1970
-//            parameters["completedAtTo"] = dateParam.value.dateAt(.tomorrow).timeIntervalSince1970
+            parameters["completedAtFrom"] = CalendarUtils.convertStandardStartDate(date: dateParam.value).timeIntervalSince1970
+            parameters["completedAtTo"] = CalendarUtils.convertStandardEndDate(date: dateParam.value).timeIntervalSince1970
         case .dueAt:
-//            parameters["dueAtFrom"] = dateParam.value.timeIntervalSince1970
-//            parameters["dueAtTo"] = dateParam.value.dateAt(.tomorrow).timeIntervalSince1970
-            parameters["dueAtFrom"] = dateParam.value.dateAt(.startOfDay).date.timeIntervalSince1970
-            parameters["dueAtTo"] = dateParam.value.dateAt(.endOfDay).date.timeIntervalSince1970
+            parameters["dueAtFrom"] = CalendarUtils.convertStandardStartDate(date: dateParam.value).timeIntervalSince1970
+            parameters["dueAtTo"] = CalendarUtils.convertStandardEndDate(date: dateParam.value).timeIntervalSince1970
         }
 
         return parameters
     }
-//    static let shared = PodoApi()
-//    var service: SessionManager?
-//    private init() {}
-
-//    func api() -> SessionManager {
-//
-//        service = SessionManager()
-//        guard KeychainService.shared.hasValue(key: "session") else {
-//            return service!
-//        }
-//
-//        KeychainService.shared.findValue(
-//            onSuccess: { session in
-//                if let session = session {
-//                    self.service!.adapter = SessionAdapter(session: session)
-//                }
-//        }, onError: { error in
-//
-//        })
-//        return service!
-//    }
-//
-//    func request() {
-//        self.api().request(Router.Podolist.get(parameters: [:]))
-//    }
-//}
 }

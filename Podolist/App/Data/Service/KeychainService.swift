@@ -38,30 +38,6 @@ final class KeychainService {
         }
     }
 
-//    func hasValue(key: String) -> Completable? {
-//        return Completable.create { completable in
-//            if let value = try? self.keychain.getString(key), let token = value, !token.isEmpty {
-//                completable(.completed)
-//            } else {
-//                completable(.error(NSError()))
-//            }
-//            return Disposables.create {}
-//        }
-//    }
-//
-//    @discardableResult
-//    func saveValue(key: String, value: String) -> Completable? {
-//        return Completable.create { completable in
-//            do {
-//                try self.keychain.set(value, key: key)
-//                completable(.completed)
-//            } catch let error {
-//                completable(.error(error))
-//            }
-//            return Disposables.create {}
-//        }
-//    }
-
     func findValue(onSuccess: ((String?) -> Void)? = nil, onError: ((Error) -> Void)? = nil) {
         if let token = try? keychain.getString(sessionKey) {
             if let onSuccess = onSuccess {

@@ -12,25 +12,15 @@ protocol AccountDataSource: class {
     var remoteDataSource: AccountRemoteDataSource? { get set }
 
     // Interactor -> DataSource
-//    func login(accessToken: AccessToken) -> Observable<Account>?
-//    func logout() -> Completable?
     func addAccount(_ account: Account) -> Completable?
-//    func removeAccount
-//    func addAccount(_ account: Account) -> Completable?
-//    func savePodo(id: Int, title: String)
-//    func removePodo()
 }
 
 protocol AccountLocalDataSource: class {
     // DataSource -> LocalDataSource
-//    func selectPodolist() throws -> [Podo]
     func insertAccount(_ account: Account) -> Completable?
-//    func updatePodo()
-//    func deletePodo()
 }
 
 protocol AccountRemoteDataSource: class {
     // DataSource -> RemoteDataSource
-//    func login(accessToken: AccessToken) -> Observable<Account>?
-//    func logout() -> Completable?
+//    func putAccount() -> Observable<Account>?
 }

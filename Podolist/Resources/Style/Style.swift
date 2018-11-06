@@ -19,7 +19,7 @@ struct Style {
         }
 
         struct Detail {
-            static let height: CGFloat = 320
+            static let height: CGFloat = 330
         }
 
         struct Priority {
@@ -27,7 +27,7 @@ struct Style {
         }
 
         struct Calendar {
-            static let height: CGFloat = 250
+            static let height: CGFloat = 260
         }
     }
 }

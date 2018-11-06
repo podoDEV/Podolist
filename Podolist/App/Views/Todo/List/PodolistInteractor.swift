@@ -62,11 +62,15 @@ class PodolistInteractor: PodolistInteractorProtocol {
     }
 
     func createPodo(podo: Podo) -> Observable<Podo>? {
-        return dataSource?.addPodo(podo)!
+        return dataSource?.addPodo(podo)
     }
 
     func updatePodo(id: Int, podo: Podo) -> Observable<Podo>? {
-        return dataSource?.savePodo(id: id, podo: podo)!
+        return dataSource?.savePodo(id: id, podo: podo)
+    }
+
+    func deletePodo(id: Int) -> Completable? {
+        return dataSource?.removePodo(id: id)
     }
 }
 

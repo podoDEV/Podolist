@@ -166,12 +166,6 @@ struct RequestConverter: RequestConverterProtocol {
             return try URLEncoding.default.encode(urlRequest, with: parameters)
         }
 
-////        let a = try JSONEncoding.default.encode(urlRequest, with: parameters)
         return try JSONEncoding.default.encode(urlRequest, with: parameters)
-
-//        let urlRequest = try URLRequest(url: url.appendingPathComponent(route), method: method)
-//        let a = try URLEncoding.default.encode(urlRequest, with: parameters)
-
-
     }
 }

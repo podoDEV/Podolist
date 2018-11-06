@@ -17,14 +17,6 @@ class PodoRemoteRepository: PodoRemoteDataSource {
             }
     }
 
-    func getPodolist() -> Observable<[Podo]>? {
-        return PodoService.shared.getAllPodolist()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .map { responsePodolist -> [Podo] in
-                return responsePodolist.map { Podo(responsePodo: $0) }
-            }
-    }
-
     func getPodo(podoId: Int) -> Observable<Podo>? {
         return PodoService.shared.getPodo(podoId: podoId)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
@@ -43,11 +35,8 @@ class PodoRemoteRepository: PodoRemoteDataSource {
             .map { Podo(responsePodo: $0) }
     }
 
-    func putPodo() {
-
-    }
-
-    func deletePodo() {
-
+    func deletePodo(id: Int) -> Completable? {
+        return PodoService.shared.deletePodo(id: id)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
     }
 }

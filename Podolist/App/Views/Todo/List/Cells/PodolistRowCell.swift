@@ -31,7 +31,6 @@ class PodolistRowCell: UITableViewCell {
             completeImage.isUserInteractionEnabled = false
             let tap = UITapGestureRecognizer(target: self, action: #selector(tappedComplete))
             completeView.addGestureRecognizer(tap)
-//            addGestureRecognizer(tap)
             update()
         }
     }
