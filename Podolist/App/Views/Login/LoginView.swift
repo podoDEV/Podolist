@@ -10,7 +10,6 @@ import RxSwift
 
 // MARK: - Lifecycle
 class LoginView: BaseViewController {
-
     var presenter: LoginPresenterProtocol?
 
     lazy var launchView: UIView! = {

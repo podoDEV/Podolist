@@ -16,12 +16,12 @@ class PodolistInteractor: PodolistInteractorProtocol {
         return Observable<[PodoGroup]>.zip(deleyed, completed) { delayed, completed -> [PodoGroup] in
             var result = [PodoGroup]()
             if delayed.isEmpty == false {
-                let delayedGroup = ViewModelPodoGroup(title: "delayed")
-                result.append(PodoGroup(delayedGroup, delayed.map { ViewModelPodo(podo: $0) }))
+                let delayedGroup = GroupHeader(title: "delayed")
+                result.append(PodoGroup(delayedGroup, delayed))
             }
             if completed.isEmpty == false {
-                let completedGroup = ViewModelPodoGroup(title: "completed")
-                result.append(PodoGroup(completedGroup, completed.map { ViewModelPodo(podo: $0) }))
+                let completedGroup = GroupHeader(title: "completed")
+                result.append(PodoGroup(completedGroup, completed))
             }
             return result
         }
@@ -34,16 +34,16 @@ class PodolistInteractor: PodolistInteractorProtocol {
         return Observable<[PodoGroup]>.zip(deleyed, uncompleted, completed) { delayed, uncompleted, completed -> [PodoGroup] in
             var result = [PodoGroup]()
             if delayed.isEmpty == false {
-                let delayedGroup = ViewModelPodoGroup(title: "delayed")
-                result.append(PodoGroup(delayedGroup, delayed.map { ViewModelPodo(podo: $0) }))
+                let delayedGroup = GroupHeader(title: "delayed")
+                result.append(PodoGroup(delayedGroup, delayed))
             }
             if uncompleted.isEmpty == false {
-                let uncompletedGroup = ViewModelPodoGroup(title: "uncompleted")
-                result.append(PodoGroup(uncompletedGroup, uncompleted.map { ViewModelPodo(podo: $0) }))
+                let uncompletedGroup = GroupHeader(title: "uncompleted")
+                result.append(PodoGroup(uncompletedGroup, uncompleted))
             }
             if completed.isEmpty == false {
-                let completedGroup = ViewModelPodoGroup(title: "completed")
-                result.append(PodoGroup(completedGroup, completed.map { ViewModelPodo(podo: $0) }))
+                let completedGroup = GroupHeader(title: "completed")
+                result.append(PodoGroup(completedGroup, completed))
             }
             return result
         }
@@ -54,17 +54,23 @@ class PodolistInteractor: PodolistInteractorProtocol {
         var result = [PodoGroup]()
         return uncompleted.map { uncompleted -> [PodoGroup] in
             if uncompleted.isEmpty == false {
-                let uncompletedGroup = ViewModelPodoGroup(title: "uncompleted")
-                result.append(PodoGroup(uncompletedGroup, uncompleted.map { ViewModelPodo(podo: $0) }))
+                let uncompletedGroup = GroupHeader(title: "uncompleted")
+                result.append(PodoGroup(uncompletedGroup, uncompleted))
             }
             return result
         }
     }
 
-    func createPodo(podo: Podo) -> Observable<ViewModelPodo>? {
-        return dataSource?.addPodo(podo)!
-            .flatMap { (self.dataSource?.findPodo(podoId: $0))! }
-            .map { ViewModelPodo(podo: $0)}
+    func createPodo(podo: Podo) -> Observable<Podo>? {
+        return dataSource?.addPodo(podo)
+    }
+
+    func updatePodo(id: Int, podo: Podo) -> Observable<Podo>? {
+        return dataSource?.savePodo(id: id, podo: podo)
+    }
+
+    func deletePodo(id: Int) -> Completable? {
+        return dataSource?.removePodo(id: id)
     }
 }
 
@@ -78,9 +84,10 @@ private extension PodolistInteractor {
     }
 
     func uncompletedPodo(date: Date) -> Observable<[Podo]> {
-        let filterParam = FilterParam(filterType: .complete, value: false)
+        let filterParam1 = FilterParam(filterType: .complete, value: false)
+        let filterParam2 = FilterParam(filterType: .delay, value: false)
         let dateParam = DateParam(dateType: .dueAt, value: date)
-        let podoParams = PodoParams(filterParams: [filterParam], dateParam: dateParam)
+        let podoParams = PodoParams(filterParams: [filterParam1, filterParam2], dateParam: dateParam)
         return (dataSource?.findPodolist(page: 0, params: podoParams))!
     }
 

@@ -19,16 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcA-fa-j9k">
-                        <rect key="frame" x="40" y="14" width="297" height="73.5"/>
+                        <rect key="frame" x="42" y="21.5" width="300" height="59"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성LG생활건강 자소서 1번 완성" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-Tr-8MQ">
-                                <rect key="frame" x="15" y="8" width="267" height="57.5"/>
+                                <rect key="frame" x="15" y="8" width="270" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.56425291300000002" green="0.0" blue="0.99614375830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.58039215686274503" green="0.25490196078431371" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Mc4-Tr-8MQ" firstAttribute="top" secondItem="BcA-fa-j9k" secondAttribute="top" constant="8" id="0eW-xw-hxk"/>
                             <constraint firstAttribute="bottom" secondItem="Mc4-Tr-8MQ" secondAttribute="bottom" constant="8" id="3Xu-aB-CDx"/>
@@ -38,18 +38,18 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8a1-Im-29c">
-                        <rect key="frame" x="0.0" y="14" width="40" height="73.5"/>
+                        <rect key="frame" x="0.0" y="21.5" width="42" height="59"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN3-0b-BxE">
-                                <rect key="frame" x="15" y="29.5" width="15" height="15"/>
+                                <rect key="frame" x="15" y="20.5" width="18" height="18"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="2cu-dn-Bxf"/>
-                                    <constraint firstAttribute="width" constant="15" id="WTf-cE-sGX"/>
+                                    <constraint firstAttribute="height" constant="18" id="2cu-dn-Bxf"/>
+                                    <constraint firstAttribute="width" constant="18" id="WTf-cE-sGX"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_complete" translatesAutoresizingMaskIntoConstraints="NO" id="Wkp-ek-Cfv">
-                                <rect key="frame" x="17" y="29.5" width="15" height="15"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wkp-ek-Cfv">
+                                <rect key="frame" x="18" y="20.5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="7Qg-AY-10v"/>
                                     <constraint firstAttribute="width" constant="15" id="Lkp-sD-3JK"/>
@@ -59,13 +59,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Wkp-ek-Cfv" firstAttribute="leading" secondItem="8a1-Im-29c" secondAttribute="leading" constant="17" id="6b6-F2-3HQ"/>
+                            <constraint firstItem="Wkp-ek-Cfv" firstAttribute="leading" secondItem="8a1-Im-29c" secondAttribute="leading" constant="18" id="6b6-F2-3HQ"/>
                             <constraint firstItem="iN3-0b-BxE" firstAttribute="leading" secondItem="8a1-Im-29c" secondAttribute="leading" constant="15" id="bX5-XO-Wn3"/>
-                            <constraint firstAttribute="trailing" secondItem="Wkp-ek-Cfv" secondAttribute="trailing" constant="8" id="dLp-xM-QMB"/>
+                            <constraint firstAttribute="trailing" secondItem="Wkp-ek-Cfv" secondAttribute="trailing" constant="9" id="dLp-xM-QMB"/>
                             <constraint firstItem="iN3-0b-BxE" firstAttribute="centerY" secondItem="8a1-Im-29c" secondAttribute="centerY" id="deA-hU-IF9"/>
-                            <constraint firstAttribute="trailing" secondItem="iN3-0b-BxE" secondAttribute="trailing" constant="10" id="edg-cd-LW0"/>
-                            <constraint firstItem="Wkp-ek-Cfv" firstAttribute="centerY" secondItem="8a1-Im-29c" secondAttribute="centerY" id="hgk-VK-E32"/>
-                            <constraint firstAttribute="width" constant="40" id="mfg-l8-g6R"/>
+                            <constraint firstAttribute="trailing" secondItem="iN3-0b-BxE" secondAttribute="trailing" constant="9" id="edg-cd-LW0"/>
+                            <constraint firstItem="Wkp-ek-Cfv" firstAttribute="centerY" secondItem="8a1-Im-29c" secondAttribute="centerY" constant="-1.5" id="hgk-VK-E32"/>
+                            <constraint firstAttribute="width" constant="42" id="mfg-l8-g6R"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -78,10 +78,12 @@
                     <constraint firstItem="BcA-fa-j9k" firstAttribute="centerY" secondItem="2Dn-ad-Tte" secondAttribute="centerY" id="bMR-8l-YPq"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BcA-fa-j9k" secondAttribute="bottom" constant="5" id="iqr-ql-qFx"/>
                     <constraint firstItem="8a1-Im-29c" firstAttribute="centerY" secondItem="2Dn-ad-Tte" secondAttribute="centerY" id="tLs-fV-jEP"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BcA-fa-j9k" secondAttribute="trailing" constant="35" id="xyf-ZA-Q8h"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BcA-fa-j9k" secondAttribute="trailing" constant="30" id="xyf-ZA-Q8h"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="completeImage" destination="Wkp-ek-Cfv" id="bAQ-tz-ZWU"/>
+                <outlet property="completeView" destination="8a1-Im-29c" id="md1-kb-bxS"/>
                 <outlet property="priorityView" destination="iN3-0b-BxE" id="qX9-B6-2zl"/>
                 <outlet property="roundView" destination="BcA-fa-j9k" id="2P4-Vs-Bye"/>
                 <outlet property="titleLabel" destination="Mc4-Tr-8MQ" id="gw8-kK-JWg"/>
@@ -89,7 +91,4 @@
             <point key="canvasLocation" x="-44.799999999999997" y="155.62218890554723"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="ic_complete" width="12" height="11"/>
-    </resources>
 </document>

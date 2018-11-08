@@ -100,11 +100,19 @@ final class Logger {
     }
 
 }
-//
-//func gaAction(_ value: String) {
-//    guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-//    tracker.set(kGAIEventAction, value: value)
-//
-//    guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
-//    tracker.send(builder.build() as [NSObject: AnyObject])
-//}
+
+func gaAction(_ value: String) {
+    guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+    tracker.set(kGAIEventAction, value: value)
+
+    guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+    tracker.send(builder.build() as [NSObject: AnyObject])
+}
+
+func gaScreen(_ value: String) {
+    guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+    tracker.set(kGAIScreenName, value: value)
+
+    guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+    tracker.send(builder.build() as [NSObject: AnyObject])
+}

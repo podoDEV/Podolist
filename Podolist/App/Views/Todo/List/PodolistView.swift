@@ -11,33 +11,33 @@ import SwiftDate
 
 class PodolistView: BaseViewController {
     var presenter: PodolistPresenterProtocol?
-    var podo: Podo = Podo()
-    var podoGroups: [PodoGroup] = [] {
+    private var podo: Podo = Podo()
+    private var podoGroups: [PodoGroup] = [] {
         didSet {
             tableView.reloadData()
         }
     }
 
-    var normalFrame: CGRect {
+    private var normalFrame: CGRect {
         return CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Normal.height + safeAreaInset.bottom)
     }
-    var writeFrame: CGRect {
+    private var writeFrame: CGRect {
         if let keyboardHeight = keyboardHeight {
             return CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - keyboardHeight, width: view.frame.width, height: Style.Write.Normal.height)
         }
         return normalFrame
     }
-    var detailWriteFrame: CGRect {
+    private var detailWriteFrame: CGRect {
         return CGRect(x: 0, y: view.frame.height - Style.Write.Detail.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Detail.height + safeAreaInset.bottom)
     }
-    var keyboardHeight: CGFloat?
+    private var keyboardHeight: CGFloat?
 
     // MARK: - Views
-    var topView: MainTopView!
-    var tableView: UITableView!
-    var writeView: PodoWriteView!
-    var refreshControl: UIRefreshControl!
-    var hidingView: UIView!
+    private var topView: MainTopView!
+    private var tableView: UITableView!
+    private var writeView: PodoWriteView!
+    private var refreshControl: UIRefreshControl!
+    private var hidingView: UIView!
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -193,7 +193,7 @@ extension PodolistView: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return podoGroups.count
+        return podoGroups[section].1.count
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -210,6 +210,7 @@ extension PodolistView: UITableViewDataSource, UITableViewDelegate {
 
         let podo = podoGroups[indexPath.section].1[indexPath.row]
         cell.item = podo
+        cell.presenter = presenter
 
         return cell
     }
@@ -245,6 +246,7 @@ extension PodolistView: WriteViewDelegate {
 
     func didTappedCreate() {
         presenter?.didTappedCreate(podo: self.podo)
+        gaAction("New Todo")
     }
 
     // TODO: - 필요하지 않을수도 있음.

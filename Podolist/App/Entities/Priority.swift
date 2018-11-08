@@ -40,8 +40,10 @@ extension Priority {
             return .priorityColor3
         case .low:
             return .priorityColor4
-        default:
+        case .none:
             return .backgroundColor2
+//        default:
+//            return .backgroundColor2
         }
     }
 }

@@ -51,7 +51,7 @@ class PodoWriteView: BaseView {
         priorityView.frame = CGRect(x: 8, y: titleView.frame.maxY + 8, width: frame.width - 16, height: 50)
         priorityView.backgroundColor = .clear
         priorityView.isHidden = false
-        calendarView.frame = CGRect(x: 8, y: priorityView.frame.maxY + 8, width: frame.width - 16, height: 200)
+        calendarView.frame = CGRect(x: 8, y: priorityView.frame.maxY + 8, width: frame.width - 16, height: 210)
         calendarView.backgroundColor = .clear
         calendarView.isHidden = false
     }

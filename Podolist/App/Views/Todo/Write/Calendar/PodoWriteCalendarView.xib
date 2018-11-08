@@ -27,10 +27,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUC-u1-wmK" customClass="PodoCalendar" customModule="PodoCalendar">
-                    <rect key="frame" x="0.0" y="19" width="410" height="190"/>
+                    <rect key="frame" x="0.0" y="19" width="410" height="200"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="190" id="8WS-ky-7ez"/>
+                        <constraint firstAttribute="height" constant="200" id="8WS-ky-7ez"/>
                     </constraints>
                 </view>
             </subviews>

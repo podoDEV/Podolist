@@ -16,14 +16,14 @@ struct Podo {
 
     init() {}
 
-    init(id: Int, title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int, priority: Priority) {
+    init(id: Int, title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int, priority: Priority?) {
         self.id = id
         self.title = title
         self.isCompleted = isCompleted
         self.startedAt = Date(seconds: TimeInterval(startedAt))
         self.endedAt = Date(seconds: TimeInterval(endedAt))
         self.updatedAt = updatedAt
-        self.priority = priority
+        self.priority = priority ?? .none
     }
 
     init(responsePodo: ResponsePodo) {
@@ -33,6 +33,6 @@ struct Podo {
                   startedAt: responsePodo.startedAt!,
                   endedAt: responsePodo.endedAt!,
                   updatedAt: responsePodo.updatedAt!,
-                  priority: responsePodo.priority!)
+                  priority: responsePodo.priority)
     }
 }

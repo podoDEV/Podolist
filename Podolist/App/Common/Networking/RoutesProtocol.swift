@@ -15,7 +15,6 @@ protocol URLRouter {
 // Typically this is conformed to by methods routes.
 protocol Routable {
     typealias Parameters = [String: Any]
-    typealias Query = String
     var route: String { get set }
     var urlParams: String! { get set }
     init()
@@ -161,13 +160,12 @@ struct RequestConverter: RequestConverterProtocol {
     // Throws: An `Error` if the underlying `URLRequest` is `nil`.
     func asURLRequest() throws -> URLRequest {
         let url = try Router.basePath.asURL()
-//        let urlRequest = try URLRequest(url: url.appendingPathComponent(route), method: method)
-////        let a = try JSONEncoding.default.encode(urlRequest, with: parameters)
-//        return try JSONEncoding.default.encode(urlRequest, with: parameters)
 
-        let urlRequest = URLRequest(url: url.appendingPathComponent(route))
-//        let a = try URLEncoding.default.encode(urlRequest, with: parameters)
+        let urlRequest = try URLRequest(url: url.appendingPathComponent(route), method: method)
+        if method == .get {
+            return try URLEncoding.default.encode(urlRequest, with: parameters)
+        }
 
-        return try URLEncoding.default.encode(urlRequest, with: parameters)
+        return try JSONEncoding.default.encode(urlRequest, with: parameters)
     }
 }

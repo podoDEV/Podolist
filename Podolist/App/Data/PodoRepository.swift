@@ -8,7 +8,6 @@
 import RxSwift
 
 class PodoRepository: PodoDataSource {
-
     var localDataSource: PodoLocalDataSource?
     var remoteDataSource: PodoRemoteDataSource?
 
@@ -16,23 +15,19 @@ class PodoRepository: PodoDataSource {
         return remoteDataSource?.getPodolist(page: page, params: params)
     }
 
-    func findPodolist() -> Observable<[Podo]>? {
-        return remoteDataSource?.getPodolist()
-    }
-
     func findPodo(podoId: Int) -> Observable<Podo>? {
         return remoteDataSource?.getPodo(podoId: podoId)
     }
 
-    func addPodo(_ podo: Podo) -> Observable<Int>? {
+    func addPodo(_ podo: Podo) -> Observable<Podo>? {
         return remoteDataSource?.postPodo(podo)
     }
 
-    func savePodo(id: Int, title: String) {
-        remoteDataSource?.putPodo()
+    func savePodo(id: Int, podo: Podo) -> Observable<Podo>? {
+        return remoteDataSource?.putPodo(id: id, podo: podo)
     }
 
-    func removePodo() {
-
+    func removePodo(id: Int) -> Completable? {
+        return remoteDataSource?.deletePodo(id: id)
     }
 }
