@@ -7,6 +7,10 @@
 
 import SwiftDate
 
+protocol PodoCalendarViewDelegate: NSObjectProtocol {
+    func calendarView(_ calendarView: PodoCalendarView, didSelectDate date: Date)
+}
+
 class PodoCalendarView: BaseView {
 
     public weak var delegate: PodoCalendarViewDelegate?
@@ -22,8 +26,15 @@ class PodoCalendarView: BaseView {
     lazy var calendarView: CalendarView = {
         let view = CalendarView()
         view.delegate = self
+        view.calDelegate = self
         return view
     }()
+
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: .didSelected,
+                                                  object: nil)
+    }
 
     override func setup() {
         addSubview(weekLabel)
@@ -43,37 +54,31 @@ class PodoCalendarView: BaseView {
     }
 
     @objc private func onSelected(notification: NSNotification) {
-        guard let date = notification.object as? DateInRegion else {
-            return
-        }
-
+        guard let date = notification.object as? DateInRegion else { return }
         self.date = date.date
         calendarView.selectDate(date: date)
-        if let delegate = delegate {
-            delegate.calendarView(self, didSelectDate: date.date)
-        }
+        delegate?.calendarView(self, didSelectDate: date.date)
     }
 
+    // MARK: - external -> PodoCalendarView
     func update(_ date: Date) {
         self.date = date
         calendarView.update(DateInRegion(date))
     }
 }
 
-extension PodoCalendarView: UIScrollViewDelegate {
+extension PodoCalendarView: UIScrollViewDelegate, CalendarViewDelegate {
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = self.calendarView.contentOffset.x / self.calendarView.frame.width
-        if position.isNaN {
-            return
-        }
-
+        if position.isNaN { return }
         if position <= 0.0 || 2.0 <= position {
-            calendarView.move(to: Direction(rawValue: Int(position))!)
+            calendarView.move(to: CalendarView.Direction(rawValue: Int(position))!)
         }
     }
-}
 
-protocol PodoCalendarViewDelegate: NSObjectProtocol {
-    func calendarView(_ calendarView: PodoCalendarView, didSelectDate date: Date)
+    // MARK: - internal -> PodoCalendarView
+    func calendarView(didSelectDate date: DateInRegion) {
+        delegate?.calendarView(self, didSelectDate: date.date)
+    }
 }

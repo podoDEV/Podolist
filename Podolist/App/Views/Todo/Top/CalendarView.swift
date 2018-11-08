@@ -7,7 +7,13 @@
 
 import SwiftDate
 
+protocol CalendarViewDelegate: NSObjectProtocol {
+    func calendarView(didSelectDate date: DateInRegion)
+}
+
 class CalendarView: UIScrollView {
+
+    var calDelegate: CalendarViewDelegate?
 
     var weeks = [WeekView]()
     var currentPosition = 1
@@ -73,6 +79,9 @@ class CalendarView: UIScrollView {
             page3.date = page1.date?.dateAt(.prevWeek)
             weeks = [page3, page1, page2]
             contentOffset.x = frame.width
+            let date = selectedDate!.dateByAdding(-7, .day)
+            selectDate(date: date)
+            calDelegate?.calendarView(didSelectDate: date)
         }
 
         if toDirection == .next {
@@ -82,8 +91,10 @@ class CalendarView: UIScrollView {
             page1.date = page3.date?.dateAt(.nextWeek)
             weeks = [page2, page3, page1]
             contentOffset.x = frame.width
+            let date = selectedDate!.dateByAdding(7, .day)
+            selectDate(date: date)
+            calDelegate?.calendarView(didSelectDate: date)
         }
-        selectDate(date: selectedDate!)
     }
 
     func selectDate(date: DateInRegion) {
@@ -102,9 +113,9 @@ class CalendarView: UIScrollView {
             }
         }
     }
-}
 
-internal enum Direction: Int {
-    case prev = 0
-    case next = 2
+    internal enum Direction: Int {
+        case prev = 0
+        case next = 2
+    }
 }
