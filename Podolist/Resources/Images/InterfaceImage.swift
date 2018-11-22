@@ -15,13 +15,14 @@ enum InterfaceImage: String {
         case disabled
     }
 
-    case logo = "podolist_logo"
+    case logo = "AppIcon"
     case add = "ic_add"
     case create = "ic_create"
     case dropdown = "ic_dropdown"
     case setting = "ic_setting"
     case calendar = "bg_calendar"
     case complete = "ic_complete"
+    case none
 
     func image(_ style: Style) -> UIImage? {
         switch style {
@@ -38,7 +39,8 @@ enum InterfaceImage: String {
 
     var normalImage: UIImage! {
         switch self {
-        case .add,
+        case .logo,
+             .add,
              .create,
              .dropdown,
              .calendar,

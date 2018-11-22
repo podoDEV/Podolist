@@ -6,29 +6,81 @@
 //
 
 import RxSwift
+import MessageUI
 
-class SettingPresenter: SettingPresenterProtocol {
-    var view: SettingViewProtocol?
-    var interactor: SettingInteractorProtocol?
-    var wireFrame: SettingWireFrameProtocol?
+protocol SettingPresenterProtocol: class {
+    // View -> Presenter
+    var sections: [SettingSectionProtocol] { get }
+    func numberOfRows(in section: Int) -> Int
+    func didSelectRow(at indexPath: IndexPath)
+    func configureCell(_ cell: SettingCellType, forRowAt indexPath: IndexPath)
+}
 
+final class SettingPresenter {
+
+    // MARK: - Properties
+
+    private var view: SettingViewProtocol!
+    private var interactor: SettingInteractorProtocol!
+    private var wireFrame: SettingWireFrameProtocol!
+
+    lazy var sections = interactor.sections
     let disposeBag = DisposeBag()
 
-    var items = [ViewModelSettingSection]()
+    // MARK: - Initialize
 
-    func viewDidLoad() {
-        let accountItem = ViewModelSettingAccountItem(row: ViewModelSettingRow(type: .account, title: "계정", imageUrl: " "))
-        items.append(accountItem)
-
-        let othersItem = ViewModelSettingOthersItem(rows: [ViewModelSettingRow(type: .help, title: "도움말 및 피드백", imageUrl: " "),
-                                                           ViewModelSettingRow(type: .about, title: "앱 정보", imageUrl: " "),
-                                                           ViewModelSettingRow(type: .sync, title: "동기화", imageUrl: " ")])
-        items.append(othersItem)
-
-        let logoutItem = ViewModelSettingLogoutItem(row: ViewModelSettingRow(type: .logout, title: "로그아웃", imageUrl: " "))
-        items.append(logoutItem)
-        view?.showSettings(with: items)
+    init(
+        view: SettingViewProtocol,
+        wireframe: SettingWireFrameProtocol,
+        interactor: SettingInteractorProtocol
+        ) {
+        self.view = view
+        self.wireFrame = wireframe
+        self.interactor = interactor
     }
+}
+
+// MARK: - SettingPresenterProtocol
+
+extension SettingPresenter: SettingPresenterProtocol {
+
+    func numberOfRows(in section: Int) -> Int {
+        return sections[section].rowCount
+    }
+
+    func didSelectRow(at indexPath: IndexPath) {
+        let item = sections[indexPath.section].rows[indexPath.row]
+        switch item.type! {
+        case .account:
+            break
+        case .about:
+            wireFrame.navigate(to: .about)
+        case .license:
+            wireFrame.navigate(to: .license)
+        case .feedback:
+            guard MFMailComposeViewController.canSendMail() else {
+                wireFrame.navigate(to: .alert(title: InterfaceString.Error.MailTitle,
+                                              message: InterfaceString.Error.MailBody))
+                return
+            }
+            wireFrame.navigate(to: .feedback(recipients: InterfaceString.Commmon.Developers,
+                                             subject: InterfaceString.Commmon.Subject,
+                                             message: InterfaceString.Commmon.Info))
+        case .logout:
+            wireFrame.navigate(to: .action(title: nil,
+                                           message: nil,
+                                           actionTitle: InterfaceString.Setting.Logout) { _ in
+                                            self.logout()
+                })
+        }
+    }
+
+    func configureCell(_ cell: SettingCellType, forRowAt indexPath: IndexPath) {
+        cell.configureWith(sections[indexPath.section].rows[indexPath.row])
+    }
+}
+
+private extension SettingPresenter {
 
     func logout() {
         KOSession.shared().logoutAndClose { _, _ in}
@@ -37,17 +89,10 @@ class SettingPresenter: SettingPresenterProtocol {
             .subscribe { completable in
                 switch completable {
                 case .completed:
-                    self.wireFrame?.goToLoginScreen()
+                    self.wireFrame.navigate(to: .logout)
                 case .error:
                     log.d("Invalid Session")
                 }
             }.disposed(by: disposeBag)
-    }
-}
-
-extension SettingPresenter {
-
-    func showDetail(type: SettingRowType) {
-        wireFrame?.goToDetailScreen(from: self.view!, to: type)
     }
 }

@@ -18,7 +18,6 @@ def common
     pod 'CocoaLumberjack/Swift'
 
     # Etc
-    pod 'Then'
     pod 'SwiftLint'
     pod 'KeychainAccess', '~> 3.1.1'
 end

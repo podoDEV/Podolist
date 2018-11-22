@@ -11,7 +11,6 @@
 		2D0F201B2143934700B8BDF2 /* PodolistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F201A2143934700B8BDF2 /* PodolistUITests.swift */; };
 		2D0F20602143984A00B8BDF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20352143984A00B8BDF2 /* AppDelegate.swift */; };
 		2D0F20612143984A00B8BDF2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20392143984A00B8BDF2 /* Localizable.strings */; };
-		2D0F20622143984A00B8BDF2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F203B2143984A00B8BDF2 /* InfoPlist.strings */; };
 		2D0F20632143984A00B8BDF2 /* InterfaceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20412143984A00B8BDF2 /* InterfaceString.swift */; };
 		2D0F20642143984A00B8BDF2 /* InterfaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20432143984A00B8BDF2 /* InterfaceImage.swift */; };
 		2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20442143984A00B8BDF2 /* Images.xcassets */; };
@@ -38,14 +37,16 @@
 		2D0F20B321441CBE00B8BDF2 /* PodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B221441CBE00B8BDF2 /* PodoRepository.swift */; };
 		2D0F20B521441CDF00B8BDF2 /* PodoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B421441CDF00B8BDF2 /* PodoDataSource.swift */; };
 		2D0F20BD214432E800B8BDF2 /* PodolistRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */; };
-		2D0F20D621453AF500B8BDF2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20D521453AF500B8BDF2 /* Setting.storyboard */; };
 		2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */; };
 		2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */; };
-		2D0F20DC21453B2100B8BDF2 /* SettingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */; };
-		2D0F20DE21453B2900B8BDF2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DD21453B2900B8BDF2 /* SettingView.swift */; };
+		2D0F20DE21453B2900B8BDF2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */; };
 		2D0F20E021453B3400B8BDF2 /* SettingWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */; };
 		2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */; };
 		2D0F20E521454DC600B8BDF2 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E421454DC600B8BDF2 /* Setting.swift */; };
+		2D198D4721A6893700287923 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4621A6893600287923 /* license.txt */; };
+		2D198D4821A6893700287923 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4621A6893600287923 /* license.txt */; };
+		2D198D4A21A6C8AF00287923 /* intro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4921A6C8AF00287923 /* intro.txt */; };
+		2D198D4B21A6C8AF00287923 /* intro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4921A6C8AF00287923 /* intro.txt */; };
 		2D1C5F882164DCED00EC79A2 /* PodolistRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */; };
 		2D1C5F892164DCED00EC79A2 /* PodolistRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */; };
 		2D1C5F8B2164E78400EC79A2 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */; };
@@ -91,20 +92,9 @@
 		2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D643A217C6C5E001CF919 /* AccessToken.swift */; };
 		2D3D643C217C6C5E001CF919 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D643A217C6C5E001CF919 /* AccessToken.swift */; };
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
-		2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC55214D173200B79BF6 /* SettingSectionType.swift */; };
-		2D41BC58214D186D00B79BF6 /* ViewModelSettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC57214D186D00B79BF6 /* ViewModelSettingSection.swift */; };
-		2D41BC5A214D18F600B79BF6 /* ViewModelSettingAccountItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC59214D18F600B79BF6 /* ViewModelSettingAccountItem.swift */; };
-		2D41BC5C214D1A6B00B79BF6 /* ViewModelSettingOthersItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC5B214D1A6B00B79BF6 /* ViewModelSettingOthersItem.swift */; };
-		2D41BC5E214D1B4E00B79BF6 /* ViewModelSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC5D214D1B4E00B79BF6 /* ViewModelSettingRow.swift */; };
-		2D41BC60214D1C3D00B79BF6 /* ViewModelSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC5F214D1C3D00B79BF6 /* ViewModelSetting.swift */; };
-		2D41BC66214D58D600B79BF6 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC65214D58D600B79BF6 /* AccountView.swift */; };
-		2D41BC68214D642500B79BF6 /* SettingRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC67214D642500B79BF6 /* SettingRowType.swift */; };
-		2D41BC6A214D69D900B79BF6 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC69214D69D900B79BF6 /* HelpView.swift */; };
-		2D41BC6C214D69E100B79BF6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6B214D69E100B79BF6 /* AboutView.swift */; };
-		2D41BC6E214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6D214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift */; };
-		2D41BC70214D6C9F00B79BF6 /* SettingTableViewLogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D41BC6F214D6C9F00B79BF6 /* SettingTableViewLogoutCell.xib */; };
-		2D41BC72214D6D8D00B79BF6 /* ViewModelSettingLogoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC71214D6D8D00B79BF6 /* ViewModelSettingLogoutItem.swift */; };
-		2D41BC74214D728600B79BF6 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D41BC73214D728600B79BF6 /* SettingTableViewCell.xib */; };
+		2D41BC66214D58D600B79BF6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC65214D58D600B79BF6 /* AboutViewController.swift */; };
+		2D41BC6A214D69D900B79BF6 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC69214D69D900B79BF6 /* LicenseViewController.swift */; };
+		2D41BC6E214D6C2800B79BF6 /* SettingTableViewAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6D214D6C2800B79BF6 /* SettingTableViewAccountCell.swift */; };
 		2D41BC76214E069600B79BF6 /* CommonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC75214E069600B79BF6 /* CommonDataSource.swift */; };
 		2D41BC78214E077B00B79BF6 /* CommonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC77214E077B00B79BF6 /* CommonRepository.swift */; };
 		2D41BC7A214E079600B79BF6 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC79214E079600B79BF6 /* AccountDataSource.swift */; };
@@ -135,33 +125,27 @@
 		2D90956E2146B94F009335A1 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956D2146B94F009335A1 /* LoginProtocols.swift */; };
 		2D9095702146B955009335A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956F2146B955009335A1 /* LoginView.swift */; };
 		2D9095722146B966009335A1 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9095712146B966009335A1 /* LoginWireFrame.swift */; };
-		2D95489D215D1E74006C51E1 /* ViewModelSettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC57214D186D00B79BF6 /* ViewModelSettingSection.swift */; };
 		2D95489F215D1E74006C51E1 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D9548A0215D1E74006C51E1 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC85214E086F00B79BF6 /* SessionService.swift */; };
 		2D9548A1215D1E74006C51E1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC7B214E07A200B79BF6 /* AccountRepository.swift */; };
-		2D9548A2215D1E74006C51E1 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC65214D58D600B79BF6 /* AccountView.swift */; };
+		2D9548A2215D1E74006C51E1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC65214D58D600B79BF6 /* AboutViewController.swift */; };
 		2D9548A3215D1E74006C51E1 /* PriorityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063B214FDF2100C44E16 /* PriorityButton.swift */; };
-		2D9548A4215D1E74006C51E1 /* ViewModelSettingLogoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC71214D6D8D00B79BF6 /* ViewModelSettingLogoutItem.swift */; };
 		2D9548A5215D1E74006C51E1 /* PodolistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F205D2143984A00B8BDF2 /* PodolistView.swift */; };
 		2D9548A6215D1E74006C51E1 /* PodoRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B021441C6800B8BDF2 /* PodoRemoteRepository.swift */; };
 		2D9548A7215D1E74006C51E1 /* PodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B221441CBE00B8BDF2 /* PodoRepository.swift */; };
 		2D9548A8215D1E74006C51E1 /* InterfaceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20412143984A00B8BDF2 /* InterfaceString.swift */; };
 		2D9548A9215D1E74006C51E1 /* CommonLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC83214E085100B79BF6 /* CommonLocalRepository.swift */; };
-		2D9548AA215D1E74006C51E1 /* SettingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */; };
 		2D9548AB215D1E74006C51E1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20492143984A00B8BDF2 /* Fonts.swift */; };
 		2D9548AC215D1E74006C51E1 /* SessionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C022155656A00BF8588 /* SessionAdapter.swift */; };
 		2D9548AD215D1E74006C51E1 /* ResponsePodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A7214419DE00B8BDF2 /* ResponsePodo.swift */; };
 		2D9548AE215D1E74006C51E1 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */; };
-		2D9548AF215D1E74006C51E1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DD21453B2900B8BDF2 /* SettingView.swift */; };
+		2D9548AF215D1E74006C51E1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */; };
 		2D9548B0215D1E74006C51E1 /* UIAlertController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */; };
 		2D9548B2215D1E74006C51E1 /* PodolistProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20992144179000B8BDF2 /* PodolistProtocols.swift */; };
-		2D9548B3215D1E74006C51E1 /* ViewModelSettingAccountItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC59214D18F600B79BF6 /* ViewModelSettingAccountItem.swift */; };
 		2D9548B4215D1E74006C51E1 /* PodolistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */; };
 		2D9548B5215D1E74006C51E1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20812143D1DE00B8BDF2 /* Router.swift */; };
 		2D9548B6215D1E74006C51E1 /* PodolistWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */; };
-		2D9548B7215D1E74006C51E1 /* ViewModelSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC5F214D1C3D00B79BF6 /* ViewModelSetting.swift */; };
 		2D9548B8215D1E74006C51E1 /* PodolistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */; };
-		2D9548B9215D1E74006C51E1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6B214D69E100B79BF6 /* AboutView.swift */; };
 		2D9548BA215D1E74006C51E1 /* PodoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B421441CDF00B8BDF2 /* PodoDataSource.swift */; };
 		2D9548BB215D1E74006C51E1 /* ApiServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20802143D1DE00B8BDF2 /* ApiServiceProtocol.swift */; };
 		2D9548BC215D1E74006C51E1 /* RoutesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F207D2143D1DE00B8BDF2 /* RoutesProtocol.swift */; };
@@ -175,20 +159,16 @@
 		2D9548C6215D1E74006C51E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20352143984A00B8BDF2 /* AppDelegate.swift */; };
 		2D9548C7215D1E74006C51E1 /* PodoWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */; };
 		2D9548C8215D1E74006C51E1 /* Podo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A32144196400B8BDF2 /* Podo.swift */; };
-		2D9548C9215D1E74006C51E1 /* SettingRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC67214D642500B79BF6 /* SettingRowType.swift */; };
 		2D9548CA215D1E74006C51E1 /* PodoLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20AE21441C5500B8BDF2 /* PodoLocalRepository.swift */; };
 		2D9548CB215D1E74006C51E1 /* AccountRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC7D214E07FF00B79BF6 /* AccountRemoteRepository.swift */; };
-		2D9548CC215D1E74006C51E1 /* SettingTableViewLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6D214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift */; };
+		2D9548CC215D1E74006C51E1 /* SettingTableViewAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6D214D6C2800B79BF6 /* SettingTableViewAccountCell.swift */; };
 		2D9548CD215D1E74006C51E1 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20852143D1DE00B8BDF2 /* UIColor+Additions.swift */; };
 		2D9548CE215D1E74006C51E1 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* KeychainService.swift */; };
 		2D9548CF215D1E74006C51E1 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC79214E079600B79BF6 /* AccountDataSource.swift */; };
-		2D9548D0215D1E74006C51E1 /* ViewModelSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC5D214D1B4E00B79BF6 /* ViewModelSettingRow.swift */; };
 		2D9548D1215D1E74006C51E1 /* RequestPodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A5214419C800B8BDF2 /* RequestPodo.swift */; };
 		2D9548D2215D1E74006C51E1 /* SettingWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */; };
-		2D9548D3215D1E74006C51E1 /* ViewModelSettingOthersItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC5B214D1A6B00B79BF6 /* ViewModelSettingOthersItem.swift */; };
 		2D9548D4215D1E74006C51E1 /* CommonRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC7F214E080E00B79BF6 /* CommonRemoteRepository.swift */; };
 		2D9548D5215D1E74006C51E1 /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F207C2143D1DE00B8BDF2 /* JSONable.swift */; };
-		2D9548D7215D1E74006C51E1 /* SettingSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC55214D173200B79BF6 /* SettingSectionType.swift */; };
 		2D9548D8215D1E74006C51E1 /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */; };
 		2D9548D9215D1E74006C51E1 /* ApiSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0421556F4700BF8588 /* ApiSessionService.swift */; };
 		2D9548DA215D1E74006C51E1 /* EntryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0021552B6600BF8588 /* EntryViewType.swift */; };
@@ -202,22 +182,22 @@
 		2D9548E3215D1E74006C51E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956F2146B955009335A1 /* LoginView.swift */; };
 		2D9548E4215D1E74006C51E1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90BF82154D27D00BF8588 /* BaseViewController.swift */; };
 		2D9548E5215D1E74006C51E1 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9095712146B966009335A1 /* LoginWireFrame.swift */; };
-		2D9548E6215D1E74006C51E1 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC69214D69D900B79BF6 /* HelpView.swift */; };
+		2D9548E6215D1E74006C51E1 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC69214D69D900B79BF6 /* LicenseViewController.swift */; };
 		2D9548E9215D1E74006C51E1 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
 		2D9548EB215D1E74006C51E1 /* Podolist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */; };
 		2D9548EC215D1E74006C51E1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20932144161A00B8BDF2 /* Login.storyboard */; };
-		2D9548EE215D1E74006C51E1 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D41BC73214D728600B79BF6 /* SettingTableViewCell.xib */; };
 		2D9548EF215D1E74006C51E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20442143984A00B8BDF2 /* Images.xcassets */; };
-		2D9548F0215D1E74006C51E1 /* SettingTableViewLogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D41BC6F214D6C9F00B79BF6 /* SettingTableViewLogoutCell.xib */; };
 		2D9548F1215D1E74006C51E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20392143984A00B8BDF2 /* Localizable.strings */; };
-		2D9548F2215D1E74006C51E1 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20D521453AF500B8BDF2 /* Setting.storyboard */; };
-		2D9548F4215D1E74006C51E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F203B2143984A00B8BDF2 /* InfoPlist.strings */; };
 		2DAC8BAF2166668F007A2997 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC8BAE2166668F007A2997 /* NibView.swift */; };
 		2DAC8BB02166668F007A2997 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC8BAE2166668F007A2997 /* NibView.swift */; };
 		2DAE36C6219FBB2100F03488 /* SettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C5219FBB2100F03488 /* SettingTopView.swift */; };
 		2DAE36C7219FBB2100F03488 /* SettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C5219FBB2100F03488 /* SettingTopView.swift */; };
 		2DAE36C9219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */; };
 		2DAE36CA219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */; };
+		2DAE36CC21A094AA00F03488 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */; };
+		2DAE36CD21A094AA00F03488 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */; };
+		2DAE36CF21A09CD600F03488 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */; };
+		2DAE36D021A09CD600F03488 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */; };
 		2DB43251218C7B6B002AEEBA /* PodoAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */; };
 		2DB43252218C7B6B002AEEBA /* PodoAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */; };
 		2DB43254218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */; };
@@ -278,11 +258,8 @@
 		2D0F201C2143934700B8BDF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D0F20352143984A00B8BDF2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D0F203A2143984A00B8BDF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2D0F203C2143984A00B8BDF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D0F203D2143984A00B8BDF2 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2D0F203E2143984A00B8BDF2 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D0F203F2143984A00B8BDF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2D0F20402143984A00B8BDF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D0F20412143984A00B8BDF2 /* InterfaceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceString.swift; sourceTree = "<group>"; };
 		2D0F20432143984A00B8BDF2 /* InterfaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceImage.swift; sourceTree = "<group>"; };
 		2D0F20442143984A00B8BDF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -310,14 +287,14 @@
 		2D0F20B221441CBE00B8BDF2 /* PodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoRepository.swift; sourceTree = "<group>"; };
 		2D0F20B421441CDF00B8BDF2 /* PodoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoDataSource.swift; sourceTree = "<group>"; };
 		2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistRowCell.swift; sourceTree = "<group>"; };
-		2D0F20D521453AF500B8BDF2 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInteractor.swift; sourceTree = "<group>"; };
 		2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
-		2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProtocols.swift; sourceTree = "<group>"; };
-		2D0F20DD21453B2900B8BDF2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWireFrame.swift; sourceTree = "<group>"; };
 		2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		2D0F20E421454DC600B8BDF2 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		2D198D4621A6893600287923 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		2D198D4921A6C8AF00287923 /* intro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = intro.txt; sourceTree = "<group>"; };
 		2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodolistRowCell.xib; sourceTree = "<group>"; };
 		2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		2D2E08B921847B1000DEF92A /* WeekLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekLabelView.swift; sourceTree = "<group>"; };
@@ -341,20 +318,9 @@
 		2D3D6430217C5852001CF919 /* ResponseAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAccount.swift; sourceTree = "<group>"; };
 		2D3D643A217C6C5E001CF919 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		2D41BC55214D173200B79BF6 /* SettingSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionType.swift; sourceTree = "<group>"; };
-		2D41BC57214D186D00B79BF6 /* ViewModelSettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSettingSection.swift; sourceTree = "<group>"; };
-		2D41BC59214D18F600B79BF6 /* ViewModelSettingAccountItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSettingAccountItem.swift; sourceTree = "<group>"; };
-		2D41BC5B214D1A6B00B79BF6 /* ViewModelSettingOthersItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSettingOthersItem.swift; sourceTree = "<group>"; };
-		2D41BC5D214D1B4E00B79BF6 /* ViewModelSettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSettingRow.swift; sourceTree = "<group>"; };
-		2D41BC5F214D1C3D00B79BF6 /* ViewModelSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSetting.swift; sourceTree = "<group>"; };
-		2D41BC65214D58D600B79BF6 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		2D41BC67214D642500B79BF6 /* SettingRowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowType.swift; sourceTree = "<group>"; };
-		2D41BC69214D69D900B79BF6 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
-		2D41BC6B214D69E100B79BF6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		2D41BC6D214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewLogoutCell.swift; sourceTree = "<group>"; };
-		2D41BC6F214D6C9F00B79BF6 /* SettingTableViewLogoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewLogoutCell.xib; sourceTree = "<group>"; };
-		2D41BC71214D6D8D00B79BF6 /* ViewModelSettingLogoutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSettingLogoutItem.swift; sourceTree = "<group>"; };
-		2D41BC73214D728600B79BF6 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		2D41BC65214D58D600B79BF6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		2D41BC69214D69D900B79BF6 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		2D41BC6D214D6C2800B79BF6 /* SettingTableViewAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewAccountCell.swift; sourceTree = "<group>"; };
 		2D41BC75214E069600B79BF6 /* CommonDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDataSource.swift; sourceTree = "<group>"; };
 		2D41BC77214E077B00B79BF6 /* CommonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRepository.swift; sourceTree = "<group>"; };
 		2D41BC79214E079600B79BF6 /* AccountDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataSource.swift; sourceTree = "<group>"; };
@@ -384,6 +350,8 @@
 		2DAC8BAE2166668F007A2997 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		2DAE36C5219FBB2100F03488 /* SettingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTopView.swift; sourceTree = "<group>"; };
 		2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Additions.swift"; sourceTree = "<group>"; };
+		2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Additions.swift"; sourceTree = "<group>"; };
+		2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoAPIType.swift; sourceTree = "<group>"; };
 		2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistSectionCell.swift; sourceTree = "<group>"; };
 		2DB43256218C8EF1002AEEBA /* PodolistSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodolistSectionCell.xib; sourceTree = "<group>"; };
@@ -551,6 +519,8 @@
 			children = (
 				2D0F20382143984A00B8BDF2 /* Localization */,
 				2D0F20412143984A00B8BDF2 /* InterfaceString.swift */,
+				2D198D4921A6C8AF00287923 /* intro.txt */,
+				2D198D4621A6893600287923 /* license.txt */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -558,7 +528,6 @@
 		2D0F20382143984A00B8BDF2 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F203B2143984A00B8BDF2 /* InfoPlist.strings */,
 				2D0F20392143984A00B8BDF2 /* Localizable.strings */,
 			);
 			path = Localization;
@@ -619,7 +588,6 @@
 		2D0F20782143D12600B8BDF2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20B621442C7600B8BDF2 /* ViewModel */,
 				2D0F20A12144194A00B8BDF2 /* Request */,
 				2D0F20A22144195200B8BDF2 /* Response */,
 				2D41BC52214D0DF000B79BF6 /* Account.swift */,
@@ -674,6 +642,7 @@
 				2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */,
 				2D31DEA221690E5900977507 /* String+Additions.swift */,
 				2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */,
+				2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -762,19 +731,6 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		2D0F20B621442C7600B8BDF2 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2D41BC5F214D1C3D00B79BF6 /* ViewModelSetting.swift */,
-				2D41BC5D214D1B4E00B79BF6 /* ViewModelSettingRow.swift */,
-				2D41BC57214D186D00B79BF6 /* ViewModelSettingSection.swift */,
-				2D41BC59214D18F600B79BF6 /* ViewModelSettingAccountItem.swift */,
-				2D41BC5B214D1A6B00B79BF6 /* ViewModelSettingOthersItem.swift */,
-				2D41BC71214D6D8D00B79BF6 /* ViewModelSettingLogoutItem.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		2D0F20BB214432D700B8BDF2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -799,9 +755,7 @@
 			isa = PBXGroup;
 			children = (
 				2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */,
-				2D41BC73214D728600B79BF6 /* SettingTableViewCell.xib */,
-				2D41BC6D214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift */,
-				2D41BC6F214D6C9F00B79BF6 /* SettingTableViewLogoutCell.xib */,
+				2D41BC6D214D6C2800B79BF6 /* SettingTableViewAccountCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -882,8 +836,6 @@
 				2D3D643A217C6C5E001CF919 /* AccessToken.swift */,
 				2DB4325A218C9003002AEEBA /* GroupHeader.swift */,
 				2D0F20E421454DC600B8BDF2 /* Setting.swift */,
-				2D41BC67214D642500B79BF6 /* SettingRowType.swift */,
-				2D41BC55214D173200B79BF6 /* SettingSectionType.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -891,8 +843,9 @@
 		2D41BC61214D510200B79BF6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				2DE90BF82154D27D00BF8588 /* BaseViewController.swift */,
 				2D5599992165115100FFA64A /* BaseView.swift */,
+				2DE90BF82154D27D00BF8588 /* BaseViewController.swift */,
+				2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */,
 				2DAC8BAE2166668F007A2997 /* NibView.swift */,
 				2DE90C0021552B6600BF8588 /* EntryViewType.swift */,
 			);
@@ -902,9 +855,8 @@
 		2D41BC64214D58BF00B79BF6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2D41BC65214D58D600B79BF6 /* AccountView.swift */,
-				2D41BC69214D69D900B79BF6 /* HelpView.swift */,
-				2D41BC6B214D69E100B79BF6 /* AboutView.swift */,
+				2D41BC65214D58D600B79BF6 /* AboutViewController.swift */,
+				2D41BC69214D69D900B79BF6 /* LicenseViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -955,11 +907,9 @@
 			children = (
 				2D41BC64214D58BF00B79BF6 /* Views */,
 				2D0F20E121454CE700B8BDF2 /* Cells */,
-				2D0F20D521453AF500B8BDF2 /* Setting.storyboard */,
 				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
 				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
-				2D0F20DB21453B2100B8BDF2 /* SettingProtocols.swift */,
-				2D0F20DD21453B2900B8BDF2 /* SettingView.swift */,
+				2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */,
 				2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */,
 			);
 			path = List;
@@ -1197,18 +1147,16 @@
 				2D0F2098214416FA00B8BDF2 /* Podolist.storyboard in Resources */,
 				2D512202216782F700977966 /* PodoWriteTitleView.xib in Resources */,
 				2D0F20942144161A00B8BDF2 /* Login.storyboard in Resources */,
+				2D198D4A21A6C8AF00287923 /* intro.txt in Resources */,
 				2DB43257218C8EF1002AEEBA /* PodolistSectionCell.xib in Resources */,
 				2D34050021733BD200EC3862 /* Launch.xib in Resources */,
 				2D31DE912168F3CD00977507 /* NotoSans-Regular.ttf in Resources */,
-				2D41BC74214D728600B79BF6 /* SettingTableViewCell.xib in Resources */,
 				2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */,
-				2D41BC70214D6C9F00B79BF6 /* SettingTableViewLogoutCell.xib in Resources */,
 				2D31DE982168F40E00977507 /* NotoSans-Light.ttf in Resources */,
 				2D0F20612143984A00B8BDF2 /* Localizable.strings in Resources */,
 				2D1C5F882164DCED00EC79A2 /* PodolistRowCell.xib in Resources */,
-				2D0F20D621453AF500B8BDF2 /* Setting.storyboard in Resources */,
-				2D0F20622143984A00B8BDF2 /* InfoPlist.strings in Resources */,
 				2D5599A6216512FE00FFA64A /* PodoWriteCalendarView.xib in Resources */,
+				2D198D4721A6893700287923 /* license.txt in Resources */,
 				2D31DE9A2168F40E00977507 /* NotoSans-Bold.ttf in Resources */,
 				2D5599A3216512EB00FFA64A /* PodoWritePriorityView.xib in Resources */,
 				2D31DE962168F40E00977507 /* NotoSans-Medium.ttf in Resources */,
@@ -1236,18 +1184,16 @@
 				2D9548EB215D1E74006C51E1 /* Podolist.storyboard in Resources */,
 				2D512203216782F700977966 /* PodoWriteTitleView.xib in Resources */,
 				2D9548EC215D1E74006C51E1 /* Login.storyboard in Resources */,
+				2D198D4B21A6C8AF00287923 /* intro.txt in Resources */,
 				2DB43258218C8EF1002AEEBA /* PodolistSectionCell.xib in Resources */,
 				2D34050121733BD200EC3862 /* Launch.xib in Resources */,
 				2D31DE922168F3CD00977507 /* NotoSans-Regular.ttf in Resources */,
-				2D9548EE215D1E74006C51E1 /* SettingTableViewCell.xib in Resources */,
 				2D9548EF215D1E74006C51E1 /* Images.xcassets in Resources */,
-				2D9548F0215D1E74006C51E1 /* SettingTableViewLogoutCell.xib in Resources */,
 				2D31DE992168F40E00977507 /* NotoSans-Light.ttf in Resources */,
 				2D9548F1215D1E74006C51E1 /* Localizable.strings in Resources */,
 				2D1C5F892164DCED00EC79A2 /* PodolistRowCell.xib in Resources */,
-				2D9548F2215D1E74006C51E1 /* Setting.storyboard in Resources */,
-				2D9548F4215D1E74006C51E1 /* InfoPlist.strings in Resources */,
 				2D5599A7216512FE00FFA64A /* PodoWriteCalendarView.xib in Resources */,
+				2D198D4821A6893700287923 /* license.txt in Resources */,
 				2D31DE9B2168F40E00977507 /* NotoSans-Bold.ttf in Resources */,
 				2D5599A4216512EB00FFA64A /* PodoWritePriorityView.xib in Resources */,
 				2D31DE972168F40E00977507 /* NotoSans-Medium.ttf in Resources */,
@@ -1499,34 +1445,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2E08B8218476E400DEF92A /* CalendarView.swift in Sources */,
-				2D41BC58214D186D00B79BF6 /* ViewModelSettingSection.swift in Sources */,
 				2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */,
 				2D41BC86214E086F00B79BF6 /* SessionService.swift in Sources */,
 				2D41BC7C214E07A200B79BF6 /* AccountRepository.swift in Sources */,
-				2D41BC66214D58D600B79BF6 /* AccountView.swift in Sources */,
+				2D41BC66214D58D600B79BF6 /* AboutViewController.swift in Sources */,
 				2D31DEE9216A68B600977507 /* WeekView.swift in Sources */,
 				2DD7063C214FDF2100C44E16 /* PriorityButton.swift in Sources */,
-				2D41BC72214D6D8D00B79BF6 /* ViewModelSettingLogoutItem.swift in Sources */,
 				2D0F20752143984A00B8BDF2 /* PodolistView.swift in Sources */,
 				2D0F20B121441C6800B8BDF2 /* PodoRemoteRepository.swift in Sources */,
 				2D3D6431217C5852001CF919 /* ResponseAccount.swift in Sources */,
 				2D0F20B321441CBE00B8BDF2 /* PodoRepository.swift in Sources */,
 				2D0F20632143984A00B8BDF2 /* InterfaceString.swift in Sources */,
 				2D41BC84214E085100B79BF6 /* CommonLocalRepository.swift in Sources */,
-				2D0F20DC21453B2100B8BDF2 /* SettingProtocols.swift in Sources */,
 				2D55999D216512B600FFA64A /* PodoWritePriorityView.swift in Sources */,
 				2D0F20682143984A00B8BDF2 /* Fonts.swift in Sources */,
 				2DE90C032155656A00BF8588 /* SessionAdapter.swift in Sources */,
 				2D3996E02188B36900CB0E4D /* DefaultRequest.swift in Sources */,
 				2D0F20A8214419DE00B8BDF2 /* ResponsePodo.swift in Sources */,
 				2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */,
-				2D0F20DE21453B2900B8BDF2 /* SettingView.swift in Sources */,
+				2D0F20DE21453B2900B8BDF2 /* SettingViewController.swift in Sources */,
 				2DD0695C214BDD0200E0C987 /* UIAlertController+Additions.swift in Sources */,
 				2D47E3EE2187621400899B12 /* PodoRequest.swift in Sources */,
 				2D35496921742B8F0014D8CF /* Logger.swift in Sources */,
 				2D5599A0216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
 				2D0F209A2144179000B8BDF2 /* PodolistProtocols.swift in Sources */,
-				2D41BC5A214D18F600B79BF6 /* ViewModelSettingAccountItem.swift in Sources */,
 				2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */,
 				2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */,
@@ -1535,16 +1477,16 @@
 				2D0F208B2143D1DE00B8BDF2 /* Router.swift in Sources */,
 				2DAE36C6219FBB2100F03488 /* SettingTopView.swift in Sources */,
 				2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */,
-				2D41BC60214D1C3D00B79BF6 /* ViewModelSetting.swift in Sources */,
 				2D5121FF216782BF00977966 /* PodoWriteTitleView.swift in Sources */,
 				2D0F209E2144181F00B8BDF2 /* PodolistInteractor.swift in Sources */,
 				2DB43254218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */,
-				2D41BC6C214D69E100B79BF6 /* AboutView.swift in Sources */,
 				2D0F20B521441CDF00B8BDF2 /* PodoDataSource.swift in Sources */,
 				2D1C5F8B2164E78400EC79A2 /* UIView+Additions.swift in Sources */,
+				2DAE36CC21A094AA00F03488 /* UITableView+Additions.swift in Sources */,
 				2D0F208A2143D1DE00B8BDF2 /* ApiServiceProtocol.swift in Sources */,
 				2D31DE9D2168F8CE00977507 /* Priority.swift in Sources */,
 				2D0F20872143D1DE00B8BDF2 /* RoutesProtocol.swift in Sources */,
+				2DAE36CF21A09CD600F03488 /* BaseWireframe.swift in Sources */,
 				2DE9031C2151387400AAAE4C /* Style.swift in Sources */,
 				2D55999A2165115100FFA64A /* BaseView.swift in Sources */,
 				2D2E08BD2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
@@ -1559,21 +1501,17 @@
 				2D31DEE6216A687400977507 /* DayView.swift in Sources */,
 				2DD7063E214FF15A00C44E16 /* PodoWriteView.swift in Sources */,
 				2D0F20A42144196400B8BDF2 /* Podo.swift in Sources */,
-				2D41BC68214D642500B79BF6 /* SettingRowType.swift in Sources */,
 				2D0F20AF21441C5500B8BDF2 /* PodoLocalRepository.swift in Sources */,
 				2D41BC7E214E07FF00B79BF6 /* AccountRemoteRepository.swift in Sources */,
-				2D41BC6E214D6C2800B79BF6 /* SettingTableViewLogoutCell.swift in Sources */,
+				2D41BC6E214D6C2800B79BF6 /* SettingTableViewAccountCell.swift in Sources */,
 				2D2E08BA21847B1000DEF92A /* WeekLabelView.swift in Sources */,
 				2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */,
 				2DE90C072155730200BF8588 /* KeychainService.swift in Sources */,
 				2D41BC7A214E079600B79BF6 /* AccountDataSource.swift in Sources */,
-				2D41BC5E214D1B4E00B79BF6 /* ViewModelSettingRow.swift in Sources */,
 				2D0F20A6214419C800B8BDF2 /* RequestPodo.swift in Sources */,
 				2D0F20E021453B3400B8BDF2 /* SettingWireFrame.swift in Sources */,
-				2D41BC5C214D1A6B00B79BF6 /* ViewModelSettingOthersItem.swift in Sources */,
 				2D41BC80214E080E00B79BF6 /* CommonRemoteRepository.swift in Sources */,
 				2D0F20862143D1DE00B8BDF2 /* JSONable.swift in Sources */,
-				2D41BC56214D173200B79BF6 /* SettingSectionType.swift in Sources */,
 				2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */,
 				2DE90C0521556F4700BF8588 /* ApiSessionService.swift in Sources */,
 				2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */,
@@ -1592,7 +1530,7 @@
 				2D31DEA72169DF2E00977507 /* MainTopView.swift in Sources */,
 				2D9095722146B966009335A1 /* LoginWireFrame.swift in Sources */,
 				2D31DEF3216A736900977507 /* PodoCalendarView.swift in Sources */,
-				2D41BC6A214D69D900B79BF6 /* HelpView.swift in Sources */,
+				2D41BC6A214D69D900B79BF6 /* LicenseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1617,34 +1555,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2E08B7218476CA00DEF92A /* CalendarView.swift in Sources */,
-				2D95489D215D1E74006C51E1 /* ViewModelSettingSection.swift in Sources */,
 				2D95489F215D1E74006C51E1 /* Account.swift in Sources */,
 				2D9548A0215D1E74006C51E1 /* SessionService.swift in Sources */,
 				2D9548A1215D1E74006C51E1 /* AccountRepository.swift in Sources */,
-				2D9548A2215D1E74006C51E1 /* AccountView.swift in Sources */,
+				2D9548A2215D1E74006C51E1 /* AboutViewController.swift in Sources */,
 				2D31DEEA216A68B600977507 /* WeekView.swift in Sources */,
 				2D9548A3215D1E74006C51E1 /* PriorityButton.swift in Sources */,
-				2D9548A4215D1E74006C51E1 /* ViewModelSettingLogoutItem.swift in Sources */,
 				2D9548A5215D1E74006C51E1 /* PodolistView.swift in Sources */,
 				2D9548A6215D1E74006C51E1 /* PodoRemoteRepository.swift in Sources */,
 				2D3D6432217C5852001CF919 /* ResponseAccount.swift in Sources */,
 				2D9548A7215D1E74006C51E1 /* PodoRepository.swift in Sources */,
 				2D9548A8215D1E74006C51E1 /* InterfaceString.swift in Sources */,
 				2D9548A9215D1E74006C51E1 /* CommonLocalRepository.swift in Sources */,
-				2D9548AA215D1E74006C51E1 /* SettingProtocols.swift in Sources */,
 				2D55999E216512B600FFA64A /* PodoWritePriorityView.swift in Sources */,
 				2D9548AB215D1E74006C51E1 /* Fonts.swift in Sources */,
 				2D9548AC215D1E74006C51E1 /* SessionAdapter.swift in Sources */,
 				2D3996E12188B36900CB0E4D /* DefaultRequest.swift in Sources */,
 				2D9548AD215D1E74006C51E1 /* ResponsePodo.swift in Sources */,
 				2D9548AE215D1E74006C51E1 /* SettingPresenter.swift in Sources */,
-				2D9548AF215D1E74006C51E1 /* SettingView.swift in Sources */,
+				2D9548AF215D1E74006C51E1 /* SettingViewController.swift in Sources */,
 				2D9548B0215D1E74006C51E1 /* UIAlertController+Additions.swift in Sources */,
 				2D47E3EF2187621400899B12 /* PodoRequest.swift in Sources */,
 				2D35496A21742B8F0014D8CF /* Logger.swift in Sources */,
 				2D5599A1216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
 				2D9548B2215D1E74006C51E1 /* PodolistProtocols.swift in Sources */,
-				2D9548B3215D1E74006C51E1 /* ViewModelSettingAccountItem.swift in Sources */,
 				2D3404FE2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D3D643C217C6C5E001CF919 /* AccessToken.swift in Sources */,
 				2D9548B4215D1E74006C51E1 /* PodolistPresenter.swift in Sources */,
@@ -1653,16 +1587,16 @@
 				2D9548B5215D1E74006C51E1 /* Router.swift in Sources */,
 				2DAE36C7219FBB2100F03488 /* SettingTopView.swift in Sources */,
 				2D9548B6215D1E74006C51E1 /* PodolistWireFrame.swift in Sources */,
-				2D9548B7215D1E74006C51E1 /* ViewModelSetting.swift in Sources */,
 				2D512200216782BF00977966 /* PodoWriteTitleView.swift in Sources */,
 				2D9548B8215D1E74006C51E1 /* PodolistInteractor.swift in Sources */,
 				2DB43255218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */,
-				2D9548B9215D1E74006C51E1 /* AboutView.swift in Sources */,
 				2D9548BA215D1E74006C51E1 /* PodoDataSource.swift in Sources */,
 				2D1C5F8C2164E78400EC79A2 /* UIView+Additions.swift in Sources */,
+				2DAE36CD21A094AA00F03488 /* UITableView+Additions.swift in Sources */,
 				2D9548BB215D1E74006C51E1 /* ApiServiceProtocol.swift in Sources */,
 				2D31DE9E2168F8CE00977507 /* Priority.swift in Sources */,
 				2D9548BC215D1E74006C51E1 /* RoutesProtocol.swift in Sources */,
+				2DAE36D021A09CD600F03488 /* BaseWireframe.swift in Sources */,
 				2D9548BD215D1E74006C51E1 /* Style.swift in Sources */,
 				2D55999B2165115100FFA64A /* BaseView.swift in Sources */,
 				2D2E08BE2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
@@ -1677,21 +1611,17 @@
 				2D31DEE7216A687400977507 /* DayView.swift in Sources */,
 				2D9548C7215D1E74006C51E1 /* PodoWriteView.swift in Sources */,
 				2D9548C8215D1E74006C51E1 /* Podo.swift in Sources */,
-				2D9548C9215D1E74006C51E1 /* SettingRowType.swift in Sources */,
 				2D9548CA215D1E74006C51E1 /* PodoLocalRepository.swift in Sources */,
 				2D9548CB215D1E74006C51E1 /* AccountRemoteRepository.swift in Sources */,
-				2D9548CC215D1E74006C51E1 /* SettingTableViewLogoutCell.swift in Sources */,
+				2D9548CC215D1E74006C51E1 /* SettingTableViewAccountCell.swift in Sources */,
 				2D2E08BB21847B1000DEF92A /* WeekLabelView.swift in Sources */,
 				2D9548CD215D1E74006C51E1 /* UIColor+Additions.swift in Sources */,
 				2D9548CE215D1E74006C51E1 /* KeychainService.swift in Sources */,
 				2D9548CF215D1E74006C51E1 /* AccountDataSource.swift in Sources */,
-				2D9548D0215D1E74006C51E1 /* ViewModelSettingRow.swift in Sources */,
 				2D9548D1215D1E74006C51E1 /* RequestPodo.swift in Sources */,
 				2D9548D2215D1E74006C51E1 /* SettingWireFrame.swift in Sources */,
-				2D9548D3215D1E74006C51E1 /* ViewModelSettingOthersItem.swift in Sources */,
 				2D9548D4215D1E74006C51E1 /* CommonRemoteRepository.swift in Sources */,
 				2D9548D5215D1E74006C51E1 /* JSONable.swift in Sources */,
-				2D9548D7215D1E74006C51E1 /* SettingSectionType.swift in Sources */,
 				2D9548D8215D1E74006C51E1 /* SettingInteractor.swift in Sources */,
 				2D9548D9215D1E74006C51E1 /* ApiSessionService.swift in Sources */,
 				2D9548DA215D1E74006C51E1 /* EntryViewType.swift in Sources */,
@@ -1710,7 +1640,7 @@
 				2D31DEAC216A4A6600977507 /* MainTopView.swift in Sources */,
 				2D9548E5215D1E74006C51E1 /* LoginWireFrame.swift in Sources */,
 				2D31DEF4216A736900977507 /* PodoCalendarView.swift in Sources */,
-				2D9548E6215D1E74006C51E1 /* HelpView.swift in Sources */,
+				2D9548E6215D1E74006C51E1 /* LicenseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1738,16 +1668,6 @@
 				2D0F203F2143984A00B8BDF2 /* Base */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		2D0F203B2143984A00B8BDF2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D0F203C2143984A00B8BDF2 /* en */,
-				2D0F203E2143984A00B8BDF2 /* ko */,
-				2D0F20402143984A00B8BDF2 /* Base */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

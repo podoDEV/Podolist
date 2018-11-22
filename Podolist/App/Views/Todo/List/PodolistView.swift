@@ -46,8 +46,8 @@ class PodolistView: BaseViewController {
         presenter?.refresh(date: Date())
     }
 
-    override func setup() {
-        super.setup()
+    override func setupSubviews() {
+        super.setupSubviews()
         setupTopView()
         setupTableView()
         setupHidingView()
@@ -93,8 +93,8 @@ class PodolistView: BaseViewController {
         view.addSubview(writeView)
     }
 
-    override func setupFrame() {
-        super.setupFrame()
+    override func setupConstraints() {
+        super.setupConstraints()
         topView.frame.size = CGSize(width: view.bounds.width, height: Style.List.Top.height + safeAreaInset.top)
         tableView.frame = CGRect(x: 0, y: topView.frame.maxY, width: view.bounds.width, height: view.bounds.height - topView.frame.height - Style.Write.Normal.height - safeAreaInset.bottom)
         hidingView.frame = tableView.frame

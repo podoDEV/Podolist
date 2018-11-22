@@ -6,50 +6,100 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingWireFrame: SettingWireFrameProtocol {
+protocol SettingWireFrameProtocol: class {
+    static func createSettingModule() -> SettingViewController
 
-    static var settingStoryboard: UIStoryboard {
-        return UIStoryboard(name: "Podolist", bundle: Bundle.main)
-    }
+    // Presenter -> WireFrame
+    func navigate(to route: SettingWireFrame.Router)
+}
 
-    static func createSettingModule() -> UIViewController {
-        let settingEntry = settingStoryboard.instantiateViewController(withIdentifier: EntryViewType.setting.rawValue)
-        if let view = settingEntry as? SettingView {
-            let presenter: SettingPresenterProtocol = SettingPresenter()
-            let interactor: SettingInteractorProtocol = SettingInteractor()
-//            let dataSource: PodoDataSource = PodoRepository()
-//            let localDataSource: PodoLocalDataSource = PodoLocalRepository()
-//            let remoteDataSource: PodoRemoteDataSource = PodoRemoteRepository()
-            let wireFrame: SettingWireFrameProtocol = SettingWireFrame()
-
-            view.presenter = presenter
-            presenter.view = view
-            presenter.interactor = interactor
-            presenter.wireFrame = wireFrame
-//            interactor.dataSource = dataSource
-//            dataSource.localDataSource = localDataSource
-//            dataSource.remoteDataSource = remoteDataSource
-
-            return settingEntry
-        }
-        return UIViewController()
+class SettingWireFrame: BaseWireframe {
+    enum Router {
+        case about
+        case license
+        case feedback(recipients: [String], subject: String, message: String)
+        case logout
+        case action(title: String?, message: String?, actionTitle: String, handler: ((UIAlertAction) -> Void)?)
+        case alert(title: String, message: String)
     }
 }
 
-extension SettingWireFrame {
+extension SettingWireFrame: SettingWireFrameProtocol {
 
-    func goToLoginScreen() {
-        let destinationVC = LoginWireFrame.createLoginModule()
-        UIApplication.shared.keyWindow?.rootViewController = destinationVC
+    static func createSettingModule() -> SettingViewController {
+        let view = SettingViewController(nibName: nil, bundle: nil)
+        let wireframe = SettingWireFrame()
+        let interactor = SettingInteractor()
+        let presenter = SettingPresenter(view: view,
+                                         wireframe: wireframe,
+                                         interactor: interactor)
+
+        view.presenter = presenter
+        wireframe.view = view
+//        interactor.presenter = presenter
+
+        return view
     }
 
-    func goToDetailScreen(from source: SettingViewProtocol, to type: SettingRowType) {
-        guard let source = source as? UIViewController else {
+    // MARK: - SettingWireFrameProtocol
+
+    func navigate(to route: Router) {
+        switch route {
+        case .about:
+            showAboutView()
+        case .license:
+            showLicenseView()
+        case .feedback(let recipients, let subject, let message):
+            showFeedbackView(recipients: recipients, subject: subject, message: message)
+        case .logout:
+            showLoginView()
+        case .action(let title, let message, let actionTitle, let handler):
+            presentActionSheet(title: title,
+                               message: message,
+                               actionTitle: actionTitle,
+                               handler: handler)
+        case .alert(let title, let message):
+            presentAlert(title: title, message: message)
             return
         }
+    }
+}
 
-        let destination = SettingWireFrame.settingStoryboard.instantiateViewController(withIdentifier: type.rawValue)
-        source.navigationController?.pushViewController(destination, animated: true)
+private extension SettingWireFrame {
+
+    // MARK: - Navigation
+
+    func showAboutView() {
+        let aboutViewController = AboutViewController()
+        show(aboutViewController, with: .push)
+    }
+
+    func showLicenseView() {
+        let licenseViewController = LicenseViewController()
+        show(licenseViewController, with: .push)
+    }
+
+    func showFeedbackView(recipients: [String], subject: String, message: String) {
+        let mailComposer = MFMailComposeViewController()
+        mailComposer.mailComposeDelegate = self
+        mailComposer.setToRecipients(recipients)
+        mailComposer.setSubject(subject)
+        mailComposer.setMessageBody(message, isHTML: false)
+        mailComposer.modalPresentationStyle = .currentContext
+        show(mailComposer, with: .present(from: view))
+    }
+
+    func showLoginView() {
+        let loginViewController = LoginWireFrame.createLoginModule()
+        show(loginViewController, with: .root(window: UIApplication.shared.keyWindow!))
+    }
+}
+
+extension SettingWireFrame: MFMailComposeViewControllerDelegate {
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        pop(isModal: true, animated: true)
     }
 }
