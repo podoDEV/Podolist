@@ -23,8 +23,8 @@ class LoginView: BaseViewController {
         showLoading()
     }
 
-    override func setup() {
-        super.setup()
+    override func setupSubviews() {
+        super.setupSubviews()
         view.addSubview(launchView)
     }
 

@@ -1,9 +1,0 @@
-//
-//  InfoPlist.strings
-//  Podolist
-//
-//  Copyright © 2018년 podo. All rights reserved.
-//
-
-"CFBundleDisplayName" = "Podolist";
-"NSHumanReadableCopyright" = "Copyright © 2018 podo. All rights reserved.";

@@ -11,7 +11,7 @@ class BaseViewController: UIViewController {
 
     var safeAreaInset: UIEdgeInsets = .zero {
         didSet {
-            setupFrame()
+            setupConstraints()
         }
     }
 
@@ -21,7 +21,8 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        setupSubviews()
+        setupConstraints()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,11 +36,21 @@ class BaseViewController: UIViewController {
         safeAreaInset = view.layoutInsets()
     }
 
-    func setup() {
+    func setupSubviews() {
 
     }
 
-    func setupFrame() {
+    func setupConstraints() {
 
+    }
+
+    func setupNavigationBar() {
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .automatic
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        }
     }
 }

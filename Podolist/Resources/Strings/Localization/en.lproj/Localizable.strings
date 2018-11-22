@@ -8,8 +8,6 @@
 "login.signup" = "Sign Up";
 "login.signin" = "Sign In";
 
-"podolist.title" = "title";
-
 "write.priority" = "Priority";
 "write.date" = "Date";
 
@@ -18,10 +16,11 @@
 "priority.medium" = "Medium";
 "priority.low" = "Low";
 
-"setting.help" = "Help";
-"setting.version" = "Version";
+"setting" = "Setting";
+"setting.about" = "About";
+"setting.about.version" = "Version";
+"setting.license" = "Opensource License";
 "setting.feedback" = "Feedback";
-"setting.inquiry" = "Inquiry";
 "setting.logout" = "Logout";
 
 "common.podolist" = "Podolist";
@@ -38,16 +37,10 @@
 "common.skip" = "Skip";
 "common.seeall" = "See All";
 
-"error.email.title" = "Could Not Send Email";
-"error.email.body" = "Your device could not send e-mail.\nPlease check e-mail configuration and try again.";
+"signature.copyright" = "Copyright © 2018 podo. All rights reserved.";
 
-//"SUN" = "SUN";
-//"MON" = "MON";
-//"TUE" = "TUE";
-//"WED" = "WED";
-//"THU" = "THU";
-//"FRI" = "FRI";
-//"SAT" = "SAT";
+"error.email.title" = "Couldn't Send Email";
+"error.email.body" = "Your device couldn't send e-mail.\nPlease check e-mail configuration and try again.";
 
 "SUN" = "sun";
 "MON" = "mon";

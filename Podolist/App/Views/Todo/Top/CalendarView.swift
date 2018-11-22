@@ -13,7 +13,7 @@ protocol CalendarViewDelegate: NSObjectProtocol {
 
 class CalendarView: UIScrollView {
 
-    var calDelegate: CalendarViewDelegate?
+    weak var calDelegate: CalendarViewDelegate?
 
     var weeks = [WeekView]()
     var currentPosition = 1

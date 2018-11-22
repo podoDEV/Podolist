@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate {
+private extension AppDelegate {
 
     func setupAnalytics() {
         guard let gai = GAI.sharedInstance() else {
@@ -61,10 +61,12 @@ extension AppDelegate {
         #endif
     }
 
-    fileprivate func setupEntryScreen() {
+    func setupEntryScreen() {
         let loginScreen = LoginWireFrame.createLoginModule()
         self.window?.rootViewController = loginScreen
         self.window?.makeKeyAndVisible()
+
+        UINavigationBar.appearance().barStyle = .blackOpaque
     }
 
     func setupPushNotification() {

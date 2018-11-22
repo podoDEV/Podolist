@@ -14,10 +14,13 @@ private struct PodolistColors {
     static let appColor3 = UIColor(hex: 0xD6ACFB) // 달력 날짜 선택
     static let appColor4 = UIColor(hex: 0xDEB9FF) // 투두리스트 완료
 
-    static let gradationStart = UIColor(hex: 0xC32BFF)
-    static let gradationEnd = UIColor(hex: 0x9013FE)
+    static let gradationStart = UIColor(hex: 0x9E30FE)
+    static let gradationEnd = UIColor(hex: 0xCD5EFF)
 
-    static let todoBackground1 = UIColor(hex: 0x9441F5) // normal
+//    static let gradationStart = UIColor(hex: 0xC32BFF) // Legacy
+//    static let gradationEnd = UIColor(hex: 0x9013FE)
+
+    static let todoBackground1 = UIColor(hex: 0x9E30FE) // normal
     static let todoBackground2 = UIColor(hex: 0xDCC3FC) // completed
 
     static let priorityColor1 = UIColor(hex: 0xD0021B) // 매우 중요
