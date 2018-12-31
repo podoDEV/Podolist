@@ -7,6 +7,7 @@
 
 struct PodoSection {
     var title: String
+    var color: UIColor
     var rows: [Podo]
 }
 

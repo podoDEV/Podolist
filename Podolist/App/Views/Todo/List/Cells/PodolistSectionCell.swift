@@ -12,10 +12,10 @@ class PodolistSectionCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
 
-    func configureWith(_ title: String) {
+    func configureWith(_ title: String, color: UIColor) {
         self.backgroundColor = .white
         titleLabel.text = title
-        titleLabel.textColor = .red
+        titleLabel.textColor = color
         titleLabel.font = .appFontB(size: 13)
     }
 }

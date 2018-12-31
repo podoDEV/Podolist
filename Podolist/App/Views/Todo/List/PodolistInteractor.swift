@@ -59,11 +59,17 @@ extension PodolistInteractor {
                 var podoSections = [PodoSection]()
                 if CalendarUtils.isToday(date: self.selectedDate) {
                     if $0.delayedItems.isEmpty == false {
-                        podoSections.append(PodoSection(title: InterfaceString.List.DelayedItems, rows: $0.delayedItems))
+                        podoSections.append(PodoSection(title: InterfaceString.List.DelayedItems,
+                                                        color: .delayedItems,
+                                                        rows: $0.delayedItems))
                     }
-                    podoSections.append(PodoSection(title: InterfaceString.List.Items, rows: $0.items))
+                    podoSections.append(PodoSection(title: InterfaceString.List.Items,
+                                                    color: .normalItems,
+                                                    rows: $0.items))
                 } else {
-                    podoSections.append(PodoSection(title: self.selectedDate.displayYYYYMMDD(), rows: $0.items))
+                    podoSections.append(PodoSection(title: self.selectedDate.displayYYYYMMDD(),
+                                                    color: .normalItems,
+                                                    rows: $0.items))
                 }
                 self.podoSections = podoSections
                 return podoSections

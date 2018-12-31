@@ -87,7 +87,7 @@ extension PodolistPresenter {
 
     func configureSection(_ cell: PodolistSectionCell, forSectionAt section: Int) {
         let item = podoSections[section]
-        cell.configureWith(item.title)
+        cell.configureWith(item.title, color: item.color)
     }
 
     func configureRow(_ cell: PodolistRowCell, forRowAt indexPath: IndexPath) {
