@@ -213,8 +213,6 @@
 		2DB43252218C7B6B002AEEBA /* PodoAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */; };
 		2DB43254218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */; };
 		2DB43255218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */; };
-		2DB43257218C8EF1002AEEBA /* PodolistSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB43256218C8EF1002AEEBA /* PodolistSectionCell.xib */; };
-		2DB43258218C8EF1002AEEBA /* PodolistSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB43256218C8EF1002AEEBA /* PodolistSectionCell.xib */; };
 		2DB4325B218C9003002AEEBA /* GroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB4325A218C9003002AEEBA /* GroupHeader.swift */; };
 		2DB4325C218C9003002AEEBA /* GroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB4325A218C9003002AEEBA /* GroupHeader.swift */; };
 		2DD0695C214BDD0200E0C987 /* UIAlertController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */; };
@@ -370,7 +368,6 @@
 		2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoAPIType.swift; sourceTree = "<group>"; };
 		2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistSectionCell.swift; sourceTree = "<group>"; };
-		2DB43256218C8EF1002AEEBA /* PodolistSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodolistSectionCell.xib; sourceTree = "<group>"; };
 		2DB4325A218C9003002AEEBA /* GroupHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHeader.swift; sourceTree = "<group>"; };
 		2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Additions.swift"; sourceTree = "<group>"; };
 		2DD7063B214FDF2100C44E16 /* PriorityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityButton.swift; sourceTree = "<group>"; };
@@ -753,7 +750,6 @@
 			isa = PBXGroup;
 			children = (
 				2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */,
-				2DB43256218C8EF1002AEEBA /* PodolistSectionCell.xib */,
 				2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */,
 				2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */,
 			);
@@ -1150,7 +1146,6 @@
 			files = (
 				2D512202216782F700977966 /* PodoWriteTitleView.xib in Resources */,
 				2D198D4A21A6C8AF00287923 /* intro.txt in Resources */,
-				2DB43257218C8EF1002AEEBA /* PodolistSectionCell.xib in Resources */,
 				2D34050021733BD200EC3862 /* Launch.xib in Resources */,
 				2D31DE912168F3CD00977507 /* NotoSans-Regular.ttf in Resources */,
 				2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */,
@@ -1185,7 +1180,6 @@
 			files = (
 				2D512203216782F700977966 /* PodoWriteTitleView.xib in Resources */,
 				2D198D4B21A6C8AF00287923 /* intro.txt in Resources */,
-				2DB43258218C8EF1002AEEBA /* PodolistSectionCell.xib in Resources */,
 				2D34050121733BD200EC3862 /* Launch.xib in Resources */,
 				2D31DE922168F3CD00977507 /* NotoSans-Regular.ttf in Resources */,
 				2D9548EF215D1E74006C51E1 /* Images.xcassets in Resources */,

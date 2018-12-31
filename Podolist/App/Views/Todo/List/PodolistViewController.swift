@@ -16,6 +16,7 @@ protocol PodolistViewProtocol: class {
     func showDefaultState()
     func showWritingExpandState()
     func showPodoOnWriting(_ podo: Podo)
+    func reloadSection(_ indexSet: IndexSet)
 }
 
 class PodolistViewController: BaseViewController {
@@ -66,7 +67,7 @@ class PodolistViewController: BaseViewController {
         view.backgroundColor = .white
         view.sectionFooterHeight = 0
         view.tableFooterView = UIView()
-        view.registerNib(cell: PodolistSectionCell.self)
+        view.register(cell: PodolistSectionCell.self)
         view.registerNib(cell: PodolistRowCell.self)
         return view
     }()
@@ -184,6 +185,12 @@ extension PodolistViewController: PodolistViewProtocol {
     func showPodoOnWriting(_ podo: Podo) {
         writeView.update(podo)
         view.endEditing(true)
+    }
+
+    func reloadSection(_ indexSet: IndexSet) {
+        tableView.beginUpdates()
+        tableView.reloadSections(indexSet, with: .top)
+        tableView.endUpdates()
     }
 }
 

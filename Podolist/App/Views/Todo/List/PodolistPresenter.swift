@@ -21,6 +21,7 @@ protocol PodolistPresenterProtocol: class {
 
     // Cell
     func didChangedComplete(indexPath: IndexPath, completed: Bool)
+    func didChangedShowDelayed(show: Bool)
 }
 
 final class PodolistPresenter: NSObject, PodolistPresenterProtocol {
@@ -32,8 +33,6 @@ final class PodolistPresenter: NSObject, PodolistPresenterProtocol {
     private var wireFrame: PodolistWireFrameProtocol!
 
     private let disposeBag = DisposeBag()
-
-    private var podoSections: [PodoSection] = []
 
     // MARK: - Initializer
 
@@ -64,7 +63,6 @@ extension PodolistPresenter {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { podoSections in
-                    self.podoSections = podoSections
                     self.view.showPodolist()
             }, onError: { error in
                 print(error)
@@ -78,20 +76,22 @@ extension PodolistPresenter {
 extension PodolistPresenter {
 
     func numberOfSections() -> Int {
-        return podoSections.count
+        return interactor.podoSections.count
     }
 
     func numberOfRows(in section: Int) -> Int {
-        return podoSections[section].rows.count
+        let cell = interactor.podoSections[section]
+        return cell.visible ? cell.rows.count : 0
     }
 
     func configureSection(_ cell: PodolistSectionCell, forSectionAt section: Int) {
-        let item = podoSections[section]
-        cell.configureWith(item.title, color: item.color)
+        let item = interactor.podoSections[section]
+        cell.configure(item.title, color: item.color, editable: item.editable, visible: item.visible)
+        cell.presenter = self
     }
 
     func configureRow(_ cell: PodolistRowCell, forRowAt indexPath: IndexPath) {
-        let podo = podoSections[indexPath.section].rows[indexPath.row]
+        let podo = interactor.podoSections[indexPath.section].rows[indexPath.row]
         cell.configureWith(podo, indexPath: indexPath)
         cell.presenter = self
     }
@@ -109,12 +109,16 @@ extension PodolistPresenter {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { podoSections in
-                    self.podoSections = podoSections
                     self.view.showPodolist()
             }, onError: { error in
                 print(error)
             })
             .disposed(by: disposeBag)
+    }
+
+    func didChangedShowDelayed(show: Bool) {
+        interactor.updateShowDelayedItems(show: show)
+        view.reloadSection([0])
     }
 }
 
@@ -160,7 +164,6 @@ extension PodolistPresenter: WriteViewDelegate {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { podoSections in
-                    self.podoSections = podoSections
                     self.view.showPodolist()
                     self.interactor.resetPodoOnWriting()
                     self.view.showPodoOnWriting(self.interactor.fetchPodoOnWriting())

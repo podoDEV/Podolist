@@ -5,10 +5,26 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
-struct PodoSection {
+class PodoSection {
     var title: String
     var color: UIColor
     var rows: [Podo]
+    var editable: Bool
+    var visible: Bool
+
+    init(
+        title: String,
+        color: UIColor,
+        rows: [Podo],
+        editable: Bool = false,
+        visible: Bool = true
+        ) {
+        self.title = title
+        self.color = color
+        self.rows = rows
+        self.editable = editable
+        self.visible = visible
+    }
 }
 
 extension PodoSection: Equatable, Hashable {
