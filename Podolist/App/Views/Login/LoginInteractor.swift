@@ -7,17 +7,119 @@
 
 import RxSwift
 
-class LoginInteractor: LoginInteractorProtocol {
-    var accountDataSource: AccountDataSource?
-    var commonDataSource: CommonDataSource?
+protocol LoginInteractorProtocol: class {
+    // Presenter -> Interactor
+    func hasSession() -> Completable?
+    func kakaoLogin() -> Completable
+    func anonymousLogin() -> Completable
+}
+
+class LoginInteractor {
+
+    // MARK: - Properties
+
+    private var accountDataSource: AccountDataSource
+    private var commonDataSource: CommonDataSource
+
+    let disposeBag = DisposeBag()
+
+    // MARK: - Initializer
+
+    init(
+        accountDataSource: AccountDataSource,
+        commonDataSource: CommonDataSource
+        ) {
+        self.accountDataSource = accountDataSource
+        self.commonDataSource = commonDataSource
+    }
+}
+
+// MARK: - LoginInteractorProtocol
+
+extension LoginInteractor: LoginInteractorProtocol {
 
     func hasSession() -> Completable? {
-        return commonDataSource?.hasSession()
+        return commonDataSource.hasSession()
     }
 
-    func makeSession(accessToken: AccessToken) -> Completable? {
-        return SessionService.shared.login(accessToken: accessToken)
-            .flatMap { (self.accountDataSource?.addAccount($0))!.asObservable() }
-            .asCompletable()
+    func kakaoLogin() -> Completable {
+        return Completable.create { completable in
+            self.getkakaoSession { [weak self] token in
+                guard let `self` = self else { return }
+                guard let token = token else { return }
+                SessionService.shared.login(provider: .kakao(token))
+                    .flatMapLatest { login -> Completable in
+                        let session = login.session
+                        let responseAccount = login.responseAccount
+                        var profile: UIImage
+                        if let url = URL(string: (responseAccount?.imageUrl)!),
+                            let data = try? Data(contentsOf: url),
+                            let image = UIImage(data: data) {
+                            profile = image
+                        } else {
+                            profile = UIImage(named: "ic_profile")!
+                        }
+                        let account = Account(responseAccount: responseAccount!, profile: profile)
+                        log.d(account.name)
+                        return Completable.merge(self.commonDataSource.addSession(session!)!,
+                                                 self.accountDataSource.addAccount(account)!)
+                    }.subscribe { observer in
+                        switch observer {
+                        case .completed:
+                            completable(.completed)
+                        case .error(let error):
+                            completable(.error(error))
+                        }
+                    }.disposed(by: self.disposeBag)
+            }
+            return Disposables.create {}
+        }
+    }
+
+    func anonymousLogin() -> Completable {
+        return Completable.create { completable in
+            SessionService.shared.login(provider: .anonymous(UUID().uuidString))
+                .flatMapLatest { login -> Completable in
+                    let session = login.session
+                    let responseAccount = login.responseAccount
+                    let profile = UIImage(named: "ic_profile")!
+                    let account = Account(responseAccount: responseAccount!, profile: profile)
+                    log.d(account.name)
+                    return Completable.merge(self.commonDataSource.addSession(session!)!,
+                                             self.accountDataSource.addAccount(account)!)
+                }.subscribe { observer in
+                    switch observer {
+                    case .completed:
+                        completable(.completed)
+                    case .error(let error):
+                        completable(.error(error))
+                    }
+                }.disposed(by: self.disposeBag)
+            return Disposables.create {}
+        }
+    }
+}
+
+private extension LoginInteractor {
+
+    func getkakaoSession(_ completion: @escaping (String?) -> Void) {
+        guard let session = KOSession.shared() else {
+            completion(nil)
+            log.d("Invalid kakao session")
+            return
+        }
+
+        if session.isOpen() {
+            session.close()
+        }
+
+        session.open { error in
+            guard session.isOpen() else {
+                log.d("Invalid kakao state")
+                completion(nil)
+                return
+            }
+            completion(session.token.accessToken)
+        }
     }
 }

@@ -8,15 +8,19 @@
 import SwiftyJSON
 
 class ResponseAccount: JSONable {
-    var id: Int?
-    var name: String?
-    var provider: Int?
-    var providerId: Int?
+    var id: Int
+    var name: String
+    var email: String?
+    var imageUrl: String?
+    var provider: String?
+    var providerId: String?
 
     required init(json: JSON) {
         id = json["id"].intValue
         name = json["name"].stringValue
-        provider = json["provider"].intValue
-        providerId = json["providerId"].intValue
+        email = json["email"].stringValue
+        imageUrl = json["profileImageUrl"].stringValue
+        provider = json["provider"].stringValue
+        providerId = json["providerId"].stringValue
     }
 }

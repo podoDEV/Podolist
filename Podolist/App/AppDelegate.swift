@@ -62,10 +62,9 @@ private extension AppDelegate {
     }
 
     func setupEntryScreen() {
-        let loginScreen = LoginWireFrame.createLoginModule()
-        self.window?.rootViewController = loginScreen
-        self.window?.makeKeyAndVisible()
-
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let loginViewController = LoginWireFrame.createLoginModule()
+        AppWireframe.shared.setupKeyWindow(window!, viewController: loginViewController)
         UINavigationBar.appearance().barStyle = .blackOpaque
     }
 
@@ -127,7 +126,7 @@ extension AppDelegate /* For kakao */{
         return true
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if KOSession.isKakaoAccountLoginCallback(url) {
             return KOSession.handleOpen(url)
         }

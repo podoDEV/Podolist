@@ -11,7 +11,7 @@ import SwiftyJSON
 
 protocol PodoServiceProtocol: ApiServiceProtocol {
 
-    func getPodolist(page: Int, params: PodoParams) -> Observable<[ResponsePodo]>
+    func getPodolist(page: Int, date: Date) -> Observable<ResponsePodolist>
     func getPodo(podoId: Int) -> Observable<ResponsePodo>
     func postPodo(requestPodo: RequestPodo) -> Observable<ResponsePodo>
     func putPodo(id: Int, requestPodo: RequestPodo) -> Observable<ResponsePodo>
@@ -20,33 +20,24 @@ protocol PodoServiceProtocol: ApiServiceProtocol {
 
 class PodoService: PodoServiceProtocol {
     static let shared = PodoService()
-//    var api: PodoApi
-    var sessionService: ApiSessionService
-    private init() {
-//        api = PodoApi.shared
-        sessionService = ApiSessionService.shared
-    }
+    private init() {}
 
-    func getPodolist(page: Int, params: PodoParams) -> Observable<[ResponsePodo]> {
-        return Observable<[ResponsePodo]>.create { observer in
-            let parameters = PodoAPIType.makePodoParams(page: page, params: params)
-//            let request = self.sessionService.api().request(Router.Podolist.get(parameters: parameters))
-            let request = Alamofire.request(Router.Podolist.get(parameters: parameters))
+    func getPodolist(page: Int, date: Date) -> Observable<ResponsePodolist> {
+        return Observable<ResponsePodolist>.create { observer in
+            let parameters = PodoAPIType.makePodoParams(page: page, date: date)
+            let request = PodoApiManager().api.request(Router.Podolist.get(parameters: parameters))
                 .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):
-                        var responsePodolist = [ResponsePodo]()
-                        for jsonPodo in JSON(value).arrayValue {
-                            let content = jsonPodo.to(type: ResponsePodo.self) as! ResponsePodo
-                            responsePodolist.append(content)
+                        if let responsePodolist = JSON(value).to(type: ResponsePodolist.self) as? ResponsePodolist {
+                            observer.onNext(responsePodolist)
                         }
-                        observer.onNext(responsePodolist)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
                     }
-            }
+                }
             request.resume()
             return Disposables.create {
                 request.cancel()
@@ -54,15 +45,17 @@ class PodoService: PodoServiceProtocol {
         }
     }
 
+    // Deprecate
     func getPodo(podoId: Int) -> Observable<ResponsePodo> {
         return Observable<ResponsePodo>.create { observer in
-            let request = self.sessionService.api().request(Router.Podolist.get(param: String(podoId)))
+            let request = PodoApiManager().api.request(Router.Podolist.get(param: String(podoId)))
                 .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):
-                        let responsePodo = JSON(value).to(type: ResponsePodo.self) as! ResponsePodo
-                        observer.onNext(responsePodo)
+                        if let responsePodo = JSON(value).to(type: ResponsePodo.self) as? ResponsePodo {
+                            observer.onNext(responsePodo)
+                        }
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
@@ -77,13 +70,14 @@ class PodoService: PodoServiceProtocol {
 
     func postPodo(requestPodo: RequestPodo) -> Observable<ResponsePodo> {
         return Observable<ResponsePodo>.create { observer in
-            let request = self.sessionService.api().request(Router.Podolist.create(parameters: requestPodo.asDicsionary))
+            let request = PodoApiManager().api.request(Router.Podolist.create(parameters: requestPodo.asDicsionary))
                 .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):
-                        let responsePodo = JSON(value).to(type: ResponsePodo.self) as! ResponsePodo
-                        observer.onNext(responsePodo)
+                        if let responsePodo = JSON(value).to(type: ResponsePodo.self) as? ResponsePodo {
+                            observer.onNext(responsePodo)
+                        }
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
@@ -96,13 +90,14 @@ class PodoService: PodoServiceProtocol {
 
     func putPodo(id: Int, requestPodo: RequestPodo) -> Observable<ResponsePodo> {
         return Observable<ResponsePodo>.create { observer in
-            let request = self.sessionService.api().request(Router.Podolist.update(params: String(id), parameters: requestPodo.asDicsionary))
+            let request = PodoApiManager().api.request(Router.Podolist.update(params: String(id), parameters: requestPodo.asDicsionary))
                 .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):
-                        let responsePodo = JSON(value).to(type: ResponsePodo.self) as! ResponsePodo
-                        observer.onNext(responsePodo)
+                        if let responsePodo = JSON(value).to(type: ResponsePodo.self) as? ResponsePodo {
+                            observer.onNext(responsePodo)
+                        }
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
@@ -115,7 +110,7 @@ class PodoService: PodoServiceProtocol {
 
     func deletePodo(id: Int) -> Completable {
         return Completable.create { completable in
-            let request = self.sessionService.api().request(Router.Podolist.delete(params: String(id)))
+            let request = PodoApiManager().api.request(Router.Podolist.delete(params: String(id)))
                 .validate()
                 .responseData { response in
                     switch response.result {

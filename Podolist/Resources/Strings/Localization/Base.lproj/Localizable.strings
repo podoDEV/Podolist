@@ -5,18 +5,22 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-"login.signup" = "Sign Up";
-"login.signin" = "Sign In";
+"login.kakao" = "Log in with Kakao";
+"login.anonymous" = "그냥 할래요";
 
 "podolist.title" = "title";
 
 "write.priority" = "Priority";
 "write.date" = "Date";
 
-"priority.urgent" = "Urgent";
-"priority.high" = "High";
-"priority.medium" = "Medium";
-"priority.low" = "Low";
+"priority.urgent" = "!!!!!";
+"priority.high" = "!!!";
+"priority.medium" = "!";
+"priority.low" = "~";
+"priority.none" = "-";
+
+"list.delayedItems" = "Delayed";
+"list.items" = "Today";
 
 "setting.help" = "Help";
 "setting.version" = "Version";

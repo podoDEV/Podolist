@@ -1,5 +1,5 @@
 //
-//  AccountService.swift
+//  SessionService.swift
 //  Podolist
 //
 //  Copyright © 2018년 podo. All rights reserved.
@@ -11,30 +11,28 @@ import SwiftyJSON
 
 protocol SessionServiceProtocol: ApiServiceProtocol {
 
-    func login(accessToken: AccessToken) -> Observable<Account>
+    func login(provider: AuthProvider) -> Observable<ResponseLogin>
     func logout() -> Completable
 }
 
 class SessionService: SessionServiceProtocol {
     static let shared = SessionService()
-//    var sessionService: ApiSessionService
-//    private init() {
-//        sessionService = ApiSessionService.shared
-//    }
+    private init() {}
 
-    func login(accessToken: AccessToken) -> Observable<Account> {
-        return Observable<Account>.create { observer in
-            let request = Alamofire.request(Router.Login.create(parameters: accessToken.asDicsionary))
+    func login(provider: AuthProvider) -> Observable<ResponseLogin> {
+        return Observable<ResponseLogin>.create { observer in
+            let parameters = PodoAPIType.makeLoginParams(provider: provider)
+            let request = PodoApiManager().api.request(Router.Login.create(param: provider.rawValue(),
+                                                                           parameters: parameters))
                 .validate()
                 .responseJSON { response in
-                    KeychainService.shared.saveValue(key: "session", value: response.response?.allHeaderFields["Set-Cookie"] as! String)
                     switch response.result {
                     case .success(let value):
-                        guard let account = JSON(value).to(type: Account.self) as? Account else {
+                        guard let responseLogin = JSON(value).to(type: ResponseLogin.self) as? ResponseLogin else {
                             observer.onError(NSError())
                             return
                         }
-                        observer.onNext(account)
+                        observer.onNext(responseLogin)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
@@ -49,10 +47,10 @@ class SessionService: SessionServiceProtocol {
 
     func logout() -> Completable {
         return Completable.create { completable in
-            let request = Alamofire.request(Router.Logout.create())
+            let request = PodoApiManager().api.request(Router.Logout.create())
                 .validate()
                 .responseData { response in
-                    KeychainService.shared.deleteValue(key: "session")
+                    KeychainService.shared.deleteSession()
                     switch response.result {
                     case .success:
                         completable(.completed)

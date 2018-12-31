@@ -7,109 +7,133 @@
 
 import RxSwift
 
+protocol PodolistInteractorProtocol: class {
+
+    // Presenter -> Interactor
+    func fetchPodolist() -> Observable<[PodoSection]>?
+    func createPodo() -> Observable<Podo>?
+    func updatePodo(id: Int, podo: Podo) -> Observable<Podo>?
+    func deletePodo(id: Int) -> Completable?
+    func fetchAccount() -> Account
+
+    // Top
+    func updateSelectedDate(date: Date)
+
+    // Cell
+    func updateComplete(indexPath: IndexPath, completed: Bool) -> Observable<Podo>?
+
+    // Writing
+    func fetchPodoOnWriting() -> Podo
+    func updateDate(date: Date)
+    func updateTitle(title: String)
+    func updatePriority(priority: Priority)
+    func updatePodoOnWriting(_ podo: Podo)
+    func resetPodoOnWriting()
+}
+
 class PodolistInteractor: PodolistInteractorProtocol {
-    var dataSource: PodoDataSource?
 
-    func fetchPastPodolist(date: Date) -> Observable<[PodoGroup]>? {
-        let deleyed = delayedPodo(date: date)
-        let completed = completedPodo(date: date)
-        return Observable<[PodoGroup]>.zip(deleyed, completed) { delayed, completed -> [PodoGroup] in
-            var result = [PodoGroup]()
-            if delayed.isEmpty == false {
-                let delayedGroup = GroupHeader(title: "delayed")
-                result.append(PodoGroup(delayedGroup, delayed))
-            }
-            if completed.isEmpty == false {
-                let completedGroup = GroupHeader(title: "completed")
-                result.append(PodoGroup(completedGroup, completed))
-            }
-            return result
-        }
-    }
+    // MARK: - Properties
 
-    func fetchTodayPodolist(date: Date) -> Observable<[PodoGroup]>? {
-        let deleyed = uncompletedAndDelayedPodo(date: date)
-        let uncompleted = uncompletedPodo(date: date)
-        let completed = completedPodo(date: date)
-        return Observable<[PodoGroup]>.zip(deleyed, uncompleted, completed) { delayed, uncompleted, completed -> [PodoGroup] in
-            var result = [PodoGroup]()
-            if delayed.isEmpty == false {
-                let delayedGroup = GroupHeader(title: "delayed")
-                result.append(PodoGroup(delayedGroup, delayed))
-            }
-            if uncompleted.isEmpty == false {
-                let uncompletedGroup = GroupHeader(title: "uncompleted")
-                result.append(PodoGroup(uncompletedGroup, uncompleted))
-            }
-            if completed.isEmpty == false {
-                let completedGroup = GroupHeader(title: "completed")
-                result.append(PodoGroup(completedGroup, completed))
-            }
-            return result
-        }
-    }
+    private var podoDataSource: PodoDataSource
+    private var accountDataSource: AccountDataSource
 
-    func fetchFuturePodolist(date: Date) -> Observable<[PodoGroup]>? {
-        let uncompleted = uncompletedPodo(date: date)
-        var result = [PodoGroup]()
-        return uncompleted.map { uncompleted -> [PodoGroup] in
-            if uncompleted.isEmpty == false {
-                let uncompletedGroup = GroupHeader(title: "uncompleted")
-                result.append(PodoGroup(uncompletedGroup, uncompleted))
-            }
-            return result
-        }
-    }
+    private var podoSections = [PodoSection]()
+    private var selectedDate = Date()
+    private(set) var podo = Podo()
 
-    func createPodo(podo: Podo) -> Observable<Podo>? {
-        return dataSource?.addPodo(podo)
-    }
-
-    func updatePodo(id: Int, podo: Podo) -> Observable<Podo>? {
-        return dataSource?.savePodo(id: id, podo: podo)
-    }
-
-    func deletePodo(id: Int) -> Completable? {
-        return dataSource?.removePodo(id: id)
+    init(
+        podoDataSource: PodoDataSource,
+        accountDataSource: AccountDataSource
+        ) {
+        self.podoDataSource = podoDataSource
+        self.accountDataSource = accountDataSource
     }
 }
 
-private extension PodolistInteractor {
+extension PodolistInteractor {
 
-    func completedPodo(date: Date) -> Observable<[Podo]> {
-        let filterParam = FilterParam(filterType: .complete, value: true)
-        let dateParam = DateParam(dateType: .completedAt, value: date)
-        let podoParams = PodoParams(filterParams: [filterParam], dateParam: dateParam)
-        return (dataSource?.findPodolist(page: 0, params: podoParams))!
+    func fetchPodolist() -> Observable<[PodoSection]>? {
+        return podoDataSource.findPodolist(page: 0, date: self.selectedDate)?
+            .map {
+                var podoSections = [PodoSection]()
+                if CalendarUtils.isToday(date: self.selectedDate) {
+                    if $0.delayedItems.isEmpty == false {
+                        podoSections.append(PodoSection(title: InterfaceString.List.DelayedItems, rows: $0.delayedItems))
+                    }
+                    podoSections.append(PodoSection(title: InterfaceString.List.Items, rows: $0.items))
+                } else {
+                    podoSections.append(PodoSection(title: self.selectedDate.displayYYYYMMDD(), rows: $0.items))
+                }
+                self.podoSections = podoSections
+                return podoSections
+        }
     }
 
-    func uncompletedPodo(date: Date) -> Observable<[Podo]> {
-        let filterParam1 = FilterParam(filterType: .complete, value: false)
-        let filterParam2 = FilterParam(filterType: .delay, value: false)
-        let dateParam = DateParam(dateType: .dueAt, value: date)
-        let podoParams = PodoParams(filterParams: [filterParam1, filterParam2], dateParam: dateParam)
-        return (dataSource?.findPodolist(page: 0, params: podoParams))!
+    func createPodo() -> Observable<Podo>? {
+        return podoDataSource.addPodo(self.podo)
     }
 
-    func delayedPodo(date: Date) -> Observable<[Podo]> {
-        let filterParam = FilterParam(filterType: .delay, value: true)
-        let dateParam = DateParam(dateType: .dueAt, value: date)
-        let podoParams = PodoParams(filterParams: [filterParam], dateParam: dateParam)
-        return (dataSource?.findPodolist(page: 0, params: podoParams))!
+    func updatePodo(id: Int, podo: Podo) -> Observable<Podo>? {
+        return podoDataSource.savePodo(id: id, podo: podo)
     }
 
-    func undelayedPodo(date: Date) -> Observable<[Podo]> {
-        let filterParam = FilterParam(filterType: .delay, value: false)
-        let dateParam = DateParam(dateType: .dueAt, value: date)
-        let podoParams = PodoParams(filterParams: [filterParam], dateParam: dateParam)
-        return (dataSource?.findPodolist(page: 0, params: podoParams))!
+    func deletePodo(id: Int) -> Completable? {
+        return podoDataSource.removePodo(id: id)
     }
 
-    func uncompletedAndDelayedPodo(date: Date) -> Observable<[Podo]> {
-        let filterParam1 = FilterParam(filterType: .complete, value: false)
-        let filterParam2 = FilterParam(filterType: .delay, value: true)
-        let dateParam = DateParam(dateType: .dueAt, value: date)
-        let podoParams = PodoParams(filterParams: [filterParam1, filterParam2], dateParam: dateParam)
-        return (dataSource?.findPodolist(page: 0, params: podoParams))!
+    func fetchAccount() -> Account {
+        return accountDataSource.findAccount()!
+    }
+}
+
+// MARK: - Update Top
+
+extension PodolistInteractor {
+
+    func updateSelectedDate(date: Date) {
+        self.selectedDate = date
+    }
+}
+
+// MARK: - Update Cell
+
+extension PodolistInteractor {
+
+    func updateComplete(indexPath: IndexPath, completed: Bool) -> Observable<Podo>? {
+        let podo = podoSections[indexPath.section].rows[indexPath.row]
+        podo.isCompleted = completed
+        return updatePodo(id: podo.id!, podo: podo)
+    }
+}
+
+// MARK: - Update Writing
+
+extension PodolistInteractor {
+
+    func fetchPodoOnWriting() -> Podo {
+        return self.podo
+    }
+
+    func updateTitle(title: String) {
+        self.podo.title = title
+    }
+
+    func updatePriority(priority: Priority) {
+        self.podo.priority = priority
+    }
+
+    func updateDate(date: Date) {
+        self.podo.startedAt = date
+        self.podo.endedAt = date
+        self.podo.dueAt = date
+    }
+
+    func updatePodoOnWriting(_ podo: Podo) {
+        self.podo = podo
+    }
+
+    func resetPodoOnWriting() {
+        self.podo = Podo()
     }
 }

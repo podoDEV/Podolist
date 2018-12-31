@@ -11,18 +11,20 @@ class ResponsePodo: JSONable {
     var id: Int?
     var title: String?
     var isCompleted: Bool?
-    var startedAt: Int?
-    var endedAt: Int?
-    var updatedAt: Int?
+    var startedAt: Date?
+    var endedAt: Date?
+    var dueAt: Date?
+    var updatedAt: Date?
     var priority: Priority?
 
     required init(json: JSON) {
         id = json["id"].intValue
         title = json["title"].stringValue
         isCompleted = json["isCompleted"].boolValue
-        startedAt = json["startedAt"].intValue
-        endedAt = json["endedAt"].intValue
-        updatedAt = json["updatedAt"].intValue
+        startedAt = Date(seconds: TimeInterval(json["startedAt"].intValue))
+        endedAt = Date(seconds: TimeInterval(json["endedAt"].intValue))
+        dueAt = Date(seconds: TimeInterval(json["dueAt"].intValue))
+        updatedAt = Date(seconds: TimeInterval(json["updatedAt"].intValue))
         priority = Priority(rawValue: json["priority"].stringValue)
     }
 }

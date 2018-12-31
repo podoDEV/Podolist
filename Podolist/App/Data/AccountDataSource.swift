@@ -12,15 +12,17 @@ protocol AccountDataSource: class {
     var remoteDataSource: AccountRemoteDataSource? { get set }
 
     // Interactor -> DataSource
+    func findAccount() -> Account?
     func addAccount(_ account: Account) -> Completable?
 }
 
 protocol AccountLocalDataSource: class {
     // DataSource -> LocalDataSource
+    func selectAccount() -> Account?
     func insertAccount(_ account: Account) -> Completable?
 }
 
 protocol AccountRemoteDataSource: class {
     // DataSource -> RemoteDataSource
-//    func putAccount() -> Observable<Account>?
+
 }

@@ -9,7 +9,4 @@ import RxSwift
 
 class AccountRemoteRepository: AccountRemoteDataSource {
 
-//    func putAccount() -> Observable<Account>? {
-//
-//    }
 }

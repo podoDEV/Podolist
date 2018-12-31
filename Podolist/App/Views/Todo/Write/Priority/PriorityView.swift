@@ -14,7 +14,7 @@ class PriorityView: BaseView {
     weak var delegate: PriorityViewDelegate?
 
 //    var selectedPriority: Priority?
-    var priorities: [Priority] = [.urgent, .high, .medium, .low]
+    var priorities: [Priority] = [.urgent, .high, .medium, .low, .none]
     var priorityButtons = [PriorityButton]()
 
     override func setup() {

@@ -13,11 +13,13 @@ protocol CommonDataSource: class {
 
     // Interactor -> DataSource
     func hasSession() -> Completable?
+    func addSession(_ session: Session) -> Completable?
 }
 
 protocol CommonLocalDataSource: class {
     // DataSource -> LocalDataSource
     func hasSession() -> Completable?
+    func insertSession(_ session: Session) -> Completable?
 }
 
 protocol CommonRemoteDataSource: class {
