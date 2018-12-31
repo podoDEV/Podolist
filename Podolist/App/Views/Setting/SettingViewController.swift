@@ -22,7 +22,7 @@ class SettingViewController: BaseViewController {
 
     private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .grouped)
-        view.rowHeight = UITableViewAutomaticDimension
+        view.rowHeight = UITableView.automaticDimension
         view.separatorStyle = .none
         view.delegate = self
         view.dataSource = self

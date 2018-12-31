@@ -59,7 +59,7 @@ class PodolistViewController: BaseViewController {
 
     private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .grouped)
-        view.rowHeight = UITableViewAutomaticDimension
+        view.rowHeight = UITableView.automaticDimension
         view.separatorStyle = .none
         view.dataSource = self
         view.delegate = self
@@ -106,17 +106,17 @@ class PodolistViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 
     @objc func keyboardWillAppear(notification: NSNotification?) {
-        guard let keyboardFrame = notification?.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+        guard let keyboardFrame = notification?.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
             return
         }
         keyboardHeight = keyboardFrame.cgRectValue.height

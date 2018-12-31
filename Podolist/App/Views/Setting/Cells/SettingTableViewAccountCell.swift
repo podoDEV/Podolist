@@ -18,7 +18,7 @@ class SettingTableViewAccountCell: UITableViewCell, SettingCellType {
 
     // MARK: - Initialize
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
         setupConstraints()

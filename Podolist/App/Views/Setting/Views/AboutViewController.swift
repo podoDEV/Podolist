@@ -42,7 +42,7 @@ class AboutViewController: BaseViewController {
         view.addSubview(nameLabel)
 
         versionLabel = UILabel(frame: .zero)
-        versionLabel.text = "\(InterfaceString.Setting.Version) \(InterfaceString.Signature.AppVersion)"
+        versionLabel.text = AppUtils.versionName()
         versionLabel.textColor = .gray3
         versionLabel.font = .appFontL(size: 14)
         view.addSubview(versionLabel)

@@ -29,4 +29,12 @@ class AppUtils {
         }
         return false
     }
+
+    static func versionName() -> String {
+        var version = "\(InterfaceString.Setting.Version) \(InterfaceString.Signature.AppVersion)"
+        #if DEBUG
+            version.append(".debug")
+        #endif
+        return version
+    }
 }

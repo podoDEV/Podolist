@@ -72,7 +72,7 @@ class LoginViewController: BaseViewController {
         anonymousLoginButton.addTarget(self, action: #selector(didTapLogin(_:)), for: .touchUpInside)
 
         [launchView, logoView, logoView2, kakaoLoginButton, anonymousLoginButton].forEach(view.addSubview)
-        view.bringSubview(toFront: launchView)
+        view.bringSubviewToFront(launchView)
     }
 
     override func setupConstraints() {

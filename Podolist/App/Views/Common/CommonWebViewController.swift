@@ -28,7 +28,7 @@ final class CommonWebViewController: UIViewController {
         webView.backgroundColor = .white
         view.addSubview(webView)
 
-        loadingView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        loadingView = UIActivityIndicatorView(style: .whiteLarge)
         loadingView.color = .gray
         view.addSubview(loadingView)
     }
