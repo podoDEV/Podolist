@@ -48,9 +48,9 @@ class PodolistSectionCell: UITableViewHeaderFooterView {
             caretImageView.isHidden = false
             caretButton.isHidden = false
             if visible {
-                caretImageView.image = UIImage(named: "ic_caretDelayedOpen")
-            } else {
                 caretImageView.image = UIImage(named: "ic_caretDelayedClose")
+            } else {
+                caretImageView.image = UIImage(named: "ic_caretDelayedOpen")
             }
         } else {
             caretImageView.isHidden = true
