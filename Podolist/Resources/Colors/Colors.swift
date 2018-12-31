@@ -20,6 +20,8 @@ private struct PodolistColors {
 //    static let gradationStart = UIColor(hex: 0xC32BFF) // Legacy
 //    static let gradationEnd = UIColor(hex: 0x9013FE)
 
+    static let kakaoLogin = UIColor(red: 255, green: 232, blue: 18, alpha: 1)
+
     static let todoBackground1 = UIColor(hex: 0x9E30FE) // normal
     static let todoBackground2 = UIColor(hex: 0xDCC3FC) // completed
 
@@ -27,6 +29,7 @@ private struct PodolistColors {
     static let priorityColor2 = UIColor(hex: 0xF5A623) // 중요
     static let priorityColor3 = UIColor(hex: 0x7ED321) // 보통
     static let priorityColor4 = UIColor(hex: 0x50E3C2) // 여유
+    static let priorityColor5 = UIColor(hex: 0x4A90E2) // 그냥
 
     static let backgroundColor1 = UIColor(hex: 0xEBEBEB)
     static let backgroundColor2 = UIColor(hex: 0xD1D1D1) // 중요도 선택 x
@@ -50,6 +53,8 @@ extension UIColor {
     static var gradationStart: UIColor { return PodolistColors.gradationStart }
     static var gradationEnd: UIColor { return PodolistColors.gradationEnd }
 
+    static var kakaoLogin: UIColor { return PodolistColors.kakaoLogin }
+
     static var todoBackground1: UIColor { return PodolistColors.todoBackground1 }
     static var todoBackground2: UIColor { return PodolistColors.todoBackground2 }
 
@@ -57,6 +62,7 @@ extension UIColor {
     static var priorityColor2: UIColor { return PodolistColors.priorityColor2 }
     static var priorityColor3: UIColor { return PodolistColors.priorityColor3 }
     static var priorityColor4: UIColor { return PodolistColors.priorityColor4 }
+    static var priorityColor5: UIColor { return PodolistColors.priorityColor5 }
 
     static var backgroundColor1: UIColor { return PodolistColors.backgroundColor1 }
     static var backgroundColor2: UIColor { return PodolistColors.backgroundColor2 }

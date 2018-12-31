@@ -5,6 +5,8 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
+import SnapKit
+
 protocol MainTopViewDelegate: class {
     func didTappedSetting()
     func didSelectDate(date: Date)
@@ -40,7 +42,7 @@ class MainTopView: BaseView {
         addSubview(backgroundView)
 
         // MARK: - 설정화면 enable
-        settingButton.setImage(InterfaceImage.setting.image(.normal), for: .normal)
+        settingButton.clipsToBounds = true
         settingButton.addTarget(self, action: #selector(didTappedSetting), for: .touchUpInside)
         addSubview(settingButton)
 
@@ -67,6 +69,9 @@ class MainTopView: BaseView {
         settingButton.translatesAutoresizingMaskIntoConstraints = false
         settingButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
         settingButton.bottomAnchor.constraint(equalTo: self.calendarView.topAnchor, constant: -16).isActive = true
+        settingButton.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        settingButton.widthAnchor.constraint(equalTo: settingButton.heightAnchor).isActive = true
+        settingButton.layer.cornerRadius = 12
 
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
@@ -93,6 +98,10 @@ class MainTopView: BaseView {
     func update(_ date: Date) {
         self.date = date
         calendarView.update(date)
+    }
+
+    func updateProfile(_ account: Account) {
+        settingButton.setImage(account.profile, for: .normal)
     }
 
     @objc func didTappedSetting() {

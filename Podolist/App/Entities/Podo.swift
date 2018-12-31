@@ -5,34 +5,48 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-struct Podo {
+class Podo {
     var id: Int?
     var title: String?
     var isCompleted = false
     var startedAt = Date()
     var endedAt = Date()
-    var updatedAt: Int?
+    var dueAt = Date()
+    var updatedAt: Date?
     var priority: Priority = .none
 
     init() {}
 
-    init(id: Int, title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int, priority: Priority?) {
+    init(
+        id: Int,
+        title: String,
+        isCompleted: Bool,
+        startedAt: Date,
+        endedAt: Date,
+        dueAt: Date,
+        updatedAt: Date,
+        priority: Priority?
+        ) {
         self.id = id
         self.title = title
         self.isCompleted = isCompleted
-        self.startedAt = Date(seconds: TimeInterval(startedAt))
-        self.endedAt = Date(seconds: TimeInterval(endedAt))
+        self.startedAt = startedAt
+        self.endedAt = endedAt
+        self.dueAt = dueAt
         self.updatedAt = updatedAt
         self.priority = priority ?? .none
     }
 
-    init(responsePodo: ResponsePodo) {
-        self.init(id: responsePodo.id!,
-                  title: responsePodo.title!,
-                  isCompleted: responsePodo.isCompleted!,
-                  startedAt: responsePodo.startedAt!,
-                  endedAt: responsePodo.endedAt!,
-                  updatedAt: responsePodo.updatedAt!,
-                  priority: responsePodo.priority)
+    convenience init(responsePodo: ResponsePodo) {
+        self.init(
+            id: responsePodo.id!,
+            title: responsePodo.title!,
+            isCompleted: responsePodo.isCompleted!,
+            startedAt: responsePodo.startedAt!,
+            endedAt: responsePodo.endedAt!,
+            dueAt: responsePodo.dueAt!,
+            updatedAt: responsePodo.updatedAt!,
+            priority: responsePodo.priority
+        )
     }
 }

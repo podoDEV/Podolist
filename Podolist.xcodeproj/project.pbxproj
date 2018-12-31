@@ -16,15 +16,12 @@
 		2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20442143984A00B8BDF2 /* Images.xcassets */; };
 		2D0F20662143984A00B8BDF2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20462143984A00B8BDF2 /* Colors.swift */; };
 		2D0F20682143984A00B8BDF2 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20492143984A00B8BDF2 /* Fonts.swift */; };
-		2D0F20752143984A00B8BDF2 /* PodolistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F205D2143984A00B8BDF2 /* PodolistView.swift */; };
+		2D0F20752143984A00B8BDF2 /* PodolistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F205D2143984A00B8BDF2 /* PodolistViewController.swift */; };
 		2D0F20862143D1DE00B8BDF2 /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F207C2143D1DE00B8BDF2 /* JSONable.swift */; };
 		2D0F20872143D1DE00B8BDF2 /* RoutesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F207D2143D1DE00B8BDF2 /* RoutesProtocol.swift */; };
 		2D0F208A2143D1DE00B8BDF2 /* ApiServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20802143D1DE00B8BDF2 /* ApiServiceProtocol.swift */; };
 		2D0F208B2143D1DE00B8BDF2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20812143D1DE00B8BDF2 /* Router.swift */; };
 		2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20852143D1DE00B8BDF2 /* UIColor+Additions.swift */; };
-		2D0F20942144161A00B8BDF2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20932144161A00B8BDF2 /* Login.storyboard */; };
-		2D0F2098214416FA00B8BDF2 /* Podolist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */; };
-		2D0F209A2144179000B8BDF2 /* PodolistProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20992144179000B8BDF2 /* PodolistProtocols.swift */; };
 		2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */; };
 		2D0F209E2144181F00B8BDF2 /* PodolistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */; };
 		2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */; };
@@ -43,6 +40,10 @@
 		2D0F20E021453B3400B8BDF2 /* SettingWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */; };
 		2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */; };
 		2D0F20E521454DC600B8BDF2 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E421454DC600B8BDF2 /* Setting.swift */; };
+		2D16F19D21A91B7000647779 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D16F19C21A91B7000647779 /* LoginButton.swift */; };
+		2D16F19E21A91B7000647779 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D16F19C21A91B7000647779 /* LoginButton.swift */; };
+		2D16F1A021A9C8C100647779 /* AppWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D16F19F21A9C8C100647779 /* AppWireframe.swift */; };
+		2D16F1A121A9C8C100647779 /* AppWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D16F19F21A9C8C100647779 /* AppWireframe.swift */; };
 		2D198D4721A6893700287923 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4621A6893600287923 /* license.txt */; };
 		2D198D4821A6893700287923 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4621A6893600287923 /* license.txt */; };
 		2D198D4A21A6C8AF00287923 /* intro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4921A6C8AF00287923 /* intro.txt */; };
@@ -51,6 +52,10 @@
 		2D1C5F892164DCED00EC79A2 /* PodolistRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */; };
 		2D1C5F8B2164E78400EC79A2 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */; };
 		2D1C5F8C2164E78400EC79A2 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */; };
+		2D1E9A0B21B261FC00F79E6C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0A21B261FC00F79E6C /* Session.swift */; };
+		2D1E9A0C21B261FC00F79E6C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0A21B261FC00F79E6C /* Session.swift */; };
+		2D1E9A0E21B2621D00F79E6C /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0D21B2621D00F79E6C /* MetaData.swift */; };
+		2D1E9A0F21B2621D00F79E6C /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0D21B2621D00F79E6C /* MetaData.swift */; };
 		2D2E08B7218476CA00DEF92A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEEB216A68DE00977507 /* CalendarView.swift */; };
 		2D2E08B8218476E400DEF92A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEEB216A68DE00977507 /* CalendarView.swift */; };
 		2D2E08BA21847B1000DEF92A /* WeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08B921847B1000DEF92A /* WeekLabelView.swift */; };
@@ -87,8 +92,8 @@
 		2D37EB4C2196CF2D001B4274 /* CommonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */; };
 		2D3996E02188B36900CB0E4D /* DefaultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */; };
 		2D3996E12188B36900CB0E4D /* DefaultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */; };
-		2D3D6431217C5852001CF919 /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseAccount.swift */; };
-		2D3D6432217C5852001CF919 /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseAccount.swift */; };
+		2D3D6431217C5852001CF919 /* ResponseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseLogin.swift */; };
+		2D3D6432217C5852001CF919 /* ResponseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseLogin.swift */; };
 		2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D643A217C6C5E001CF919 /* AccessToken.swift */; };
 		2D3D643C217C6C5E001CF919 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D643A217C6C5E001CF919 /* AccessToken.swift */; };
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
@@ -122,26 +127,24 @@
 		2D5599A7216512FE00FFA64A /* PodoWriteCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D5599A5216512FE00FFA64A /* PodoWriteCalendarView.xib */; };
 		2D90956A2146B93B009335A1 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9095692146B93B009335A1 /* LoginInteractor.swift */; };
 		2D90956C2146B944009335A1 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956B2146B944009335A1 /* LoginPresenter.swift */; };
-		2D90956E2146B94F009335A1 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956D2146B94F009335A1 /* LoginProtocols.swift */; };
-		2D9095702146B955009335A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956F2146B955009335A1 /* LoginView.swift */; };
+		2D9095702146B955009335A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956F2146B955009335A1 /* LoginViewController.swift */; };
 		2D9095722146B966009335A1 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9095712146B966009335A1 /* LoginWireFrame.swift */; };
 		2D95489F215D1E74006C51E1 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D9548A0215D1E74006C51E1 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC85214E086F00B79BF6 /* SessionService.swift */; };
 		2D9548A1215D1E74006C51E1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC7B214E07A200B79BF6 /* AccountRepository.swift */; };
 		2D9548A2215D1E74006C51E1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC65214D58D600B79BF6 /* AboutViewController.swift */; };
 		2D9548A3215D1E74006C51E1 /* PriorityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063B214FDF2100C44E16 /* PriorityButton.swift */; };
-		2D9548A5215D1E74006C51E1 /* PodolistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F205D2143984A00B8BDF2 /* PodolistView.swift */; };
+		2D9548A5215D1E74006C51E1 /* PodolistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F205D2143984A00B8BDF2 /* PodolistViewController.swift */; };
 		2D9548A6215D1E74006C51E1 /* PodoRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B021441C6800B8BDF2 /* PodoRemoteRepository.swift */; };
 		2D9548A7215D1E74006C51E1 /* PodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B221441CBE00B8BDF2 /* PodoRepository.swift */; };
 		2D9548A8215D1E74006C51E1 /* InterfaceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20412143984A00B8BDF2 /* InterfaceString.swift */; };
 		2D9548A9215D1E74006C51E1 /* CommonLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC83214E085100B79BF6 /* CommonLocalRepository.swift */; };
 		2D9548AB215D1E74006C51E1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20492143984A00B8BDF2 /* Fonts.swift */; };
-		2D9548AC215D1E74006C51E1 /* SessionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C022155656A00BF8588 /* SessionAdapter.swift */; };
+		2D9548AC215D1E74006C51E1 /* PodoRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C022155656A00BF8588 /* PodoRequestAdapter.swift */; };
 		2D9548AD215D1E74006C51E1 /* ResponsePodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A7214419DE00B8BDF2 /* ResponsePodo.swift */; };
 		2D9548AE215D1E74006C51E1 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */; };
 		2D9548AF215D1E74006C51E1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */; };
 		2D9548B0215D1E74006C51E1 /* UIAlertController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */; };
-		2D9548B2215D1E74006C51E1 /* PodolistProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20992144179000B8BDF2 /* PodolistProtocols.swift */; };
 		2D9548B4215D1E74006C51E1 /* PodolistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */; };
 		2D9548B5215D1E74006C51E1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20812143D1DE00B8BDF2 /* Router.swift */; };
 		2D9548B6215D1E74006C51E1 /* PodolistWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */; };
@@ -152,7 +155,6 @@
 		2D9548BD215D1E74006C51E1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031B2151387400AAAE4C /* Style.swift */; };
 		2D9548BF215D1E74006C51E1 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031821512B0600AAAE4C /* AppUtils.swift */; };
 		2D9548C1215D1E74006C51E1 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9095692146B93B009335A1 /* LoginInteractor.swift */; };
-		2D9548C2215D1E74006C51E1 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956D2146B94F009335A1 /* LoginProtocols.swift */; };
 		2D9548C3215D1E74006C51E1 /* CommonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC75214E069600B79BF6 /* CommonDataSource.swift */; };
 		2D9548C4215D1E74006C51E1 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956B2146B944009335A1 /* LoginPresenter.swift */; };
 		2D9548C5215D1E74006C51E1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20462143984A00B8BDF2 /* Colors.swift */; };
@@ -170,8 +172,7 @@
 		2D9548D4215D1E74006C51E1 /* CommonRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC7F214E080E00B79BF6 /* CommonRemoteRepository.swift */; };
 		2D9548D5215D1E74006C51E1 /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F207C2143D1DE00B8BDF2 /* JSONable.swift */; };
 		2D9548D8215D1E74006C51E1 /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */; };
-		2D9548D9215D1E74006C51E1 /* ApiSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0421556F4700BF8588 /* ApiSessionService.swift */; };
-		2D9548DA215D1E74006C51E1 /* EntryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0021552B6600BF8588 /* EntryViewType.swift */; };
+		2D9548D9215D1E74006C51E1 /* PodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0421556F4700BF8588 /* PodoApi.swift */; };
 		2D9548DB215D1E74006C51E1 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */; };
 		2D9548DC215D1E74006C51E1 /* CommonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC77214E077B00B79BF6 /* CommonRepository.swift */; };
 		2D9548DE215D1E74006C51E1 /* AccountLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC81214E083D00B79BF6 /* AccountLocalRepository.swift */; };
@@ -179,25 +180,35 @@
 		2D9548E0215D1E74006C51E1 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E421454DC600B8BDF2 /* Setting.swift */; };
 		2D9548E1215D1E74006C51E1 /* PodolistRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */; };
 		2D9548E2215D1E74006C51E1 /* PodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20AC21441A8700B8BDF2 /* PodoService.swift */; };
-		2D9548E3215D1E74006C51E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956F2146B955009335A1 /* LoginView.swift */; };
+		2D9548E3215D1E74006C51E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956F2146B955009335A1 /* LoginViewController.swift */; };
 		2D9548E4215D1E74006C51E1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90BF82154D27D00BF8588 /* BaseViewController.swift */; };
 		2D9548E5215D1E74006C51E1 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9095712146B966009335A1 /* LoginWireFrame.swift */; };
 		2D9548E6215D1E74006C51E1 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC69214D69D900B79BF6 /* LicenseViewController.swift */; };
 		2D9548E9215D1E74006C51E1 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
-		2D9548EB215D1E74006C51E1 /* Podolist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */; };
-		2D9548EC215D1E74006C51E1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20932144161A00B8BDF2 /* Login.storyboard */; };
 		2D9548EF215D1E74006C51E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20442143984A00B8BDF2 /* Images.xcassets */; };
 		2D9548F1215D1E74006C51E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20392143984A00B8BDF2 /* Localizable.strings */; };
 		2DAC8BAF2166668F007A2997 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC8BAE2166668F007A2997 /* NibView.swift */; };
 		2DAC8BB02166668F007A2997 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC8BAE2166668F007A2997 /* NibView.swift */; };
-		2DAE36C6219FBB2100F03488 /* SettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C5219FBB2100F03488 /* SettingTopView.swift */; };
-		2DAE36C7219FBB2100F03488 /* SettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C5219FBB2100F03488 /* SettingTopView.swift */; };
 		2DAE36C9219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */; };
 		2DAE36CA219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */; };
 		2DAE36CC21A094AA00F03488 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */; };
 		2DAE36CD21A094AA00F03488 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */; };
 		2DAE36CF21A09CD600F03488 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */; };
 		2DAE36D021A09CD600F03488 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */; };
+		2DAE949A21D73E2C00A4DFDC /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE949921D73E2C00A4DFDC /* ResponseAccount.swift */; };
+		2DAE949B21D73E2C00A4DFDC /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE949921D73E2C00A4DFDC /* ResponseAccount.swift */; };
+		2DAE949E21D753AD00A4DFDC /* PodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE949D21D753AD00A4DFDC /* PodoSection.swift */; };
+		2DAE949F21D753AD00A4DFDC /* PodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE949D21D753AD00A4DFDC /* PodoSection.swift */; };
+		2DAE94A421D7583C00A4DFDC /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */; };
+		2DAE94A521D7583C00A4DFDC /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */; };
+		2DAE94A721D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */; };
+		2DAE94A821D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */; };
+		2DAE94AA21D77A1700A4DFDC /* ResponsePodolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A921D77A1700A4DFDC /* ResponsePodolist.swift */; };
+		2DAE94AB21D77A1700A4DFDC /* ResponsePodolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A921D77A1700A4DFDC /* ResponsePodolist.swift */; };
+		2DAE94AD21D7844600A4DFDC /* Podolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AC21D7844600A4DFDC /* Podolist.swift */; };
+		2DAE94AE21D7844600A4DFDC /* Podolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AC21D7844600A4DFDC /* Podolist.swift */; };
+		2DAE94B021D7BB2400A4DFDC /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */; };
+		2DAE94B121D7BB2400A4DFDC /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */; };
 		2DB43251218C7B6B002AEEBA /* PodoAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */; };
 		2DB43252218C7B6B002AEEBA /* PodoAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */; };
 		2DB43254218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */; };
@@ -213,9 +224,8 @@
 		2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031821512B0600AAAE4C /* AppUtils.swift */; };
 		2DE9031C2151387400AAAE4C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031B2151387400AAAE4C /* Style.swift */; };
 		2DE90BF92154D27D00BF8588 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90BF82154D27D00BF8588 /* BaseViewController.swift */; };
-		2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0021552B6600BF8588 /* EntryViewType.swift */; };
-		2DE90C032155656A00BF8588 /* SessionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C022155656A00BF8588 /* SessionAdapter.swift */; };
-		2DE90C0521556F4700BF8588 /* ApiSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0421556F4700BF8588 /* ApiSessionService.swift */; };
+		2DE90C032155656A00BF8588 /* PodoRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C022155656A00BF8588 /* PodoRequestAdapter.swift */; };
+		2DE90C0521556F4700BF8588 /* PodoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C0421556F4700BF8588 /* PodoApi.swift */; };
 		2DE90C072155730200BF8588 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90C062155730200BF8588 /* KeychainService.swift */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		95258D32950BBB2D45A678E9 /* Pods_PodolistTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5AD311678E279F80FF4434 /* Pods_PodolistTest.framework */; };
@@ -265,16 +275,13 @@
 		2D0F20442143984A00B8BDF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D0F20462143984A00B8BDF2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2D0F20492143984A00B8BDF2 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		2D0F205D2143984A00B8BDF2 /* PodolistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodolistView.swift; sourceTree = "<group>"; };
+		2D0F205D2143984A00B8BDF2 /* PodolistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodolistViewController.swift; sourceTree = "<group>"; };
 		2D0F205F2143984A00B8BDF2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D0F207C2143D1DE00B8BDF2 /* JSONable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONable.swift; sourceTree = "<group>"; };
 		2D0F207D2143D1DE00B8BDF2 /* RoutesProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutesProtocol.swift; sourceTree = "<group>"; };
 		2D0F20802143D1DE00B8BDF2 /* ApiServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceProtocol.swift; sourceTree = "<group>"; };
 		2D0F20812143D1DE00B8BDF2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2D0F20852143D1DE00B8BDF2 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
-		2D0F20932144161A00B8BDF2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Podolist.storyboard; sourceTree = "<group>"; };
-		2D0F20992144179000B8BDF2 /* PodolistProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistProtocols.swift; sourceTree = "<group>"; };
 		2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistPresenter.swift; sourceTree = "<group>"; };
 		2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistInteractor.swift; sourceTree = "<group>"; };
 		2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistWireFrame.swift; sourceTree = "<group>"; };
@@ -293,10 +300,14 @@
 		2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWireFrame.swift; sourceTree = "<group>"; };
 		2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		2D0F20E421454DC600B8BDF2 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		2D16F19C21A91B7000647779 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		2D16F19F21A9C8C100647779 /* AppWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWireframe.swift; sourceTree = "<group>"; };
 		2D198D4621A6893600287923 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		2D198D4921A6C8AF00287923 /* intro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = intro.txt; sourceTree = "<group>"; };
 		2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodolistRowCell.xib; sourceTree = "<group>"; };
 		2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		2D1E9A0A21B261FC00F79E6C /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		2D1E9A0D21B2621D00F79E6C /* MetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
 		2D2E08B921847B1000DEF92A /* WeekLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekLabelView.swift; sourceTree = "<group>"; };
 		2D2E08BC2184C9A100DEF92A /* CalendarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUtils.swift; sourceTree = "<group>"; };
 		2D31DE902168F3CD00977507 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -315,7 +326,7 @@
 		2D35496821742B8F0014D8CF /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebViewController.swift; sourceTree = "<group>"; };
 		2D3996DF2188B36900CB0E4D /* DefaultRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequest.swift; sourceTree = "<group>"; };
-		2D3D6430217C5852001CF919 /* ResponseAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAccount.swift; sourceTree = "<group>"; };
+		2D3D6430217C5852001CF919 /* ResponseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLogin.swift; sourceTree = "<group>"; };
 		2D3D643A217C6C5E001CF919 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2D41BC65214D58D600B79BF6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -340,18 +351,23 @@
 		2D5599A5216512FE00FFA64A /* PodoWriteCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodoWriteCalendarView.xib; sourceTree = "<group>"; };
 		2D9095692146B93B009335A1 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		2D90956B2146B944009335A1 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		2D90956D2146B94F009335A1 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
-		2D90956F2146B955009335A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2D90956F2146B955009335A1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D9095712146B966009335A1 /* LoginWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
 		2D9548FE215D1E74006C51E1 /* PodolistTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodolistTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D9548FF215D1EBB006C51E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D95490B215D1F47006C51E1 /* Base.release(testflight).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(testflight).xcconfig"; sourceTree = "<group>"; };
 		2D95490C215D1F48006C51E1 /* Base.release(dev).xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base.release(dev).xcconfig"; sourceTree = "<group>"; };
 		2DAC8BAE2166668F007A2997 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
-		2DAE36C5219FBB2100F03488 /* SettingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTopView.swift; sourceTree = "<group>"; };
 		2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Additions.swift"; sourceTree = "<group>"; };
 		2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Additions.swift"; sourceTree = "<group>"; };
 		2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		2DAE949921D73E2C00A4DFDC /* ResponseAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAccount.swift; sourceTree = "<group>"; };
+		2DAE949D21D753AD00A4DFDC /* PodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoSection.swift; sourceTree = "<group>"; };
+		2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
+		2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Additions.swift"; sourceTree = "<group>"; };
+		2DAE94A921D77A1700A4DFDC /* ResponsePodolist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsePodolist.swift; sourceTree = "<group>"; };
+		2DAE94AC21D7844600A4DFDC /* Podolist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podolist.swift; sourceTree = "<group>"; };
+		2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoAPIType.swift; sourceTree = "<group>"; };
 		2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistSectionCell.swift; sourceTree = "<group>"; };
 		2DB43256218C8EF1002AEEBA /* PodolistSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodolistSectionCell.xib; sourceTree = "<group>"; };
@@ -369,9 +385,8 @@
 		2DE90BF62154097500BF8588 /* Base.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.debug.xcconfig; sourceTree = "<group>"; };
 		2DE90BF721540A6200BF8588 /* Base.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.release.xcconfig; sourceTree = "<group>"; };
 		2DE90BF82154D27D00BF8588 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		2DE90C0021552B6600BF8588 /* EntryViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewType.swift; sourceTree = "<group>"; };
-		2DE90C022155656A00BF8588 /* SessionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAdapter.swift; sourceTree = "<group>"; };
-		2DE90C0421556F4700BF8588 /* ApiSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSessionService.swift; sourceTree = "<group>"; };
+		2DE90C022155656A00BF8588 /* PodoRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoRequestAdapter.swift; sourceTree = "<group>"; };
+		2DE90C0421556F4700BF8588 /* PodoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoApi.swift; sourceTree = "<group>"; };
 		2DE90C062155730200BF8588 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		31D0BA43C240ED75FD61F48C /* Pods-PodolistTest.debug(real).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTest.debug(real).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTest/Pods-PodolistTest.debug(real).xcconfig"; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -493,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				2D0F20352143984A00B8BDF2 /* AppDelegate.swift */,
+				2D16F19F21A9C8C100647779 /* AppWireframe.swift */,
 				2D0F207A2143D1DE00B8BDF2 /* Common */,
 				2D0F20792143D14A00B8BDF2 /* Data */,
 				2D41BC54214D170300B79BF6 /* Domain */,
@@ -592,7 +608,10 @@
 				2D0F20A22144195200B8BDF2 /* Response */,
 				2D41BC52214D0DF000B79BF6 /* Account.swift */,
 				2D0F20A32144196400B8BDF2 /* Podo.swift */,
+				2DAE94AC21D7844600A4DFDC /* Podolist.swift */,
 				2D31DE9C2168F8CE00977507 /* Priority.swift */,
+				2D1E9A0A21B261FC00F79E6C /* Session.swift */,
+				2D1E9A0D21B2621D00F79E6C /* MetaData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -643,6 +662,8 @@
 				2D31DEA221690E5900977507 /* String+Additions.swift */,
 				2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */,
 				2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */,
+				2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */,
+				2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -651,11 +672,9 @@
 			isa = PBXGroup;
 			children = (
 				2D0F20BB214432D700B8BDF2 /* Cells */,
-				2D0F2097214416FA00B8BDF2 /* Podolist.storyboard */,
 				2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */,
 				2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */,
-				2D0F20992144179000B8BDF2 /* PodolistProtocols.swift */,
-				2D0F205D2143984A00B8BDF2 /* PodolistView.swift */,
+				2D0F205D2143984A00B8BDF2 /* PodolistViewController.swift */,
 				2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */,
 			);
 			path = List;
@@ -672,11 +691,9 @@
 		2D0F2092214415CB00B8BDF2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20932144161A00B8BDF2 /* Login.storyboard */,
 				2D9095692146B93B009335A1 /* LoginInteractor.swift */,
 				2D90956B2146B944009335A1 /* LoginPresenter.swift */,
-				2D90956D2146B94F009335A1 /* LoginProtocols.swift */,
-				2D90956F2146B955009335A1 /* LoginView.swift */,
+				2D90956F2146B955009335A1 /* LoginViewController.swift */,
 				2D9095712146B966009335A1 /* LoginWireFrame.swift */,
 			);
 			path = Login;
@@ -693,8 +710,10 @@
 		2D0F20A22144195200B8BDF2 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				2DAE949921D73E2C00A4DFDC /* ResponseAccount.swift */,
+				2D3D6430217C5852001CF919 /* ResponseLogin.swift */,
 				2D0F20A7214419DE00B8BDF2 /* ResponsePodo.swift */,
-				2D3D6430217C5852001CF919 /* ResponseAccount.swift */,
+				2DAE94A921D77A1700A4DFDC /* ResponsePodolist.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -704,7 +723,6 @@
 			children = (
 				2D34AFDA217F5C0400E78562 /* API */,
 				2DE90C062155730200BF8588 /* KeychainService.swift */,
-				2DE90C0421556F4700BF8588 /* ApiSessionService.swift */,
 				2D41BC85214E086F00B79BF6 /* SessionService.swift */,
 				2D0F20AC21441A8700B8BDF2 /* PodoService.swift */,
 			);
@@ -745,8 +763,12 @@
 		2D0F20D421453AC500B8BDF2 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				2DAE36C3219FBAD100F03488 /* Top */,
-				2DAE36C4219FBADC00F03488 /* List */,
+				2D41BC64214D58BF00B79BF6 /* Views */,
+				2D0F20E121454CE700B8BDF2 /* Cells */,
+				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
+				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
+				2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */,
+				2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -818,6 +840,7 @@
 				2D47E3EC218761EF00899B12 /* Request */,
 				2D89895F216FB28F003D97EC /* Adapter */,
 				2DB43250218C7B6B002AEEBA /* PodoAPIType.swift */,
+				2DE90C0421556F4700BF8588 /* PodoApi.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -826,6 +849,7 @@
 			isa = PBXGroup;
 			children = (
 				2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */,
+				2D16F19C21A91B7000647779 /* LoginButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -836,6 +860,8 @@
 				2D3D643A217C6C5E001CF919 /* AccessToken.swift */,
 				2DB4325A218C9003002AEEBA /* GroupHeader.swift */,
 				2D0F20E421454DC600B8BDF2 /* Setting.swift */,
+				2DAE949D21D753AD00A4DFDC /* PodoSection.swift */,
+				2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -847,7 +873,6 @@
 				2DE90BF82154D27D00BF8588 /* BaseViewController.swift */,
 				2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */,
 				2DAC8BAE2166668F007A2997 /* NibView.swift */,
-				2DE90C0021552B6600BF8588 /* EntryViewType.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -873,7 +898,7 @@
 		2D89895F216FB28F003D97EC /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				2DE90C022155656A00BF8588 /* SessionAdapter.swift */,
+				2DE90C022155656A00BF8588 /* PodoRequestAdapter.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -892,27 +917,6 @@
 				2D9548FF215D1EBB006C51E1 /* Info.plist */,
 			);
 			path = Inhouse;
-			sourceTree = "<group>";
-		};
-		2DAE36C3219FBAD100F03488 /* Top */ = {
-			isa = PBXGroup;
-			children = (
-				2DAE36C5219FBB2100F03488 /* SettingTopView.swift */,
-			);
-			path = Top;
-			sourceTree = "<group>";
-		};
-		2DAE36C4219FBADC00F03488 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				2D41BC64214D58BF00B79BF6 /* Views */,
-				2D0F20E121454CE700B8BDF2 /* Cells */,
-				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
-				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
-				2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */,
-				2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */,
-			);
-			path = List;
 			sourceTree = "<group>";
 		};
 		2DCCDD9021494BEB00CC3B00 /* BuildConfig */ = {
@@ -1144,9 +1148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D0F2098214416FA00B8BDF2 /* Podolist.storyboard in Resources */,
 				2D512202216782F700977966 /* PodoWriteTitleView.xib in Resources */,
-				2D0F20942144161A00B8BDF2 /* Login.storyboard in Resources */,
 				2D198D4A21A6C8AF00287923 /* intro.txt in Resources */,
 				2DB43257218C8EF1002AEEBA /* PodolistSectionCell.xib in Resources */,
 				2D34050021733BD200EC3862 /* Launch.xib in Resources */,
@@ -1181,9 +1183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D9548EB215D1E74006C51E1 /* Podolist.storyboard in Resources */,
 				2D512203216782F700977966 /* PodoWriteTitleView.xib in Resources */,
-				2D9548EC215D1E74006C51E1 /* Login.storyboard in Resources */,
 				2D198D4B21A6C8AF00287923 /* intro.txt in Resources */,
 				2DB43258218C8EF1002AEEBA /* PodolistSectionCell.xib in Resources */,
 				2D34050121733BD200EC3862 /* Launch.xib in Resources */,
@@ -1293,6 +1293,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1305,6 +1307,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1346,8 +1350,11 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PodoCalendar/PodoCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
@@ -1358,8 +1365,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PodoCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
@@ -1380,8 +1390,11 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PodoCalendar/PodoCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
@@ -1392,8 +1405,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PodoCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
@@ -1413,6 +1429,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1425,6 +1443,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1451,15 +1471,17 @@
 				2D41BC66214D58D600B79BF6 /* AboutViewController.swift in Sources */,
 				2D31DEE9216A68B600977507 /* WeekView.swift in Sources */,
 				2DD7063C214FDF2100C44E16 /* PriorityButton.swift in Sources */,
-				2D0F20752143984A00B8BDF2 /* PodolistView.swift in Sources */,
+				2D0F20752143984A00B8BDF2 /* PodolistViewController.swift in Sources */,
 				2D0F20B121441C6800B8BDF2 /* PodoRemoteRepository.swift in Sources */,
-				2D3D6431217C5852001CF919 /* ResponseAccount.swift in Sources */,
+				2D3D6431217C5852001CF919 /* ResponseLogin.swift in Sources */,
+				2DAE94B021D7BB2400A4DFDC /* AuthProvider.swift in Sources */,
 				2D0F20B321441CBE00B8BDF2 /* PodoRepository.swift in Sources */,
 				2D0F20632143984A00B8BDF2 /* InterfaceString.swift in Sources */,
 				2D41BC84214E085100B79BF6 /* CommonLocalRepository.swift in Sources */,
 				2D55999D216512B600FFA64A /* PodoWritePriorityView.swift in Sources */,
+				2D1E9A0E21B2621D00F79E6C /* MetaData.swift in Sources */,
 				2D0F20682143984A00B8BDF2 /* Fonts.swift in Sources */,
-				2DE90C032155656A00BF8588 /* SessionAdapter.swift in Sources */,
+				2DE90C032155656A00BF8588 /* PodoRequestAdapter.swift in Sources */,
 				2D3996E02188B36900CB0E4D /* DefaultRequest.swift in Sources */,
 				2D0F20A8214419DE00B8BDF2 /* ResponsePodo.swift in Sources */,
 				2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */,
@@ -1468,14 +1490,15 @@
 				2D47E3EE2187621400899B12 /* PodoRequest.swift in Sources */,
 				2D35496921742B8F0014D8CF /* Logger.swift in Sources */,
 				2D5599A0216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
-				2D0F209A2144179000B8BDF2 /* PodolistProtocols.swift in Sources */,
 				2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */,
 				2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */,
+				2DAE94AD21D7844600A4DFDC /* Podolist.swift in Sources */,
 				2D37EB4B2196CF2D001B4274 /* CommonWebViewController.swift in Sources */,
 				2DB43251218C7B6B002AEEBA /* PodoAPIType.swift in Sources */,
 				2D0F208B2143D1DE00B8BDF2 /* Router.swift in Sources */,
-				2DAE36C6219FBB2100F03488 /* SettingTopView.swift in Sources */,
+				2DAE94AA21D77A1700A4DFDC /* ResponsePodolist.swift in Sources */,
+				2D16F1A021A9C8C100647779 /* AppWireframe.swift in Sources */,
 				2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */,
 				2D5121FF216782BF00977966 /* PodoWriteTitleView.swift in Sources */,
 				2D0F209E2144181F00B8BDF2 /* PodolistInteractor.swift in Sources */,
@@ -1490,10 +1513,12 @@
 				2DE9031C2151387400AAAE4C /* Style.swift in Sources */,
 				2D55999A2165115100FFA64A /* BaseView.swift in Sources */,
 				2D2E08BD2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
+				2DAE949E21D753AD00A4DFDC /* PodoSection.swift in Sources */,
+				2D16F19D21A91B7000647779 /* LoginButton.swift in Sources */,
+				2DAE94A721D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */,
 				2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */,
 				2DAC8BAF2166668F007A2997 /* NibView.swift in Sources */,
 				2D90956A2146B93B009335A1 /* LoginInteractor.swift in Sources */,
-				2D90956E2146B94F009335A1 /* LoginProtocols.swift in Sources */,
 				2D41BC76214E069600B79BF6 /* CommonDataSource.swift in Sources */,
 				2D90956C2146B944009335A1 /* LoginPresenter.swift in Sources */,
 				2D0F20662143984A00B8BDF2 /* Colors.swift in Sources */,
@@ -1513,17 +1538,19 @@
 				2D41BC80214E080E00B79BF6 /* CommonRemoteRepository.swift in Sources */,
 				2D0F20862143D1DE00B8BDF2 /* JSONable.swift in Sources */,
 				2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */,
-				2DE90C0521556F4700BF8588 /* ApiSessionService.swift in Sources */,
-				2DE90C0121552B6600BF8588 /* EntryViewType.swift in Sources */,
+				2DE90C0521556F4700BF8588 /* PodoApi.swift in Sources */,
 				2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */,
 				2D31DEA321690E5900977507 /* String+Additions.swift in Sources */,
 				2D41BC78214E077B00B79BF6 /* CommonRepository.swift in Sources */,
 				2D41BC82214E083D00B79BF6 /* AccountLocalRepository.swift in Sources */,
+				2DAE94A421D7583C00A4DFDC /* Date+Additions.swift in Sources */,
 				2D0F20642143984A00B8BDF2 /* InterfaceImage.swift in Sources */,
+				2D1E9A0B21B261FC00F79E6C /* Session.swift in Sources */,
+				2DAE949A21D73E2C00A4DFDC /* ResponseAccount.swift in Sources */,
 				2D0F20E521454DC600B8BDF2 /* Setting.swift in Sources */,
 				2D0F20BD214432E800B8BDF2 /* PodolistRowCell.swift in Sources */,
 				2D0F20AD21441A8700B8BDF2 /* PodoService.swift in Sources */,
-				2D9095702146B955009335A1 /* LoginView.swift in Sources */,
+				2D9095702146B955009335A1 /* LoginViewController.swift in Sources */,
 				2DAE36C9219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */,
 				2DE90BF92154D27D00BF8588 /* BaseViewController.swift in Sources */,
 				2DB4325B218C9003002AEEBA /* GroupHeader.swift in Sources */,
@@ -1561,15 +1588,17 @@
 				2D9548A2215D1E74006C51E1 /* AboutViewController.swift in Sources */,
 				2D31DEEA216A68B600977507 /* WeekView.swift in Sources */,
 				2D9548A3215D1E74006C51E1 /* PriorityButton.swift in Sources */,
-				2D9548A5215D1E74006C51E1 /* PodolistView.swift in Sources */,
+				2D9548A5215D1E74006C51E1 /* PodolistViewController.swift in Sources */,
 				2D9548A6215D1E74006C51E1 /* PodoRemoteRepository.swift in Sources */,
-				2D3D6432217C5852001CF919 /* ResponseAccount.swift in Sources */,
+				2D3D6432217C5852001CF919 /* ResponseLogin.swift in Sources */,
+				2DAE94B121D7BB2400A4DFDC /* AuthProvider.swift in Sources */,
 				2D9548A7215D1E74006C51E1 /* PodoRepository.swift in Sources */,
 				2D9548A8215D1E74006C51E1 /* InterfaceString.swift in Sources */,
 				2D9548A9215D1E74006C51E1 /* CommonLocalRepository.swift in Sources */,
 				2D55999E216512B600FFA64A /* PodoWritePriorityView.swift in Sources */,
+				2D1E9A0F21B2621D00F79E6C /* MetaData.swift in Sources */,
 				2D9548AB215D1E74006C51E1 /* Fonts.swift in Sources */,
-				2D9548AC215D1E74006C51E1 /* SessionAdapter.swift in Sources */,
+				2D9548AC215D1E74006C51E1 /* PodoRequestAdapter.swift in Sources */,
 				2D3996E12188B36900CB0E4D /* DefaultRequest.swift in Sources */,
 				2D9548AD215D1E74006C51E1 /* ResponsePodo.swift in Sources */,
 				2D9548AE215D1E74006C51E1 /* SettingPresenter.swift in Sources */,
@@ -1578,14 +1607,15 @@
 				2D47E3EF2187621400899B12 /* PodoRequest.swift in Sources */,
 				2D35496A21742B8F0014D8CF /* Logger.swift in Sources */,
 				2D5599A1216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
-				2D9548B2215D1E74006C51E1 /* PodolistProtocols.swift in Sources */,
 				2D3404FE2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D3D643C217C6C5E001CF919 /* AccessToken.swift in Sources */,
 				2D9548B4215D1E74006C51E1 /* PodolistPresenter.swift in Sources */,
+				2DAE94AE21D7844600A4DFDC /* Podolist.swift in Sources */,
 				2D37EB4C2196CF2D001B4274 /* CommonWebViewController.swift in Sources */,
 				2DB43252218C7B6B002AEEBA /* PodoAPIType.swift in Sources */,
 				2D9548B5215D1E74006C51E1 /* Router.swift in Sources */,
-				2DAE36C7219FBB2100F03488 /* SettingTopView.swift in Sources */,
+				2DAE94AB21D77A1700A4DFDC /* ResponsePodolist.swift in Sources */,
+				2D16F1A121A9C8C100647779 /* AppWireframe.swift in Sources */,
 				2D9548B6215D1E74006C51E1 /* PodolistWireFrame.swift in Sources */,
 				2D512200216782BF00977966 /* PodoWriteTitleView.swift in Sources */,
 				2D9548B8215D1E74006C51E1 /* PodolistInteractor.swift in Sources */,
@@ -1600,10 +1630,12 @@
 				2D9548BD215D1E74006C51E1 /* Style.swift in Sources */,
 				2D55999B2165115100FFA64A /* BaseView.swift in Sources */,
 				2D2E08BE2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
+				2DAE949F21D753AD00A4DFDC /* PodoSection.swift in Sources */,
+				2D16F19E21A91B7000647779 /* LoginButton.swift in Sources */,
+				2DAE94A821D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */,
 				2D9548BF215D1E74006C51E1 /* AppUtils.swift in Sources */,
 				2DAC8BB02166668F007A2997 /* NibView.swift in Sources */,
 				2D9548C1215D1E74006C51E1 /* LoginInteractor.swift in Sources */,
-				2D9548C2215D1E74006C51E1 /* LoginProtocols.swift in Sources */,
 				2D9548C3215D1E74006C51E1 /* CommonDataSource.swift in Sources */,
 				2D9548C4215D1E74006C51E1 /* LoginPresenter.swift in Sources */,
 				2D9548C5215D1E74006C51E1 /* Colors.swift in Sources */,
@@ -1623,17 +1655,19 @@
 				2D9548D4215D1E74006C51E1 /* CommonRemoteRepository.swift in Sources */,
 				2D9548D5215D1E74006C51E1 /* JSONable.swift in Sources */,
 				2D9548D8215D1E74006C51E1 /* SettingInteractor.swift in Sources */,
-				2D9548D9215D1E74006C51E1 /* ApiSessionService.swift in Sources */,
-				2D9548DA215D1E74006C51E1 /* EntryViewType.swift in Sources */,
+				2D9548D9215D1E74006C51E1 /* PodoApi.swift in Sources */,
 				2D9548DB215D1E74006C51E1 /* SettingTableViewCell.swift in Sources */,
 				2D31DEA421690E5900977507 /* String+Additions.swift in Sources */,
 				2D9548DC215D1E74006C51E1 /* CommonRepository.swift in Sources */,
 				2D9548DE215D1E74006C51E1 /* AccountLocalRepository.swift in Sources */,
+				2DAE94A521D7583C00A4DFDC /* Date+Additions.swift in Sources */,
 				2D9548DF215D1E74006C51E1 /* InterfaceImage.swift in Sources */,
+				2D1E9A0C21B261FC00F79E6C /* Session.swift in Sources */,
+				2DAE949B21D73E2C00A4DFDC /* ResponseAccount.swift in Sources */,
 				2D9548E0215D1E74006C51E1 /* Setting.swift in Sources */,
 				2D9548E1215D1E74006C51E1 /* PodolistRowCell.swift in Sources */,
 				2D9548E2215D1E74006C51E1 /* PodoService.swift in Sources */,
-				2D9548E3215D1E74006C51E1 /* LoginView.swift in Sources */,
+				2D9548E3215D1E74006C51E1 /* LoginViewController.swift in Sources */,
 				2DAE36CA219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */,
 				2D9548E4215D1E74006C51E1 /* BaseViewController.swift in Sources */,
 				2DB4325C218C9003002AEEBA /* GroupHeader.swift in Sources */,
@@ -1720,7 +1754,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1743,6 +1777,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/AppStore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1864,7 +1899,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1887,6 +1922,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/AppStore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1968,6 +2004,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Inhouse/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2009,6 +2046,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Inhouse/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2050,6 +2088,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Inhouse/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2091,6 +2130,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Inhouse/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2131,6 +2171,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Inhouse/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2206,7 +2247,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2229,6 +2270,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/AppStore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2269,6 +2311,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Inhouse/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2385,7 +2428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2408,6 +2451,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/AppStore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2449,6 +2493,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Inhouse/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2570,7 +2615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2593,6 +2638,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/AppStore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2714,7 +2760,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2737,6 +2783,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/AppStore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2852,7 +2899,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2875,6 +2922,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/AppStore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

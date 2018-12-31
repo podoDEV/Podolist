@@ -21,7 +21,7 @@ enum SettingRowType: String {
 
 protocol SettingSectionProtocol {
     var type: SettingSectionType { get }
-    var rows: [SettingRow] { get }
+    var rows: [SettingRowProtocol] { get }
     var rowCount: Int { get }
     var sectionTitle: String { get }
 }
@@ -32,72 +32,67 @@ extension SettingSectionProtocol {
     }
 }
 
-class SettingInfoSection: SettingSectionProtocol {
+struct SettingInfoSection: SettingSectionProtocol {
     var type: SettingSectionType {
         return .info
     }
 
     var sectionTitle: String {
-        return " "
+        return ""
     }
 
     var rowCount: Int {
         return 3
     }
 
-    var rows: [SettingRow]
-
-    init(rows: [SettingRow]) {
-        self.rows = rows
-    }
+    var rows: [SettingRowProtocol]
 }
 
-class SettingOthersSection: SettingSectionProtocol {
+struct SettingOthersSection: SettingSectionProtocol {
     var type: SettingSectionType {
         return .others
     }
 
     var sectionTitle: String {
-        return " "
+        return ""
     }
 
-    var rows: [SettingRow]
-
-    init(rows: [SettingRow]) {
-        self.rows = rows
-    }
+    var rows: [SettingRowProtocol]
 }
 
-class SettingLogoutSection: SettingSectionProtocol {
+struct SettingLogoutSection: SettingSectionProtocol {
     var type: SettingSectionType {
         return .logout
     }
 
     var sectionTitle: String {
-        return " "
+        return ""
     }
 
-    var rows: [SettingRow]
-
-    init(rows: [SettingRow]) {
-        self.rows = rows
-    }
+    var rows: [SettingRowProtocol]
 }
 
 protocol SettingRowProtocol {
-//    var type: SettingRowType { get set }
-//    var title: String { get set }
-//    var imageUrl: String { get set }
+    var type: SettingRowType { get set }
+    var title: String { get set }
+    var image: UIImage { get set }
+}
+
+protocol SettingAccountRowProtocol: SettingRowProtocol {
+    var name: String { get set }
+    var email: String? { get set }
 }
 
 struct SettingRow: SettingRowProtocol {
-    var type: SettingRowType?
-    var title: String?
-    var image: UIImage?
+    var type: SettingRowType
+    var title: String
+    var image: UIImage
 }
 
-struct SettingAccountRow: SettingRowProtocol {
-    var type: SettingRowType?
-    var title: String?
-    var image: UIImage?
+struct SettingAccountRow: SettingAccountRowProtocol {
+    var type: SettingRowType
+    var title: String
+    var image: UIImage
+    var name: String
+    var email: String?
 }

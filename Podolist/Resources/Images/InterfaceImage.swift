@@ -15,7 +15,9 @@ enum InterfaceImage: String {
         case disabled
     }
 
-    case logo = "AppIcon"
+    case kakaologin = "ic_kakaoLogin"
+    case logo = "ic_logo"
+    case logo2 = "ic_logo2"
     case add = "ic_add"
     case create = "ic_create"
     case dropdown = "ic_dropdown"
@@ -40,12 +42,14 @@ enum InterfaceImage: String {
     var normalImage: UIImage! {
         switch self {
         case .logo,
+             .logo2,
              .add,
              .create,
              .dropdown,
              .calendar,
              .setting,
-             .complete:
+             .complete,
+             .kakaologin:
             return pngNamed(self.rawValue)
         default:
             return pngNamed("\(self.rawValue)_normal")

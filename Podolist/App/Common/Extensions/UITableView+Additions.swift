@@ -17,6 +17,13 @@ extension UITableViewCell: TableViewCellType {
 
 extension UITableView {
 
+    func registerNib<Cell>(
+        cell: Cell.Type,
+        forCellReuseIdentifier reuseIdentifier: String = Cell.identifier
+        ) where Cell: UITableViewCell {
+        register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+    }
+
     func register<Cell>(
         cell: Cell.Type,
         forCellReuseIdentifier reuseIdentifier: String = Cell.identifier

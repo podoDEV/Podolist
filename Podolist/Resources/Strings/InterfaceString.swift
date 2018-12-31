@@ -10,8 +10,8 @@ import UIKit
 struct InterfaceString {
 
     struct Login {
-        static let SignUp = NSLocalizedString("login.signup", comment: "")
-        static let SignIn = NSLocalizedString("login.signin", comment: "")
+        static let Kakao = NSLocalizedString("login.kakao", comment: "")
+        static let Anonymous = NSLocalizedString("login.anonymous", comment: "")
     }
 
     struct Write {
@@ -24,6 +24,12 @@ struct InterfaceString {
         static let High = NSLocalizedString("priority.high", comment: "")
         static let Medium = NSLocalizedString("priority.medium", comment: "")
         static let Low = NSLocalizedString("priority.low", comment: "")
+        static let None = NSLocalizedString("priority.none", comment: "")
+    }
+
+    struct List {
+        static let DelayedItems = NSLocalizedString("list.delayedItems", comment: "")
+        static let Items = NSLocalizedString("list.items", comment: "")
     }
 
     struct Setting {
@@ -70,7 +76,6 @@ struct InterfaceString {
         static let Copyright = NSLocalizedString("signature.copyright", comment: "copyright")
         static let AppVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         static let AppBuildVersion = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
-//        static let Device = UIDevice.current.model
         static let iOSVersion = UIDevice.current.systemVersion
     }
 }

@@ -5,7 +5,7 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
-class GroupHeader {
+struct GroupHeader {
     var title: String?
 
     init(title: String?) {

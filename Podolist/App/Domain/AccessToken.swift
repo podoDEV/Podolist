@@ -9,6 +9,6 @@ struct AccessToken {
     let id: String
 
     var asDicsionary: [String: Any] {
-        return ["access": id] as [String: Any]
+        return ["accessToken": id] as [String: Any]
     }
 }

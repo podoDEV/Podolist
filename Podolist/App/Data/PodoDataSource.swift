@@ -12,7 +12,7 @@ protocol PodoDataSource: class {
     var remoteDataSource: PodoRemoteDataSource? { get set }
 
     // Interactor -> DataSource
-    func findPodolist(page: Int, params: PodoParams) -> Observable<[Podo]>?
+    func findPodolist(page: Int, date: Date) -> Observable<Podolist>?
     func findPodo(podoId: Int) -> Observable<Podo>?
     func addPodo(_ podo: Podo) -> Observable<Podo>?
     func savePodo(id: Int, podo: Podo) -> Observable<Podo>?
@@ -29,7 +29,7 @@ protocol PodoLocalDataSource: class {
 
 protocol PodoRemoteDataSource: class {
     // DataSource -> RemoteDataSource
-    func getPodolist(page: Int, params: PodoParams) -> Observable<[Podo]>?
+    func getPodolist(page: Int, date: Date) -> Observable<Podolist>?
     func getPodo(podoId: Int) -> Observable<Podo>?
     func postPodo(_ podo: Podo) -> Observable<Podo>?
     func putPodo(id: Int, podo: Podo) -> Observable<Podo>?

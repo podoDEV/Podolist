@@ -9,11 +9,13 @@ import RxSwift
 
 class PodoRemoteRepository: PodoRemoteDataSource {
 
-    func getPodolist(page: Int, params: PodoParams) -> Observable<[Podo]>? {
-        return PodoService.shared.getPodolist(page: page, params: params)
+    func getPodolist(page: Int, date: Date) -> Observable<Podolist>? {
+        return PodoService.shared.getPodolist(page: page, date: date)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .map { responsePodolist -> [Podo] in
-                return responsePodolist.map { Podo(responsePodo: $0) }
+            .map { responsePodolist -> Podolist in
+                let delayedItems = responsePodolist.delayedItems.map { Podo(responsePodo: $0) }
+                let items = responsePodolist.items.map { Podo(responsePodo: $0) }
+                return Podolist(delayedItems: delayedItems, items: items)
             }
     }
 

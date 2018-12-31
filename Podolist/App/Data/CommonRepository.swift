@@ -14,4 +14,8 @@ class CommonRepository: CommonDataSource {
     func hasSession() -> Completable? {
         return localDataSource?.hasSession()
     }
+
+    func addSession(_ session: Session) -> Completable? {
+        return localDataSource?.insertSession(session)
+    }
 }

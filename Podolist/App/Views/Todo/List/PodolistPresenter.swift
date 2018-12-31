@@ -8,65 +8,109 @@
 import RxSwift
 import SwiftDate
 
-class PodolistPresenter: NSObject, PodolistPresenterProtocol {
-    var view: PodolistViewProtocol?
-    var interactor: PodolistInteractorProtocol?
-    var wireFrame: PodolistWireFrameProtocol?
+protocol PodolistPresenterProtocol: class {
+    // View -> Presenter
+    func viewDidLoad()
+    func reloadData()
 
-    let disposeBag = DisposeBag()
+    // Podolist
+    func numberOfSections() -> Int
+    func numberOfRows(in section: Int) -> Int
+    func configureSection(_ cell: PodolistSectionCell, forSectionAt section: Int)
+    func configureRow(_ cell: PodolistRowCell, forRowAt indexPath: IndexPath)
 
-    var podoGroups: [PodoGroup] = []
-    var date = Date()
+    // Cell
+    func didChangedComplete(indexPath: IndexPath, completed: Bool)
+}
 
-    func refresh(date: Date) {
-        self.date = date
-        view?.updateUI()
-        fetchPodolist(date: date)!
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { podoGroups in
-                    self.podoGroups = podoGroups
-                    self.view?.showPodolist(with: podoGroups)
-                }, onError: { error in
-                    print(error)
-                })
-            .disposed(by: disposeBag)
+final class PodolistPresenter: NSObject, PodolistPresenterProtocol {
+
+    // MARK: - Properties
+
+    private var view: PodolistViewProtocol!
+    private var interactor: PodolistInteractorProtocol!
+    private var wireFrame: PodolistWireFrameProtocol!
+
+    private let disposeBag = DisposeBag()
+
+    private var podoSections: [PodoSection] = []
+
+    // MARK: - Initializer
+
+    init(
+        view: PodolistViewProtocol,
+        wireframe: PodolistWireFrameProtocol,
+        interactor: PodolistInteractorProtocol
+        ) {
+        self.view = view
+        self.wireFrame = wireframe
+        self.interactor = interactor
+    }
+}
+
+// MARK: - PodolistPresenterProtocol
+
+extension PodolistPresenter {
+
+    func viewDidLoad() {
+        view.showDefaultState()
+        view.showProfile(interactor.fetchAccount())
+        view.showPodoOnWriting(interactor.fetchPodoOnWriting())
+        reloadData()
     }
 
-    func didTappedCreate(podo: Podo) {
-        self.date = podo.startedAt
-        interactor?.createPodo(podo: podo)!
-            .flatMap { _ in self.fetchPodolist(date: self.date)! }
+    func reloadData() {
+        interactor.fetchPodolist()!
             .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: { podoGroups in
-                    self.podoGroups = podoGroups
-                    self.view?.showPodolist(with: podoGroups)
-                    self.view?.updateTopView(self.date)
-                    self.view?.resetUI()
-                    self.view?.updateUI()
+                onNext: { podoSections in
+                    self.podoSections = podoSections
+                    self.view.showPodolist()
             }, onError: { error in
                 print(error)
             })
             .disposed(by: disposeBag)
     }
+}
 
-    func didTappedComplete(id: Int, completed: Bool) {
-        var podo: Podo?
-        for group in podoGroups {
-            for item in group.1 where item.id == id {
-                podo = item
-                podo?.isCompleted = !completed
+// MARK: - Podolist
+
+extension PodolistPresenter {
+
+    func numberOfSections() -> Int {
+        return podoSections.count
+    }
+
+    func numberOfRows(in section: Int) -> Int {
+        return podoSections[section].rows.count
+    }
+
+    func configureSection(_ cell: PodolistSectionCell, forSectionAt section: Int) {
+        let item = podoSections[section]
+        cell.configureWith(item.title)
+    }
+
+    func configureRow(_ cell: PodolistRowCell, forRowAt indexPath: IndexPath) {
+        let podo = podoSections[indexPath.section].rows[indexPath.row]
+        cell.configureWith(podo, indexPath: indexPath)
+        cell.presenter = self
+    }
+}
+
+// MARK: - Update Cell
+
+extension PodolistPresenter {
+
+    func didChangedComplete(indexPath: IndexPath, completed: Bool) {
+        interactor.updateComplete(indexPath: indexPath, completed: completed)!
+            .flatMap { _ in
+                self.interactor.fetchPodolist()!
             }
-        }
-        guard podo != nil else { return }
-        interactor?.updatePodo(id: id, podo: podo!)!
-            .flatMap { _ in self.fetchPodolist(date: self.date)! }
             .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: { podoGroups in
-                    self.podoGroups = podoGroups
-                    self.view?.showPodolist(with: podoGroups)
+                onNext: { podoSections in
+                    self.podoSections = podoSections
+                    self.view.showPodolist()
             }, onError: { error in
                 print(error)
             })
@@ -74,24 +118,56 @@ class PodolistPresenter: NSObject, PodolistPresenterProtocol {
     }
 }
 
-extension PodolistPresenter {
+// MARK: - MainTopViewDelegate
 
-    func showSetting() {
-        wireFrame?.goToSettingScreen(from: view!)
+extension PodolistPresenter: MainTopViewDelegate {
+
+    func didTappedSetting() {
+        wireFrame.navigate(to: .setting)
+    }
+
+    func didSelectDate(date: Date) {
+        interactor.updateSelectedDate(date: date)
+        reloadData()
     }
 }
 
-extension PodolistPresenter {
+// MARK: - WriteViewDelegate
 
-    func fetchPodolist(date: Date) -> Observable<[PodoGroup]>? {
-        var observable: Observable<[PodoGroup]>?
-        if CalendarUtils.isPast(date: date) {
-            observable = interactor?.fetchPastPodolist(date: date)
-        } else if CalendarUtils.isToday(date: date) {
-            observable = interactor?.fetchTodayPodolist(date: date)
-        } else if CalendarUtils.isFuture(date: date) {
-            observable = interactor?.fetchFuturePodolist(date: date)
-        }
-        return observable
+extension PodolistPresenter: WriteViewDelegate {
+
+    func textFieldDidChange(text: String) {
+        interactor.updateTitle(title: text)
+    }
+
+    func didChangedPriority(priority: Priority) {
+        interactor.updatePriority(priority: priority)
+    }
+
+    func didChangedDate(date: Date) {
+        interactor.updateDate(date: date)
+    }
+
+    func didTappedDetail() {
+        view.showWritingExpandState()
+    }
+
+    func didTappedCreate() {
+        interactor.createPodo()!
+            .flatMap { _ in
+                self.interactor.fetchPodolist()!
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { podoSections in
+                    self.podoSections = podoSections
+                    self.view.showPodolist()
+                    self.interactor.resetPodoOnWriting()
+                    self.view.showPodoOnWriting(self.interactor.fetchPodoOnWriting())
+                    self.view.showDefaultState()
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
     }
 }

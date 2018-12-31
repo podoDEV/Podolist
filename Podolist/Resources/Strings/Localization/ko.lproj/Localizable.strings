@@ -5,16 +5,20 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-"login.signup" = "계정만들기";
-"login.signin" = "로그인하기";
+"login.kakao" = "카카오톡으로 로그인하기";
+"login.anonymous" = "그냥 할래요";
 
 "write.priority" = "중요도 설정";
 "write.date" = "날짜";
 
-"priority.urgent" = "매우 중요";
-"priority.high" = "중요";
-"priority.medium" = "보통";
-"priority.low" = "낮음";
+"priority.urgent" = "!!!!!";
+"priority.high" = "!!!";
+"priority.medium" = "!";
+"priority.low" = "~";
+"priority.none" = "-";
+
+"list.delayedItems" = "연기된 할일";
+"list.items" = "오늘 할일";
 
 "setting" = "설정";
 "setting.about" = "앱 정보";

@@ -25,8 +25,8 @@ extension Priority {
             return InterfaceString.Priority.Medium
         case .low:
             return InterfaceString.Priority.Low
-        default:
-            return ""
+        case .none:
+            return InterfaceString.Priority.None
         }
     }
 
@@ -41,9 +41,7 @@ extension Priority {
         case .low:
             return .priorityColor4
         case .none:
-            return .backgroundColor2
-//        default:
-//            return .backgroundColor2
+            return .priorityColor5
         }
     }
 }

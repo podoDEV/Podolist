@@ -8,34 +8,48 @@
 struct RequestPodo {
     let title: String
     let isCompleted: Bool
-    let startedAt: Int
-    let endedAt: Int
-    let updatedAt: Int?
+    let startedAt: Date
+    let endedAt: Date
+    let dueAt: Date
+    let updatedAt: Date?
     let priority: Priority
 
-    init(title: String, isCompleted: Bool, startedAt: Int, endedAt: Int, updatedAt: Int?, priority: Priority) {
+    init(
+        title: String,
+        isCompleted: Bool,
+        startedAt: Date,
+        endedAt: Date,
+        dueAt: Date,
+        updatedAt: Date?,
+        priority: Priority
+        ) {
         self.title = title
         self.isCompleted = isCompleted
         self.startedAt = startedAt
         self.endedAt = endedAt
+        self.dueAt = dueAt
         self.updatedAt = updatedAt
         self.priority = priority
     }
 
     init(podo: Podo) {
-        self.init(title: podo.title!,
-                  isCompleted: podo.isCompleted,
-                  startedAt: Int(podo.startedAt.timeIntervalSince1970),
-                  endedAt: Int(podo.endedAt.timeIntervalSince1970),
-                  updatedAt: podo.updatedAt,
-                  priority: podo.priority)
+        self.init(
+            title: podo.title!,
+            isCompleted: podo.isCompleted,
+            startedAt: podo.startedAt,
+            endedAt: podo.endedAt,
+            dueAt: podo.dueAt,
+            updatedAt: podo.updatedAt,
+            priority: podo.priority
+        )
     }
 
     var asDicsionary: [String: Any] {
         return ["title": title,
                 "isCompleted": isCompleted,
-                "startedAt": startedAt,
-                "endedAt": endedAt,
+                "startedAt": startedAt.timeIntervalSince1970,
+                "endedAt": endedAt.timeIntervalSince1970,
+                "dueAt": dueAt.timeIntervalSince1970,
                 "priority": priority.rawValue]
     }
 }

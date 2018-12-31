@@ -9,16 +9,13 @@
 import Foundation
 
 class PodolistSectionCell: UITableViewCell {
-    static let Identifier = "PodolistSectionCell"
 
     @IBOutlet weak var titleLabel: UILabel!
 
-    var item: GroupHeader? {
-        didSet {
-            self.backgroundColor = .white
-            titleLabel.text = item?.title
-            titleLabel.textColor = .red
-            titleLabel.font = .appFontB(size: 13)
-        }
+    func configureWith(_ title: String) {
+        self.backgroundColor = .white
+        titleLabel.text = title
+        titleLabel.textColor = .red
+        titleLabel.font = .appFontB(size: 13)
     }
 }

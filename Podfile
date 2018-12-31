@@ -7,8 +7,8 @@ use_frameworks!
 
 def common
     # Rx
-    pod 'RxSwift', '~> 4.1.2'
-    pod 'RxCocoa', '~> 4.1.2'
+    pod 'RxSwift', '~> 4.4.0'
+    pod 'RxCocoa', '~> 4.4.0'
 
     # Networking
     pod 'Alamofire', '~> 4.7.2'
@@ -16,6 +16,7 @@ def common
 
     # Logging
     pod 'CocoaLumberjack/Swift'
+    pod 'Then'
 
     # Etc
     pod 'SwiftLint'
@@ -23,6 +24,7 @@ def common
 end
 
 def ui
+    pod 'SnapKit'
     pod 'PodoCalendar', '~> 0.2.6'
 end
 

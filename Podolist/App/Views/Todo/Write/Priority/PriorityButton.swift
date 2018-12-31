@@ -31,7 +31,7 @@ class PriorityButton: UIButton {
         backgroundColor = .backgroundColor2
         setTitle(priority.toString(), for: .normal)
         setTitleColor(.white, for: .normal)
-        titleLabel?.font = UIFont.appFontM(size: 10)
+        titleLabel?.font = .appFontM(size: 10)
     }
 
     override func layoutSubviews() {
@@ -41,10 +41,10 @@ class PriorityButton: UIButton {
     }
 
     func updateUI() {
-        guard isSelectedButton else {
+        if isSelectedButton {
+            backgroundColor = priority.backgroundColor()
+        } else {
             backgroundColor = .backgroundColor2
-            return
         }
-        backgroundColor = priority.backgroundColor()
     }
 }
