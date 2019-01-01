@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>GA_TRACKING_ID</key>
 	<string>$(GA_TRACKING_ID)</string>
 	<key>KAKAO_APP_KEY</key>
