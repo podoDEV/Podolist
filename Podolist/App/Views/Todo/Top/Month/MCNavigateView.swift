@@ -17,10 +17,11 @@ class MCNavigateView: BaseView {
 
     lazy var prevButton: UIButton = {
         var view = UIButton()
-        view.setImage(UIImage(named: "ic_prevMonth"), for: .normal)
+        view.setImage(UIImage(named: "ic_prevMonth" ), for: .normal)
         view.setTitleColor(.white, for: .normal)
+        view.imageEdgeInsets =  UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         view.titleLabel?.font = .appFontL(size: 14)
-        view.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
+        view.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 10, right: 0)
         view.addTarget(self, action: #selector(didTappedNavigator(_:)), for: .touchUpInside)
         return view
     }()
@@ -29,8 +30,9 @@ class MCNavigateView: BaseView {
         var view = UIButton()
         view.setImage(UIImage(named: "ic_nextMonth"), for: .normal)
         view.setTitleColor(.white, for: .normal)
+        view.imageEdgeInsets =  UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         view.titleLabel?.font = .appFontL(size: 14)
-        view.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 12)
+        view.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 12)
         view.semanticContentAttribute = .forceRightToLeft
         view.addTarget(self, action: #selector(didTappedNavigator(_:)), for: .touchUpInside)
         return view
