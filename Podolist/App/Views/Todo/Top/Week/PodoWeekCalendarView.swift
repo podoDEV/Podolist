@@ -7,13 +7,13 @@
 
 import SwiftDate
 
-protocol PodoCalendarViewDelegate: NSObjectProtocol {
-    func calendarView(_ calendarView: PodoCalendarView, didSelectDate date: Date)
+protocol PodoWeekCalendarViewDelegate: NSObjectProtocol {
+    func calendarView(_ calendarView: PodoWeekCalendarView, didSelectDate date: Date)
 }
 
-class PodoCalendarView: BaseView {
+class PodoWeekCalendarView: BaseView {
 
-    public weak var delegate: PodoCalendarViewDelegate?
+    public weak var delegate: PodoWeekCalendarViewDelegate?
 
     var date = Date()
 
@@ -23,8 +23,8 @@ class PodoCalendarView: BaseView {
         return view
     }()
 
-    lazy var calendarView: CalendarView = {
-        let view = CalendarView()
+    lazy var calendarView: WeekCalendarView = {
+        let view = WeekCalendarView()
         view.delegate = self
         view.calDelegate = self
         return view
@@ -37,6 +37,7 @@ class PodoCalendarView: BaseView {
     }
 
     override func setup() {
+        calendarView.update(DateInRegion(date))
         addSubview(weekLabel)
         addSubview(calendarView)
         NotificationCenter.default.addObserver(self,
@@ -50,35 +51,38 @@ class PodoCalendarView: BaseView {
         weekLabel.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 14)
         calendarView.frame = CGRect(x: 0, y: 14, width: bounds.width, height: bounds.height - 14)
         calendarView.contentOffset.x = bounds.width
-        calendarView.selectDate(date: DateInRegion())
     }
+}
 
+extension PodoWeekCalendarView: UIScrollViewDelegate {
+
+    // MARK: - 직접 선택한 경우
     @objc private func onSelected(notification: NSNotification) {
         guard let date = notification.object as? DateInRegion else { return }
-        self.date = date.date
-        calendarView.selectDate(date: date)
-        delegate?.calendarView(self, didSelectDate: date.date)
+        calendarView.update(date)
+        calendarView(didSelectDate: date)
     }
 
-    // MARK: - external -> PodoCalendarView
+    // MARK: - 스크롤에 의해 바뀐 경우, delegate로 다시 넘어옴.
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = self.calendarView.contentOffset.x / self.calendarView.frame.width
+        if position.isNaN { return }
+        if position <= 0.0 || 2.0 <= position {
+            calendarView.move(to: WeekCalendarView.Direction(rawValue: Int(position))!)
+        }
+    }
+
+    // MARK: - 외부에서 날짜를 주입하는 경우, delegate x
     func update(_ date: Date) {
         self.date = date
         calendarView.update(DateInRegion(date))
     }
 }
 
-extension PodoCalendarView: UIScrollViewDelegate, CalendarViewDelegate {
+extension PodoWeekCalendarView: CalendarViewDelegate {
 
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let position = self.calendarView.contentOffset.x / self.calendarView.frame.width
-        if position.isNaN { return }
-        if position <= 0.0 || 2.0 <= position {
-            calendarView.move(to: CalendarView.Direction(rawValue: Int(position))!)
-        }
-    }
-
-    // MARK: - internal -> PodoCalendarView
     func calendarView(didSelectDate date: DateInRegion) {
+        self.date = date.date
         delegate?.calendarView(self, didSelectDate: date.date)
     }
 }

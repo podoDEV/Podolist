@@ -2,7 +2,6 @@
 //  PodoRequest.swift
 //  Podolist
 //
-//  Created by NHNEnt on 30/10/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 

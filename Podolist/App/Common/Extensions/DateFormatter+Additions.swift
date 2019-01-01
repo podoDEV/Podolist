@@ -2,7 +2,6 @@
 //  DateFormatter+Additions.swift
 //  Podolist
 //
-//  Created by NHNEnt on 29/12/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 

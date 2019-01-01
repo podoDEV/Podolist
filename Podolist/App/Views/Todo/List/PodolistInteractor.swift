@@ -11,6 +11,7 @@ protocol PodolistInteractorProtocol: class {
 
     // Presenter -> Interactor
     var podoSections: [PodoSection] { get }
+    var selectedDate: Date { get }
     func fetchPodolist() -> Observable<[PodoSection]>?
     func createPodo() -> Observable<Podo>?
     func updatePodo(id: Int, podo: Podo) -> Observable<Podo>?
@@ -41,7 +42,7 @@ class PodolistInteractor: PodolistInteractorProtocol {
     private var accountDataSource: AccountDataSource
 
     private var showDelayedItems = true
-    private var selectedDate = Date()
+    var selectedDate = Date()
     private var podo = Podo()
     var podoSections = [PodoSection]()
 

@@ -1,5 +1,5 @@
 //
-//  CalendarView.swift
+//  WeekCalendarView.swift
 //  Podolist
 //
 //  Copyright © 2018 podo. All rights reserved.
@@ -11,7 +11,7 @@ protocol CalendarViewDelegate: NSObjectProtocol {
     func calendarView(didSelectDate date: DateInRegion)
 }
 
-class CalendarView: UIScrollView {
+class WeekCalendarView: UIScrollView {
 
     weak var calDelegate: CalendarViewDelegate?
 
@@ -44,15 +44,6 @@ class CalendarView: UIScrollView {
         }
     }
 
-    func update(_ dateInRegion: DateInRegion) {
-        var date = dateInRegion.dateAt(.prevWeek)
-        for week in weeks {
-            week.date = date
-            date = date.dateAt(.nextWeek)
-        }
-        selectDate(date: dateInRegion)
-    }
-
     override func layoutSubviews() {
         super.layoutSubviews()
         var x: CGFloat = 0
@@ -61,6 +52,18 @@ class CalendarView: UIScrollView {
             x = week.frame.maxX
         }
         contentSize = CGSize(width: bounds.size.width * CGFloat(weeks.count), height: bounds.size.height)
+    }
+}
+
+extension WeekCalendarView {
+
+    func update(_ dateInRegion: DateInRegion) {
+        var date = dateInRegion.dateAt(.prevWeek)
+        for week in weeks {
+            week.date = date
+            date = date.dateAt(.nextWeek)
+        }
+        selectDate(date: dateInRegion)
     }
 
     func move(to toDirection: Direction) {
@@ -97,7 +100,7 @@ class CalendarView: UIScrollView {
         }
     }
 
-    func selectDate(date: DateInRegion) {
+    private func selectDate(date: DateInRegion) {
         selectedDate = date
         let selectedDateComps = CalendarUtils.dateComponentsOfDate(date: date.date)
         for week in weeks {

@@ -2,7 +2,6 @@
 //  PodolistSectionCell.swift
 //  Podolist
 //
-//  Created by NHNEnt on 02/11/2018.
 //  Copyright © 2018 podo. All rights reserved.
 //
 

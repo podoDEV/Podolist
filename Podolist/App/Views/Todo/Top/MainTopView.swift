@@ -9,6 +9,7 @@ import SnapKit
 
 protocol MainTopViewDelegate: class {
     func didTappedSetting()
+    func didTappedMonthCalendar()
     func didSelectDate(date: Date)
 }
 
@@ -19,14 +20,16 @@ class MainTopView: BaseView {
     let backgroundView = UIImageView()
     let settingButton = UIButton()
     let titleView = UIView()
-    let titleLabel = UILabel()
+    let monthLabel = UILabel()
+    let yearLabel = UILabel()
     let dropdownView = UIImageView()
-    let calendarView = PodoCalendarView()
+    let calendarView = PodoWeekCalendarView()
     let gradient = CAGradientLayer()
 
     var date: Date? {
         didSet {
-            titleLabel.text = date?.monthName(.default)
+            yearLabel.text = "\(date!.year)"
+            monthLabel.text = date?.monthName(.default)
         }
     }
 
@@ -41,7 +44,6 @@ class MainTopView: BaseView {
         backgroundView.layer.addSublayer(gradient)
         addSubview(backgroundView)
 
-        // MARK: - 설정화면 enable
         settingButton.clipsToBounds = true
         settingButton.addTarget(self, action: #selector(didTappedSetting), for: .touchUpInside)
         addSubview(settingButton)
@@ -50,13 +52,19 @@ class MainTopView: BaseView {
         addSubview(calendarView)
         addSubview(titleView)
 
-        titleLabel.textColor = .white
-        titleLabel.font = .appFontM(size: 20)
-        titleView.addSubview(titleLabel)
+        monthLabel.textColor = .white
+        monthLabel.font = .appFontM(size: 20)
+        titleView.addSubview(monthLabel)
 
-        // MARK: - dropdown enable
-//        dropdownView.image = InterfaceImage.dropdown.normalImage
+        yearLabel.textColor = .white
+        yearLabel.font = .appFontM(size: 18)
+        titleView.addSubview(yearLabel)
+
+        dropdownView.image = InterfaceImage.dropdown.normalImage
         titleView.addSubview(dropdownView)
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedMonthCalendar))
+        titleView.addGestureRecognizer(tap)
 
         date = calendarView.date
     }
@@ -76,16 +84,20 @@ class MainTopView: BaseView {
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
         titleView.bottomAnchor.constraint(equalTo: self.calendarView.topAnchor, constant: -16).isActive = true
-        titleView.heightAnchor.constraint(equalTo: titleLabel.heightAnchor).isActive = true
+        titleView.heightAnchor.constraint(equalTo: monthLabel.heightAnchor).isActive = true
 
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.topAnchor.constraint(equalTo: self.titleView.topAnchor).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: self.titleView.bottomAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: self.titleView.leadingAnchor).isActive = true
+        monthLabel.translatesAutoresizingMaskIntoConstraints = false
+        monthLabel.topAnchor.constraint(equalTo: self.titleView.topAnchor).isActive = true
+        monthLabel.bottomAnchor.constraint(equalTo: self.titleView.bottomAnchor).isActive = true
+        monthLabel.leadingAnchor.constraint(equalTo: self.titleView.leadingAnchor).isActive = true
+
+        yearLabel.translatesAutoresizingMaskIntoConstraints = false
+        yearLabel.bottomAnchor.constraint(equalTo: self.titleView.bottomAnchor).isActive = true
+        yearLabel.leadingAnchor.constraint(equalTo: self.monthLabel.trailingAnchor, constant: 10).isActive = true
 
         dropdownView.translatesAutoresizingMaskIntoConstraints = false
-        dropdownView.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor).isActive = true
-        dropdownView.leadingAnchor.constraint(equalTo: self.titleLabel.trailingAnchor, constant: 10).isActive = true
+        dropdownView.centerYAnchor.constraint(equalTo: self.yearLabel.centerYAnchor).isActive = true
+        dropdownView.leadingAnchor.constraint(equalTo: self.yearLabel.trailingAnchor, constant: 10).isActive = true
         dropdownView.trailingAnchor.constraint(equalTo: self.titleView.trailingAnchor).isActive = true
 
         calendarView.translatesAutoresizingMaskIntoConstraints = false
@@ -107,11 +119,15 @@ class MainTopView: BaseView {
     @objc func didTappedSetting() {
         delegate?.didTappedSetting()
     }
+
+    @objc func didTappedMonthCalendar() {
+        delegate?.didTappedMonthCalendar()
+    }
 }
 
-extension MainTopView: PodoCalendarViewDelegate {
+extension MainTopView: PodoWeekCalendarViewDelegate {
 
-    func calendarView(_ calendarView: PodoCalendarView, didSelectDate date: Date) {
+    func calendarView(_ calendarView: PodoWeekCalendarView, didSelectDate date: Date) {
         self.date = date
         delegate?.didSelectDate(date: date)
     }

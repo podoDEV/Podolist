@@ -122,12 +122,27 @@ extension PodolistPresenter {
     }
 }
 
+// MARK: - PodoMonthCalendarViewDelegate
+
+extension PodolistPresenter: PodoMonthCalendarViewDelegate {
+
+    func calendarView(_ calendarView: PodoMonthCalendarView, didSelectDate date: Date) {
+        view.showTopView(date)
+        interactor.updateSelectedDate(date: date)
+        reloadData()
+    }
+}
+
 // MARK: - MainTopViewDelegate
 
 extension PodolistPresenter: MainTopViewDelegate {
 
     func didTappedSetting() {
         wireFrame.navigate(to: .setting)
+    }
+
+    func didTappedMonthCalendar() {
+        view.showMonthCalendar(interactor.selectedDate)
     }
 
     func didSelectDate(date: Date) {
