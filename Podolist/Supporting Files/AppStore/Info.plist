@@ -39,6 +39,8 @@
 	<string>$(GA_TRACKING_ID)</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>$(KAKAO_APP_KEY)</string>
+	<key>KAKAO_CLIENT_SECRET</key>
+	<string>$(KAKAO_CLIENT_SECRET)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakao$(KAKAO_APP_KEY)</string>

@@ -50,7 +50,7 @@ private extension AppDelegate {
             assert(false, "Google Analytics not configured correctly")
             return
         }
-        let trackingId = Bundle.main.infoDictionary?["GA_TRACKING_ID"] as! String
+        guard let trackingId = Bundle.main.infoDictionary?["GA_TRACKING_ID"] as? String else { return }
         gai.tracker(withTrackingId: trackingId)
         gai.trackUncaughtExceptions = true
 
@@ -60,7 +60,11 @@ private extension AppDelegate {
     }
 
     func setupKakao() {
-        KOSession.shared()?.clientSecret = AppUtils.versionName()
+        #if DEBUG
+        #else
+            let clientSecret = Bundle.main.infoDictionary?["KAKAO_CLIENT_SECRET"] as! String
+            KOSession.shared()?.clientSecret = clientSecret
+        #endif
     }
 
     func setupEntryScreen() {
