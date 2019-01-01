@@ -10,6 +10,8 @@ import RxSwift
 protocol PodolistInteractorProtocol: class {
 
     // Presenter -> Interactor
+    var podoSections: [PodoSection] { get }
+    var selectedDate: Date { get }
     func fetchPodolist() -> Observable<[PodoSection]>?
     func createPodo() -> Observable<Podo>?
     func updatePodo(id: Int, podo: Podo) -> Observable<Podo>?
@@ -21,6 +23,7 @@ protocol PodolistInteractorProtocol: class {
 
     // Cell
     func updateComplete(indexPath: IndexPath, completed: Bool) -> Observable<Podo>?
+    func updateShowDelayedItems(show: Bool)
 
     // Writing
     func fetchPodoOnWriting() -> Podo
@@ -38,9 +41,10 @@ class PodolistInteractor: PodolistInteractorProtocol {
     private var podoDataSource: PodoDataSource
     private var accountDataSource: AccountDataSource
 
-    private var podoSections = [PodoSection]()
-    private var selectedDate = Date()
-    private(set) var podo = Podo()
+    private var showDelayedItems = true
+    var selectedDate = Date()
+    private var podo = Podo()
+    var podoSections = [PodoSection]()
 
     init(
         podoDataSource: PodoDataSource,
@@ -59,11 +63,19 @@ extension PodolistInteractor {
                 var podoSections = [PodoSection]()
                 if CalendarUtils.isToday(date: self.selectedDate) {
                     if $0.delayedItems.isEmpty == false {
-                        podoSections.append(PodoSection(title: InterfaceString.List.DelayedItems, rows: $0.delayedItems))
+                        podoSections.append(PodoSection(title: InterfaceString.List.DelayedItems,
+                                                        color: .delayedItems,
+                                                        rows: $0.delayedItems,
+                                                        editable: true,
+                                                        visible: self.showDelayedItems))
                     }
-                    podoSections.append(PodoSection(title: InterfaceString.List.Items, rows: $0.items))
+                    podoSections.append(PodoSection(title: InterfaceString.List.Items,
+                                                    color: .normalItems,
+                                                    rows: $0.items))
                 } else {
-                    podoSections.append(PodoSection(title: self.selectedDate.displayYYYYMMDD(), rows: $0.items))
+                    podoSections.append(PodoSection(title: self.selectedDate.displayYYYYMMDD(),
+                                                    color: .normalItems,
+                                                    rows: $0.items))
                 }
                 self.podoSections = podoSections
                 return podoSections
@@ -104,6 +116,13 @@ extension PodolistInteractor {
         let podo = podoSections[indexPath.section].rows[indexPath.row]
         podo.isCompleted = completed
         return updatePodo(id: podo.id!, podo: podo)
+    }
+
+    func updateShowDelayedItems(show: Bool) {
+        for section in podoSections where section.editable {
+            section.visible = show
+        }
+        self.showDelayedItems = show
     }
 }
 

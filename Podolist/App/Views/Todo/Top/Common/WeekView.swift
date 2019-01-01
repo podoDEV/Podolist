@@ -15,6 +15,8 @@ class WeekView: BaseView {
             updateDays()
         }
     }
+    var year: Int?
+    var month: Int?
 
     override func setup() {
         for _ in 0..<7 {
@@ -37,6 +39,7 @@ class WeekView: BaseView {
     func updateDays() {
         var date = self.date!
         for day in days {
+            day.isSameMonth = (date.year == self.year && date.month == self.month)
             day.date = date
             date = date.dateAt(.tomorrow)
         }

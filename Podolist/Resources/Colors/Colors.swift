@@ -22,6 +22,9 @@ private struct PodolistColors {
 
     static let kakaoLogin = UIColor(red: 255, green: 232, blue: 18, alpha: 1)
 
+    static let delayedItems = UIColor(red: 208, green: 2, blue: 27, alpha: 1)
+    static let normalItems = UIColor(red: 44, green: 44, blue: 44, alpha: 1)
+
     static let todoBackground1 = UIColor(hex: 0x9E30FE) // normal
     static let todoBackground2 = UIColor(hex: 0xDCC3FC) // completed
 
@@ -54,6 +57,9 @@ extension UIColor {
     static var gradationEnd: UIColor { return PodolistColors.gradationEnd }
 
     static var kakaoLogin: UIColor { return PodolistColors.kakaoLogin }
+
+    static var delayedItems: UIColor { return PodolistColors.delayedItems }
+    static var normalItems: UIColor { return PodolistColors.normalItems }
 
     static var todoBackground1: UIColor { return PodolistColors.todoBackground1 }
     static var todoBackground2: UIColor { return PodolistColors.todoBackground2 }

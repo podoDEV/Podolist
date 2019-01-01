@@ -15,7 +15,10 @@ protocol PodolistViewProtocol: class {
     func showProfile(_ account: Account)
     func showDefaultState()
     func showWritingExpandState()
+    func showTopView(_ date: Date)
     func showPodoOnWriting(_ podo: Podo)
+    func showMonthCalendar(_ date: Date)
+    func reloadSection(_ indexSet: IndexSet)
 }
 
 class PodolistViewController: BaseViewController {
@@ -49,6 +52,14 @@ class PodolistViewController: BaseViewController {
 
     // MARK: - Views
 
+    private lazy var monthCalendarView: PodoMonthCalendarView = {
+        let view = PodoMonthCalendarView()
+        if let delegate = presenter as? PodoMonthCalendarViewDelegate {
+            view.delegate = delegate
+        }
+        return view
+    }()
+
     private lazy var topView: MainTopView = {
         let view = MainTopView()
         if let delegate = presenter as? MainTopViewDelegate {
@@ -66,7 +77,7 @@ class PodolistViewController: BaseViewController {
         view.backgroundColor = .white
         view.sectionFooterHeight = 0
         view.tableFooterView = UIView()
-        view.registerNib(cell: PodolistSectionCell.self)
+        view.register(cell: PodolistSectionCell.self)
         view.registerNib(cell: PodolistRowCell.self)
         return view
     }()
@@ -89,7 +100,14 @@ class PodolistViewController: BaseViewController {
         return control
     }()
 
-    private lazy var hidingView: UIView = {
+    private lazy var writeHidingView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.alpha = 0.5
+        return view
+    }()
+
+    private lazy var monthCalendarHidingView: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
         view.alpha = 0.5
@@ -126,19 +144,23 @@ class PodolistViewController: BaseViewController {
     override func setupSubviews() {
         super.setupSubviews()
 
-        [topView, tableView, hidingView, writeView].forEach(view.addSubview)
+        [monthCalendarView, topView, tableView, writeHidingView, writeView, monthCalendarHidingView].forEach(view.addSubview)
     }
 
     override func setupConstraints() {
         super.setupConstraints()
+        monthCalendarHidingView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height + safeAreaInset.bottom)
+        monthCalendarView.frame = CGRect(x: 0, y: -400, width: view.bounds.width, height: 400 + safeAreaInset.top)
         topView.frame.size = CGSize(width: view.bounds.width, height: Style.List.Top.height + safeAreaInset.top)
         tableView.frame = CGRect(x: 0, y: topView.frame.maxY, width: view.bounds.width, height: view.bounds.height - topView.frame.height - Style.Write.Normal.height - safeAreaInset.bottom)
-        hidingView.frame = tableView.frame
+        writeHidingView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height + safeAreaInset.bottom)
         writeView.frame = CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Normal.height + safeAreaInset.bottom)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         showDefaultState()
+        hideMonthCalendar()
+        view.bringSubviewToFront(writeView)
     }
 }
 
@@ -153,7 +175,8 @@ extension PodolistViewController: PodolistViewProtocol {
     }
 
     func showDefaultState() {
-        hidingView.isHidden = true
+        monthCalendarHidingView.isHidden = true
+        writeHidingView.isHidden = true
         UIView.animate(withDuration: 0.2) {
             self.writeView.frame = self.normalFrame
         }
@@ -162,14 +185,14 @@ extension PodolistViewController: PodolistViewProtocol {
     }
 
     func showWritingTitleState() {
-        hidingView.isHidden = false
+        writeHidingView.isHidden = false
         UIView.animate(withDuration: 0.2) {
             self.writeView.frame = self.writeFrame
         }
     }
 
     func showWritingExpandState() {
-        hidingView.isHidden = false
+        writeHidingView.isHidden = false
         UIView.animate(withDuration: 0.2) {
             self.writeView.frame = self.detailWriteFrame
         }
@@ -184,6 +207,29 @@ extension PodolistViewController: PodolistViewProtocol {
     func showPodoOnWriting(_ podo: Podo) {
         writeView.update(podo)
         view.endEditing(true)
+    }
+
+    func showMonthCalendar(_ date: Date) {
+        view.bringSubviewToFront(monthCalendarHidingView)
+        view.bringSubviewToFront(monthCalendarView)
+        monthCalendarHidingView.isHidden = false
+        monthCalendarView.update(date)
+        UIView.animate(withDuration: 0.2) {
+            self.monthCalendarView.frame.origin.y = 0
+        }
+    }
+
+    func hideMonthCalendar() {
+        writeHidingView.isHidden = true
+        UIView.animate(withDuration: 0.2) {
+            self.monthCalendarView.frame.origin.y = -400 - self.safeAreaInset.top
+        }
+    }
+
+    func reloadSection(_ indexSet: IndexSet) {
+        tableView.beginUpdates()
+        tableView.reloadSections(indexSet, with: .top)
+        tableView.endUpdates()
     }
 }
 

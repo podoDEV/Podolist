@@ -31,6 +31,12 @@ class DayView: BaseView {
         }
     }
 
+    var isSameMonth: Bool = true {
+        didSet {
+            updateUI()
+        }
+    }
+
     var isSelected: Bool = false {
         didSet {
             if isSelected {

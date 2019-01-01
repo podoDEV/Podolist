@@ -11,8 +11,8 @@ def common
     pod 'RxCocoa', '~> 4.4.0'
 
     # Networking
-    pod 'Alamofire', '~> 4.7.2'
-    pod 'SwiftyJSON', '~> 4.1.0'
+    pod 'Alamofire', '~> 4.7.3'
+    pod 'SwiftyJSON', '~> 4.2.0'
 
     # Logging
     pod 'CocoaLumberjack/Swift'
@@ -20,7 +20,7 @@ def common
 
     # Etc
     pod 'SwiftLint'
-    pod 'KeychainAccess', '~> 3.1.1'
+    pod 'KeychainAccess', '~> 3.1.2'
 end
 
 def ui
