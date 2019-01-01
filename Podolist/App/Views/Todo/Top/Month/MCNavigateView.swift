@@ -1,5 +1,5 @@
 //
-//  CalendarNavigateView.swift
+//  MCNavigateView.swift
 //  Podolist
 //
 //  Copyright © 2019 podo. All rights reserved.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol CalendarNavigateViewDelegate: NSObjectProtocol {
-    func navigate(to direction: MonthCalendarView.Direction)
+protocol MCNavigateViewDelegate: NSObjectProtocol {
+    func navigate(to direction: MCCalendarView.Direction)
 }
 
-class CalendarNavigateView: BaseView {
+class MCNavigateView: BaseView {
 
-    weak var delegate: CalendarNavigateViewDelegate?
+    weak var delegate: MCNavigateViewDelegate?
 
     lazy var prevButton: UIButton = {
         var view = UIButton()
@@ -42,12 +42,12 @@ class CalendarNavigateView: BaseView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        prevButton.frame = CGRect(x: 0, y: 0, width: 50, height: 40)
-        nextButton.frame = CGRect(x: frame.maxX - 50, y: 0, width: 50, height: 40)
+        prevButton.frame = CGRect(x: 10, y: 0, width: 50, height: 40)
+        nextButton.frame = CGRect(x: frame.maxX - 50 - 10, y: 0, width: 50, height: 40)
     }
 }
 
-extension CalendarNavigateView {
+extension MCNavigateView {
 
     @objc func didTappedNavigator(_ sender: UIButton) {
         if sender.isEqual(prevButton) {
@@ -58,7 +58,7 @@ extension CalendarNavigateView {
     }
 }
 
-extension CalendarNavigateView {
+extension MCNavigateView {
 
     func update(_ date: Date) {
         let prevMonth = date.dateAt(.prevMonth).monthName(.short)

@@ -1,5 +1,5 @@
 //
-//  PodoCalendarView.swift
+//  WeekCalendarView.swift
 //  Podolist
 //
 //  Copyright © 2018 podo. All rights reserved.
@@ -7,24 +7,24 @@
 
 import SwiftDate
 
-protocol PodoWeekCalendarViewDelegate: NSObjectProtocol {
-    func calendarView(_ calendarView: PodoWeekCalendarView, didSelectDate date: Date)
+protocol WeekCalendarViewDelegate: NSObjectProtocol {
+    func calendarView(_ calendarView: WeekCalendarView, didSelectDate date: Date)
 }
 
-class PodoWeekCalendarView: BaseView {
+class WeekCalendarView: BaseView {
 
-    public weak var delegate: PodoWeekCalendarViewDelegate?
+    public weak var delegate: WeekCalendarViewDelegate?
 
     var date = Date()
 
-    lazy var weekLabel: WeekLabelView = {
-        let view = WeekLabelView()
+    lazy var weekLabel: WCWeekLabelView = {
+        let view = WCWeekLabelView()
         view.backgroundColor = .clear
         return view
     }()
 
-    lazy var calendarView: WeekCalendarView = {
-        let view = WeekCalendarView()
+    lazy var calendarView: WCCalendarView = {
+        let view = WCCalendarView()
         view.delegate = self
         view.calDelegate = self
         return view
@@ -54,7 +54,7 @@ class PodoWeekCalendarView: BaseView {
     }
 }
 
-extension PodoWeekCalendarView: UIScrollViewDelegate {
+extension WeekCalendarView: UIScrollViewDelegate {
 
     // MARK: - 직접 선택한 경우
     @objc private func onSelected(notification: NSNotification) {
@@ -68,7 +68,7 @@ extension PodoWeekCalendarView: UIScrollViewDelegate {
         let position = self.calendarView.contentOffset.x / self.calendarView.frame.width
         if position.isNaN { return }
         if position <= 0.0 || 2.0 <= position {
-            calendarView.move(to: WeekCalendarView.Direction(rawValue: Int(position))!)
+            calendarView.move(to: WCCalendarView.Direction(rawValue: Int(position))!)
         }
     }
 
@@ -79,7 +79,7 @@ extension PodoWeekCalendarView: UIScrollViewDelegate {
     }
 }
 
-extension PodoWeekCalendarView: CalendarViewDelegate {
+extension WeekCalendarView: WCCalendarViewDelegate {
 
     func calendarView(didSelectDate date: DateInRegion) {
         self.date = date.date

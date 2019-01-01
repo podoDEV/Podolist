@@ -44,6 +44,9 @@ private struct PodolistColors {
     static let grayE = UIColor(hex: 0xEEEEEE)
     static let grayF4 = UIColor(hex: 0xF4F4F4)
     static let modalBackground = UIColor(white: 0x000000, alpha: 0.7)
+
+    static let normalSunday = UIColor(red: 208, green: 2, blue: 27, alpha: 1)
+    static let otherMonthSunday = UIColor(red: 208, green: 2, blue: 27, alpha: 0.5)
 }
 
 extension UIColor {
@@ -80,4 +83,7 @@ extension UIColor {
     static var grayE: UIColor { return PodolistColors.grayE }
     static var grayF4: UIColor { return PodolistColors.grayF4 }
     static var modalBackground: UIColor { return PodolistColors.modalBackground }
+
+    static var normalSunday: UIColor { return PodolistColors.normalSunday }
+    static var otherMonthSunday: UIColor { return PodolistColors.otherMonthSunday }
 }

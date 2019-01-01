@@ -1,5 +1,5 @@
 //
-//  MonthCalendarView.swift
+//  MCCalendarView.swift
 //  Podolist
 //
 //  Copyright © 2018 podo. All rights reserved.
@@ -7,11 +7,15 @@
 
 import SwiftDate
 
-class MonthCalendarView: UIScrollView {
+protocol MCCalendarViewDelegate: NSObjectProtocol {
+    func calendarView(didSelectDate date: DateInRegion)
+}
 
-    weak var calDelegate: CalendarViewDelegate?
+class MCCalendarView: UIScrollView {
 
-    var months = [MonthView]()
+    weak var calDelegate: MCCalendarViewDelegate?
+
+    var months = [MCMonthView]()
     var currentPosition = 1
     var selectedDate: DateInRegion?
 
@@ -32,7 +36,7 @@ class MonthCalendarView: UIScrollView {
 
         var date = DateInRegion().dateAt(.prevWeek)
         for _ in 0..<3 {
-            let month = MonthView()
+            let month = MCMonthView()
             month.date = date
             addSubview(month)
             months.append(month)
@@ -51,7 +55,7 @@ class MonthCalendarView: UIScrollView {
     }
 }
 
-extension MonthCalendarView {
+extension MCCalendarView {
 
     func update(_ dateInRegion: DateInRegion) {
         var date = dateInRegion.dateAt(.prevMonth)

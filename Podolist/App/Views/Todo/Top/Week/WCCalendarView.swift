@@ -1,5 +1,5 @@
 //
-//  WeekCalendarView.swift
+//  WCCalendarView.swift
 //  Podolist
 //
 //  Copyright © 2018 podo. All rights reserved.
@@ -7,15 +7,15 @@
 
 import SwiftDate
 
-protocol CalendarViewDelegate: NSObjectProtocol {
+protocol WCCalendarViewDelegate: NSObjectProtocol {
     func calendarView(didSelectDate date: DateInRegion)
 }
 
-class WeekCalendarView: UIScrollView {
+class WCCalendarView: UIScrollView {
 
-    weak var calDelegate: CalendarViewDelegate?
+    weak var calDelegate: WCCalendarViewDelegate?
 
-    var weeks = [WeekView]()
+    var weeks = [WCWeekView]()
     var currentPosition = 1
     var selectedDate: DateInRegion?
 
@@ -36,7 +36,7 @@ class WeekCalendarView: UIScrollView {
 
         var date = DateInRegion().dateAt(.prevWeek)
         for _ in 0..<3 {
-            let week = WeekView()
+            let week = WCWeekView()
             week.date = date
             addSubview(week)
             weeks.append(week)
@@ -55,7 +55,7 @@ class WeekCalendarView: UIScrollView {
     }
 }
 
-extension WeekCalendarView {
+extension WCCalendarView {
 
     func update(_ dateInRegion: DateInRegion) {
         var date = dateInRegion.dateAt(.prevWeek)

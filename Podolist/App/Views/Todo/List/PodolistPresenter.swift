@@ -122,11 +122,11 @@ extension PodolistPresenter {
     }
 }
 
-// MARK: - PodoMonthCalendarViewDelegate
+// MARK: - MonthCalendarViewDelegate
 
-extension PodolistPresenter: PodoMonthCalendarViewDelegate {
+extension PodolistPresenter: MonthCalendarViewDelegate {
 
-    func calendarView(_ calendarView: PodoMonthCalendarView, didSelectDate date: Date) {
+    func calendarView(_ calendarView: MonthCalendarView, didSelectDate date: Date) {
         view.showTopView(date)
         interactor.updateSelectedDate(date: date)
         reloadData()

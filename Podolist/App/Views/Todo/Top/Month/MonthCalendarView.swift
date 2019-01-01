@@ -1,5 +1,5 @@
 //
-//  PodoMonthCalendarView.swift
+//  MonthCalendarView.swift
 //  Podolist
 //
 //  Copyright © 2019 podo. All rights reserved.
@@ -7,13 +7,13 @@
 
 import SwiftDate
 
-protocol PodoMonthCalendarViewDelegate: NSObjectProtocol {
-    func calendarView(_ calendarView: PodoMonthCalendarView, didSelectDate date: Date)
+protocol MonthCalendarViewDelegate: NSObjectProtocol {
+    func calendarView(_ calendarView: MonthCalendarView, didSelectDate date: Date)
 }
 
-class PodoMonthCalendarView: BaseView {
+class MonthCalendarView: BaseView {
 
-    public weak var delegate: PodoMonthCalendarViewDelegate?
+    public weak var delegate: MonthCalendarViewDelegate?
 
     var date: Date? {
         didSet {
@@ -21,35 +21,6 @@ class PodoMonthCalendarView: BaseView {
             monthLabel.text = date!.monthName(.default)
         }
     }
-//
-//    var normalWeekdayTextColor: UIColor? {
-//        didSet {
-//            if let normalWeekdayTextColor = normalWeekdayTextColor {
-//                UIColor.normalWeekdayTextColor = normalWeekdayTextColor
-//            }
-//        }
-//    }
-//    var normalDayTextColor: UIColor? {
-//        didSet {
-//            if let normalDayTextColor = normalDayTextColor {
-//                UIColor.normalDayTextColor = normalDayTextColor
-//            }
-//        }
-//    }
-//    var otherMonthWeekdayTextColor: UIColor? {
-//        didSet {
-//            if let otherMonthWeekdayTextColor = otherMonthWeekdayTextColor {
-//                UIColor.otherMonthWeekdayTextColor = otherMonthWeekdayTextColor
-//            }
-//        }
-//    }
-//    var otherMonthDayTextColor: UIColor? {
-//        didSet {
-//            if let otherMonthDayTextColor = otherMonthDayTextColor {
-//                UIColor.otherMonthDayTextColor = otherMonthDayTextColor
-//            }
-//        }
-//    }
 
     lazy var titleView: UIView = {
         let view = UIView()
@@ -72,8 +43,8 @@ class PodoMonthCalendarView: BaseView {
         return view
     }()
 
-    lazy var weekLabel: WeekLabelView = {
-        let view = WeekLabelView()
+    lazy var weekLabel: MCWeekLabelView = {
+        let view = MCWeekLabelView()
         view.backgroundColor = .clear
         return view
     }()
@@ -84,16 +55,16 @@ class PodoMonthCalendarView: BaseView {
         return view
     }()
 
-    lazy var calendarView: MonthCalendarView = {
-        let view = MonthCalendarView()
+    lazy var calendarView: MCCalendarView = {
+        let view = MCCalendarView()
         view.delegate = self
         view.calDelegate = self
         view.backgroundColor = .clear
         return view
     }()
 
-    lazy var navigateView: CalendarNavigateView = {
-        let view = CalendarNavigateView()
+    lazy var navigateView: MCNavigateView = {
+        let view = MCNavigateView()
         view.backgroundColor = .clear
         view.delegate = self
         return view
@@ -113,8 +84,8 @@ class PodoMonthCalendarView: BaseView {
         calendarView.update(DateInRegion(self.date!))
         gradient.startPoint = CGPoint(x: 0.5, y: 0)
         gradient.endPoint = CGPoint(x: 0.5, y: 1)
-        gradient.colors = [UIColor.gradationStart.cgColor,
-                           UIColor.gradationEnd.cgColor]
+        gradient.colors = [UIColor(red: 106, green: 3, blue: 152, alpha: 1).cgColor,
+                           UIColor(red: 85, green: 0, blue: 159, alpha: 1).cgColor]
         gradient.locations = [0, 1]
         backgroundView.layer.addSublayer(gradient)
         titleView.addSubview(yearLabel)
@@ -185,7 +156,7 @@ class PodoMonthCalendarView: BaseView {
     }
 }
 
-extension PodoMonthCalendarView: UIScrollViewDelegate, CalendarNavigateViewDelegate {
+extension MonthCalendarView: UIScrollViewDelegate, MCNavigateViewDelegate {
 
     // MARK: - 직접 선택한 경우
     @objc private func onSelected(notification: NSNotification) {
@@ -199,7 +170,7 @@ extension PodoMonthCalendarView: UIScrollViewDelegate, CalendarNavigateViewDeleg
         let position = self.calendarView.contentOffset.x / self.calendarView.frame.width
         if position.isNaN { return }
         if position <= 0.0 || 2.0 <= position {
-            calendarView.move(to: MonthCalendarView.Direction(rawValue: Int(position))!)
+            calendarView.move(to: MCCalendarView.Direction(rawValue: Int(position))!)
         }
     }
 
@@ -211,12 +182,12 @@ extension PodoMonthCalendarView: UIScrollViewDelegate, CalendarNavigateViewDeleg
     }
 
     // MARK: - CalendarNavigateViewDelegate
-    func navigate(to direction: MonthCalendarView.Direction) {
+    func navigate(to direction: MCCalendarView.Direction) {
         calendarView.move(to: direction)
     }
 }
 
-extension PodoMonthCalendarView: CalendarViewDelegate {
+extension MonthCalendarView: MCCalendarViewDelegate {
 
     func calendarView(didSelectDate date: DateInRegion) {
         self.date = date.date
@@ -224,29 +195,3 @@ extension PodoMonthCalendarView: CalendarViewDelegate {
         delegate?.calendarView(self, didSelectDate: date.date)
     }
 }
-//
-//struct CalendarAppearance {
-//    static var normalWeekdayTextColor = UIColor(red: 208, green: 2, blue: 27, alpha: 1)
-//    static var normalDayTextColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-//    static var otherMonthWeekdayTextColor = UIColor(red: 208, green: 2, blue: 27, alpha: 0.5)
-//    static var otherMonthDayTextColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
-//}
-//
-//extension UIColor {
-//    static var normalWeekdayTextColor: UIColor {
-//        get { return CalendarAppearance.normalWeekdayTextColor }
-//        set { CalendarAppearance.normalWeekdayTextColor = newValue }
-//    }
-//    static var normalDayTextColor: UIColor {
-//        get { return CalendarAppearance.normalDayTextColor }
-//        set { CalendarAppearance.normalDayTextColor = newValue }
-//    }
-//    static var otherMonthWeekdayTextColor: UIColor {
-//        get { return CalendarAppearance.otherMonthWeekdayTextColor }
-//        set { CalendarAppearance.otherMonthWeekdayTextColor = newValue }
-//    }
-//    static var otherMonthDayTextColor: UIColor {
-//        get { return CalendarAppearance.otherMonthDayTextColor }
-//        set { CalendarAppearance.otherMonthDayTextColor = newValue }
-//    }
-//}

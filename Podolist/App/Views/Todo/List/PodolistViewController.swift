@@ -52,9 +52,9 @@ class PodolistViewController: BaseViewController {
 
     // MARK: - Views
 
-    private lazy var monthCalendarView: PodoMonthCalendarView = {
-        let view = PodoMonthCalendarView()
-        if let delegate = presenter as? PodoMonthCalendarViewDelegate {
+    private lazy var monthCalendarView: MonthCalendarView = {
+        let view = MonthCalendarView()
+        if let delegate = presenter as? MonthCalendarViewDelegate {
             view.delegate = delegate
         }
         return view

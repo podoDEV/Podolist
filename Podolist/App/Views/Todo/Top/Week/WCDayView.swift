@@ -1,5 +1,5 @@
 //
-//  DayView.swift
+//  WCDayView.swift
 //  Podolist
 //
 //  Copyright © 2018 podo. All rights reserved.
@@ -7,7 +7,7 @@
 
 import SwiftDate
 
-class DayView: BaseView {
+class WCDayView: BaseView {
 
     lazy var dateLabel: UILabel = {
         let label = UILabel()

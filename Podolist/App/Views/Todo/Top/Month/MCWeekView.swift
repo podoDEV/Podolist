@@ -1,5 +1,5 @@
 //
-//  WeekView.swift
+//  MCWeekView.swift
 //  Podolist
 //
 //  Copyright © 2018 podo. All rights reserved.
@@ -7,9 +7,9 @@
 
 import SwiftDate
 
-class WeekView: BaseView {
+class MCWeekView: BaseView {
 
-    var days = [DayView]()
+    var days = [MCDayView]()
     var date: DateInRegion? {
         didSet {
             updateDays()
@@ -20,7 +20,7 @@ class WeekView: BaseView {
 
     override func setup() {
         for _ in 0..<7 {
-            let day = DayView()
+            let day = MCDayView()
             day.backgroundColor = .clear
             addSubview(day)
             days.append(day)
@@ -40,6 +40,7 @@ class WeekView: BaseView {
         var date = self.date!
         for day in days {
             day.isSameMonth = (date.year == self.year && date.month == self.month)
+            day.isSunday = date == date.dateAt(.startOfWeek)
             day.date = date
             date = date.dateAt(.tomorrow)
         }

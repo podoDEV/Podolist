@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import KakaoOpenSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,12 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupAnalytics()
+        setupKakao()
         setupEntryScreen()
         setupPushNotification()
-//        setupObserver()
-//        KOSession.shared().clientSecret = SessionConstants.clientSecret;
-
-//        reloadRootViewController()
         return true
     }
 
@@ -61,6 +59,10 @@ private extension AppDelegate {
         #endif
     }
 
+    func setupKakao() {
+        KOSession.shared()?.clientSecret = AppUtils.versionName()
+    }
+
     func setupEntryScreen() {
         window = UIWindow(frame: UIScreen.main.bounds)
         let loginViewController = LoginWireFrame.createLoginModule()
@@ -79,28 +81,6 @@ private extension AppDelegate {
         }
         UIApplication.shared.registerForRemoteNotifications()
     }
-
-//    func setupObserver() {
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(kakaoSessionDidChangeWithNotification),
-//                                               name: NSNotification.Name.KOSessionDidChange,
-//                                               object: nil)
-//    }
-
-//    @objc func kakaoSessionDidChangeWithNotification() {
-//        reloadRootViewController()
-//    }
-
-//    fileprivate func reloadRootViewController() {
-//        let isOpened = KOSession.shared().isOpen()
-//        if !isOpened {
-//            let mainScreen = self.mainScreen as! UINavigationController
-//            mainScreen.popToRootViewController(animated: false)
-//        }
-//        self.window?.rootViewController = isOpened ? self.mainScreen : self.loginScreen
-//        self.window?.rootViewController = self.loginScreen
-//        self.window?.makeKeyAndVisible()
-//    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {

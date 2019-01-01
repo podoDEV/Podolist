@@ -23,7 +23,7 @@ class MainTopView: BaseView {
     let monthLabel = UILabel()
     let yearLabel = UILabel()
     let dropdownView = UIImageView()
-    let calendarView = PodoWeekCalendarView()
+    let calendarView = WeekCalendarView()
     let gradient = CAGradientLayer()
 
     var date: Date? {
@@ -125,9 +125,9 @@ class MainTopView: BaseView {
     }
 }
 
-extension MainTopView: PodoWeekCalendarViewDelegate {
+extension MainTopView: WeekCalendarViewDelegate {
 
-    func calendarView(_ calendarView: PodoWeekCalendarView, didSelectDate date: Date) {
+    func calendarView(_ calendarView: WeekCalendarView, didSelectDate date: Date) {
         self.date = date
         delegate?.didSelectDate(date: date)
     }

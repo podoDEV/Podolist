@@ -1,5 +1,5 @@
 //
-//  MonthView.swift
+//  MCMonthView.swift
 //  Podolist
 //
 //  Copyright © 2019 podo. All rights reserved.
@@ -7,9 +7,9 @@
 
 import SwiftDate
 
-class MonthView: BaseView {
+class MCMonthView: BaseView {
 
-    var weeks = [WeekView]()
+    var weeks = [MCWeekView]()
     var date: DateInRegion? {
         didSet {
             updateWeeks()
@@ -18,7 +18,7 @@ class MonthView: BaseView {
 
     override func setup() {
         for _ in 0..<6 {
-            let week = WeekView()
+            let week = MCWeekView()
             addSubview(week)
             weeks.append(week)
         }

@@ -1,5 +1,5 @@
 //
-//  WeekLabelView.swift
+//  MCWeekLabelView.swift
 //  Podolist
 //
 //  Copyright © 2018 podo. All rights reserved.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-internal class WeekLabelView: BaseView {
+class MCWeekLabelView: BaseView {
 
-    var weekLabels: [WeekLabel] = [WeekLabel(day: NSLocalizedString("SUN", comment: "Sunday")),
+    var weekLabels: [WeekLabel] = [WeekLabel(day: NSLocalizedString("SUN", comment: "Sunday"), color: .normalSunday),
                                    WeekLabel(day: NSLocalizedString("MON", comment: "Monday")),
                                    WeekLabel(day: NSLocalizedString("TUE", comment: "Tuesday")),
                                    WeekLabel(day: NSLocalizedString("WED", comment: "Wednesday")),
@@ -28,8 +28,6 @@ internal class WeekLabelView: BaseView {
         var x: CGFloat = 0
         for label in weekLabels {
             label.frame = CGRect(x: x, y: 0, width: bounds.size.width / CGFloat(weekLabels.count), height: bounds.height)
-            label.textColor = .white
-            label.font = .appFontL(size: 13)
             x = label.frame.maxX
         }
     }
@@ -44,10 +42,12 @@ internal class WeekLabelView: BaseView {
             super.init(frame: frame)
         }
 
-        init(day: String) {
+        init(day: String, color: UIColor = .white) {
             super.init(frame: .zero)
             text = day
+            textColor = color
             textAlignment = .center
+            font = .appFontL(size: 13)
         }
     }
 }
