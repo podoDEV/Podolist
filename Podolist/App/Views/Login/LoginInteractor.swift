@@ -78,23 +78,26 @@ extension LoginInteractor: LoginInteractorProtocol {
 
     func anonymousLogin() -> Completable {
         return Completable.create { completable in
-            SessionService.shared.login(provider: .anonymous(UUID().uuidString))
-                .flatMapLatest { login -> Completable in
-                    let session = login.session
-                    let responseAccount = login.responseAccount
-                    let profile = UIImage(named: "ic_profile")!
-                    let account = Account(responseAccount: responseAccount!, profile: profile)
-                    log.d(account.name)
-                    return Completable.merge(self.commonDataSource.addSession(session!)!,
-                                             self.accountDataSource.addAccount(account)!)
-                }.subscribe { observer in
-                    switch observer {
-                    case .completed:
-                        completable(.completed)
-                    case .error(let error):
-                        completable(.error(error))
-                    }
-                }.disposed(by: self.disposeBag)
+            self.getUUID { [weak self] uuid in
+                guard let `self` = self else { return }
+                SessionService.shared.login(provider: .anonymous(uuid))
+                    .flatMapLatest { login -> Completable in
+                        let session = login.session
+                        let responseAccount = login.responseAccount
+                        let profile = UIImage(named: "ic_profile")!
+                        let account = Account(responseAccount: responseAccount!, profile: profile)
+                        log.d(account.name)
+                        return Completable.merge(self.commonDataSource.addSession(session!)!,
+                                                 self.accountDataSource.addAccount(account)!)
+                    }.subscribe { observer in
+                        switch observer {
+                        case .completed:
+                            completable(.completed)
+                        case .error(let error):
+                            completable(.error(error))
+                        }
+                    }.disposed(by: self.disposeBag)
+            }
             return Disposables.create {}
         }
     }
@@ -120,6 +123,16 @@ private extension LoginInteractor {
                 return
             }
             completion(session.token.accessToken)
+        }
+    }
+
+    func getUUID(_ completion: @escaping (String) -> Void) {
+        if let uuid = UserDefaults.standard.string(forKey: "uuid") {
+            completion(uuid)
+        } else {
+            let uuid = UUID().uuidString
+            UserDefaults.standard.setValue(uuid, forKey: "uuid")
+            completion(uuid)
         }
     }
 }

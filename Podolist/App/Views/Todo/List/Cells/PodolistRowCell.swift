@@ -9,16 +9,34 @@ import UIKit
 
 class PodolistRowCell: UITableViewCell {
 
+    weak var presenter: PodolistPresenterProtocol?
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priorityView: UIView!
     @IBOutlet weak var roundView: UIView!
     @IBOutlet weak var completeImage: UIImageView!
     @IBOutlet weak var completeView: UIView!
 
-    weak var presenter: PodolistPresenterProtocol?
+    var deleteButton: UIButton!
+    var deleteImageView: UIImageView!
 
     var podo: Podo?
     var indexPath: IndexPath?
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        deleteButton = UIButton()
+        deleteButton.frame.size = CGSize(width: 14, height: 14)
+        addSubview(deleteButton)
+
+        deleteImageView = UIImageView()
+        deleteImageView.frame = CGRect(x: 1, y: 1, width: 12, height: 12)
+        deleteButton.addSubview(deleteImageView)
+    }
 
     func configureWith(_ podo: Podo, indexPath: IndexPath) {
         self.podo = podo

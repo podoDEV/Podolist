@@ -95,11 +95,6 @@ class PodolistViewController: BaseViewController {
         return view
     }()
 
-    private lazy var refreshControl: UIRefreshControl = {
-        let control = UIRefreshControl()
-        return control
-    }()
-
     private lazy var writeHidingView: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
@@ -164,6 +159,8 @@ class PodolistViewController: BaseViewController {
     }
 }
 
+// MARK: - PodolistViewProtocol
+
 extension PodolistViewController: PodolistViewProtocol {
 
     func showPodolist() {
@@ -220,7 +217,7 @@ extension PodolistViewController: PodolistViewProtocol {
     }
 
     func hideMonthCalendar() {
-        writeHidingView.isHidden = true
+        monthCalendarHidingView.isHidden = true
         UIView.animate(withDuration: 0.2) {
             self.monthCalendarView.frame.origin.y = -400 - self.safeAreaInset.top
         }
@@ -228,10 +225,12 @@ extension PodolistViewController: PodolistViewProtocol {
 
     func reloadSection(_ indexSet: IndexSet) {
         tableView.beginUpdates()
-        tableView.reloadSections(indexSet, with: .top)
+        tableView.reloadSections(indexSet, with: .automatic)
         tableView.endUpdates()
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension PodolistViewController: UITableViewDataSource {
 
@@ -260,6 +259,8 @@ extension PodolistViewController: UITableViewDataSource {
 //        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension PodolistViewController: UITableViewDelegate {
 
