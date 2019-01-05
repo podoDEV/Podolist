@@ -23,6 +23,7 @@ protocol PodolistInteractorProtocol: class {
 
     // Cell
     func updateComplete(indexPath: IndexPath, completed: Bool) -> Observable<Podo>?
+    func deletePodo(indexPath: IndexPath) -> Completable?
     func updateShowDelayedItems(show: Bool)
 
     // Writing
@@ -116,6 +117,12 @@ extension PodolistInteractor {
         let podo = podoSections[indexPath.section].rows[indexPath.row]
         podo.isCompleted = completed
         return updatePodo(id: podo.id!, podo: podo)
+    }
+
+    func deletePodo(indexPath: IndexPath) -> Completable? {
+        let id = podoSections[indexPath.section].rows[indexPath.row].id!
+        podoSections[indexPath.section].rows.remove(at: indexPath.row)
+        return deletePodo(id: id)
     }
 
     func updateShowDelayedItems(show: Bool) {

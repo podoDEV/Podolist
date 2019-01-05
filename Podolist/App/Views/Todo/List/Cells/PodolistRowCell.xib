@@ -78,7 +78,7 @@
                     <constraint firstItem="BcA-fa-j9k" firstAttribute="centerY" secondItem="2Dn-ad-Tte" secondAttribute="centerY" id="bMR-8l-YPq"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BcA-fa-j9k" secondAttribute="bottom" constant="5" id="iqr-ql-qFx"/>
                     <constraint firstItem="8a1-Im-29c" firstAttribute="centerY" secondItem="2Dn-ad-Tte" secondAttribute="centerY" id="tLs-fV-jEP"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BcA-fa-j9k" secondAttribute="trailing" constant="40" id="xyf-ZA-Q8h"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BcA-fa-j9k" secondAttribute="trailing" constant="45" id="xyf-ZA-Q8h"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

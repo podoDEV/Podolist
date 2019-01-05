@@ -19,6 +19,7 @@ protocol PodolistViewProtocol: class {
     func showPodoOnWriting(_ podo: Podo)
     func showMonthCalendar(_ date: Date)
     func reloadSection(_ indexSet: IndexSet)
+    func reloadRows(_ indexPaths: [IndexPath])
 }
 
 class PodolistViewController: BaseViewController {
@@ -226,6 +227,12 @@ extension PodolistViewController: PodolistViewProtocol {
     func reloadSection(_ indexSet: IndexSet) {
         tableView.beginUpdates()
         tableView.reloadSections(indexSet, with: .automatic)
+        tableView.endUpdates()
+    }
+
+    func reloadRows(_ indexPaths: [IndexPath]) {
+        tableView.beginUpdates()
+        tableView.deleteRows(at: indexPaths, with: .fade)
         tableView.endUpdates()
     }
 }

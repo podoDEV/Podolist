@@ -21,6 +21,7 @@ protocol PodolistPresenterProtocol: class {
 
     // Cell
     func didChangedComplete(indexPath: IndexPath, completed: Bool)
+    func didTappedDelete(indexPath: IndexPath)
     func didChangedShowDelayed(show: Bool)
 }
 
@@ -110,6 +111,17 @@ extension PodolistPresenter {
             .subscribe(
                 onNext: { podoSections in
                     self.view.showPodolist()
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func didTappedDelete(indexPath: IndexPath) {
+        interactor.deletePodo(indexPath: indexPath)!
+            .observeOn(MainScheduler.instance)
+            .subscribe(onCompleted: { [weak self] in
+                self?.view.reloadRows([indexPath])
             }, onError: { error in
                 print(error)
             })
