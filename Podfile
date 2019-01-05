@@ -16,10 +16,10 @@ def common
 
     # Logging
     pod 'CocoaLumberjack/Swift'
-    pod 'Then'
 
     # Etc
     pod 'SwiftLint'
+    pod 'Scope'
     pod 'KeychainAccess', '~> 3.1.2'
 end
 

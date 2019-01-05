@@ -6,7 +6,7 @@
 //
 
 import CocoaLumberjack
-import Then
+import Scope
 
 extension DDLogFlag {
     public var level: String {
@@ -23,7 +23,7 @@ extension DDLogFlag {
 
 private class LogFormatter: NSObject, DDLogFormatter {
 
-    static let dateFormatter = DateFormatter().then {
+    static let dateFormatter = DateFormatter().also {
         $0.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
     }
 
@@ -52,7 +52,7 @@ final class Logger {
         setenv("XcodeColors", "YES", 0)
 
         // TTY = Xcode console
-        DDTTYLogger.sharedInstance.do {
+        DDTTYLogger.sharedInstance.let {
             $0.logFormatter = LogFormatter()
             $0.colorsEnabled = false /*true*/ // Note: doesn't work in Xcode 8
             $0.setForegroundColor(DDMakeColor(30, 121, 214), backgroundColor: nil, for: .info)
@@ -61,7 +61,7 @@ final class Logger {
         }
 
         // File logger
-        DDFileLogger().do {
+        DDFileLogger().also {
             $0.rollingFrequency = TimeInterval(60 * 60 * 24)  // 24 hours
             $0.logFileManager.maximumNumberOfLogFiles = 7
             DDLog.add($0)
