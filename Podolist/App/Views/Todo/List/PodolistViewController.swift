@@ -6,7 +6,10 @@
 //
 
 import UIKit
+
 import RxSwift
+import Scope
+import SnapKit
 import SwiftDate
 
 protocol PodolistViewProtocol: class {
@@ -16,10 +19,11 @@ protocol PodolistViewProtocol: class {
     func showDefaultState()
     func showWritingExpandState()
     func showTopView(_ date: Date)
-    func showPodoOnWriting(_ podo: Podo)
+    func showPodoOnWriting(_ podo: Podo, mode: WritingMode)
     func showMonthCalendar(_ date: Date)
-    func reloadSection(_ indexSet: IndexSet)
-    func reloadRows(_ indexPaths: [IndexPath])
+    func reloadSections(_ indexSet: IndexSet, with animation: UITableView.RowAnimation)
+    func deleteRows(_ indexPaths: [IndexPath], with animation: UITableView.RowAnimation)
+    func reloadRows(_ indexPaths: [IndexPath], with animation: UITableView.RowAnimation)
 }
 
 class PodolistViewController: BaseViewController {
@@ -40,6 +44,15 @@ class PodolistViewController: BaseViewController {
                           y: view.frame.height - Style.Write.Normal.height - keyboardHeight,
                           width: view.frame.width,
                           height: Style.Write.Normal.height)
+        }
+        return normalFrame
+    }
+    private var writeFrame2: CGRect {
+        if let keyboardHeight = keyboardHeight {
+            return CGRect(x: 0,
+                          y: view.frame.height - Style.Write.Normal.height - keyboardHeight - 40,
+                          width: view.frame.width,
+                          height: 60)
         }
         return normalFrame
     }
@@ -79,7 +92,7 @@ class PodolistViewController: BaseViewController {
         view.sectionFooterHeight = 0
         view.tableFooterView = UIView()
         view.register(cell: PodolistSectionCell.self)
-        view.registerNib(cell: PodolistRowCell.self)
+        view.register(cell: PodolistRowCell.self)
         return view
     }()
 
@@ -95,6 +108,9 @@ class PodolistViewController: BaseViewController {
         view.backgroundColor = .backgroundColor1
         return view
     }()
+    private let isEditingView = UIView()
+    private let editingText = UILabel()
+    private let cancelButton = UIButton()
 
     private lazy var writeHidingView: UIView = {
         let view = UIView()
@@ -140,7 +156,27 @@ class PodolistViewController: BaseViewController {
     override func setupSubviews() {
         super.setupSubviews()
 
-        [monthCalendarView, topView, tableView, writeHidingView, writeView, monthCalendarHidingView].forEach(view.addSubview)
+        with(isEditingView) {
+            $0.alpha = 0.8
+        }
+
+        with(editingText) {
+            $0.font = .appFontM(size: 13)
+            $0.textColor = .white
+            $0.text = InterfaceString.Edit.Editing
+        }
+        with(cancelButton) {
+            $0.titleLabel?.font = .appFontM(size: 13)
+            $0.setTitleColor(.white, for: .normal)
+            $0.setTitle(InterfaceString.Edit.Cancel, for: .normal)
+            $0.titleEdgeInsets = .zero
+            $0.addTarget(self, action: #selector(didCancelEdit), for: .touchUpInside)
+        }
+
+        isEditingView.backgroundColor = .gray
+        [cancelButton, editingText].forEach(isEditingView.addSubview)
+        [monthCalendarView, topView, tableView, writeHidingView, writeView, isEditingView, monthCalendarHidingView].forEach(view.addSubview)
+        view.bringSubviewToFront(writeView)
     }
 
     override func setupConstraints() {
@@ -151,12 +187,33 @@ class PodolistViewController: BaseViewController {
         tableView.frame = CGRect(x: 0, y: topView.frame.maxY, width: view.bounds.width, height: view.bounds.height - topView.frame.height - Style.Write.Normal.height - safeAreaInset.bottom)
         writeHidingView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height + safeAreaInset.bottom)
         writeView.frame = CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom, width: view.frame.width, height: Style.Write.Normal.height + safeAreaInset.bottom)
+        isEditingView.frame = CGRect(x: 0, y: view.frame.height - Style.Write.Normal.height - safeAreaInset.bottom - 40, width: view.frame.width, height: 60)
+
+        editingText.snp.makeConstraints {
+//            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(10)
+            $0.leading.equalToSuperview().offset(15)
+//            $0.height.equalTo(14)
+//            $0.width.equalTo(40)
+        }
+
+        cancelButton.snp.makeConstraints {
+            $0.centerY.equalTo(editingText)
+//            $0.top.equalToSuperview().offset(10)
+            $0.trailing.equalToSuperview().offset(-15)
+//            $0.height.equalTo($0)
+//            $0.width.height.equalTo(14)
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         showDefaultState()
         hideMonthCalendar()
         view.bringSubviewToFront(writeView)
+    }
+
+    @objc func didCancelEdit() {
+        presenter.didCancelEdit()
     }
 }
 
@@ -177,6 +234,7 @@ extension PodolistViewController: PodolistViewProtocol {
         writeHidingView.isHidden = true
         UIView.animate(withDuration: 0.2) {
             self.writeView.frame = self.normalFrame
+            self.isEditingView.frame = CGRect(x: 0, y: self.view.frame.height - Style.Write.Normal.height - self.safeAreaInset.bottom - 40, width: self.view.frame.width, height: 60)
         }
         writeView.updateUI()
         view.endEditing(true)
@@ -186,6 +244,7 @@ extension PodolistViewController: PodolistViewProtocol {
         writeHidingView.isHidden = false
         UIView.animate(withDuration: 0.2) {
             self.writeView.frame = self.writeFrame
+            self.isEditingView.frame = self.writeFrame2
         }
     }
 
@@ -193,6 +252,7 @@ extension PodolistViewController: PodolistViewProtocol {
         writeHidingView.isHidden = false
         UIView.animate(withDuration: 0.2) {
             self.writeView.frame = self.detailWriteFrame
+            self.isEditingView.frame = CGRect(x: 0, y: self.view.frame.height - Style.Write.Detail.height - self.safeAreaInset.bottom - 40, width: self.view.frame.width, height: 60)
         }
         writeView.updateUIToDetail()
         view.endEditing(true)
@@ -202,9 +262,15 @@ extension PodolistViewController: PodolistViewProtocol {
         topView.update(date)
     }
 
-    func showPodoOnWriting(_ podo: Podo) {
-        writeView.update(podo)
+    func showPodoOnWriting(_ podo: Podo, mode: WritingMode) {
+        writeView.update(podo, mode: mode)
         view.endEditing(true)
+        switch mode {
+        case .create:
+            isEditingView.isHidden = true
+        case .edit:
+            isEditingView.isHidden = false
+        }
     }
 
     func showMonthCalendar(_ date: Date) {
@@ -224,15 +290,21 @@ extension PodolistViewController: PodolistViewProtocol {
         }
     }
 
-    func reloadSection(_ indexSet: IndexSet) {
+    func reloadSections(_ indexSet: IndexSet, with animation: UITableView.RowAnimation) {
         tableView.beginUpdates()
-        tableView.reloadSections(indexSet, with: .automatic)
+        tableView.reloadSections(indexSet, with: animation)
         tableView.endUpdates()
     }
 
-    func reloadRows(_ indexPaths: [IndexPath]) {
+    func deleteRows(_ indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
         tableView.beginUpdates()
-        tableView.deleteRows(at: indexPaths, with: .fade)
+        tableView.deleteRows(at: indexPaths, with: animation)
+        tableView.endUpdates()
+    }
+
+    func reloadRows(_ indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+        tableView.beginUpdates()
+        tableView.reloadRows(at: indexPaths, with: animation)
         tableView.endUpdates()
     }
 }
@@ -261,9 +333,8 @@ extension PodolistViewController: UITableViewDataSource {
         return cell
     }
 
-    func scrollToBottom() {
-//        let indexPath = IndexPath(row: podoGroup.count - 1, section: 0)
-//        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelect(indexPath: indexPath)
     }
 }
 

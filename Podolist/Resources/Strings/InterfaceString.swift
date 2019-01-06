@@ -19,6 +19,11 @@ struct InterfaceString {
         static let Date = NSLocalizedString("write.date", comment: "")
     }
 
+    struct Edit {
+        static let Editing = NSLocalizedString("edit.editing", comment: "")
+        static let Cancel = NSLocalizedString("edit.cancel", comment: "")
+    }
+
     struct Priority {
         static let Urgent = NSLocalizedString("priority.urgent", comment: "")
         static let High = NSLocalizedString("priority.high", comment: "")

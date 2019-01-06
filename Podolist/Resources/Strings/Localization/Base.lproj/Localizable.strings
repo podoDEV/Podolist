@@ -6,12 +6,12 @@
 //
 
 "login.kakao" = "Log in with Kakao";
-"login.anonymous" = "그냥 할래요";
-
-"podolist.title" = "title";
+"login.anonymous" = "Log in Anonymous";
 
 "write.priority" = "Priority";
 "write.date" = "Date";
+"edit.editing" = "Editing...";
+"edit.cancel" = "Cancel";
 
 "priority.urgent" = "!!!!!";
 "priority.high" = "!!!";
@@ -22,10 +22,11 @@
 "list.delayedItems" = "Delayed";
 "list.items" = "Today";
 
-"setting.help" = "Help";
-"setting.version" = "Version";
+"setting" = "Setting";
+"setting.about" = "About";
+"setting.about.version" = "Version";
+"setting.license" = "Opensource License";
 "setting.feedback" = "Feedback";
-"setting.inquiry" = "Inquiry";
 "setting.logout" = "Logout";
 
 "common.podolist" = "Podolist";
@@ -47,10 +48,10 @@
 "error.email.title" = "Couldn't Send Email";
 "error.email.body" = "Your device couldn't send e-mail.\nPlease check e-mail configuration and try again.";
 
-"SUN" = "SUN";
-"MON" = "MON";
-"TUE" = "TUE";
-"WED" = "WED";
-"THU" = "THU";
-"FRI" = "FRI";
-"SAT" = "SAT";
+"SUN" = "sun";
+"MON" = "mon";
+"TUE" = "tue";
+"WED" = "wed";
+"THU" = "thu";
+"FRI" = "fri";
+"SAT" = "sat";

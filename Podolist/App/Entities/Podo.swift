@@ -49,4 +49,15 @@ class Podo {
             priority: responsePodo.priority
         )
     }
+
+    func copy() -> Podo {
+        return Podo(id: self.id!,
+                        title: self.title!,
+                        isCompleted: self.isCompleted,
+                        startedAt: self.startedAt,
+                        endedAt: self.endedAt,
+                        dueAt: self.dueAt,
+                        updatedAt: self.updatedAt!,
+                        priority: self.priority)
+    }
 }

@@ -27,8 +27,8 @@ class PodoWriteCalendarView: BaseView {
         }
     }
 
-    func update() {
-//        calendarView.
+    func update(_ date: Date) {
+        calendarView.update(date)
     }
 }
 
