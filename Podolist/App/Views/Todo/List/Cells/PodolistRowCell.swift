@@ -76,21 +76,15 @@ private extension PodolistRowCell {
             titleContainerView.addSubview($0)
         }
         editImageView = UIButton().also {
-//            $0.image = UIImage(named: "ic_edit")
             $0.setImage(UIImage(named: "ic_edit"), for: .normal)
             $0.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
             $0.addTarget(self, action: #selector(didTappedEdit), for: .touchUpInside)
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedEdit))
-//            $0.addGestureRecognizer(tap)
             titleContainerView.addSubview($0)
         }
         deleteImageView = UIButton().also {
             $0.setImage(UIImage(named: "ic_delete"), for: .normal)
             $0.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
-//            $0.image = UIImage(named: "ic_delete")
             $0.addTarget(self, action: #selector(didTappedDelete), for: .touchUpInside)
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedDelete))
-//            $0.addGestureRecognizer(tap)
             titleContainerView.addSubview($0)
         }
     }

@@ -12,7 +12,7 @@ protocol PodolistPresenterProtocol: class {
     // View -> Presenter
     func viewDidLoad()
     func reloadData()
-    func didCancelEdit()
+    func didTouched()
 
     // Podolist
     func numberOfSections() -> Int
@@ -74,10 +74,13 @@ extension PodolistPresenter {
             .disposed(by: disposeBag)
     }
 
-    func didCancelEdit() {
-        interactor.resetPodoOnWriting()
-        view.showPodoOnWriting(interactor.fetchPodoOnWriting(), mode: .create)
+    func didTouched() {
+        if interactor.writingMode == .edit {
+            interactor.resetPodoOnWriting()
+            view.showPodoOnWriting(interactor.fetchPodoOnWriting(), mode: .create)
+        }
         view.showDefaultState()
+        view.hideMonthCalendar()
     }
 }
 
@@ -135,7 +138,7 @@ extension PodolistPresenter {
 
     func didTappedEdit(_ podo: Podo, indexPath: IndexPath) {
         interactor.updatePodoOnWriting(podo)
-        view.showPodoOnWriting(podo, mode: .edit)
+        view.showPodoOnWriting(podo, mode: interactor.writingMode)
         view.showWritingExpandState()
     }
 
