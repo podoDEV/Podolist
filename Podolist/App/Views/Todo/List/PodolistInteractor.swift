@@ -11,6 +11,7 @@ protocol PodolistInteractorProtocol: class {
 
     // Presenter -> Interactor
     var podoSections: [PodoSection] { get }
+    var writingMode: WritingMode { get }
     var selectedDate: Date { get }
     var selectedIndexPath: IndexPath? { get }
     var needUpdateIndexPaths: [IndexPath] { get }
@@ -51,6 +52,7 @@ class PodolistInteractor: PodolistInteractorProtocol {
     private var showDelayedItems = true
     private var podo = Podo()
     var podoSections = [PodoSection]()
+    var writingMode: WritingMode = .create
     var selectedDate = Date()
     var selectedIndexPath: IndexPath?
     var needUpdateIndexPaths: [IndexPath] = []
@@ -188,10 +190,12 @@ extension PodolistInteractor {
     }
 
     func updatePodoOnWriting(_ podo: Podo) {
+        self.writingMode = .edit
         self.podo = podo.copy()
     }
 
     func resetPodoOnWriting() {
+        self.writingMode = .create
         self.podo = Podo()
     }
 }
