@@ -25,7 +25,7 @@ end
 
 def ui
     pod 'SnapKit'
-    pod 'PodoCalendar', '~> 0.2.6'
+    pod 'PodoCalendar', '~> 0.2.7'
 end
 
 def analytics

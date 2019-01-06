@@ -35,23 +35,31 @@ class PodoWriteTitleView: BaseView {
                 UIView.animate(withDuration: 0.1) {
                     self.createButton.isEnabled = true
                     self.createButton.backgroundColor = .appColor1
-                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+//                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
                 }
             } else {
                 UIView.animate(withDuration: 0.1) {
                     self.createButton.isEnabled = false
                     self.createButton.backgroundColor = .grayE
-                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+//                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
                 }
             }
         }
     }
+    var mode: WritingMode?
 
-    func update(_ title: String?) {
+    func update(_ title: String?, mode: WritingMode) {
         // detailButton init
         let text = title ?? ""
         titleField.text = text
         canCreate = !text.isEmpty
+        self.mode = mode
+        switch mode {
+        case .create:
+            self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+        case .edit:
+            self.createButton.setImage(UIImage(named: "ic_edit"), for: .normal)
+        }
     }
 }
 
@@ -69,6 +77,10 @@ extension PodoWriteTitleView {
     }
 
     @IBAction func createAction(_ sender: Any) {
-        delegate?.didTappedCreate()
+        if self.mode == .edit {
+            delegate?.didTappedEdit()
+        } else {
+            delegate?.didTappedCreate()
+        }
     }
 }

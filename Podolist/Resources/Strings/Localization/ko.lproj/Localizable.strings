@@ -10,6 +10,8 @@
 
 "write.priority" = "중요도 설정";
 "write.date" = "날짜";
+"edit.editing" = "편집중...";
+"edit.cancel" = "편집취소";
 
 "priority.urgent" = "!!!!!";
 "priority.high" = "!!!";

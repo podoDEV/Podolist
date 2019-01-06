@@ -1331,7 +1331,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1358,7 +1358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AC7AAE7DFDC5104B7626A9F5 /* [CP] Check Pods Manifest.lock */ = {
@@ -1385,7 +1385,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Podolist/Pods-Podolist-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Podolist/Pods-Podolist-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1414,7 +1414,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Podolist/Pods-Podolist-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Podolist/Pods-Podolist-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBCBB3C74B6510DCEC43A7B8 /* [CP] Embed Pods Frameworks */ = {
@@ -1423,7 +1423,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PodolistTest/Pods-PodolistTest-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PodolistTest/Pods-PodolistTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1452,7 +1452,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PodolistTest/Pods-PodolistTest-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PodolistTest/Pods-PodolistTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD4C4A315FBE02A1169A5BC0 /* [CP] Embed Pods Frameworks */ = {
@@ -1461,7 +1461,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PodolistTests/Pods-PodolistTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1488,7 +1488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PodolistTests/Pods-PodolistTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

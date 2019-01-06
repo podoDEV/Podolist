@@ -12,15 +12,18 @@ protocol PodolistPresenterProtocol: class {
     // View -> Presenter
     func viewDidLoad()
     func reloadData()
+    func didCancelEdit()
 
     // Podolist
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
     func configureSection(_ cell: PodolistSectionCell, forSectionAt section: Int)
     func configureRow(_ cell: PodolistRowCell, forRowAt indexPath: IndexPath)
+    func didSelect(indexPath: IndexPath)
 
     // Cell
     func didChangedComplete(indexPath: IndexPath, completed: Bool)
+    func didTappedEdit(_ podo: Podo, indexPath: IndexPath)
     func didTappedDelete(indexPath: IndexPath)
     func didChangedShowDelayed(show: Bool)
 }
@@ -55,7 +58,7 @@ extension PodolistPresenter {
     func viewDidLoad() {
         view.showDefaultState()
         view.showProfile(interactor.fetchAccount())
-        view.showPodoOnWriting(interactor.fetchPodoOnWriting())
+        view.showPodoOnWriting(interactor.fetchPodoOnWriting(), mode: .create)
         reloadData()
     }
 
@@ -69,6 +72,12 @@ extension PodolistPresenter {
                 print(error)
             })
             .disposed(by: disposeBag)
+    }
+
+    func didCancelEdit() {
+        interactor.resetPodoOnWriting()
+        view.showPodoOnWriting(interactor.fetchPodoOnWriting(), mode: .create)
+        view.showDefaultState()
     }
 }
 
@@ -93,8 +102,15 @@ extension PodolistPresenter {
 
     func configureRow(_ cell: PodolistRowCell, forRowAt indexPath: IndexPath) {
         let podo = interactor.podoSections[indexPath.section].rows[indexPath.row]
-        cell.configureWith(podo, indexPath: indexPath)
+        let isSelected = interactor.selectedIndexPath == indexPath
+        cell.configureWith(podo, indexPath: indexPath, isSelected: isSelected)
+        cell.selectionStyle = .none
         cell.presenter = self
+    }
+
+    func didSelect(indexPath: IndexPath) {
+        interactor.updateSelectedIndexPath(indexPath: indexPath)
+        view.reloadRows(interactor.needUpdateIndexPaths, with: .automatic)
     }
 }
 
@@ -117,11 +133,18 @@ extension PodolistPresenter {
             .disposed(by: disposeBag)
     }
 
+    func didTappedEdit(_ podo: Podo, indexPath: IndexPath) {
+        interactor.updatePodoOnWriting(podo)
+        view.showPodoOnWriting(podo, mode: .edit)
+        view.showWritingExpandState()
+    }
+
     func didTappedDelete(indexPath: IndexPath) {
         interactor.deletePodo(indexPath: indexPath)!
             .observeOn(MainScheduler.instance)
             .subscribe(onCompleted: { [weak self] in
-                self?.view.reloadRows([indexPath])
+                self?.view.deleteRows([indexPath], with: .fade)
+                self?.view.reloadSections([0], with: .automatic)
             }, onError: { error in
                 print(error)
             })
@@ -130,7 +153,7 @@ extension PodolistPresenter {
 
     func didChangedShowDelayed(show: Bool) {
         interactor.updateShowDelayedItems(show: show)
-        view.reloadSection([0])
+        view.reloadSections([0], with: .automatic)
     }
 }
 
@@ -190,10 +213,31 @@ extension PodolistPresenter: WriteViewDelegate {
             }
             .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: { podoSections in
+                onNext: { _ in
                     self.view.showPodolist()
                     self.interactor.resetPodoOnWriting()
-                    self.view.showPodoOnWriting(self.interactor.fetchPodoOnWriting())
+                    self.view.showPodoOnWriting(self.interactor.fetchPodoOnWriting(), mode: .create)
+                    self.view.showDefaultState()
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func didTappedEdit() {
+        interactor.editPodo()!
+            .do {
+                self.view.reloadRows(self.interactor.needUpdateIndexPaths, with: .automatic)
+            }
+            .flatMap { _ in
+                self.interactor.fetchPodolist()!
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { _ in
+                    self.view.showPodolist()
+                    self.interactor.resetPodoOnWriting()
+                    self.view.showPodoOnWriting(self.interactor.fetchPodoOnWriting(), mode: .create)
                     self.view.showDefaultState()
             }, onError: { error in
                 print(error)

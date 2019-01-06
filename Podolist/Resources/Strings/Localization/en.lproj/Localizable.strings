@@ -6,10 +6,12 @@
 //
 
 "login.kakao" = "Log in with Kakao";
-"login.anonymous" = "그냥 할래요";
+"login.anonymous" = "Log in Anonymous";
 
 "write.priority" = "Priority";
 "write.date" = "Date";
+"edit.editing" = "Editing...";
+"edit.cancel" = "Cancel";
 
 "priority.urgent" = "!!!!!";
 "priority.high" = "!!!";

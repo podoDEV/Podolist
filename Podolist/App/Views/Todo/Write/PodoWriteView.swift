@@ -13,6 +13,7 @@ protocol WriteViewDelegate: class {
     func didChangedDate(date: Date)
     func didTappedDetail()
     func didTappedCreate()
+    func didTappedEdit()
 }
 
 class PodoWriteView: BaseView {
@@ -56,10 +57,10 @@ class PodoWriteView: BaseView {
         calendarView.isHidden = false
     }
 
-    func update(_ podo: Podo) {
-        titleView.update(podo.title)
+    func update(_ podo: Podo, mode: WritingMode) {
+        titleView.update(podo.title, mode: mode)
         priorityView.update(podo.priority)
-        calendarView.update()
+        calendarView.update(podo.dueAt)
     }
 
     override func resignFirstResponder() -> Bool {
@@ -67,4 +68,9 @@ class PodoWriteView: BaseView {
         titleView.titleField.resignFirstResponder()
         return true
     }
+}
+
+enum WritingMode {
+    case create
+    case edit
 }

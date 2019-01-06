@@ -12,6 +12,10 @@ protocol PodolistInteractorProtocol: class {
     // Presenter -> Interactor
     var podoSections: [PodoSection] { get }
     var selectedDate: Date { get }
+    var selectedIndexPath: IndexPath? { get }
+    var needUpdateIndexPaths: [IndexPath] { get }
+
+    // CRUD
     func fetchPodolist() -> Observable<[PodoSection]>?
     func createPodo() -> Observable<Podo>?
     func updatePodo(id: Int, podo: Podo) -> Observable<Podo>?
@@ -23,8 +27,10 @@ protocol PodolistInteractorProtocol: class {
 
     // Cell
     func updateComplete(indexPath: IndexPath, completed: Bool) -> Observable<Podo>?
+    func editPodo() -> Observable<Podo>?
     func deletePodo(indexPath: IndexPath) -> Completable?
     func updateShowDelayedItems(show: Bool)
+    func updateSelectedIndexPath(indexPath: IndexPath)
 
     // Writing
     func fetchPodoOnWriting() -> Podo
@@ -43,9 +49,11 @@ class PodolistInteractor: PodolistInteractorProtocol {
     private var accountDataSource: AccountDataSource
 
     private var showDelayedItems = true
-    var selectedDate = Date()
     private var podo = Podo()
     var podoSections = [PodoSection]()
+    var selectedDate = Date()
+    var selectedIndexPath: IndexPath?
+    var needUpdateIndexPaths: [IndexPath] = []
 
     init(
         podoDataSource: PodoDataSource,
@@ -119,9 +127,18 @@ extension PodolistInteractor {
         return updatePodo(id: podo.id!, podo: podo)
     }
 
+    func editPodo() -> Observable<Podo>? {
+        if let selectedIndexPath = self.selectedIndexPath {
+            self.needUpdateIndexPaths = [selectedIndexPath]
+            self.selectedIndexPath = nil
+        }
+        return updatePodo(id: podo.id!, podo: podo)
+    }
+
     func deletePodo(indexPath: IndexPath) -> Completable? {
         let id = podoSections[indexPath.section].rows[indexPath.row].id!
         podoSections[indexPath.section].rows.remove(at: indexPath.row)
+        selectedIndexPath = nil
         return deletePodo(id: id)
     }
 
@@ -130,6 +147,21 @@ extension PodolistInteractor {
             section.visible = show
         }
         self.showDelayedItems = show
+    }
+
+    func updateSelectedIndexPath(indexPath selectedIndexPath: IndexPath) {
+        if let prev = self.selectedIndexPath {
+            if prev == selectedIndexPath {
+                self.selectedIndexPath = nil
+                self.needUpdateIndexPaths = [selectedIndexPath]
+            } else {
+                self.selectedIndexPath = selectedIndexPath
+                self.needUpdateIndexPaths = [prev, selectedIndexPath]
+            }
+        } else {
+            self.selectedIndexPath = selectedIndexPath
+            self.needUpdateIndexPaths = [selectedIndexPath]
+        }
     }
 }
 
@@ -156,7 +188,7 @@ extension PodolistInteractor {
     }
 
     func updatePodoOnWriting(_ podo: Podo) {
-        self.podo = podo
+        self.podo = podo.copy()
     }
 
     func resetPodoOnWriting() {
