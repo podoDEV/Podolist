@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUZ-go-KAP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© PODO." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN2-AW-1fu">
+                            <rect key="frame" x="158" y="728.66666666666663" width="59.333333333333343" height="19.333333333333371"/>
+                            <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="J8I-Dx-Etc">
+                            <rect key="frame" x="144.66666666666666" y="359" width="86" height="94"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="94" id="VNV-3W-fVl"/>
+                                <constraint firstAttribute="width" constant="86" id="mRX-ET-3Im"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="J8I-Dx-Etc" firstAttribute="centerY" secondItem="OUZ-go-KAP" secondAttribute="centerY" id="GMi-Ar-qKn"/>
+                        <constraint firstItem="TN2-AW-1fu" firstAttribute="centerX" secondItem="OUZ-go-KAP" secondAttribute="centerX" id="aiT-Zx-bE7"/>
+                        <constraint firstAttribute="bottom" secondItem="TN2-AW-1fu" secondAttribute="bottom" constant="64" id="fHO-9e-GVx"/>
+                        <constraint firstItem="J8I-Dx-Etc" firstAttribute="centerX" secondItem="OUZ-go-KAP" secondAttribute="centerX" id="mhl-lE-JDk"/>
+                        <constraint firstItem="TN2-AW-1fu" firstAttribute="centerX" secondItem="OUZ-go-KAP" secondAttribute="centerX" id="nuC-d8-VhT"/>
+                        <constraint firstAttribute="bottom" secondItem="TN2-AW-1fu" secondAttribute="bottom" constant="64" id="wDr-CS-ZVn"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="2ub-21-qr1"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OUZ-go-KAP" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="5qw-e2-lxp"/>
+                <constraint firstItem="OUZ-go-KAP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XQ1-I9-fWk"/>
+                <constraint firstItem="OUZ-go-KAP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cbD-NH-fkN"/>
+                <constraint firstAttribute="bottom" secondItem="OUZ-go-KAP" secondAttribute="bottom" id="scW-rL-UxS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="140" y="153.69458128078819"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_logo" width="86" height="94"/>
+    </resources>
+</document>

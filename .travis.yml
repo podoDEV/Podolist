@@ -1,0 +1,19 @@
+language: objective-c
+osx_image: xcode9.3
+branches:
+  only:
+    - develop
+    - master
+env:
+  - DESTINATION="OS=11.3,name=iPhone 8" SCHEME="Podolist_REAL" SDK=iphonesimulator
+before_install:
+  - rvm install ruby-2.2.2
+  - sudo gem install cocoapods -v '1.5.3'
+  - gem install xcpretty -N
+  - brew update
+  - brew install swiftlint || true
+  - pod install --repo-update
+script:
+  - set -o pipefail
+  - travis_retry xcodebuild -workspace Podolist.xcworkspace -scheme "$SCHEME" -sdk "$SDK" ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - swiftlint
