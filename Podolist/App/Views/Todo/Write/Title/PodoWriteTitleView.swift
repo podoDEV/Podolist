@@ -49,7 +49,7 @@ class PodoWriteTitleView: BaseView {
     var mode: WritingMode?
 
     func update(_ title: String?, mode: WritingMode) {
-        // detailButton init
+        createButton.isEnabled = true
         let text = title ?? ""
         titleField.text = text
         canCreate = !text.isEmpty
@@ -76,7 +76,8 @@ extension PodoWriteTitleView {
         delegate?.didTappedDetail()
     }
 
-    @IBAction func createAction(_ sender: Any) {
+    @IBAction func createAction(_ sender: UIButton) {
+        sender.isEnabled = false
         if self.mode == .edit {
             delegate?.didTappedEdit()
         } else {

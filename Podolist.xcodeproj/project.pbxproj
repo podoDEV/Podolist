@@ -48,8 +48,6 @@
 		2D198D4821A6893700287923 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4621A6893600287923 /* license.txt */; };
 		2D198D4A21A6C8AF00287923 /* intro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4921A6C8AF00287923 /* intro.txt */; };
 		2D198D4B21A6C8AF00287923 /* intro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4921A6C8AF00287923 /* intro.txt */; };
-		2D1C5F882164DCED00EC79A2 /* PodolistRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */; };
-		2D1C5F892164DCED00EC79A2 /* PodolistRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */; };
 		2D1C5F8B2164E78400EC79A2 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */; };
 		2D1C5F8C2164E78400EC79A2 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */; };
 		2D1E9A0B21B261FC00F79E6C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0A21B261FC00F79E6C /* Session.swift */; };
@@ -320,7 +318,6 @@
 		2D16F19F21A9C8C100647779 /* AppWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWireframe.swift; sourceTree = "<group>"; };
 		2D198D4621A6893600287923 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		2D198D4921A6C8AF00287923 /* intro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = intro.txt; sourceTree = "<group>"; };
-		2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodolistRowCell.xib; sourceTree = "<group>"; };
 		2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		2D1E9A0A21B261FC00F79E6C /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D1E9A0D21B2621D00F79E6C /* MetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
@@ -779,7 +776,6 @@
 			children = (
 				2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */,
 				2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */,
-				2D1C5F872164DCED00EC79A2 /* PodolistRowCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1203,7 +1199,6 @@
 				2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */,
 				2D31DE982168F40E00977507 /* NotoSans-Light.ttf in Resources */,
 				2D0F20612143984A00B8BDF2 /* Localizable.strings in Resources */,
-				2D1C5F882164DCED00EC79A2 /* PodolistRowCell.xib in Resources */,
 				2D5599A6216512FE00FFA64A /* PodoWriteCalendarView.xib in Resources */,
 				2D198D4721A6893700287923 /* license.txt in Resources */,
 				2D31DE9A2168F40E00977507 /* NotoSans-Bold.ttf in Resources */,
@@ -1237,7 +1232,6 @@
 				2D9548EF215D1E74006C51E1 /* Images.xcassets in Resources */,
 				2D31DE992168F40E00977507 /* NotoSans-Light.ttf in Resources */,
 				2D9548F1215D1E74006C51E1 /* Localizable.strings in Resources */,
-				2D1C5F892164DCED00EC79A2 /* PodolistRowCell.xib in Resources */,
 				2D5599A7216512FE00FFA64A /* PodoWriteCalendarView.xib in Resources */,
 				2D198D4821A6893700287923 /* license.txt in Resources */,
 				2D31DE9B2168F40E00977507 /* NotoSans-Bold.ttf in Resources */,
