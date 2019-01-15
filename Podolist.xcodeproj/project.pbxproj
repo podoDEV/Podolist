@@ -56,6 +56,8 @@
 		2D1E9A0C21B261FC00F79E6C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0A21B261FC00F79E6C /* Session.swift */; };
 		2D1E9A0E21B2621D00F79E6C /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0D21B2621D00F79E6C /* MetaData.swift */; };
 		2D1E9A0F21B2621D00F79E6C /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0D21B2621D00F79E6C /* MetaData.swift */; };
+		2D246CDB21E782E00087AB62 /* GADefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D246CDA21E782E00087AB62 /* GADefine.swift */; };
+		2D246CDC21E782E00087AB62 /* GADefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D246CDA21E782E00087AB62 /* GADefine.swift */; };
 		2D2E08B7218476CA00DEF92A /* WCCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEEB216A68DE00977507 /* WCCalendarView.swift */; };
 		2D2E08B8218476E400DEF92A /* WCCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEEB216A68DE00977507 /* WCCalendarView.swift */; };
 		2D2E08BA21847B1000DEF92A /* WCWeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08B921847B1000DEF92A /* WCWeekLabelView.swift */; };
@@ -322,6 +324,7 @@
 		2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		2D1E9A0A21B261FC00F79E6C /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D1E9A0D21B2621D00F79E6C /* MetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
+		2D246CDA21E782E00087AB62 /* GADefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADefine.swift; sourceTree = "<group>"; };
 		2D2E08B921847B1000DEF92A /* WCWeekLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCWeekLabelView.swift; sourceTree = "<group>"; };
 		2D2E08BC2184C9A100DEF92A /* CalendarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUtils.swift; sourceTree = "<group>"; };
 		2D31DE902168F3CD00977507 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -556,6 +559,7 @@
 			children = (
 				2D0F20382143984A00B8BDF2 /* Localization */,
 				2D0F20412143984A00B8BDF2 /* InterfaceString.swift */,
+				2D246CDA21E782E00087AB62 /* GADefine.swift */,
 				2D198D4921A6C8AF00287923 /* intro.txt */,
 				2D198D4621A6893600287923 /* license.txt */,
 			);
@@ -1551,6 +1555,7 @@
 				2D55999A2165115100FFA64A /* BaseView.swift in Sources */,
 				2D2E08BD2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
 				2DAE949E21D753AD00A4DFDC /* PodoSection.swift in Sources */,
+				2D246CDB21E782E00087AB62 /* GADefine.swift in Sources */,
 				2D16F19D21A91B7000647779 /* LoginButton.swift in Sources */,
 				2DAE94A721D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */,
 				2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */,
@@ -1676,6 +1681,7 @@
 				2D55999B2165115100FFA64A /* BaseView.swift in Sources */,
 				2D2E08BE2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
 				2DAE949F21D753AD00A4DFDC /* PodoSection.swift in Sources */,
+				2D246CDC21E782E00087AB62 /* GADefine.swift in Sources */,
 				2D16F19E21A91B7000647779 /* LoginButton.swift in Sources */,
 				2DAE94A821D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */,
 				2D9548BF215D1E74006C51E1 /* AppUtils.swift in Sources */,

@@ -137,12 +137,14 @@ extension PodolistPresenter {
     }
 
     func didTappedEdit(_ podo: Podo, indexPath: IndexPath) {
+        gaEvent(GADefine.Podo, action: GADefine.edit)
         interactor.updatePodoOnWriting(podo)
         view.showPodoOnWriting(podo, mode: interactor.writingMode)
         view.showWritingExpandState()
     }
 
     func didTappedDelete(indexPath: IndexPath) {
+        gaEvent(GADefine.Podo, action: GADefine.delete)
         interactor.deletePodo(indexPath: indexPath)!
             .observeOn(MainScheduler.instance)
             .subscribe(onCompleted: { [weak self] in
@@ -211,6 +213,9 @@ extension PodolistPresenter: WriteViewDelegate {
 
     func didTappedCreate() {
         interactor.createPodo()!
+            .do {
+                gaEvent(GADefine.Podo, action: GADefine.create)
+            }
             .flatMap { _ in
                 self.interactor.fetchPodolist()!
             }
@@ -230,6 +235,7 @@ extension PodolistPresenter: WriteViewDelegate {
     func didTappedEdit() {
         interactor.editPodo()!
             .do {
+                gaEvent(GADefine.Podo, action: GADefine.editDone)
                 self.view.reloadRows(self.interactor.needUpdateIndexPaths, with: .automatic)
             }
             .flatMap { _ in

@@ -32,6 +32,7 @@ class SettingInteractor: SettingInteractorProtocol {
 
     func removeSession() -> Completable? {
         return SessionService.shared.logout()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
 //            .flatMap { (self.accountDataSource?.addAccount($0))!.asObservable() }
 //            .asCompletable()
     }
