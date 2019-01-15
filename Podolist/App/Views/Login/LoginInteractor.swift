@@ -60,7 +60,7 @@ extension LoginInteractor: LoginInteractorProtocol {
                             profile = UIImage(named: "ic_profile")!
                         }
                         let account = Account(responseAccount: responseAccount!, profile: profile)
-                        log.d(account.name)
+                        gaEvent(GADefine.Session, action: GADefine.kakaoLogin)
                         return Completable.merge(self.commonDataSource.addSession(session!)!,
                                                  self.accountDataSource.addAccount(account)!)
                     }.subscribe { observer in
@@ -86,7 +86,7 @@ extension LoginInteractor: LoginInteractorProtocol {
                         let responseAccount = login.responseAccount
                         let profile = UIImage(named: "ic_profile")!
                         let account = Account(responseAccount: responseAccount!, profile: profile)
-                        log.d(account.name)
+                        gaEvent(GADefine.Session, action: GADefine.anonymousLogin)
                         return Completable.merge(self.commonDataSource.addSession(session!)!,
                                                  self.accountDataSource.addAccount(account)!)
                     }.subscribe { observer in

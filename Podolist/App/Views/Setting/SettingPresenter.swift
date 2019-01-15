@@ -70,6 +70,7 @@ extension SettingPresenter: SettingPresenterProtocol {
             wireFrame.navigate(to: .action(title: nil,
                                            message: nil,
                                            actionTitle: InterfaceString.Setting.Logout) { _ in
+                                            gaEvent(GADefine.Session, action: GADefine.logout)
                                             self.logout()
                 })
         }
@@ -86,10 +87,10 @@ private extension SettingPresenter {
         KOSession.shared().logoutAndClose { _, _ in}
         interactor?.removeSession()!
             .observeOn(MainScheduler.instance)
-            .subscribe { completable in
+            .subscribe { [weak self] completable in
                 switch completable {
                 case .completed:
-                    self.wireFrame.navigate(to: .logout)
+                    self?.wireFrame.navigate(to: .logout)
                 case .error:
                     log.d("Invalid Session")
                 }

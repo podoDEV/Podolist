@@ -121,6 +121,7 @@ class MainTopView: BaseView {
     }
 
     @objc func didTappedMonthCalendar() {
+        gaEvent(GADefine.Calendar, action: GADefine.monthCalendar)
         delegate?.didTappedMonthCalendar()
     }
 }
