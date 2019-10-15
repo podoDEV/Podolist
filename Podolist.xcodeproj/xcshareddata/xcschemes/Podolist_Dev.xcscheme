@@ -9,26 +9,24 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D95489A215D1E74006C51E1"
-               BuildableName = "PodolistTest.app"
-               BlueprintName = "PodolistTest"
+               BlueprintIdentifier = "2D0F1FF62143934100B8BDF2"
+               BuildableName = "Podolist.app"
+               BlueprintName = "Podolist"
                ReferencedContainer = "container:Podolist.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug(DEV)"
+      buildConfiguration = "Debug(Dev)"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -38,11 +36,11 @@
             ReferencedContainer = "container:Podolist.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug(DEV)"
+      buildConfiguration = "Debug(Dev)"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -51,31 +49,19 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D95489A215D1E74006C51E1"
-            BuildableName = "PodolistTest.app"
-            BlueprintName = "PodolistTest"
-            ReferencedContainer = "container:Podolist.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release(DEV)"
+      buildConfiguration = "Release(Dev)"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug(DEV)">
+      buildConfiguration = "Debug(Dev)">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release(DEV)"
+      buildConfiguration = "Release(Dev)"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
