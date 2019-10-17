@@ -5,8 +5,6 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-import SwiftyJSON
-
 class Account: NSObject, NSCoding {
     var name: String
     var profile: UIImage

@@ -44,7 +44,7 @@ struct RequestPodo {
         )
     }
 
-    var asDicsionary: [String: Any] {
+    var asDictionary: [String: Any] {
         return ["title": title,
                 "isCompleted": isCompleted,
                 "startedAt": startedAt.timeIntervalSince1970,

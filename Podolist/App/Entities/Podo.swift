@@ -5,7 +5,7 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-class Podo {
+class Podo: Codable {
     var id: Int?
     var title: String?
     var isCompleted = false
