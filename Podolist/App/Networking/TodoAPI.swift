@@ -11,8 +11,8 @@ import Moya
 
 enum TodoAPI {
     case getTodos(page: Int, date: Date)
-    case newTodo(podo: Podo)
-    case editTodo(id: Int, podo: Podo)
+    case postTodo(podo: Podo)
+    case updateTodo(id: Int, podo: Podo)
     case deleteTodo(id: Int)
 }
 
@@ -24,17 +24,17 @@ extension TodoAPI: TargetType {
     var path: String {
         switch self {
         case .getTodos: return "items"
-        case .newTodo: return "items"
-        case .editTodo(let id, _): return "items/\(id)"
+        case .postTodo: return "items"
+        case .updateTodo(let id, _): return "items/\(id)"
         case .deleteTodo(let id): return "items/\(id)"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .newTodo:
+        case .postTodo:
             return .post
-        case .editTodo:
+        case .updateTodo:
             return .put
         case .deleteTodo:
             return .delete
@@ -53,8 +53,11 @@ extension TodoAPI: TargetType {
                 urlParameters: ["date": dateParam,
                                 "page": page]
             )
-        case .newTodo(let podo):
-            return .requestParameters()
+        case .postTodo(let podo):
+            return .requestParameters(
+                parameters: podo.asParameters,
+                encoding: JSONEncoding.default
+            )
         default:
             return .requestPlain
         }

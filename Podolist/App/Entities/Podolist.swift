@@ -2,10 +2,11 @@
 //  Podolist.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/18.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
-struct Podolist {
-    var delayedItems: [Podo]
-    var items: [Podo]
+class Podolist: Codable {
+    var delayedItems: [Podo]?
+    var items: [Podo]?
 }

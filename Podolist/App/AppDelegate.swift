@@ -2,7 +2,8 @@
 //  AppDelegate.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/18.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         setupAnalytics()
         setupKakao()
         setupEntryScreen()
@@ -22,24 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-
-    }
-
     func applicationDidEnterBackground(_ application: UIApplication) {
         KOSession.handleDidEnterBackground()
     }
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-
-    }
-
     func applicationDidBecomeActive(_ application: UIApplication) {
         KOSession.handleDidBecomeActive()
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-
     }
 }
 
@@ -88,21 +80,19 @@ private extension AppDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("The notification \"\(notification.request.identifier)\" is presenting. \"\(notification.request.content.body)\"")
+        log.i("The notification \"\(notification.request.identifier)\" is presenting. \"\(notification.request.content.body)\"")
         completionHandler([.alert, .badge, .sound])
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("The user responded to the notification \"\(response.notification.request.identifier)\" at \"\(response.notification.date.description(with: .current))\".")
+        log.i("The user responded to the notification \"\(response.notification.request.identifier)\" at \"\(response.notification.date.description(with: .current))\".")
         UIApplication.shared.applicationIconBadgeNumber = 0
         completionHandler()
     }
 }
 
 extension AppDelegate /* For kakao */{
-
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         if KOSession.isKakaoAccountLoginCallback(url) {
             return KOSession.handleOpen(url)

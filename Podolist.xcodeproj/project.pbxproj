@@ -21,9 +21,6 @@
 		2D0F209E2144181F00B8BDF2 /* PodolistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */; };
 		2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */; };
 		2D0F20A42144196400B8BDF2 /* Podo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A32144196400B8BDF2 /* Podo.swift */; };
-		2D0F20A6214419C800B8BDF2 /* RequestPodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A5214419C800B8BDF2 /* RequestPodo.swift */; };
-		2D0F20A8214419DE00B8BDF2 /* ResponsePodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A7214419DE00B8BDF2 /* ResponsePodo.swift */; };
-		2D0F20B121441C6800B8BDF2 /* PodoRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20B021441C6800B8BDF2 /* PodoRemoteRepository.swift */; };
 		2D0F20BD214432E800B8BDF2 /* PodolistRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */; };
 		2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */; };
 		2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */; };
@@ -36,8 +33,6 @@
 		2D198D4721A6893700287923 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4621A6893600287923 /* license.txt */; };
 		2D198D4A21A6C8AF00287923 /* intro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4921A6C8AF00287923 /* intro.txt */; };
 		2D1C5F8B2164E78400EC79A2 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */; };
-		2D1E9A0B21B261FC00F79E6C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0A21B261FC00F79E6C /* Session.swift */; };
-		2D1E9A0E21B2621D00F79E6C /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E9A0D21B2621D00F79E6C /* MetaData.swift */; };
 		2D246CDB21E782E00087AB62 /* GADefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D246CDA21E782E00087AB62 /* GADefine.swift */; };
 		2D2E08B8218476E400DEF92A /* WCCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31DEEB216A68DE00977507 /* WCCalendarView.swift */; };
 		2D2E08BA21847B1000DEF92A /* WCWeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E08B921847B1000DEF92A /* WCWeekLabelView.swift */; };
@@ -63,7 +58,6 @@
 		2D3637B02358E81B0090E1BF /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3637AF2358E81B0090E1BF /* TodoService.swift */; };
 		2D3637B22358E8A60090E1BF /* PodoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3637B12358E8A60090E1BF /* PodoError.swift */; };
 		2D37EB4B2196CF2D001B4274 /* CommonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */; };
-		2D3D6431217C5852001CF919 /* ResponseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D6430217C5852001CF919 /* ResponseLogin.swift */; };
 		2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D643A217C6C5E001CF919 /* AccessToken.swift */; };
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D41BC66214D58D600B79BF6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC65214D58D600B79BF6 /* AboutViewController.swift */; };
@@ -90,11 +84,9 @@
 		2DAE36C9219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */; };
 		2DAE36CC21A094AA00F03488 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */; };
 		2DAE36CF21A09CD600F03488 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */; };
-		2DAE949A21D73E2C00A4DFDC /* ResponseAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE949921D73E2C00A4DFDC /* ResponseAccount.swift */; };
 		2DAE949E21D753AD00A4DFDC /* PodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE949D21D753AD00A4DFDC /* PodoSection.swift */; };
 		2DAE94A421D7583C00A4DFDC /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */; };
 		2DAE94A721D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */; };
-		2DAE94AA21D77A1700A4DFDC /* ResponsePodolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A921D77A1700A4DFDC /* ResponsePodolist.swift */; };
 		2DAE94AD21D7844600A4DFDC /* Podolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AC21D7844600A4DFDC /* Podolist.swift */; };
 		2DAE94B021D7BB2400A4DFDC /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */; };
 		2DAE94B821DA9B3E00A4DFDC /* MonthCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94B721DA9B3E00A4DFDC /* MonthCalendarView.swift */; };
@@ -107,6 +99,8 @@
 		2DAE94CD21DBAE9A00A4DFDC /* MCWeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94C621DBAE9A00A4DFDC /* MCWeekLabelView.swift */; };
 		2DB43254218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */; };
 		2DB4325B218C9003002AEEBA /* GroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB4325A218C9003002AEEBA /* GroupHeader.swift */; };
+		2DCF81C0235A310D006A3464 /* ResponseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF81BF235A310D006A3464 /* ResponseLogin.swift */; };
+		2DCF81C2235A32CA006A3464 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF81C1235A32CA006A3464 /* AppInjector.swift */; };
 		2DD0695C214BDD0200E0C987 /* UIAlertController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */; };
 		2DD7063C214FDF2100C44E16 /* PriorityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063B214FDF2100C44E16 /* PriorityButton.swift */; };
 		2DD7063E214FF15A00C44E16 /* PodoWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */; };
@@ -162,9 +156,6 @@
 		2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistInteractor.swift; sourceTree = "<group>"; };
 		2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistWireFrame.swift; sourceTree = "<group>"; };
 		2D0F20A32144196400B8BDF2 /* Podo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podo.swift; sourceTree = "<group>"; };
-		2D0F20A5214419C800B8BDF2 /* RequestPodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPodo.swift; sourceTree = "<group>"; };
-		2D0F20A7214419DE00B8BDF2 /* ResponsePodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsePodo.swift; sourceTree = "<group>"; };
-		2D0F20B021441C6800B8BDF2 /* PodoRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoRemoteRepository.swift; sourceTree = "<group>"; };
 		2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistRowCell.swift; sourceTree = "<group>"; };
 		2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInteractor.swift; sourceTree = "<group>"; };
 		2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
@@ -177,8 +168,6 @@
 		2D198D4621A6893600287923 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		2D198D4921A6C8AF00287923 /* intro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = intro.txt; sourceTree = "<group>"; };
 		2D1C5F8A2164E78400EC79A2 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
-		2D1E9A0A21B261FC00F79E6C /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		2D1E9A0D21B2621D00F79E6C /* MetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
 		2D246CDA21E782E00087AB62 /* GADefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADefine.swift; sourceTree = "<group>"; };
 		2D2E08B921847B1000DEF92A /* WCWeekLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCWeekLabelView.swift; sourceTree = "<group>"; };
 		2D2E08BC2184C9A100DEF92A /* CalendarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUtils.swift; sourceTree = "<group>"; };
@@ -204,7 +193,6 @@
 		2D3637AF2358E81B0090E1BF /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		2D3637B12358E8A60090E1BF /* PodoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoError.swift; sourceTree = "<group>"; };
 		2D37EB4A2196CF2D001B4274 /* CommonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebViewController.swift; sourceTree = "<group>"; };
-		2D3D6430217C5852001CF919 /* ResponseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLogin.swift; sourceTree = "<group>"; };
 		2D3D643A217C6C5E001CF919 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2D41BC65214D58D600B79BF6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -233,11 +221,9 @@
 		2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Additions.swift"; sourceTree = "<group>"; };
 		2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Additions.swift"; sourceTree = "<group>"; };
 		2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
-		2DAE949921D73E2C00A4DFDC /* ResponseAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAccount.swift; sourceTree = "<group>"; };
 		2DAE949D21D753AD00A4DFDC /* PodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoSection.swift; sourceTree = "<group>"; };
 		2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
 		2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Additions.swift"; sourceTree = "<group>"; };
-		2DAE94A921D77A1700A4DFDC /* ResponsePodolist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsePodolist.swift; sourceTree = "<group>"; };
 		2DAE94AC21D7844600A4DFDC /* Podolist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podolist.swift; sourceTree = "<group>"; };
 		2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		2DAE94B721DA9B3E00A4DFDC /* MonthCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarView.swift; sourceTree = "<group>"; };
@@ -250,6 +236,8 @@
 		2DAE94C621DBAE9A00A4DFDC /* MCWeekLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCWeekLabelView.swift; sourceTree = "<group>"; };
 		2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistSectionCell.swift; sourceTree = "<group>"; };
 		2DB4325A218C9003002AEEBA /* GroupHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHeader.swift; sourceTree = "<group>"; };
+		2DCF81BF235A310D006A3464 /* ResponseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLogin.swift; sourceTree = "<group>"; };
+		2DCF81C1235A32CA006A3464 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
 		2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Additions.swift"; sourceTree = "<group>"; };
 		2DD7063B214FDF2100C44E16 /* PriorityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityButton.swift; sourceTree = "<group>"; };
 		2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoWriteView.swift; sourceTree = "<group>"; };
@@ -354,8 +342,8 @@
 		2D0F20342143984A00B8BDF2 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				2D89792D23561F6400EC23BE /* Legacy */,
 				2D0F20352143984A00B8BDF2 /* AppDelegate.swift */,
+				2DCF81C1235A32CA006A3464 /* AppInjector.swift */,
 				2D16F19F21A9C8C100647779 /* AppWireframe.swift */,
 				2D0F207A2143D1DE00B8BDF2 /* Common */,
 				2D41BC54214D170300B79BF6 /* Domain */,
@@ -454,12 +442,12 @@
 		2D0F20782143D12600B8BDF2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				2D3D643A217C6C5E001CF919 /* AccessToken.swift */,
 				2D41BC52214D0DF000B79BF6 /* Account.swift */,
 				2D0F20A32144196400B8BDF2 /* Podo.swift */,
 				2DAE94AC21D7844600A4DFDC /* Podolist.swift */,
 				2D31DE9C2168F8CE00977507 /* Priority.swift */,
-				2D1E9A0A21B261FC00F79E6C /* Session.swift */,
-				2D1E9A0D21B2621D00F79E6C /* MetaData.swift */,
+				2DCF81BF235A310D006A3464 /* ResponseLogin.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -642,7 +630,6 @@
 		2D41BC54214D170300B79BF6 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				2D3D643A217C6C5E001CF919 /* AccessToken.swift */,
 				2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */,
 				2D3637B12358E8A60090E1BF /* PodoError.swift */,
 			);
@@ -667,19 +654,6 @@
 				2D41BC69214D69D900B79BF6 /* LicenseViewController.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		2D89792D23561F6400EC23BE /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				2D0F20B021441C6800B8BDF2 /* PodoRemoteRepository.swift */,
-				2DAE949921D73E2C00A4DFDC /* ResponseAccount.swift */,
-				2D3D6430217C5852001CF919 /* ResponseLogin.swift */,
-				2D0F20A7214419DE00B8BDF2 /* ResponsePodo.swift */,
-				2DAE94A921D77A1700A4DFDC /* ResponsePodolist.swift */,
-				2D0F20A5214419C800B8BDF2 /* RequestPodo.swift */,
-			);
-			path = Legacy;
 			sourceTree = "<group>";
 		};
 		2DAE94B221DA939400A4DFDC /* Week */ = {
@@ -1064,16 +1038,13 @@
 				2D31DEE9216A68B600977507 /* WCWeekView.swift in Sources */,
 				2DAE94CB21DBAE9A00A4DFDC /* MCMonthView.swift in Sources */,
 				2DD7063C214FDF2100C44E16 /* PriorityButton.swift in Sources */,
+				2DCF81C0235A310D006A3464 /* ResponseLogin.swift in Sources */,
 				2D0F20752143984A00B8BDF2 /* PodolistViewController.swift in Sources */,
-				2D0F20B121441C6800B8BDF2 /* PodoRemoteRepository.swift in Sources */,
-				2D3D6431217C5852001CF919 /* ResponseLogin.swift in Sources */,
 				2DAE94B021D7BB2400A4DFDC /* AuthProvider.swift in Sources */,
 				2D3637AC2358DCBC0090E1BF /* AuthPlugin.swift in Sources */,
 				2D0F20632143984A00B8BDF2 /* InterfaceString.swift in Sources */,
 				2D55999D216512B600FFA64A /* PodoWritePriorityView.swift in Sources */,
-				2D1E9A0E21B2621D00F79E6C /* MetaData.swift in Sources */,
 				2D0F20682143984A00B8BDF2 /* Fonts.swift in Sources */,
-				2D0F20A8214419DE00B8BDF2 /* ResponsePodo.swift in Sources */,
 				2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */,
 				2DAE94BE21DB47D600A4DFDC /* WCMonthView.swift in Sources */,
 				2D0F20DE21453B2900B8BDF2 /* SettingViewController.swift in Sources */,
@@ -1087,7 +1058,6 @@
 				2DAE94AD21D7844600A4DFDC /* Podolist.swift in Sources */,
 				2D37EB4B2196CF2D001B4274 /* CommonWebViewController.swift in Sources */,
 				2D3637A72358DC4D0090E1BF /* TodoAPI.swift in Sources */,
-				2DAE94AA21D77A1700A4DFDC /* ResponsePodolist.swift in Sources */,
 				2D16F1A021A9C8C100647779 /* AppWireframe.swift in Sources */,
 				2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */,
 				2D5121FF216782BF00977966 /* PodoWriteTitleView.swift in Sources */,
@@ -1121,16 +1091,14 @@
 				2D2E08BA21847B1000DEF92A /* WCWeekLabelView.swift in Sources */,
 				2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */,
 				2DAE94B821DA9B3E00A4DFDC /* MonthCalendarView.swift in Sources */,
-				2D0F20A6214419C800B8BDF2 /* RequestPodo.swift in Sources */,
 				2D0F20E021453B3400B8BDF2 /* SettingWireFrame.swift in Sources */,
 				2DAE94C121DB4D6B00A4DFDC /* MCCalendarView.swift in Sources */,
 				2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */,
 				2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */,
+				2DCF81C2235A32CA006A3464 /* AppInjector.swift in Sources */,
 				2D31DEA321690E5900977507 /* String+Additions.swift in Sources */,
 				2DAE94A421D7583C00A4DFDC /* Date+Additions.swift in Sources */,
 				2D0F20642143984A00B8BDF2 /* InterfaceImage.swift in Sources */,
-				2D1E9A0B21B261FC00F79E6C /* Session.swift in Sources */,
-				2DAE949A21D73E2C00A4DFDC /* ResponseAccount.swift in Sources */,
 				2D0F20E521454DC600B8BDF2 /* Setting.swift in Sources */,
 				2DAE94CD21DBAE9A00A4DFDC /* MCWeekLabelView.swift in Sources */,
 				2D0F20BD214432E800B8BDF2 /* PodolistRowCell.swift in Sources */,

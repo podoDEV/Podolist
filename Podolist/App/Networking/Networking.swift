@@ -23,46 +23,58 @@ final class Networking<Target: TargetType>: MoyaProvider<Target> {
         super.init(manager: manager, plugins: plugins)
     }
 
-    func request<T: Codable>(
+    func requestWithLog(
         _ target: Target,
-        completion: @escaping (Result<T, PodoError>) -> Void
+        completion: @escaping (Result<Response, PodoError>) -> Void
     ) {
         let requestString = "\(target.method) \(target.path)"
         let message = "REQUEST: \(requestString)"
-        log.debug(message)
+        log.d(message)
         self.request(target) { result in
             switch result {
             case .success(let response):
-                do {
-                    let data = try response.map(T.self)
-                    let message = "SUCCESS: \(requestString) (\(response.statusCode))"
-                    log.debug(message)
-                    completion(.success(data))
-                } catch {
-                    let message = "FAILURE: \(requestString) (\(response.statusCode))"
-                    log.warning(message)
-                    completion(.failure(.parsingError))
-                }
+                let message = "SUCCESS: \(requestString) (\(response.statusCode))"
+                log.d(message)
+                completion(.success(response))
             case .failure(let error):
                 if let response = error.response {
                   if let jsonObject = try? response.mapJSON(failsOnEmptyData: false) {
                     let message = "FAILURE: \(requestString) (\(response.statusCode))\n\(jsonObject)"
-                    log.warning(message)
+                    log.w(message)
                     completion(.failure(.parsingError))
                   } else if let rawString = String(data: response.data, encoding: .utf8) {
                     let message = "FAILURE: \(requestString) (\(response.statusCode))\n\(rawString)"
-                    log.warning(message)
+                    log.w(message)
                     completion(.failure(.unknown))
                   } else {
                     let message = "FAILURE: \(requestString) (\(response.statusCode))"
-                    log.warning(message)
+                    log.w(message)
                     completion(.failure(.unknown))
                   }
                 } else {
                     let message = "FAILURE: \(requestString)\n\(error)"
-                    log.warning(message)
+                    log.w(message)
                     completion(.failure(.unknown))
                 }
+            }
+        }
+    }
+
+    func request<T: Codable>(
+        _ target: Target,
+        completion: @escaping (Result<T, PodoError>) -> Void
+    ) {
+        self.requestWithLog(target) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let data = try response.map(T.self)
+                    completion(.success(data))
+                } catch {
+                    completion(.failure(.parsingError))
+                }
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

@@ -6,8 +6,6 @@
 //
 
 import UIKit
-
-import RxSwift
 import Scope
 import SnapKit
 import SwiftDate

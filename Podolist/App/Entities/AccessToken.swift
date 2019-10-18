@@ -6,6 +6,6 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
-struct AccessToken {
-    let id: String
+class AccessToken {
+    var id: String?
 }

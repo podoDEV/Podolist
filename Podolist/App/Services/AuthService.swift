@@ -10,6 +10,7 @@ import KeychainAccess
 import Moya
 
 protocol AuthServiceType {
+    typealias Session = String
     var current: Session? { get }
 
     func authorize(_ provider: AuthProvider, _ completion: @escaping (Result<(), PodoError>) -> Void)
@@ -29,14 +30,14 @@ final class AuthService: AuthServiceType {
     }
 
     func authorize(_ provider: AuthProvider, _ completion: @escaping (Result<(), PodoError>) -> Void) {
-        networking.request(.login(provider: provider)) { result in
+        networking.requestWithLog(.login(provider: provider)) { result in
             switch result {
             case .success(let response):
                 if let headers = response.response?.allHeaderFields as? [String: Any],
                     let session = headers["Set-Cookie"] as? Session {
                     self.current = session
                     try? self.saveSession(session)
-                    completion(.success)
+                    completion(.success(()))
                     break
                 }
                 completion(.failure(.parsingError))

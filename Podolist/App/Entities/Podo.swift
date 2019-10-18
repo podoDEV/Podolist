@@ -2,62 +2,71 @@
 //  Podo.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/18.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 class Podo: Codable {
     var id: Int?
     var title: String?
-    var isCompleted = false
-    var startedAt = Date()
-    var endedAt = Date()
-    var dueAt = Date()
+    var isCompleted: Bool?
+    var startedAt: Date?
+    var endedAt: Date?
+    var dueAt: Date?
     var updatedAt: Date?
-    var priority: Priority = .none
+    var priority: Priority?
 
-    init() {}
-
-    init(
-        id: Int,
-        title: String,
-        isCompleted: Bool,
-        startedAt: Date,
-        endedAt: Date,
-        dueAt: Date,
-        updatedAt: Date,
-        priority: Priority?
-        ) {
-        self.id = id
-        self.title = title
-        self.isCompleted = isCompleted
-        self.startedAt = startedAt
-        self.endedAt = endedAt
-        self.dueAt = dueAt
-        self.updatedAt = updatedAt
-        self.priority = priority ?? .none
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case isCompleted
+        case startedAt
+        case endedAt
+        case dueAt
+        case updatedAt
+        case priority
     }
 
-    convenience init(responsePodo: ResponsePodo) {
-        self.init(
-            id: responsePodo.id!,
-            title: responsePodo.title!,
-            isCompleted: responsePodo.isCompleted!,
-            startedAt: responsePodo.startedAt!,
-            endedAt: responsePodo.endedAt!,
-            dueAt: responsePodo.dueAt!,
-            updatedAt: responsePodo.updatedAt!,
-            priority: responsePodo.priority
-        )
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decodeIfPresent(Int.self, forKey: .id)
+        title = try values.decodeIfPresent(String.self, forKey: .title)
+        isCompleted = try values.decodeIfPresent(Bool.self, forKey: .isCompleted)
+        if let startedAt = try values.decodeIfPresent(Int.self, forKey: .startedAt) {
+            self.startedAt = Date(seconds: TimeInterval(startedAt))
+        }
+        if let endedAt = try values.decodeIfPresent(Int.self, forKey: .endedAt) {
+            self.endedAt = Date(seconds: TimeInterval(endedAt))
+        }
+        if let dueAt = try values.decodeIfPresent(Int.self, forKey: .dueAt) {
+            self.dueAt = Date(seconds: TimeInterval(dueAt))
+        }
+        if let updatedAt = try values.decodeIfPresent(Int.self, forKey: .updatedAt) {
+            self.updatedAt = Date(seconds: TimeInterval(updatedAt))
+        }
+        priority = try values.decodeIfPresent(Priority.self, forKey: .priority)
     }
 
-    func copy() -> Podo {
-        return Podo(id: self.id!,
-                        title: self.title!,
-                        isCompleted: self.isCompleted,
-                        startedAt: self.startedAt,
-                        endedAt: self.endedAt,
-                        dueAt: self.dueAt,
-                        updatedAt: self.updatedAt!,
-                        priority: self.priority)
+    var asParameters: [String: Any] {
+        var parameters: [String: Any] = [:]
+        if let title = title {
+            parameters["title"] = title
+        }
+        if let isCompleted = isCompleted {
+            parameters["isCompleted"] = isCompleted
+        }
+        if let startedAt = startedAt {
+            parameters["startedAt"] = startedAt.timeIntervalSince1970
+        }
+        if let endedAt = endedAt {
+            parameters["endedAt"] = endedAt.timeIntervalSince1970
+        }
+        if let dueAt = dueAt {
+            parameters["dueAt"] = dueAt.timeIntervalSince1970
+        }
+        if let priority = priority {
+            parameters["priority"] = priority.rawValue
+        }
+        return parameters
     }
 }
