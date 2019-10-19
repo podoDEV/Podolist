@@ -2,55 +2,27 @@
 //  SettingWireFrame.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/19.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
 import MessageUI
 
 protocol SettingWireFrameProtocol: class {
-    static func createSettingModule() -> SettingViewController
-
     // Presenter -> WireFrame
     func navigate(to route: SettingWireFrame.Router)
 }
 
-class SettingWireFrame: BaseWireframe {
+class SettingWireFrame: BaseWireframe, SettingWireFrameProtocol {
     enum Router {
         case about
         case license
+        case login
         case feedback(recipients: [String], subject: String, message: String)
-        case logout
         case action(title: String?, message: String?, actionTitle: String, handler: ((UIAlertAction) -> Void)?)
         case alert(title: String, message: String)
     }
-}
-
-extension SettingWireFrame: SettingWireFrameProtocol {
-
-    static func createSettingModule() -> SettingViewController {
-
-        // AccountDataSrouce
-        let accountDataSource: AccountDataSource = AccountRepository()
-        let accountLocalDataSource: AccountLocalDataSource = AccountLocalRepository()
-        let accountRemoteDataSource: AccountRemoteDataSource = AccountRemoteRepository()
-
-        accountDataSource.localDataSource = accountLocalDataSource
-        accountDataSource.remoteDataSource = accountRemoteDataSource
-
-        let view = SettingViewController()
-        let wireframe = SettingWireFrame()
-        let interactor = SettingInteractor(accountDataSource: accountDataSource)
-        let presenter = SettingPresenter(view: view,
-                                         wireframe: wireframe,
-                                         interactor: interactor)
-
-        view.presenter = presenter
-        wireframe.view = view
-        return view
-    }
-
-    // MARK: - SettingWireFrameProtocol
 
     func navigate(to route: Router) {
         switch route {
@@ -58,25 +30,25 @@ extension SettingWireFrame: SettingWireFrameProtocol {
             showAboutView()
         case .license:
             showLicenseView()
-        case .feedback(let recipients, let subject, let message):
-            showFeedbackView(recipients: recipients, subject: subject, message: message)
-        case .logout:
+        case .login:
             showLoginView()
+        case .feedback(let recipients, let subject, let message):
+            showFeedbackView(
+                recipients: recipients,
+                subject: subject,
+                message: message
+            )
         case .action(let title, let message, let actionTitle, let handler):
-            presentActionSheet(title: title,
-                               message: message,
-                               actionTitle: actionTitle,
-                               handler: handler)
+            presentActionSheet(
+                title: title,
+                message: message,
+                actionTitle: actionTitle,
+                handler: handler
+            )
         case .alert(let title, let message):
             presentAlert(title: title, message: message)
-            return
         }
     }
-}
-
-private extension SettingWireFrame {
-
-    // MARK: - Navigation
 
     func showAboutView() {
         let aboutViewController = AboutViewController()
@@ -88,6 +60,11 @@ private extension SettingWireFrame {
         show(licenseViewController, with: .push)
     }
 
+    func showLoginView() {
+        let loginViewController = LoginWireFrame.createLoginModule()
+        show(loginViewController, with: .root(window: UIApplication.shared.keyWindow!))
+    }
+
     func showFeedbackView(recipients: [String], subject: String, message: String) {
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
@@ -97,16 +74,32 @@ private extension SettingWireFrame {
         mailComposer.modalPresentationStyle = .currentContext
         show(mailComposer, with: .present(from: view))
     }
-
-    func showLoginView() {
-        let loginViewController = LoginWireFrame.createLoginModule()
-        show(loginViewController, with: .root(window: UIApplication.shared.keyWindow!))
-    }
 }
 
 extension SettingWireFrame: MFMailComposeViewControllerDelegate {
-
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         pop(isModal: true, animated: true)
+    }
+}
+
+extension SettingWireFrame {
+    static func createSettingModule() -> SettingViewController {
+        let authService = container.resolve(AuthServiceType.self)!
+        let memberService = container.resolve(MemberServiceType.self)!
+        let view = SettingViewController()
+        let wireframe = SettingWireFrame()
+        let interactor = SettingInteractor(
+            authService: authService,
+            memberService: memberService
+        )
+        let presenter = SettingPresenter(
+            view: view,
+            wireframe: wireframe,
+            interactor: interactor
+        )
+        view.presenter = presenter
+        interactor.presenter = presenter
+        wireframe.view = view
+        return view
     }
 }

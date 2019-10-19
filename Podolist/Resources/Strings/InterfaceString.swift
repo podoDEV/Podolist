@@ -60,27 +60,27 @@ struct InterfaceString {
         static let Done = NSLocalizedString("common.done", comment: "Done button title")
         static let Skip = NSLocalizedString("common.skip", comment: "Skip action")
         static let SeeAll = NSLocalizedString("common.seeall", comment: "See All title")
-        static let Developers = ["podo.devops@gmail.com", "heebuma@gmail.com"]
-        static let Subject = "[Feedback] "
-        static let Info = """
-        \n\n\n\n
-        ---------------------------------
-        My App: \(InterfaceString.Commmon.Podolist)
-        My Version: \(InterfaceString.Signature.AppVersion)(\(InterfaceString.Signature.AppBuildVersion))
-        My iOS: \(InterfaceString.Signature.iOSVersion)
-        ---------------------------------
-        """
+//        static let Developers = ["podo.devops@gmail.com", "heebuma@gmail.com"]
+//        static let Subject = "[Feedback] "
+//        static let Info = """
+//        \n\n\n\n
+//        ---------------------------------
+//        My App: \(InterfaceString.Commmon.Podolist)
+//        My Version: \(InterfaceString.Signature.AppVersion)(\(InterfaceString.Signature.AppBuildVersion))
+//        My iOS: \(InterfaceString.Signature.iOSVersion)
+//        ---------------------------------
+//        """
     }
 
-    struct Error {
-        static let MailTitle = NSLocalizedString("error.email.title", comment: "")
-        static let MailBody = NSLocalizedString("error.email.body", comment: "")
-    }
-
-    struct Signature {
-        static let Copyright = NSLocalizedString("signature.copyright", comment: "copyright")
-        static let AppVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-        static let AppBuildVersion = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
-        static let iOSVersion = UIDevice.current.systemVersion
-    }
+//    struct Error {
+//        static let MailTitle = NSLocalizedString("error.email.title", comment: "")
+//        static let MailBody = NSLocalizedString("error.email.body", comment: "")
+//    }
+//
+//    struct Signature {
+//        static let Copyright = NSLocalizedString("signature.copyright", comment: "copyright")
+//        static let AppVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+//        static let AppBuildVersion = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+//        static let iOSVersion = UIDevice.current.systemVersion
+//    }
 }

@@ -26,23 +26,22 @@ final class AuthService: AuthServiceType {
     init(networking: AuthNetworking) {
         self.networking = networking
         self.current = loadSession()
-        log.debug("currentSession exists: \(self.current != nil)")
+        log.d("currentSession exists: \(self.current != nil)")
     }
 
     func authorize(_ provider: AuthProvider, _ completion: @escaping (Result<(), PodoError>) -> Void) {
-        networking.requestWithLog(.login(provider: provider)) { result in
+        networking.request(.login(provider: provider)) { (result: (Result<ResponseLogin, PodoError>)) -> Void in
             switch result {
-            case .success(let response):
-                if let headers = response.response?.allHeaderFields as? [String: Any],
-                    let session = headers["Set-Cookie"] as? Session {
-                    self.current = session
-                    try? self.saveSession(session)
-                    completion(.success(()))
-                    break
+            case .success(let responseLogin):
+                guard let session = responseLogin.sessionId else {
+                    completion(.failure(.unknown))
+                    return
                 }
-                completion(.failure(.parsingError))
+                self.current = session
+                try? self.saveSession(session)
+                completion(.success(()))
             case .failure(let error):
-                completion(.failure(.unknown))
+                completion(.failure(error))
             }
         }
     }

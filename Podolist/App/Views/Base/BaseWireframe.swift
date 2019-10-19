@@ -2,7 +2,8 @@
 //  BaseWireframe.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/19.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
@@ -11,34 +12,38 @@ class BaseWireframe: NSObject {
     weak var view: UIViewController!
 
     func show(_ viewController: UIViewController, with type: TransitionType, animated: Bool = true) {
-        switch type {
-        case .push:
-            guard let navigationController = view.navigationController else {
-                fatalError("Can't push without a navigation controller")
+        DispatchQueue.main.async {
+            switch type {
+            case .push:
+                guard let navigationController = view.navigationController else {
+                    fatalError("Can't push without a navigation controller")
+                }
+                navigationController.pushViewController(viewController, animated: animated)
+            case .present(let sender):
+                sender.present(viewController, animated: animated)
+            case .root(let window):
+                window.rootViewController = viewController
             }
-            navigationController.pushViewController(viewController, animated: animated)
-        case .present(let sender):
-            sender.present(viewController, animated: animated)
-        case .root(let window):
-            window.rootViewController = viewController
         }
     }
 
     func pop(isModal: Bool = false, animated: Bool = true) {
-        if let navigationController = view.navigationController {
-            if isModal {
-                navigationController.dismiss(animated: animated, completion: nil)
-            } else if navigationController.popViewController(animated: animated) == nil {
-                if let presentingView = view.presentingViewController {
-                    return presentingView.dismiss(animated: animated)
-                } else {
-                    fatalError("Can't navigate back from \(view!)")
+        DispatchQueue.main.async {
+            if let navigationController = view.navigationController {
+                if isModal {
+                    navigationController.dismiss(animated: animated, completion: nil)
+                } else if navigationController.popViewController(animated: animated) == nil {
+                    if let presentingView = view.presentingViewController {
+                        return presentingView.dismiss(animated: animated)
+                    } else {
+                        fatalError("Can't navigate back from \(view!)")
+                    }
                 }
+            } else if let presentingView = view.presentingViewController {
+                presentingView.dismiss(animated: animated)
+            } else {
+                fatalError("Neither modal nor navigation! Can't navigate back from \(view!)")
             }
-        } else if let presentingView = view.presentingViewController {
-            presentingView.dismiss(animated: animated)
-        } else {
-            fatalError("Neither modal nor navigation! Can't navigate back from \(view!)")
         }
     }
 }

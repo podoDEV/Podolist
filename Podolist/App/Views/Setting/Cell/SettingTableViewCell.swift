@@ -2,13 +2,14 @@
 //  SettingTableViewCell.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/19.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
 
 protocol SettingCellType {
-    func configureWith(_ item: SettingRowProtocol)
+    func configure(with item: SettingRowProtocol)
 }
 
 final class SettingTableViewCell: UITableViewCell, SettingCellType {
@@ -67,7 +68,7 @@ final class SettingTableViewCell: UITableViewCell, SettingCellType {
         separateView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
     }
 
-    func configureWith(_ item: SettingRowProtocol) {
+    func configure(with item: SettingRowProtocol) {
         thumbnailView.image = item.image
         titleLabel.text = item.title
 

@@ -12,6 +12,8 @@ import Moya
 enum AuthAPI {
     case login(provider: AuthProvider)
     case logout
+
+    case me
 }
 
 extension AuthAPI: TargetType {
@@ -23,11 +25,13 @@ extension AuthAPI: TargetType {
         switch self {
         case .login(let provider): return "login/\(provider.rawValue)"
         case .logout: return "logout"
+        case .me: return "users/me"
         }
     }
 
     var method: Moya.Method {
         switch self {
+        case .me: return .get
         default:
             return .post
         }
@@ -48,7 +52,7 @@ extension AuthAPI: TargetType {
                     encoding: JSONEncoding.default
                 )
             }
-        case .logout:
+        default:
             return .requestPlain
         }
     }

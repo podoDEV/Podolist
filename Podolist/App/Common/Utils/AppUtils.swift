@@ -9,6 +9,10 @@
 import Foundation
 
 class AppUtils {
+    static let AppVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    static let AppBuildVersion = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+    static let iOSVersion = UIDevice.current.systemVersion
+    
     static func versionName() -> String {
         var version = "\(InterfaceString.Setting.Version) \(InterfaceString.Signature.AppVersion)"
         #if DEBUG

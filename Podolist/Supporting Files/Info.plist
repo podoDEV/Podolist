@@ -35,8 +35,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>GA_TRACKING_ID</key>
-	<string>$(GA_TRACKING_ID)</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>$(KAKAO_APP_KEY)</string>
 	<key>KAKAO_CLIENT_SECRET</key>

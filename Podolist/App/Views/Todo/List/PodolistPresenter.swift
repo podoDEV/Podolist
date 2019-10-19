@@ -5,7 +5,6 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-import RxSwift
 import SwiftDate
 
 protocol PodolistPresenterProtocol: class {
@@ -35,8 +34,6 @@ final class PodolistPresenter: NSObject, PodolistPresenterProtocol {
     private var view: PodolistViewProtocol!
     private var interactor: PodolistInteractorProtocol!
     private var wireFrame: PodolistWireFrameProtocol!
-
-    private let disposeBag = DisposeBag()
 
     // MARK: - Initializer
 

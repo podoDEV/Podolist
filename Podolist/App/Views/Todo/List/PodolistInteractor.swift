@@ -5,8 +5,6 @@
 //  Copyright © 2018년 podo. All rights reserved.
 //
 
-import RxSwift
-
 protocol PodolistInteractorProtocol: class {
 
     // Presenter -> Interactor

@@ -99,21 +99,4 @@ final class Logger {
             .map { String(describing: $0) }
             .joined(separator: " ")
     }
-
-}
-
-func gaEvent(_ category: String, action: String, label: String? = nil) {
-    guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-    tracker.set(kGAIEventAction, value: action)
-
-    guard let builder = GAIDictionaryBuilder.createEvent(withCategory: category, action: action, label: label, value: nil) else { return }
-    tracker.send(builder.build() as [NSObject: AnyObject])
-}
-
-func gaScreen(_ value: String) {
-    guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-    tracker.set(kGAIScreenName, value: value)
-
-    guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
-    tracker.send(builder.build() as [NSObject: AnyObject])
 }

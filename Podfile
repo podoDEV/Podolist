@@ -10,10 +10,18 @@ def common
     pod 'Moya'
 
     # Logging
+    pod 'Umbrella'
+    pod 'Umbrella/Firebase'
     pod 'CocoaLumberjack/Swift'
+    pod 'Firebase/Analytics'
+
+    # Crashlytics
+    pod 'Fabric'
+    pod 'Crashlytics'
 
     # Etc
     pod 'SwiftLint'
+    pod 'Swinject'
     pod 'Scope'
     pod 'KeychainAccess', '~> 3.1.2'
 end
@@ -21,10 +29,6 @@ end
 def ui
     pod 'SnapKit'
     pod 'PodoCalendar', '~> 0.2.7'
-end
-
-def analytics
-    pod 'GoogleAnalytics'
 end
 
 def spec
@@ -35,7 +39,6 @@ end
 target 'Podolist' do
     common
     ui
-    analytics
 end
 
 target 'PodolistTests' do

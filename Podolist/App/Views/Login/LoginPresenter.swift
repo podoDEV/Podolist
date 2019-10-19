@@ -2,29 +2,23 @@
 //  LoginPresenter.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/19.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
-import RxSwift
-
-protocol LoginPresenterProtocol: class {
-    // View -> Presenter
-    func viewDidLoad()
+protocol LoginPresenterProtocol: AnyObject {
+    // MARK: - View -> Presenter
     func didTapKakaoLogin()
     func didTapAnonymousLogin()
+
+    // MARK: - Interactor -> Presenter
+    func completeLogin()
 }
 
 class LoginPresenter {
-
-    // MARK: - Properties
-
-    weak var view: LoginViewProtocol!
-    private var wireframe: LoginWireFrameProtocol!
-    private var interactor: LoginInteractorProtocol!
-
-    private let disposeBag = DisposeBag()
-
-    // MARK: - Initializer
+    private weak let view: LoginViewProtocol?
+    private let wireframe: LoginWireFrameProtocol
+    private let interactor: LoginInteractorProtocol
 
     init(
         view: LoginViewProtocol,
@@ -37,35 +31,16 @@ class LoginPresenter {
     }
 }
 
-// MARK: - LoginPresenterProtocol
-
 extension LoginPresenter: LoginPresenterProtocol {
-
-    func viewDidLoad() {
-        sessionHandler(interactor.hasSession()!)
-    }
-
     func didTapKakaoLogin() {
-        sessionHandler(interactor.kakaoLogin())
+        interactor.kakaoLogin()
     }
 
     func didTapAnonymousLogin() {
-        sessionHandler(interactor.anonymousLogin())
+        interactor.anonymousLogin()
     }
-}
 
-private extension LoginPresenter {
-
-    func sessionHandler(_ completable: Completable) {
-        completable
-            .observeOn(MainScheduler.instance)
-            .subscribe { completable in
-                switch completable {
-                case .completed:
-                    self.wireframe.navigate(to: .todo)
-                case .error:
-                    self.view.showLogin()
-                }
-            }.disposed(by: disposeBag)
+    func completeLogin() {
+        wireframe.navigate(to: .todo)
     }
 }
