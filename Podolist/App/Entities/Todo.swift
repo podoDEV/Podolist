@@ -1,12 +1,12 @@
 //
-//  Podo.swift
+//  Todo.swift
 //  Podolist
 //
 //  Created by hb1love on 2019/10/18.
 //  Copyright © 2019 podo. All rights reserved.
 //
 
-class Podo: Codable {
+class Todo: Codable {
     var id: Int?
     var title: String?
     var isCompleted: Bool?
@@ -27,7 +27,16 @@ class Podo: Codable {
         case priority
     }
 
-    init(from decoder: Decoder) throws {
+    init() {
+        let date = Date()
+        isCompleted = false
+        startedAt = date
+        endedAt = date
+        dueAt = date
+        priority = .medium
+    }
+
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         title = try values.decodeIfPresent(String.self, forKey: .title)

@@ -1,8 +1,9 @@
 //
-//  PodolistRowCell.swift
+//  TodolistRowCell.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/20.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
@@ -10,9 +11,9 @@ import UIKit
 import Scope
 import SnapKit
 
-class PodolistRowCell: UITableViewCell {
+class TodolistRowCell: UITableViewCell {
 
-    // MARK: - Metric
+    // MARK: - Constants
 
     private struct Metric {
 
@@ -20,8 +21,8 @@ class PodolistRowCell: UITableViewCell {
 
     // MARK: - Properties
 
-    weak var presenter: PodolistPresenterProtocol?
-    private var podo: Podo?
+    weak var presenter: TodolistPresenterProtocol?
+    private var todo: Todo?
     private var indexPath: IndexPath?
 
     private var completeContainerView: UIView!
@@ -32,8 +33,6 @@ class PodolistRowCell: UITableViewCell {
     private var editImageView: UIButton!
     private var deleteImageView: UIButton!
 
-    // MARK: - Initializer
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
@@ -43,9 +42,6 @@ class PodolistRowCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-private extension PodolistRowCell {
 
     func setupSubviews() {
         completeContainerView = UIView().also {
@@ -132,14 +128,11 @@ private extension PodolistRowCell {
             $0.leading.equalTo(titleContainerView.snp.trailing).offset(16)
         }
     }
-}
 
-extension PodolistRowCell {
-
-    func configureWith(_ podo: Podo, indexPath: IndexPath, isSelected: Bool) {
-        self.podo = podo
+    func configure(_ todo: Todo, indexPath: IndexPath, isSelected: Bool) {
+        self.todo = todo
         self.indexPath = indexPath
-        titleLabel.text = podo.title
+        titleLabel.text = todo.title
         update()
 
         if isSelected {
@@ -150,8 +143,8 @@ extension PodolistRowCell {
     }
 
     func update() {
-        guard let podo = self.podo else { return }
-        if podo.isCompleted {
+        guard let todo = self.todo else { return }
+        if todo.isCompleted == true {
             completeImageView.isHidden = false
             priorityView.backgroundColor = .backgroundColor2
             priorityView.layer.borderColor = UIColor.backgroundColor2.cgColor
@@ -159,7 +152,7 @@ extension PodolistRowCell {
         } else {
             completeImageView.isHidden = true
             priorityView.backgroundColor = .white
-            priorityView.layer.borderColor = podo.priority.backgroundColor().cgColor
+            priorityView.layer.borderColor = todo.priority?.backgroundColor().cgColor
             priorityView.layer.borderWidth = 1.5
             titleContainerView.backgroundColor = .todoBackground1
         }
@@ -208,15 +201,18 @@ extension PodolistRowCell {
     }
 
     @objc func didTappedComplete() {
-        guard let podo = self.podo, let indexPath = self.indexPath else { return }
-        podo.isCompleted.toggle()
+        guard let completed = self.todo?.isCompleted,
+            let indexPath = self.indexPath else { return }
+
+        self.todo?.isCompleted = !completed
         update()
-        presenter?.didChangedComplete(indexPath: indexPath, completed: podo.isCompleted)
+        presenter?.didChangedComplete(indexPath: indexPath, completed: !completed)
     }
 
     @objc func didTappedEdit() {
         guard let indexPath = self.indexPath else { return }
-        presenter?.didTappedEdit(podo!, indexPath: indexPath)
+        guard let todo = self.todo else { return }
+        presenter?.didTappedEdit(todo, indexPath: indexPath)
     }
 
     @objc func didTappedDelete() {

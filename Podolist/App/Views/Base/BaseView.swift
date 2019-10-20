@@ -10,14 +10,18 @@ import UIKit
 
 class BaseView: UIView {
 
-    init() {
-        super.init(frame: .zero)
+    convenience init() {
+        self.init(frame: .zero)
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupSubviews()
         setupConstraints()
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setupSubviews()
         setupConstraints()
     }

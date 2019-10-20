@@ -18,7 +18,7 @@ class MCWeekView: BaseView {
     var year: Int?
     var month: Int?
 
-    override func setup() {
+    override func setupSubviews() {
         for _ in 0..<7 {
             let day = MCDayView()
             day.backgroundColor = .clear

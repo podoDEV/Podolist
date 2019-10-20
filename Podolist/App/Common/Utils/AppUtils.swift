@@ -12,9 +12,13 @@ class AppUtils {
     static let AppVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     static let AppBuildVersion = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
     static let iOSVersion = UIDevice.current.systemVersion
-    
+
+    static var baseURL: String {
+        return "http://api.dev.podolist.com:8000/"
+    }
+
     static func versionName() -> String {
-        var version = "\(InterfaceString.Setting.Version) \(InterfaceString.Signature.AppVersion)"
+        var version = "setting.about.version".localized + AppVersion
         #if DEBUG
             version.append(".debug")
         #endif

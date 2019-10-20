@@ -2,14 +2,15 @@
 //  PriorityView.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/27.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
-protocol PriorityViewDelegate: class {
+protocol PriorityViewDelegate: AnyObject {
     func didChangedPriority(priority: Priority)
 }
 
-class PriorityView: BaseView {
+final class PriorityView: BaseView {
 
     weak var delegate: PriorityViewDelegate?
 
@@ -17,8 +18,7 @@ class PriorityView: BaseView {
     var priorities: [Priority] = [.urgent, .high, .medium, .low, .none]
     var priorityButtons = [PriorityButton]()
 
-    override func setup() {
-        super.setup()
+    override func setupSubviews() {
         for priority in priorities {
             let button = PriorityButton(priority: priority)
             button.addTarget(self, action: #selector(handlePress(sender:)), for: .touchUpInside)
@@ -36,7 +36,7 @@ class PriorityView: BaseView {
         }
     }
 
-    func update(_ priority: Priority) {
+    func update(_ priority: Priority?) {
         for button in priorityButtons {
             if priority == button.priority {
                 button.isSelectedButton = true

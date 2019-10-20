@@ -8,7 +8,7 @@
 
 import Moya
 
-final struct AuthPlugin: PluginType {
+struct AuthPlugin: PluginType {
     private let authService: AuthServiceType
 
     init(authService: AuthServiceType) {

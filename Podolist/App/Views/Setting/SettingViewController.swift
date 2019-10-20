@@ -15,7 +15,7 @@ protocol SettingViewProtocol: AnyObject {
     func reloadData()
 }
 
-class SettingViewController: BaseViewController, SettingViewProtocol {
+class SettingViewController: BaseViewController {
 
     // MARK: - Subviews
 
@@ -41,8 +41,8 @@ class SettingViewController: BaseViewController, SettingViewProtocol {
             $0.sectionFooterHeight = 0
             $0.isScrollEnabled = false
             $0.tableFooterView = UIView()
-            $0.register(cell: SettingTableViewCell.self)
-            $0.register(cell: SettingTableViewAccountCell.self)
+            $0.register(cell: SettingCell.self)
+            $0.register(cell: SettingAccountCell.self)
             view.addSubview($0)
         }
     }
@@ -55,7 +55,7 @@ class SettingViewController: BaseViewController, SettingViewProtocol {
 }
 
 // MARK: - Presenter -> View
-extension SettingViewController {
+extension SettingViewController: SettingViewProtocol {
     func reloadData() {
         tableView.reloadData()
     }
@@ -79,8 +79,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func dequeueTableCell(_ indexPath: IndexPath) -> UITableViewCell {
         let item = presenter.rows[indexPath.row]
         if item is SettingAccountRow {
-            return tableView.dequeue(SettingTableViewAccountCell.self)!
+            return tableView.dequeue(SettingAccountCell.self)!
         }
-        return tableView.dequeue(SettingTableViewCell.self)!
+        return tableView.dequeue(SettingCell.self)!
     }
 }

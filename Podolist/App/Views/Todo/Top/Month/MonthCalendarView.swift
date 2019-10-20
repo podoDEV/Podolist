@@ -79,7 +79,7 @@ class MonthCalendarView: BaseView {
                                                   object: nil)
     }
 
-    override func setup() {
+    override func setupSubviews() {
         date = Date()
         calendarView.update(DateInRegion(self.date!))
         gradient.startPoint = CGPoint(x: 0.5, y: 0)

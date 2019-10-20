@@ -1,21 +1,22 @@
 //
-//  PodoSection.swift
+//  TodoSection.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/27.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
-class PodoSection {
+class TodoSection {
     var title: String
     var color: UIColor
-    var rows: [Podo]
+    var rows: [Todo]
     var editable: Bool
     var visible: Bool
 
     init(
         title: String,
         color: UIColor,
-        rows: [Podo],
+        rows: [Todo],
         editable: Bool = false,
         visible: Bool = true
         ) {
@@ -24,15 +25,5 @@ class PodoSection {
         self.rows = rows
         self.editable = editable
         self.visible = visible
-    }
-}
-
-extension PodoSection: Equatable, Hashable {
-    var hashValue: Int {
-        return title.hashValue
-    }
-
-    static func == (lhs: PodoSection, rhs: PodoSection) -> Bool {
-        return lhs.title == rhs.title
     }
 }

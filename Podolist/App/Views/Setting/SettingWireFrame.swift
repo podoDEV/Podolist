@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-protocol SettingWireFrameProtocol: class {
+protocol SettingWireFrameProtocol {
     // Presenter -> WireFrame
     func navigate(to route: SettingWireFrame.Router)
 }

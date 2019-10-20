@@ -11,14 +11,14 @@ import Moya
 
 enum TodoAPI {
     case getTodos(page: Int, date: Date)
-    case postTodo(podo: Podo)
-    case updateTodo(id: Int, podo: Podo)
+    case postTodo(todo: Todo)
+    case updateTodo(id: Int, todo: Todo)
     case deleteTodo(id: Int)
 }
 
 extension TodoAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "https://myshort.info/api")!
+        return URL(string: AppUtils.baseURL)!
     }
 
     var path: String {
@@ -47,15 +47,13 @@ extension TodoAPI: TargetType {
         switch self {
         case .getTodos(let page, let date):
             let dateParam = date.stringYYYYMMDD()
-            return .requestCompositeParameters(
-                bodyParameters: [:],
-                bodyEncoding: JSONEncoding.default,
-                urlParameters: ["date": dateParam,
-                                "page": page]
-            )
-        case .postTodo(let podo):
             return .requestParameters(
-                parameters: podo.asParameters,
+                parameters: ["date": dateParam, "page": page],
+                encoding: URLEncoding.default
+            )
+        case .postTodo(let todo):
+            return .requestParameters(
+                parameters: todo.asParameters,
                 encoding: JSONEncoding.default
             )
         default:

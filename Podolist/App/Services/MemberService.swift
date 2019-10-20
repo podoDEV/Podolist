@@ -28,7 +28,7 @@ final class MemberService: MemberServiceType {
                 self?.current = account
                 completion(.success((account)))
             case .failure(let error):
-                completion(.failure(.unknown))
+                completion(.failure(error))
             }
         }
     }

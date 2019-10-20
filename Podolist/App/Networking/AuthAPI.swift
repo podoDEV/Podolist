@@ -18,12 +18,12 @@ enum AuthAPI {
 
 extension AuthAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "https://myshort.info/api")!
+        return URL(string: AppUtils.baseURL)!
     }
 
     var path: String {
         switch self {
-        case .login(let provider): return "login/\(provider.rawValue)"
+        case .login(let provider): return "login/\(provider.rawValue())"
         case .logout: return "logout"
         case .me: return "users/me"
         }

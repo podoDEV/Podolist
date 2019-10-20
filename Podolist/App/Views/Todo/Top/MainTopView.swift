@@ -2,29 +2,33 @@
 //  MainTopView.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/27.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
+import UIKit
 import SnapKit
 
-protocol MainTopViewDelegate: class {
+protocol MainTopViewDelegate: AnyObject {
     func didTappedSetting()
     func didTappedMonthCalendar()
     func didSelectDate(date: Date)
 }
 
-class MainTopView: BaseView {
+final class MainTopView: BaseView {
+
+    // MARK: - Subviews
+
+    private var backgroundView: UIImageView!
+    private var settingButton: UIButton!
+    private var titleView: UIView!
+    private var monthLabel: UILabel!
+    private var yearLabel: UILabel!
+    private var dropdownView: UIImageView!
+    private var calendarView: WeekCalendarView!
+    private var gradient: CAGradientLayer!
 
     weak var delegate: MainTopViewDelegate?
-
-    let backgroundView = UIImageView()
-    let settingButton = UIButton()
-    let titleView = UIView()
-    let monthLabel = UILabel()
-    let yearLabel = UILabel()
-    let dropdownView = UIImageView()
-    let calendarView = WeekCalendarView()
-    let gradient = CAGradientLayer()
 
     var date: Date? {
         didSet {
@@ -33,39 +37,51 @@ class MainTopView: BaseView {
         }
     }
 
-    override func setup() {
-        super.setup()
-
-        gradient.startPoint = CGPoint(x: 0.5, y: 0)
-        gradient.endPoint = CGPoint(x: 0.5, y: 1)
-        gradient.colors = [UIColor.gradationStart.cgColor,
-                            UIColor.gradationEnd.cgColor]
-        gradient.locations = [0, 1]
-        backgroundView.layer.addSublayer(gradient)
-        addSubview(backgroundView)
-
-        settingButton.clipsToBounds = true
-        settingButton.addTarget(self, action: #selector(didTappedSetting), for: .touchUpInside)
-        addSubview(settingButton)
-
-        calendarView.delegate = self
-        addSubview(calendarView)
-        addSubview(titleView)
-
-        monthLabel.textColor = .white
-        monthLabel.font = .appFontM(size: 20)
-        titleView.addSubview(monthLabel)
-
-        yearLabel.textColor = .white
-        yearLabel.font = .appFontM(size: 18)
-        titleView.addSubview(yearLabel)
-
-        dropdownView.image = InterfaceImage.dropdown.normalImage
-        titleView.addSubview(dropdownView)
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedMonthCalendar))
-        titleView.addGestureRecognizer(tap)
-
+    override func setupSubviews() {
+        backgroundView = UIImageView().also {
+            addSubview($0)
+        }
+        settingButton = UIButton().also {
+            $0.clipsToBounds = true
+            $0.addTarget(self, action: #selector(didTappedSetting), for: .touchUpInside)
+            addSubview($0)
+        }
+        titleView = UIView().also {
+            let tap = UITapGestureRecognizer(
+                target: self,
+                action: #selector(didTappedMonthCalendar)
+            )
+            $0.addGestureRecognizer(tap)
+            addSubview($0)
+        }
+        monthLabel = UILabel().also {
+            $0.font = .appFontM(size: 20)
+            $0.textColor = .white
+            titleView.addSubview($0)
+        }
+        yearLabel = UILabel().also {
+            $0.font = .appFontM(size: 18)
+            $0.textColor = .white
+            titleView.addSubview($0)
+        }
+        dropdownView = UIImageView().also {
+            $0.image = InterfaceImage.dropdown.normalImage
+            titleView.addSubview($0)
+        }
+        calendarView = WeekCalendarView().also {
+            $0.delegate = self
+            addSubview($0)
+        }
+        gradient = CAGradientLayer().also {
+            $0.startPoint = CGPoint(x: 0.5, y: 0)
+            $0.endPoint = CGPoint(x: 0.5, y: 1)
+            $0.colors = [
+                UIColor.gradationStart.cgColor,
+                UIColor.gradationEnd.cgColor
+            ]
+            $0.locations = [0, 1]
+            backgroundView.layer.addSublayer($0)
+        }
         date = calendarView.date
     }
 
@@ -112,16 +128,12 @@ class MainTopView: BaseView {
         calendarView.update(date)
     }
 
-    func updateProfile(_ account: Account) {
-        settingButton.setImage(account.profile, for: .normal)
-    }
-
     @objc func didTappedSetting() {
         delegate?.didTappedSetting()
     }
 
     @objc func didTappedMonthCalendar() {
-        gaEvent(GADefine.Calendar, action: GADefine.monthCalendar)
+        analytics.log(.calendar_view)
         delegate?.didTappedMonthCalendar()
     }
 }

@@ -16,7 +16,7 @@ protocol WriteViewDelegate: class {
     func didTappedEdit()
 }
 
-class PodoWriteView: BaseView {
+final class TodoWriteView: BaseView {
 
     private let titleView = PodoWriteTitleView().loadNib() as! PodoWriteTitleView
     private let priorityView = PodoWritePriorityView().loadNib() as! PodoWritePriorityView
@@ -30,8 +30,7 @@ class PodoWriteView: BaseView {
         }
     }
 
-    override func setup() {
-        super.setup()
+    override func setupSubviews() {
         titleView.backgroundColor = .white
         titleView.layer.cornerRadius = 15
         titleView.clipsToBounds = true
@@ -57,10 +56,10 @@ class PodoWriteView: BaseView {
         calendarView.isHidden = false
     }
 
-    func update(_ podo: Podo, mode: WritingMode) {
-        titleView.update(podo.title, mode: mode)
-        priorityView.update(podo.priority)
-        calendarView.update(podo.dueAt)
+    func update(_ todo: Todo, mode: WritingMode) {
+        titleView.update(todo.title, mode: mode)
+        priorityView.update(todo.priority)
+        calendarView.update(todo.dueAt)
     }
 
     override func resignFirstResponder() -> Bool {

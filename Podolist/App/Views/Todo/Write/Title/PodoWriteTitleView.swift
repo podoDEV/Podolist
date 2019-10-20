@@ -2,7 +2,8 @@
 //  PodoWriteTitleView.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/27.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 class PodoWriteTitleView: BaseView {
@@ -35,13 +36,13 @@ class PodoWriteTitleView: BaseView {
                 UIView.animate(withDuration: 0.1) {
                     self.createButton.isEnabled = true
                     self.createButton.backgroundColor = .appColor1
-//                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
                 }
             } else {
                 UIView.animate(withDuration: 0.1) {
                     self.createButton.isEnabled = false
                     self.createButton.backgroundColor = .grayE
-//                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
                 }
             }
         }

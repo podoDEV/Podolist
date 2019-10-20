@@ -80,7 +80,7 @@ extension SettingPresenter {
                 to: .action(
                     title: nil,
                     message: nil,
-                    actionTitle: InterfaceString.Setting.Logout
+                    actionTitle: "setting.logout".localized
                 ) { _ in
                     analytics.log(.logout)
                     self.interactor.logout()

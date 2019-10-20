@@ -19,26 +19,16 @@ class AppWireframe: BaseWireframe {
     }
 
     func start() {
-        window?.rootViewController = navigationController
+        window.rootViewController = navigationController
         guard let authService = container.resolve(AuthServiceType.self) else {
             fatalError("AuthServiceType not invoked")
         }
         var viewController: UIViewController
         if authService.current == nil {
-            viewController = LoginWireFrameProtocol.createLoginModule()
+            viewController = LoginWireFrame.createLoginModule()
         } else {
-            viewController = PodolistWireFrameProtocol.createPodolistModule()
+            viewController = TodolistWireFrame.createTodolistModule()
         }
         show(viewController, with: .root(window: window))
-//        navigationController.setViewControllers(
-//            [viewController],
-//            animated: true
-//        )
     }
-
-//    func setupKeyWindow(_ window: UIWindow, viewController: UIViewController) {
-//        self.window = window
-//        show(viewController, with: .root(window: window))
-//        window.makeKeyAndVisible()
-//    }
 }

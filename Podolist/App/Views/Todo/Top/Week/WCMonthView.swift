@@ -16,7 +16,7 @@ class WCMonthView: BaseView {
         }
     }
 
-    override func setup() {
+    override func setupSubviews() {
         for _ in 0..<6 {
             let week = WCWeekView()
             addSubview(week)

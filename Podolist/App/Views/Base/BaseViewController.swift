@@ -9,7 +9,11 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    var safeAreaInset: UIEdgeInsets = .zero {
+        didSet {
+            setupConstraints()
+        }
+    }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -17,7 +21,11 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
-        setupConstraints()
+    }
+
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        safeAreaInset = view.layoutInsets()
     }
 
     func setupSubviews() {}

@@ -10,23 +10,22 @@
 		2D0F20102143934700B8BDF2 /* PodolistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F200F2143934700B8BDF2 /* PodolistTests.swift */; };
 		2D0F201B2143934700B8BDF2 /* PodolistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F201A2143934700B8BDF2 /* PodolistUITests.swift */; };
 		2D0F20602143984A00B8BDF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20352143984A00B8BDF2 /* AppDelegate.swift */; };
-		2D0F20632143984A00B8BDF2 /* InterfaceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20412143984A00B8BDF2 /* InterfaceString.swift */; };
 		2D0F20642143984A00B8BDF2 /* InterfaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20432143984A00B8BDF2 /* InterfaceImage.swift */; };
 		2D0F20652143984A00B8BDF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0F20442143984A00B8BDF2 /* Images.xcassets */; };
 		2D0F20662143984A00B8BDF2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20462143984A00B8BDF2 /* Colors.swift */; };
 		2D0F20682143984A00B8BDF2 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20492143984A00B8BDF2 /* Fonts.swift */; };
-		2D0F20752143984A00B8BDF2 /* PodolistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F205D2143984A00B8BDF2 /* PodolistViewController.swift */; };
+		2D0F20752143984A00B8BDF2 /* TodolistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F205D2143984A00B8BDF2 /* TodolistViewController.swift */; };
 		2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20852143D1DE00B8BDF2 /* UIColor+Additions.swift */; };
-		2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */; };
-		2D0F209E2144181F00B8BDF2 /* PodolistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */; };
-		2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */; };
-		2D0F20A42144196400B8BDF2 /* Podo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A32144196400B8BDF2 /* Podo.swift */; };
-		2D0F20BD214432E800B8BDF2 /* PodolistRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */; };
+		2D0F209C214417B500B8BDF2 /* TodolistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209B214417B500B8BDF2 /* TodolistPresenter.swift */; };
+		2D0F209E2144181F00B8BDF2 /* TodolistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209D2144181F00B8BDF2 /* TodolistInteractor.swift */; };
+		2D0F20A0214418E800B8BDF2 /* TodolistWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F209F214418E800B8BDF2 /* TodolistWireFrame.swift */; };
+		2D0F20A42144196400B8BDF2 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20A32144196400B8BDF2 /* Todo.swift */; };
+		2D0F20BD214432E800B8BDF2 /* TodolistRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20BC214432E800B8BDF2 /* TodolistRowCell.swift */; };
 		2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */; };
 		2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */; };
 		2D0F20DE21453B2900B8BDF2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */; };
 		2D0F20E021453B3400B8BDF2 /* SettingWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */; };
-		2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */; };
+		2D0F20E321454CFB00B8BDF2 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E221454CFB00B8BDF2 /* SettingCell.swift */; };
 		2D0F20E521454DC600B8BDF2 /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F20E421454DC600B8BDF2 /* SettingSection.swift */; };
 		2D16F1A021A9C8C100647779 /* AppWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D16F19F21A9C8C100647779 /* AppWireframe.swift */; };
 		2D198D4721A6893700287923 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D198D4621A6893600287923 /* license.txt */; };
@@ -59,7 +58,7 @@
 		2D41BC53214D0DF000B79BF6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC52214D0DF000B79BF6 /* Account.swift */; };
 		2D41BC66214D58D600B79BF6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC65214D58D600B79BF6 /* AboutViewController.swift */; };
 		2D41BC6A214D69D900B79BF6 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC69214D69D900B79BF6 /* LicenseViewController.swift */; };
-		2D41BC6E214D6C2800B79BF6 /* SettingTableViewAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6D214D6C2800B79BF6 /* SettingTableViewAccountCell.swift */; };
+		2D41BC6E214D6C2800B79BF6 /* SettingAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D41BC6D214D6C2800B79BF6 /* SettingAccountCell.swift */; };
 		2D5121FF216782BF00977966 /* PodoWriteTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5121FE216782BF00977966 /* PodoWriteTitleView.swift */; };
 		2D512202216782F700977966 /* PodoWriteTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D512201216782F700977966 /* PodoWriteTitleView.xib */; };
 		2D55999D216512B600FFA64A /* PodoWritePriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D55999C216512B600FFA64A /* PodoWritePriorityView.swift */; };
@@ -74,6 +73,7 @@
 		2D775874235B7640001EC37A /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D775873235B7640001EC37A /* LoginButton.swift */; };
 		2D897917235616F100EC23BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D897919235616F100EC23BE /* InfoPlist.strings */; };
 		2D89792B235619ED00EC23BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D897929235619ED00EC23BE /* Localizable.strings */; };
+		2D90141F235CAA3A00F79EB9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90141E235CAA3A00F79EB9 /* BaseTableViewCell.swift */; };
 		2D90956A2146B93B009335A1 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9095692146B93B009335A1 /* LoginInteractor.swift */; };
 		2D90956C2146B944009335A1 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956B2146B944009335A1 /* LoginPresenter.swift */; };
 		2D9095702146B955009335A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90956F2146B955009335A1 /* LoginViewController.swift */; };
@@ -82,10 +82,10 @@
 		2DAE36C9219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */; };
 		2DAE36CC21A094AA00F03488 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */; };
 		2DAE36CF21A09CD600F03488 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */; };
-		2DAE949E21D753AD00A4DFDC /* PodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE949D21D753AD00A4DFDC /* PodoSection.swift */; };
+		2DAE949E21D753AD00A4DFDC /* TodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE949D21D753AD00A4DFDC /* TodoSection.swift */; };
 		2DAE94A421D7583C00A4DFDC /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */; };
 		2DAE94A721D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */; };
-		2DAE94AD21D7844600A4DFDC /* Podolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AC21D7844600A4DFDC /* Podolist.swift */; };
+		2DAE94AD21D7844600A4DFDC /* Todolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AC21D7844600A4DFDC /* Todolist.swift */; };
 		2DAE94B021D7BB2400A4DFDC /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */; };
 		2DAE94B821DA9B3E00A4DFDC /* MonthCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94B721DA9B3E00A4DFDC /* MonthCalendarView.swift */; };
 		2DAE94BB21DA9CB200A4DFDC /* MCNavigateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94BA21DA9CB200A4DFDC /* MCNavigateView.swift */; };
@@ -95,13 +95,12 @@
 		2DAE94C921DBAE9A00A4DFDC /* MCWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94C421DBAE9A00A4DFDC /* MCWeekView.swift */; };
 		2DAE94CB21DBAE9A00A4DFDC /* MCMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94C521DBAE9A00A4DFDC /* MCMonthView.swift */; };
 		2DAE94CD21DBAE9A00A4DFDC /* MCWeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE94C621DBAE9A00A4DFDC /* MCWeekLabelView.swift */; };
-		2DB43254218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */; };
-		2DB4325B218C9003002AEEBA /* GroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB4325A218C9003002AEEBA /* GroupHeader.swift */; };
+		2DB43254218C8EA3002AEEBA /* TodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* TodolistSectionCell.swift */; };
 		2DCF81C0235A310D006A3464 /* ResponseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF81BF235A310D006A3464 /* ResponseLogin.swift */; };
 		2DCF81C2235A32CA006A3464 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF81C1235A32CA006A3464 /* AppInjector.swift */; };
 		2DD0695C214BDD0200E0C987 /* UIAlertController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */; };
 		2DD7063C214FDF2100C44E16 /* PriorityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063B214FDF2100C44E16 /* PriorityButton.swift */; };
-		2DD7063E214FF15A00C44E16 /* PodoWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */; };
+		2DD7063E214FF15A00C44E16 /* TodoWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063D214FF15A00C44E16 /* TodoWriteView.swift */; };
 		2DE08124214804FF004FD99C /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
 		2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031821512B0600AAAE4C /* AppUtils.swift */; };
 		2DE9031C2151387400AAAE4C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031B2151387400AAAE4C /* Style.swift */; };
@@ -142,24 +141,23 @@
 		2D0F201A2143934700B8BDF2 /* PodolistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistUITests.swift; sourceTree = "<group>"; };
 		2D0F201C2143934700B8BDF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D0F20352143984A00B8BDF2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D0F20412143984A00B8BDF2 /* InterfaceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceString.swift; sourceTree = "<group>"; };
 		2D0F20432143984A00B8BDF2 /* InterfaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceImage.swift; sourceTree = "<group>"; };
 		2D0F20442143984A00B8BDF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D0F20462143984A00B8BDF2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2D0F20492143984A00B8BDF2 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		2D0F205D2143984A00B8BDF2 /* PodolistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodolistViewController.swift; sourceTree = "<group>"; };
+		2D0F205D2143984A00B8BDF2 /* TodolistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodolistViewController.swift; sourceTree = "<group>"; };
 		2D0F205F2143984A00B8BDF2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D0F20852143D1DE00B8BDF2 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
-		2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistPresenter.swift; sourceTree = "<group>"; };
-		2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistInteractor.swift; sourceTree = "<group>"; };
-		2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistWireFrame.swift; sourceTree = "<group>"; };
-		2D0F20A32144196400B8BDF2 /* Podo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podo.swift; sourceTree = "<group>"; };
-		2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistRowCell.swift; sourceTree = "<group>"; };
+		2D0F209B214417B500B8BDF2 /* TodolistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistPresenter.swift; sourceTree = "<group>"; };
+		2D0F209D2144181F00B8BDF2 /* TodolistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistInteractor.swift; sourceTree = "<group>"; };
+		2D0F209F214418E800B8BDF2 /* TodolistWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistWireFrame.swift; sourceTree = "<group>"; };
+		2D0F20A32144196400B8BDF2 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		2D0F20BC214432E800B8BDF2 /* TodolistRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistRowCell.swift; sourceTree = "<group>"; };
 		2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInteractor.swift; sourceTree = "<group>"; };
 		2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWireFrame.swift; sourceTree = "<group>"; };
-		2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		2D0F20E221454CFB00B8BDF2 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		2D0F20E421454DC600B8BDF2 /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
 		2D16F19F21A9C8C100647779 /* AppWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWireframe.swift; sourceTree = "<group>"; };
 		2D198D4621A6893600287923 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
@@ -192,7 +190,7 @@
 		2D41BC52214D0DF000B79BF6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2D41BC65214D58D600B79BF6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2D41BC69214D69D900B79BF6 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
-		2D41BC6D214D6C2800B79BF6 /* SettingTableViewAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewAccountCell.swift; sourceTree = "<group>"; };
+		2D41BC6D214D6C2800B79BF6 /* SettingAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAccountCell.swift; sourceTree = "<group>"; };
 		2D5121FE216782BF00977966 /* PodoWriteTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoWriteTitleView.swift; sourceTree = "<group>"; };
 		2D512201216782F700977966 /* PodoWriteTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodoWriteTitleView.xib; sourceTree = "<group>"; };
 		2D55999C216512B600FFA64A /* PodoWritePriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoWritePriorityView.swift; sourceTree = "<group>"; };
@@ -213,6 +211,7 @@
 		2D89791A235616FA00EC23BE /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D89792A235619ED00EC23BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2D89792C235619F700EC23BE /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2D90141E235CAA3A00F79EB9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		2D9095692146B93B009335A1 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		2D90956B2146B944009335A1 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		2D90956F2146B955009335A1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -221,10 +220,10 @@
 		2DAE36C8219FF14400F03488 /* CAGradientLayer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Additions.swift"; sourceTree = "<group>"; };
 		2DAE36CB21A094AA00F03488 /* UITableView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Additions.swift"; sourceTree = "<group>"; };
 		2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
-		2DAE949D21D753AD00A4DFDC /* PodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoSection.swift; sourceTree = "<group>"; };
+		2DAE949D21D753AD00A4DFDC /* TodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSection.swift; sourceTree = "<group>"; };
 		2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
 		2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Additions.swift"; sourceTree = "<group>"; };
-		2DAE94AC21D7844600A4DFDC /* Podolist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podolist.swift; sourceTree = "<group>"; };
+		2DAE94AC21D7844600A4DFDC /* Todolist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todolist.swift; sourceTree = "<group>"; };
 		2DAE94AF21D7BB2400A4DFDC /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		2DAE94B721DA9B3E00A4DFDC /* MonthCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarView.swift; sourceTree = "<group>"; };
 		2DAE94BA21DA9CB200A4DFDC /* MCNavigateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCNavigateView.swift; sourceTree = "<group>"; };
@@ -234,13 +233,12 @@
 		2DAE94C421DBAE9A00A4DFDC /* MCWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCWeekView.swift; sourceTree = "<group>"; };
 		2DAE94C521DBAE9A00A4DFDC /* MCMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCMonthView.swift; sourceTree = "<group>"; };
 		2DAE94C621DBAE9A00A4DFDC /* MCWeekLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCWeekLabelView.swift; sourceTree = "<group>"; };
-		2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodolistSectionCell.swift; sourceTree = "<group>"; };
-		2DB4325A218C9003002AEEBA /* GroupHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHeader.swift; sourceTree = "<group>"; };
+		2DB43253218C8EA3002AEEBA /* TodolistSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistSectionCell.swift; sourceTree = "<group>"; };
 		2DCF81BF235A310D006A3464 /* ResponseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLogin.swift; sourceTree = "<group>"; };
 		2DCF81C1235A32CA006A3464 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
 		2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Additions.swift"; sourceTree = "<group>"; };
 		2DD7063B214FDF2100C44E16 /* PriorityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityButton.swift; sourceTree = "<group>"; };
-		2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodoWriteView.swift; sourceTree = "<group>"; };
+		2DD7063D214FF15A00C44E16 /* TodoWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWriteView.swift; sourceTree = "<group>"; };
 		2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = lib/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		2DE08125214807D9004FD99C /* Podolist-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Podolist-Bridging-Header.h"; sourceTree = "<group>"; };
 		2DE9031821512B0600AAAE4C /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 		A69F83A088C3C753786CB6B0 /* Pods-Podolist.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug(dev).xcconfig"; sourceTree = "<group>"; };
 		C3898912374A9CA729FEBE21 /* Pods-PodolistTests.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTests.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests.debug(dev).xcconfig"; sourceTree = "<group>"; };
 		C962FEF0D1764AD6E5D0FC65 /* Pods-PodolistUITests.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.debug(dev).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.debug(dev).xcconfig"; sourceTree = "<group>"; };
-		CA5AD311678E279F80FF4434 /* Pods_PodolistTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodolistTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC24C2CDB5F507D7967122C1 /* Pods-PodolistUITests.debug(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistUITests.debug(prod).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistUITests/Pods-PodolistUITests.debug(prod).xcconfig"; sourceTree = "<group>"; };
 		DF9A5BF76F0716392F8FF418 /* Pods-PodolistTests.debug(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistTests.debug(prod).xcconfig"; path = "Pods/Target Support Files/Pods-PodolistTests/Pods-PodolistTests.debug(prod).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -372,7 +369,6 @@
 			isa = PBXGroup;
 			children = (
 				2D0F20382143984A00B8BDF2 /* Localization */,
-				2D0F20412143984A00B8BDF2 /* InterfaceString.swift */,
 				2D198D4921A6C8AF00287923 /* intro.txt */,
 				2D198D4621A6893600287923 /* license.txt */,
 			);
@@ -433,8 +429,8 @@
 		2D0F205E2143984A00B8BDF2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2D775864235AE1C6001EC37A /* GoogleService-Info.plist */,
 				2DE08125214807D9004FD99C /* Podolist-Bridging-Header.h */,
+				2D775864235AE1C6001EC37A /* GoogleService-Info.plist */,
 				2D0F205F2143984A00B8BDF2 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -445,8 +441,8 @@
 			children = (
 				2D3D643A217C6C5E001CF919 /* AccessToken.swift */,
 				2D41BC52214D0DF000B79BF6 /* Account.swift */,
-				2D0F20A32144196400B8BDF2 /* Podo.swift */,
-				2DAE94AC21D7844600A4DFDC /* Podolist.swift */,
+				2D0F20A32144196400B8BDF2 /* Todo.swift */,
+				2DAE94AC21D7844600A4DFDC /* Todolist.swift */,
 				2D31DE9C2168F8CE00977507 /* Priority.swift */,
 				2DCF81BF235A310D006A3464 /* ResponseLogin.swift */,
 			);
@@ -489,18 +485,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2D0F20902144155200B8BDF2 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				2D0F20BB214432D700B8BDF2 /* Cells */,
-				2D0F209D2144181F00B8BDF2 /* PodolistInteractor.swift */,
-				2D0F209B214417B500B8BDF2 /* PodolistPresenter.swift */,
-				2D0F205D2143984A00B8BDF2 /* PodolistViewController.swift */,
-				2D0F209F214418E800B8BDF2 /* PodolistWireFrame.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
 		2D0F2091214415BD00B8BDF2 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,10 +496,10 @@
 		2D0F2092214415CB00B8BDF2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2D9095692146B93B009335A1 /* LoginInteractor.swift */,
-				2D90956B2146B944009335A1 /* LoginPresenter.swift */,
-				2D90956F2146B955009335A1 /* LoginViewController.swift */,
 				2D9095712146B966009335A1 /* LoginWireFrame.swift */,
+				2D90956F2146B955009335A1 /* LoginViewController.swift */,
+				2D90956B2146B944009335A1 /* LoginPresenter.swift */,
+				2D9095692146B93B009335A1 /* LoginInteractor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -533,8 +517,8 @@
 		2D0F20BB214432D700B8BDF2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2DB43253218C8EA3002AEEBA /* PodolistSectionCell.swift */,
-				2D0F20BC214432E800B8BDF2 /* PodolistRowCell.swift */,
+				2DB43253218C8EA3002AEEBA /* TodolistSectionCell.swift */,
+				2D0F20BC214432E800B8BDF2 /* TodolistRowCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -546,10 +530,10 @@
 				2D775871235B72D5001EC37A /* License */,
 				2D775875235B7E3C001EC37A /* Section */,
 				2D0F20E121454CE700B8BDF2 /* Cell */,
-				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
-				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
-				2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */,
 				2D0F20DF21453B3400B8BDF2 /* SettingWireFrame.swift */,
+				2D0F20DD21453B2900B8BDF2 /* SettingViewController.swift */,
+				2D0F20D921453B1700B8BDF2 /* SettingPresenter.swift */,
+				2D0F20D721453B0C00B8BDF2 /* SettingInteractor.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -557,8 +541,8 @@
 		2D0F20E121454CE700B8BDF2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				2D0F20E221454CFB00B8BDF2 /* SettingTableViewCell.swift */,
-				2D41BC6D214D6C2800B79BF6 /* SettingTableViewAccountCell.swift */,
+				2D0F20E221454CFB00B8BDF2 /* SettingCell.swift */,
+				2D41BC6D214D6C2800B79BF6 /* SettingAccountCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -596,11 +580,14 @@
 		2D30104321834BFE005EAE0A /* Todo */ = {
 			isa = PBXGroup;
 			children = (
-				2DAE949D21D753AD00A4DFDC /* PodoSection.swift */,
-				2DB4325A218C9003002AEEBA /* GroupHeader.swift */,
 				2D2E08B42184737E00DEF92A /* Top */,
-				2D0F20902144155200B8BDF2 /* List */,
 				2DE9031E2151563000AAAE4C /* Write */,
+				2D901420235CB5B400F79EB9 /* Section */,
+				2D0F20BB214432D700B8BDF2 /* Cells */,
+				2D0F209F214418E800B8BDF2 /* TodolistWireFrame.swift */,
+				2D0F205D2143984A00B8BDF2 /* TodolistViewController.swift */,
+				2D0F209B214417B500B8BDF2 /* TodolistPresenter.swift */,
+				2D0F209D2144181F00B8BDF2 /* TodolistInteractor.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -644,6 +631,7 @@
 			children = (
 				2D77586A235B44B1001EC37A /* BaseView.swift */,
 				2DE90BF82154D27D00BF8588 /* BaseViewController.swift */,
+				2D90141E235CAA3A00F79EB9 /* BaseTableViewCell.swift */,
 				2DAE36CE21A09CD600F03488 /* BaseWireframe.swift */,
 				2DAC8BAE2166668F007A2997 /* NibView.swift */,
 			);
@@ -678,6 +666,14 @@
 			isa = PBXGroup;
 			children = (
 				2D0F20E421454DC600B8BDF2 /* SettingSection.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		2D901420235CB5B400F79EB9 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				2DAE949D21D753AD00A4DFDC /* TodoSection.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -744,7 +740,7 @@
 				2D2E08B6218473D500DEF92A /* Title */,
 				2D2E08B5218473A800DEF92A /* Priority */,
 				2D31DEE4216A680600977507 /* Calendar */,
-				2DD7063D214FF15A00C44E16 /* PodoWriteView.swift */,
+				2DD7063D214FF15A00C44E16 /* TodoWriteView.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -773,7 +769,6 @@
 			children = (
 				2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */,
 				33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */,
-				CA5AD311678E279F80FF4434 /* Pods_PodolistTest.framework */,
 				26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */,
 				7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */,
 			);
@@ -1082,12 +1077,12 @@
 				2D41BC66214D58D600B79BF6 /* AboutViewController.swift in Sources */,
 				2D31DEE9216A68B600977507 /* WCWeekView.swift in Sources */,
 				2DAE94CB21DBAE9A00A4DFDC /* MCMonthView.swift in Sources */,
+				2D90141F235CAA3A00F79EB9 /* BaseTableViewCell.swift in Sources */,
 				2DD7063C214FDF2100C44E16 /* PriorityButton.swift in Sources */,
 				2DCF81C0235A310D006A3464 /* ResponseLogin.swift in Sources */,
-				2D0F20752143984A00B8BDF2 /* PodolistViewController.swift in Sources */,
+				2D0F20752143984A00B8BDF2 /* TodolistViewController.swift in Sources */,
 				2DAE94B021D7BB2400A4DFDC /* AuthProvider.swift in Sources */,
 				2D3637AC2358DCBC0090E1BF /* AuthPlugin.swift in Sources */,
-				2D0F20632143984A00B8BDF2 /* InterfaceString.swift in Sources */,
 				2D55999D216512B600FFA64A /* PodoWritePriorityView.swift in Sources */,
 				2D0F20682143984A00B8BDF2 /* Fonts.swift in Sources */,
 				2D0F20DA21453B1700B8BDF2 /* SettingPresenter.swift in Sources */,
@@ -1099,14 +1094,14 @@
 				2D5599A0216512CC00FFA64A /* PodoWriteCalendarView.swift in Sources */,
 				2D3404FD2173301300EC3862 /* PriorityView.swift in Sources */,
 				2D3D643B217C6C5E001CF919 /* AccessToken.swift in Sources */,
-				2D0F209C214417B500B8BDF2 /* PodolistPresenter.swift in Sources */,
-				2DAE94AD21D7844600A4DFDC /* Podolist.swift in Sources */,
+				2D0F209C214417B500B8BDF2 /* TodolistPresenter.swift in Sources */,
+				2DAE94AD21D7844600A4DFDC /* Todolist.swift in Sources */,
 				2D3637A72358DC4D0090E1BF /* TodoAPI.swift in Sources */,
 				2D16F1A021A9C8C100647779 /* AppWireframe.swift in Sources */,
-				2D0F20A0214418E800B8BDF2 /* PodolistWireFrame.swift in Sources */,
+				2D0F20A0214418E800B8BDF2 /* TodolistWireFrame.swift in Sources */,
 				2D5121FF216782BF00977966 /* PodoWriteTitleView.swift in Sources */,
-				2D0F209E2144181F00B8BDF2 /* PodolistInteractor.swift in Sources */,
-				2DB43254218C8EA3002AEEBA /* PodolistSectionCell.swift in Sources */,
+				2D0F209E2144181F00B8BDF2 /* TodolistInteractor.swift in Sources */,
+				2DB43254218C8EA3002AEEBA /* TodolistSectionCell.swift in Sources */,
 				2D77586B235B44B1001EC37A /* BaseView.swift in Sources */,
 				2D1C5F8B2164E78400EC79A2 /* UIView+Additions.swift in Sources */,
 				2D3637A92358DC630090E1BF /* AuthAPI.swift in Sources */,
@@ -1115,7 +1110,7 @@
 				2DAE36CF21A09CD600F03488 /* BaseWireframe.swift in Sources */,
 				2DE9031C2151387400AAAE4C /* Style.swift in Sources */,
 				2D2E08BD2184C9A100DEF92A /* CalendarUtils.swift in Sources */,
-				2DAE949E21D753AD00A4DFDC /* PodoSection.swift in Sources */,
+				2DAE949E21D753AD00A4DFDC /* TodoSection.swift in Sources */,
 				2DAE94A721D7586F00A4DFDC /* DateFormatter+Additions.swift in Sources */,
 				2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */,
 				2DAC8BAF2166668F007A2997 /* NibView.swift in Sources */,
@@ -1128,9 +1123,9 @@
 				2D775874235B7640001EC37A /* LoginButton.swift in Sources */,
 				2D0F20602143984A00B8BDF2 /* AppDelegate.swift in Sources */,
 				2D31DEE6216A687400977507 /* WCDayView.swift in Sources */,
-				2DD7063E214FF15A00C44E16 /* PodoWriteView.swift in Sources */,
-				2D0F20A42144196400B8BDF2 /* Podo.swift in Sources */,
-				2D41BC6E214D6C2800B79BF6 /* SettingTableViewAccountCell.swift in Sources */,
+				2DD7063E214FF15A00C44E16 /* TodoWriteView.swift in Sources */,
+				2D0F20A42144196400B8BDF2 /* Todo.swift in Sources */,
+				2D41BC6E214D6C2800B79BF6 /* SettingAccountCell.swift in Sources */,
 				2D77586F235B612E001EC37A /* Int+Additions.swift in Sources */,
 				2D2E08BA21847B1000DEF92A /* WCWeekLabelView.swift in Sources */,
 				2D0F208E2143D1DE00B8BDF2 /* UIColor+Additions.swift in Sources */,
@@ -1138,19 +1133,18 @@
 				2D0F20E021453B3400B8BDF2 /* SettingWireFrame.swift in Sources */,
 				2DAE94C121DB4D6B00A4DFDC /* MCCalendarView.swift in Sources */,
 				2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */,
-				2D0F20E321454CFB00B8BDF2 /* SettingTableViewCell.swift in Sources */,
+				2D0F20E321454CFB00B8BDF2 /* SettingCell.swift in Sources */,
 				2DCF81C2235A32CA006A3464 /* AppInjector.swift in Sources */,
 				2D31DEA321690E5900977507 /* String+Additions.swift in Sources */,
 				2DAE94A421D7583C00A4DFDC /* Date+Additions.swift in Sources */,
 				2D0F20642143984A00B8BDF2 /* InterfaceImage.swift in Sources */,
 				2D0F20E521454DC600B8BDF2 /* SettingSection.swift in Sources */,
 				2DAE94CD21DBAE9A00A4DFDC /* MCWeekLabelView.swift in Sources */,
-				2D0F20BD214432E800B8BDF2 /* PodolistRowCell.swift in Sources */,
+				2D0F20BD214432E800B8BDF2 /* TodolistRowCell.swift in Sources */,
 				2D9095702146B955009335A1 /* LoginViewController.swift in Sources */,
 				2DAE36C9219FF14400F03488 /* CAGradientLayer+Additions.swift in Sources */,
 				2DAE94BB21DA9CB200A4DFDC /* MCNavigateView.swift in Sources */,
 				2DE90BF92154D27D00BF8588 /* BaseViewController.swift in Sources */,
-				2DB4325B218C9003002AEEBA /* GroupHeader.swift in Sources */,
 				2D31DEA72169DF2E00977507 /* MainTopView.swift in Sources */,
 				2D9095722146B966009335A1 /* LoginWireFrame.swift in Sources */,
 				2D31DEF3216A736900977507 /* WeekCalendarView.swift in Sources */,
@@ -1274,8 +1268,8 @@
 			baseConfigurationReference = 60DAC366B3A27A7C36DDBE83 /* Pods-Podolist.release(prod).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 7KW522KWZF;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1296,17 +1290,11 @@
 					"\"Alamofire\"",
 					"-framework",
 					"\"KeychainAccess\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SwiftyJSON\"",
 					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = podo_Podolist_appstore_181015;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1422,8 +1410,8 @@
 			baseConfigurationReference = 062071252D91868C80BF1FC7 /* Pods-Podolist.debug(prod).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 7KW522KWZF;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1444,17 +1432,11 @@
 					"\"Alamofire\"",
 					"-framework",
 					"\"KeychainAccess\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SwiftyJSON\"",
 					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = podo_Podolist_dev_181015;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1564,8 +1546,8 @@
 			baseConfigurationReference = 21D80919D89AA907C87BEE4B /* Pods-Podolist.release(dev).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 7KW522KWZF;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1586,17 +1568,11 @@
 					"\"Alamofire\"",
 					"-framework",
 					"\"KeychainAccess\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SwiftyJSON\"",
 					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = podo_Podolist_appstore_181015;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1712,8 +1688,8 @@
 			baseConfigurationReference = A69F83A088C3C753786CB6B0 /* Pods-Podolist.debug(dev).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 7KW522KWZF;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1734,17 +1710,11 @@
 					"\"Alamofire\"",
 					"-framework",
 					"\"KeychainAccess\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SwiftyJSON\"",
 					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = podo_Podolist_dev_181015;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

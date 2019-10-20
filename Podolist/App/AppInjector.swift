@@ -56,7 +56,7 @@ struct ApplicationInjector {
             .inObjectScope(.container)
         container
             .register(TodoServiceType.self) { r in
-                let networking = r.resolve(AuthServiceType.self)!
+                let networking = r.resolve(TodoNetworking.self)!
                 return TodoService(networking: networking)
             }
             .inObjectScope(.container)
@@ -88,6 +88,6 @@ struct ApplicationInjector {
 
     static func configureAppearance() {
         UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().barStyle = .blackOpaque
+//        UINavigationBar.appearance().barStyle = .blackOpaque
     }
 }

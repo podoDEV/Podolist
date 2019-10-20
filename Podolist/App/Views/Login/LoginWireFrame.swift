@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LoginWireFrameProtocol: class {
+protocol LoginWireFrameProtocol {
     // Presenter -> WireFrame
     func navigate(to route: LoginWireFrame.Router)
 }
@@ -26,8 +26,8 @@ class LoginWireFrame: BaseWireframe, LoginWireFrameProtocol {
     }
 
     func showTodoView() {
-        let podolistViewController = PodolistWireFrame.createPodolistModule()
-        show(podolistViewController, with: .root(window: UIApplication.shared.keyWindow!))
+        let todolistViewController = TodolistWireFrame.createTodolistModule()
+        show(todolistViewController, with: .root(window: UIApplication.shared.keyWindow!))
     }
 }
 

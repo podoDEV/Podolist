@@ -17,7 +17,7 @@ class WCWeekLabelView: BaseView {
                                    WeekLabel(day: NSLocalizedString("FRI", comment: "Friday")),
                                    WeekLabel(day: NSLocalizedString("SAT", comment: "Saturday"))]
 
-    override func setup() {
+    override func setupSubviews() {
         for label in weekLabels {
             addSubview(label)
         }

@@ -16,7 +16,7 @@ protocol LoginPresenterProtocol: AnyObject {
 }
 
 class LoginPresenter {
-    private weak let view: LoginViewProtocol?
+    private weak var view: LoginViewProtocol?
     private let wireframe: LoginWireFrameProtocol
     private let interactor: LoginInteractorProtocol
 
