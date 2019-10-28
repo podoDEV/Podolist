@@ -2,12 +2,24 @@
 //  LoginButton.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/19.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
+import UIKit
+import Scope
 import SnapKit
 
 final class LoginButton: UIButton {
+
+    // MARK: - Constants
+
+    private struct Metric {
+        static let height = 28.f
+        static let textLeading = 6.f
+    }
+
+    // MARK: - Subviews
 
     private var containerView: UIView!
     private var iconImage: UIImageView!
@@ -24,19 +36,20 @@ final class LoginButton: UIButton {
     }
 
     func setupSubviews() {
-        containerView = UIView(frame: .zero)
-        containerView.isUserInteractionEnabled = false
-        containerView.backgroundColor = .clear
-        addSubview(containerView)
-
-        iconImage = UIImageView()
-        containerView.addSubview(iconImage)
-
-        textLabel = UILabel()
-        textLabel.font = .appFontR(size: 14)
-        textLabel.textColor = .black
-        textLabel.sizeToFit()
-        containerView.addSubview(textLabel)
+        containerView = UIView().also {
+            $0.isUserInteractionEnabled = false
+            $0.backgroundColor = .clear
+            addSubview($0)
+        }
+        iconImage = UIImageView().also {
+            containerView.addSubview($0)
+        }
+        textLabel = UILabel().also {
+            $0.font = .appFontR(size: 14)
+            $0.textColor = .black
+            $0.sizeToFit()
+            containerView.addSubview($0)
+        }
     }
 
     func setupConstraints() {
@@ -44,18 +57,14 @@ final class LoginButton: UIButton {
             $0.height.equalTo(iconImage.snp.height)
             $0.center.equalTo(snp.center)
         }
-
         iconImage.snp.makeConstraints {
             $0.leading.equalTo(containerView.snp.leading)
-            $0.height.width.equalTo(27)
-            $0.centerY.equalToSuperview()
+            $0.height.width.equalTo(Metric.height)
         }
-
         textLabel.snp.makeConstraints {
-            $0.leading.equalTo(iconImage.snp.trailing).offset(6)
+            $0.leading.equalTo(iconImage.snp.trailing).offset(Metric.textLeading)
             $0.trailing.equalTo(containerView.snp.trailing)
-            $0.height.equalTo(27)
-            $0.centerY.equalToSuperview()
+            $0.height.equalTo(Metric.height)
         }
     }
 

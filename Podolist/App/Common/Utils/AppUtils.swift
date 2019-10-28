@@ -2,36 +2,23 @@
 //  AppUtils.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/18.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import Foundation
 
 class AppUtils {
-    static var isIphoneX: Bool {
-        if #available(iOS 11.0, *) {
-            var topPadding: CGFloat = 0
-            switch UIDevice.current.orientation {
-            case .portrait:
-                topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
-            case .portraitUpsideDown:
-                topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
-            case .landscapeLeft:
-                topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.left ?? 0
-            case .landscapeRight:
-                topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.right ?? 0
-            default:
-                topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
-            }
-            if topPadding > 0 {
-                return true
-            }
-        }
-        return false
+    static let AppVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    static let AppBuildVersion = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+    static let iOSVersion = UIDevice.current.systemVersion
+
+    static var baseURL: String {
+        return "http://api.dev.podolist.com:8000/"
     }
 
     static func versionName() -> String {
-        var version = "\(InterfaceString.Setting.Version) \(InterfaceString.Signature.AppVersion)"
+        var version = "setting.about.version".localized + AppVersion
         #if DEBUG
             version.append(".debug")
         #endif

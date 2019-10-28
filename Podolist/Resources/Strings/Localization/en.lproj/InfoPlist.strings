@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Podolist
+
+  Created by hb1love on 2019/10/16.
+  Copyright © 2019 podo. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Podolist";
+"CFBundleName" = "Podolist";

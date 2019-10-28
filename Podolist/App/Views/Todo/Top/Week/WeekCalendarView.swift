@@ -36,7 +36,7 @@ class WeekCalendarView: BaseView {
                                                   object: nil)
     }
 
-    override func setup() {
+    override func setupSubviews() {
         calendarView.update(DateInRegion(date))
         addSubview(weekLabel)
         addSubview(calendarView)

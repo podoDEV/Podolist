@@ -47,7 +47,7 @@ class WCDayView: BaseView {
         }
     }
 
-    override func setup() {
+    override func setupSubviews() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(onSelected))
         addGestureRecognizer(tap)
         addSubview(backgroundView)

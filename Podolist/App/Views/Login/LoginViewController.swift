@@ -2,117 +2,107 @@
 //  LoginViewController.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/19.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
-import RxSwift
+import Scope
 import SnapKit
 
-protocol LoginViewProtocol: class {
-    // Presenter -> View
-    func showLogin()
+protocol LoginViewProtocol: AnyObject {
+    // MARK: - Presenter -> View
 }
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController, LoginViewProtocol {
+
+    // MARK: - Constants
+
+    private struct Metric {
+        static let logo1Width = 86.f
+        static let logo1Height = 94.f
+        static let logo2Width = 120.f
+        static let logo2Height = 31.f
+        static let stackLeadingTrailing = 60.f
+        static let stackBottom = 60.f
+        static let stackSpacing = 40.f
+        static let buttonHeight = 40.f
+    }
+
+    // MARK: - Subviews
+
+    private var logoView: UIImageView!
+    private var logoView2: UIImageView!
+    private var providerStackView: UIStackView!
+    private var kakaoLoginButton: LoginButton!
+    private var anonymousLoginButton: UIButton!
 
     // MARK: - Properties
 
     var presenter: LoginPresenterProtocol!
 
-    // MARK: - Views
-
-    private lazy var launchView: UIView = {
-        let view = Bundle.main.loadNibNamed("Launch", owner: self, options: nil)?.first as! UIView
-        return view
-    }()
-
-    private lazy var logoView: UIImageView = {
-        let view = UIImageView()
-        view.image = InterfaceImage.logo.normalImage
-        return view
-    }()
-
-    private lazy var logoView2: UIImageView = {
-        let view = UIImageView()
-        view.image = InterfaceImage.logo2.normalImage
-        return view
-    }()
-
-    private lazy var kakaoLoginButton: LoginButton = {
-        let view = LoginButton()
-        view.configure(image: InterfaceImage.kakaologin.normalImage,
-                       title: InterfaceString.Login.Kakao,
-                       color: .kakaoLogin)
-        view.layer.cornerRadius = 20
-        view.clipsToBounds = true
-        return view
-    }()
-
-    private lazy var anonymousLoginButton: UIButton = {
-        let view = UIButton()
-        view.backgroundColor = .clear
-        view.titleLabel?.font = .appFontR(size: 14)
-        view.setTitle(InterfaceString.Login.Anonymous, for: .normal)
-        view.setTitleColor(.black, for: .normal)
-        return view
-    }()
-
-    // MARK: - Life Cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        presenter?.viewDidLoad()
-    }
-
     override func setupSubviews() {
-        super.setupSubviews()
-
-        kakaoLoginButton.addTarget(self, action: #selector(didTapLogin(_:)), for: .touchUpInside)
-        anonymousLoginButton.addTarget(self, action: #selector(didTapLogin(_:)), for: .touchUpInside)
-
-        [launchView, logoView, logoView2, kakaoLoginButton, anonymousLoginButton].forEach(view.addSubview)
-        view.bringSubviewToFront(launchView)
+        logoView = UIImageView().also {
+            $0.image = InterfaceImage.logo.normalImage
+            view.addSubview($0)
+        }
+        logoView2 = UIImageView().also {
+            $0.image = InterfaceImage.logo2.normalImage
+            view.addSubview($0)
+        }
+        providerStackView = UIStackView().also {
+            $0.axis = .vertical
+            $0.alignment = .fill
+            $0.distribution = .fill
+            $0.spacing = Metric.stackSpacing
+            view.addSubview($0)
+        }
+        kakaoLoginButton = LoginButton().also {
+            $0.layer.cornerRadius = 20
+            $0.clipsToBounds = true
+            $0.addTarget(self, action: #selector(didTapLogin(_:)), for: .touchUpInside)
+            $0.configure(
+                image: InterfaceImage.kakaologin.normalImage,
+                title: "login.kakao".localized,
+                color: .kakaoLogin
+            )
+            providerStackView.addArrangedSubview($0)
+        }
+        anonymousLoginButton = UIButton().also {
+            $0.backgroundColor = .clear
+            $0.titleLabel?.font = .appFontR(size: 14)
+            $0.setTitle("login.anonymous".localized, for: .normal)
+            $0.setTitleColor(.black, for: .normal)
+            $0.addTarget(self, action: #selector(didTapLogin(_:)), for: .touchUpInside)
+            providerStackView.addArrangedSubview($0)
+        }
     }
 
     override func setupConstraints() {
-        super.setupConstraints()
-        launchView.snp.makeConstraints {
-            $0.size.equalToSuperview()
-            $0.center.equalToSuperview()
-        }
-
         logoView.snp.makeConstraints {
-            $0.width.equalTo(86)
-            $0.height.equalTo(94)
+            $0.width.equalTo(Metric.logo1Width)
+            $0.height.equalTo(Metric.logo1Height)
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview().offset(-100)
         }
-
         logoView2.snp.makeConstraints {
-            $0.width.equalTo(119)
-            $0.height.equalTo(31)
-            $0.top.equalTo(logoView.snp.bottom).offset(25)
+            $0.width.equalTo(Metric.logo2Width)
+            $0.height.equalTo(Metric.logo2Height)
+            $0.top.equalTo(logoView.snp.bottom).offset(24)
             $0.centerX.equalToSuperview()
         }
-
-        kakaoLoginButton.snp.makeConstraints {
-            $0.leading.equalTo(view.snp.leading).offset(60)
-            $0.trailing.equalTo(view.snp.trailing).offset(-60)
-            $0.height.equalTo(40)
-            $0.width.greaterThanOrEqualTo(240)
+        providerStackView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(Metric.stackLeadingTrailing)
+            $0.trailing.equalToSuperview().offset(-Metric.stackLeadingTrailing)
+            $0.bottom.equalToSuperview().offset(-Metric.stackBottom)
         }
-
+        kakaoLoginButton.snp.makeConstraints {
+            $0.height.equalTo(Metric.buttonHeight)
+        }
         anonymousLoginButton.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(60)
-            $0.trailing.equalToSuperview().offset(-60)
-            $0.height.equalTo(40)
-            $0.top.equalTo(kakaoLoginButton.snp.bottom).offset(40)
-            $0.bottom.equalToSuperview().offset(-90)
+            $0.height.equalTo(Metric.buttonHeight)
         }
     }
-
-    // MARK: - Target Action
 
     @objc func didTapLogin(_ sender: Any) {
         guard let button = sender as? UIButton else { return }
@@ -124,15 +114,5 @@ class LoginViewController: BaseViewController {
         default:
             break
         }
-    }
-}
-
-// MARK: - LoginViewProtocol
-
-extension LoginViewController: LoginViewProtocol {
-
-    func showLogin() {
-        launchView.removeFromSuperview()
-        KOSession.shared().logoutAndClose { _, _ in }
     }
 }

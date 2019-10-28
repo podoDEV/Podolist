@@ -2,7 +2,8 @@
 //  BaseWireframe.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/19.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
@@ -11,34 +12,38 @@ class BaseWireframe: NSObject {
     weak var view: UIViewController!
 
     func show(_ viewController: UIViewController, with type: TransitionType, animated: Bool = true) {
-        switch type {
-        case .push:
-            guard let navigationController = view.navigationController else {
-                fatalError("Can't push without a navigation controller")
+        DispatchQueue.main.async {
+            switch type {
+            case .push:
+                guard let navigationController = self.view.navigationController else {
+                    fatalError("Can't push without a navigation controller")
+                }
+                navigationController.pushViewController(viewController, animated: animated)
+            case .present(let sender):
+                sender.present(viewController, animated: animated)
+            case .root(let window):
+                window.rootViewController = viewController
             }
-            navigationController.pushViewController(viewController, animated: animated)
-        case .present(let sender):
-            sender.present(viewController, animated: animated)
-        case .root(let window):
-            window.rootViewController = viewController
         }
     }
 
     func pop(isModal: Bool = false, animated: Bool = true) {
-        if let navigationController = view.navigationController {
-            if isModal {
-                navigationController.dismiss(animated: animated, completion: nil)
-            } else if navigationController.popViewController(animated: animated) == nil {
-                if let presentingView = view.presentingViewController {
-                    return presentingView.dismiss(animated: animated)
-                } else {
-                    fatalError("Can't navigate back from \(view!)")
+        DispatchQueue.main.async {
+            if let navigationController = self.view.navigationController {
+                if isModal {
+                    navigationController.dismiss(animated: animated, completion: nil)
+                } else if navigationController.popViewController(animated: animated) == nil {
+                    if let presentingView = self.view.presentingViewController {
+                        return presentingView.dismiss(animated: animated)
+                    } else {
+                        fatalError("Can't navigate back from \(self.view!)")
+                    }
                 }
+            } else if let presentingView = self.view.presentingViewController {
+                presentingView.dismiss(animated: animated)
+            } else {
+                fatalError("Neither modal nor navigation! Can't navigate back from \(String(describing: self.view))")
             }
-        } else if let presentingView = view.presentingViewController {
-            presentingView.dismiss(animated: animated)
-        } else {
-            fatalError("Neither modal nor navigation! Can't navigate back from \(view!)")
         }
     }
 }
@@ -49,7 +54,7 @@ extension BaseWireframe {
                       message: String,
                       preferredStyle: UIAlertController.Style = .alert) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
-        let okAction = UIAlertAction(title: InterfaceString.Commmon.OK, style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "common.ok".localized, style: .default, handler: nil)
         alertController.addAction(okAction)
         show(alertController, with: .present(from: view))
     }
@@ -61,7 +66,7 @@ extension BaseWireframe {
                             preferredStyle: UIAlertController.Style = .actionSheet) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         let userAction = UIAlertAction(title: actionTitle, style: .destructive, handler: handler)
-        let cancelAction = UIAlertAction(title: InterfaceString.Commmon.Cancel, style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "common.cancel".localized, style: .cancel, handler: nil)
         alertController.addAction(userAction)
         alertController.addAction(cancelAction)
         show(alertController, with: .present(from: view))

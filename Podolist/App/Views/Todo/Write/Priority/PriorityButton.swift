@@ -2,12 +2,13 @@
 //  PriorityButton.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/27.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
 
-class PriorityButton: UIButton {
+final class PriorityButton: UIButton {
 
     var priority: Priority = .medium
     var isSelectedButton: Bool = false {
@@ -18,16 +19,16 @@ class PriorityButton: UIButton {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        setupSubviews()
     }
 
     init(priority: Priority) {
         super.init(frame: .zero)
         self.priority = priority
-        setup()
+        setupSubviews()
     }
 
-    func setup() {
+    func setupSubviews() {
         backgroundColor = .backgroundColor2
         setTitle(priority.toString(), for: .normal)
         setTitleColor(.white, for: .normal)

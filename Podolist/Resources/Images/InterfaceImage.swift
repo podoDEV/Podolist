@@ -35,7 +35,7 @@ enum InterfaceImage: String {
         }
     }
 
-    fileprivate func pngNamed(_ name: String) -> UIImage {
+    func pngNamed(_ name: String) -> UIImage {
         return UIImage(named: "\(name).png")!
     }
 
