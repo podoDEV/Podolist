@@ -1,5 +1,5 @@
 //
-//  Colors.swift
+//  Color.swift
 //  Podolist
 //
 //  Created by hb1love on 2019/10/20.

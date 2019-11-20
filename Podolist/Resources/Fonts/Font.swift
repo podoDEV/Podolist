@@ -1,8 +1,9 @@
 //
-//  Fonts.swift
+//  Font.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/28.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
