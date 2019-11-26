@@ -30,6 +30,7 @@ final class TodolistViewController: BaseViewController {
 
     private struct Metric {
         static let topViewHeight = 133.f
+        static let monthCalendarHeight = 400.f
         static let writeViewNormalHeight = 50.f
         static let writeViewExpandHeight = 330.f
         static let writeViewTotalHeight = 400.f
@@ -73,6 +74,7 @@ final class TodolistViewController: BaseViewController {
 
     var presenter: TodolistPresenterProtocol!
     private var keyboardHeight: CGFloat?
+
     private var normalFrame: CGRect {
         return CGRect(
             x: 0,
@@ -109,7 +111,7 @@ final class TodolistViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillAppear(notification:)),
@@ -156,12 +158,35 @@ final class TodolistViewController: BaseViewController {
     }
 
     override func setupConstraints() {
-        monthCalendarHidingView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height + safeAreaInset.bottom)
-        monthCalendarView.frame = CGRect(x: 0, y: -400 - safeAreaInset.top, width: view.bounds.width, height: 400 + safeAreaInset.top)
-        topView.frame.size = CGSize(width: view.bounds.width, height: Metric.topViewHeight + safeAreaInset.top)
-        tableView.frame = CGRect(x: 0, y: topView.frame.maxY, width: view.bounds.width, height: view.bounds.height - topView.frame.height - Metric.writeViewNormalHeight - safeAreaInset.bottom)
-        writeHidingView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height + safeAreaInset.bottom)
-        writeView.frame = CGRect(x: 0, y: view.frame.height - Metric.writeViewNormalHeight - safeAreaInset.bottom, width: view.frame.width, height: Metric.writeViewNormalHeight + safeAreaInset.bottom)
+        monthCalendarHidingView.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: view.bounds.width,
+            height: view.bounds.height + safeAreaInset.bottom
+        )
+        monthCalendarView.frame = CGRect(
+            x: 0,
+            y: -Metric.monthCalendarHeight - safeAreaInset.top,
+            width: view.bounds.width,
+            height: Metric.monthCalendarHeight + safeAreaInset.top
+        )
+        topView.frame.size = CGSize(
+            width: view.bounds.width,
+            height: Metric.topViewHeight + safeAreaInset.top
+        )
+        tableView.frame = CGRect(
+            x: 0,
+            y: topView.frame.maxY,
+            width: view.bounds.width,
+            height: view.bounds.height - topView.frame.height - Metric.writeViewNormalHeight - safeAreaInset.bottom
+        )
+        writeHidingView.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: view.bounds.width,
+            height: view.bounds.height + safeAreaInset.bottom
+        )
+        writeView.frame = normalFrame
     }
 }
 
@@ -214,7 +239,7 @@ extension TodolistViewController: TodolistViewProtocol {
     func hideMonthCalendar() {
         monthCalendarHidingView.isHidden = true
         UIView.animate(withDuration: 0.2) {
-            self.monthCalendarView.frame.origin.y = -400 - self.safeAreaInset.top
+            self.monthCalendarView.frame.origin.y = -Metric.monthCalendarHeight - self.safeAreaInset.top
         }
     }
 

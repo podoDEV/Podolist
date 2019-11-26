@@ -38,7 +38,7 @@ final class SettingCell: BaseTableViewCell, SettingCellType {
             contentView.addSubview($0)
         }
         titleLabel = UILabel().also {
-            $0.font = .appFontL(size: 13)
+            $0.font = .appFontL(size: 15)
             $0.textColor = .black
             $0.sizeToFit()
             contentView.addSubview($0)
@@ -64,12 +64,12 @@ final class SettingCell: BaseTableViewCell, SettingCellType {
         thumbnailView.image = item.image
         titleLabel.text = item.title
 
-        switch item.type {
-        case .about,
-             .license:
-            accessoryType = .disclosureIndicator
-        default:
-            break
-        }
+//        switch item.type {
+//        case .about,
+//             .license:
+//            accessoryType = .disclosureIndicator
+//        default:
+//            break
+//        }
     }
 }

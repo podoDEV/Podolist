@@ -29,6 +29,7 @@ class AppWireframe: BaseWireframe {
         } else {
             viewController = TodolistWireFrame.createTodolistModule()
         }
+        window.makeKeyAndVisible()
         show(viewController, with: .root(window: window))
     }
 }

@@ -97,13 +97,15 @@
 		2DB43254218C8EA3002AEEBA /* TodolistSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB43253218C8EA3002AEEBA /* TodolistSectionCell.swift */; };
 		2DBBBD55238585990068648A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DBBBD54238585990068648A /* GoogleService-Info.plist */; };
 		2DCF81C0235A310D006A3464 /* ResponseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF81BF235A310D006A3464 /* ResponseLogin.swift */; };
-		2DCF81C2235A32CA006A3464 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF81C1235A32CA006A3464 /* AppInjector.swift */; };
+		2DCF81C2235A32CA006A3464 /* ApplicationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF81C1235A32CA006A3464 /* ApplicationContainer.swift */; };
 		2DD0695C214BDD0200E0C987 /* UIAlertController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */; };
 		2DD7063C214FDF2100C44E16 /* PriorityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063B214FDF2100C44E16 /* PriorityButton.swift */; };
 		2DD7063E214FF15A00C44E16 /* TodoWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7063D214FF15A00C44E16 /* TodoWriteView.swift */; };
 		2DE08124214804FF004FD99C /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */; };
 		2DE9031921512B0600AAAE4C /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9031821512B0600AAAE4C /* AppUtils.swift */; };
 		2DE90BF92154D27D00BF8588 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE90BF82154D27D00BF8588 /* BaseViewController.swift */; };
+		2DEE7C57238D4EDB00A739B6 /* Scope+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE7C56238D4EDB00A739B6 /* Scope+Additions.swift */; };
+		2DEE7C5A238D809900A739B6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE7C59238D809900A739B6 /* ImageLoader.swift */; };
 		41B46F1F30916E8594326EAD /* Pods_PodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ED3BA7B89B8ACF5AE7DF24 /* Pods_PodolistTests.framework */; };
 		9E007C3A4E0C07EAD38F656F /* Pods_PodolistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */; };
 		CF27ECCE5AFDD750647BF84F /* Pods_Podolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */; };
@@ -234,7 +236,7 @@
 		2DB43253218C8EA3002AEEBA /* TodolistSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistSectionCell.swift; sourceTree = "<group>"; };
 		2DBBBD54238585990068648A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DCF81BF235A310D006A3464 /* ResponseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLogin.swift; sourceTree = "<group>"; };
-		2DCF81C1235A32CA006A3464 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
+		2DCF81C1235A32CA006A3464 /* ApplicationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationContainer.swift; sourceTree = "<group>"; };
 		2DD0695B214BDD0200E0C987 /* UIAlertController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Additions.swift"; sourceTree = "<group>"; };
 		2DD7063B214FDF2100C44E16 /* PriorityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityButton.swift; sourceTree = "<group>"; };
 		2DD7063D214FF15A00C44E16 /* TodoWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWriteView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,8 @@
 		2DE08125214807D9004FD99C /* Podolist-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Podolist-Bridging-Header.h"; sourceTree = "<group>"; };
 		2DE9031821512B0600AAAE4C /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		2DE90BF82154D27D00BF8588 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2DEE7C56238D4EDB00A739B6 /* Scope+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scope+Additions.swift"; sourceTree = "<group>"; };
+		2DEE7C59238D809900A739B6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Podolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60DAC366B3A27A7C36DDBE83 /* Pods-Podolist.release(prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.release(prod).xcconfig"; path = "Pods/Target Support Files/Pods-Podolist/Pods-Podolist.release(prod).xcconfig"; sourceTree = "<group>"; };
 		7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodolistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,12 +342,13 @@
 			isa = PBXGroup;
 			children = (
 				2D0F20352143984A00B8BDF2 /* AppDelegate.swift */,
-				2DCF81C1235A32CA006A3464 /* AppInjector.swift */,
+				2DCF81C1235A32CA006A3464 /* ApplicationContainer.swift */,
 				2D16F19F21A9C8C100647779 /* AppWireframe.swift */,
 				2D775866235AE389001EC37A /* Analytics */,
 				2D0F207A2143D1DE00B8BDF2 /* Common */,
 				2D41BC54214D170300B79BF6 /* Domain */,
 				2D0F20782143D12600B8BDF2 /* Entities */,
+				2DEE7C58238D808A00A739B6 /* Helper */,
 				2D0F207B2143D1DE00B8BDF2 /* Networking */,
 				2D0F20A921441A4B00B8BDF2 /* Services */,
 				2D0F205C2143984A00B8BDF2 /* Views */,
@@ -478,6 +483,7 @@
 				2DAE94A321D7583C00A4DFDC /* Date+Additions.swift */,
 				2DAE94A621D7586F00A4DFDC /* DateFormatter+Additions.swift */,
 				2D77586E235B612E001EC37A /* Int+Additions.swift */,
+				2DEE7C56238D4EDB00A739B6 /* Scope+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -734,6 +740,14 @@
 			path = Write;
 			sourceTree = "<group>";
 		};
+		2DEE7C58238D808A00A739B6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2DEE7C59238D809900A739B6 /* ImageLoader.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		4E8C794971625CD6374BCC4D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -926,7 +940,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		2D775869235AEADB001EC37A /* Crashlytics Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1092,6 +1106,7 @@
 				2D0F209E2144181F00B8BDF2 /* TodolistInteractor.swift in Sources */,
 				2DB43254218C8EA3002AEEBA /* TodolistSectionCell.swift in Sources */,
 				2D77586B235B44B1001EC37A /* BaseView.swift in Sources */,
+				2DEE7C5A238D809900A739B6 /* ImageLoader.swift in Sources */,
 				2D1C5F8B2164E78400EC79A2 /* UIView+Additions.swift in Sources */,
 				2D3637A92358DC630090E1BF /* AuthAPI.swift in Sources */,
 				2DAE36CC21A094AA00F03488 /* UITableView+Additions.swift in Sources */,
@@ -1113,6 +1128,7 @@
 				2D31DEE6216A687400977507 /* WCDayView.swift in Sources */,
 				2DD7063E214FF15A00C44E16 /* TodoWriteView.swift in Sources */,
 				2D0F20A42144196400B8BDF2 /* Todo.swift in Sources */,
+				2DEE7C57238D4EDB00A739B6 /* Scope+Additions.swift in Sources */,
 				2D41BC6E214D6C2800B79BF6 /* SettingAccountCell.swift in Sources */,
 				2D77586F235B612E001EC37A /* Int+Additions.swift in Sources */,
 				2D2E08BA21847B1000DEF92A /* WCWeekLabelView.swift in Sources */,
@@ -1122,7 +1138,7 @@
 				2DAE94C121DB4D6B00A4DFDC /* MCCalendarView.swift in Sources */,
 				2D0F20D821453B0C00B8BDF2 /* SettingInteractor.swift in Sources */,
 				2D0F20E321454CFB00B8BDF2 /* SettingCell.swift in Sources */,
-				2DCF81C2235A32CA006A3464 /* AppInjector.swift in Sources */,
+				2DCF81C2235A32CA006A3464 /* ApplicationContainer.swift in Sources */,
 				2D31DEA321690E5900977507 /* String+Additions.swift in Sources */,
 				2DAE94A421D7583C00A4DFDC /* Date+Additions.swift in Sources */,
 				2D0F20642143984A00B8BDF2 /* InterfaceImage.swift in Sources */,
@@ -1241,7 +1257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1266,7 +1282,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1284,7 +1300,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "Release(Prod)";
@@ -1383,7 +1399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1409,7 +1425,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1427,7 +1443,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "Debug(Prod)";
@@ -1520,7 +1536,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1545,7 +1561,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1563,7 +1579,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "Release(Dev)";
@@ -1662,7 +1678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1688,7 +1704,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1706,7 +1722,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "Debug(Dev)";

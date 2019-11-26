@@ -48,6 +48,15 @@ class PodoWriteTitleView: BaseView {
         }
     }
     var mode: WritingMode?
+    var expanded: Bool = false {
+        didSet {
+            if expanded {
+                detailButton.transform = CGAffineTransform(rotationAngle: .pi / 4)
+            } else {
+                detailButton.transform = .identity
+            }
+        }
+    }
 
     func update(_ title: String?, mode: WritingMode) {
         createButton.isEnabled = true

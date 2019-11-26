@@ -18,7 +18,7 @@ class AppUtils {
     }
 
     static func versionName() -> String {
-        var version = "setting.about.version".localized + AppVersion
+        var version = "setting.about.version".localized + " " + AppVersion
         #if DEBUG
             version.append(".debug")
         #endif

@@ -30,7 +30,7 @@ final class AuthService: AuthServiceType {
     }
 
     func authorize(_ provider: AuthProvider, _ completion: @escaping (Result<(), PodoError>) -> Void) {
-        networking.request(.login(provider: provider)) { (result: (Result<ResponseLogin, PodoError>)) -> Void in
+        networking.request(type: .login(provider: provider)) { (result: (Result<ResponseLogin, PodoError>)) -> Void in
             switch result {
             case .success(let responseLogin):
                 guard let session = responseLogin.sessionId else {

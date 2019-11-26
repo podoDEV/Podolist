@@ -14,11 +14,12 @@ class LicenseViewController: BaseViewController {
     private var licenseView: UITextView!
 
     override func setupSubviews() {
-        setupNavigationBar()
+        view.backgroundColor = .white
         title = "setting.license".localized
         licenseView = UITextView().also {
             $0.text = String(urlOfResourceFile: "license.txt")
             $0.font = .appFontL(size: 14)
+            $0.contentOffset = .zero
             view.addSubview($0)
         }
     }

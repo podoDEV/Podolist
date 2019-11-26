@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
             setupConstraints()
         }
     }
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -21,6 +22,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
+        setupNavigationBar()
     }
 
     override func viewSafeAreaInsetsDidChange() {
@@ -31,11 +33,13 @@ class BaseViewController: UIViewController {
     func setupSubviews() {}
     func setupConstraints() {}
     func setupNavigationBar() {
+        navigationController?.navigationBar.barTintColor = .appColor1
         navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .automatic
-            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.prefersLargeTitles = false
             navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         }
     }

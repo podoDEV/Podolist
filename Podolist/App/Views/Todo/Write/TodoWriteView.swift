@@ -41,12 +41,14 @@ final class TodoWriteView: BaseView {
 
     func updateUI() {
         titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
+        titleView.expanded = false
         priorityView.isHidden = true
         calendarView.isHidden = true
     }
 
     func updateUIToDetail() {
         titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
+        titleView.expanded = true
         titleView.titleField.resignFirstResponder()
         priorityView.frame = CGRect(x: 8, y: titleView.frame.maxY + 8, width: frame.width - 16, height: 50)
         priorityView.backgroundColor = .clear
@@ -67,9 +69,4 @@ final class TodoWriteView: BaseView {
         titleView.titleField.resignFirstResponder()
         return true
     }
-}
-
-enum WritingMode {
-    case create
-    case edit
 }

@@ -20,7 +20,7 @@
 "priority.low" = "~";
 "priority.none" = "-";
 
-"list.delayedItems" = "연기된 할일";
+"list.delayedItems" = "지연된 할일";
 "list.items" = "오늘 할일";
 
 "setting" = "설정";

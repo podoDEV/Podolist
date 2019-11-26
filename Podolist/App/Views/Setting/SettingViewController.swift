@@ -33,12 +33,11 @@ class SettingViewController: BaseViewController {
     override func setupSubviews() {
         title = "setting".localized
         tableView = UITableView(frame: .zero, style: .grouped).also {
-            $0.rowHeight = UITableView.automaticDimension
+            $0.estimatedRowHeight = 300
             $0.separatorStyle = .none
             $0.delegate = self
             $0.dataSource = self
             $0.backgroundColor = .white
-            $0.sectionFooterHeight = 0
             $0.isScrollEnabled = false
             $0.tableFooterView = UIView()
             $0.register(cell: SettingCell.self)

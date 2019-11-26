@@ -6,10 +6,23 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
-//import SwiftDate
+
+enum WritingMode {
+    case create
+    case edit
+}
+
+enum WritingViewState {
+    case `default`
+    case expand
+}
 
 protocol TodolistPresenterProtocol: class {
+
     // MARK: - View -> Presenter
+
+    var selectedDate: Date { get }
+
     func viewDidLoad()
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
@@ -23,8 +36,12 @@ protocol TodolistPresenterProtocol: class {
     func didChangedShowDelayed(show: Bool)
 
     // MARK: - Interactor -> Presenter
+    
     func setTodolist(sections: [TodoSection])
-    func updateTodo(id: Int, todo: Todo)
+    func createTodoDidFinished(todo: Todo)
+    func updateTodoDidFinished(id: Int, todo: Todo)
+    func deleteTodoDidFinished()
+    func resetTodoOnWriting()
 }
 
 final class TodolistPresenter: NSObject, TodolistPresenterProtocol {
@@ -35,10 +52,21 @@ final class TodolistPresenter: NSObject, TodolistPresenterProtocol {
     private var interactor: TodolistInteractorProtocol!
     private var wireFrame: TodolistWireFrameProtocol!
 
-    private var selectedDate = Date()
+    private(set) var selectedDate = Date()
     private var todo = Todo()
     private var sections: [TodoSection] = []
     private var writingMode: WritingMode = .create
+    private var selectedIndexPath: IndexPath?
+    private var viewState: WritingViewState = .default {
+        didSet {
+            switch viewState {
+            case .default:
+                view.showDefaultState()
+            case .expand:
+                view.showWritingExpandState()
+            }
+        }
+    }
 
     init(
         view: TodolistViewProtocol,
@@ -52,9 +80,10 @@ final class TodolistPresenter: NSObject, TodolistPresenterProtocol {
 }
 
 // MARK: - View -> Presenter
+
 extension TodolistPresenter {
     func viewDidLoad() {
-        interactor.fetchTodolist(selectedDate)
+        interactor.fetchTodolist(selectedDate, reload: true)
         view.showTodoOnWriting(todo, mode: writingMode)
     }
 
@@ -75,13 +104,29 @@ extension TodolistPresenter {
 
     func configureRow(_ cell: TodolistRowCell, forRowAt indexPath: IndexPath) {
         let item = sections[indexPath.section].rows[indexPath.row]
-        cell.configure(item, indexPath: indexPath, isSelected: false)
+        let isSelected = indexPath.section == selectedIndexPath?.section
+            && indexPath.row == selectedIndexPath?.row
+        cell.configure(item, indexPath: indexPath, isSelected: isSelected)
         cell.selectionStyle = .none
         cell.presenter = self
     }
 
     func didSelect(indexPath: IndexPath) {
+        var indexPathsToReload: [IndexPath] = []
+        if let prev = self.selectedIndexPath {
+            indexPathsToReload.append(prev)
+            if prev == indexPath {
+                self.selectedIndexPath = nil
+            } else {
+                self.selectedIndexPath = indexPath
+                indexPathsToReload.append(indexPath)
+            }
+        } else {
+            self.selectedIndexPath = indexPath
+            indexPathsToReload.append(indexPath)
+        }
 
+        view.reloadRows(indexPathsToReload, with: .automatic)
     }
 
     func didTouchedBackground() {
@@ -89,7 +134,7 @@ extension TodolistPresenter {
             resetTodoOnWriting()
             view.showTodoOnWriting(todo, mode: writingMode)
         }
-        view.showDefaultState()
+        viewState = .default
         view.hideMonthCalendar()
     }
 
@@ -99,39 +144,27 @@ extension TodolistPresenter {
     }
 
     func didChangedComplete(indexPath: IndexPath, completed: Bool) {
-//        interactor.updateComplete(id: <#T##Int#>, complete: <#T##Todo#>)
-//        interactor.updateComplete(indexPath: indexPath, completed: completed)!
-//            .flatMap { _ in
-//                self.interactor.fetchPodolist()!
-//            }
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(
-//                onNext: { podoSections in
-//                    self.view.showPodolist()
-//            }, onError: { error in
-//                print(error)
-//            })
-//            .disposed(by: disposeBag)
+        let todo = sections[indexPath.section].rows[indexPath.row]
+        guard let id = todo.id else { return }
+        todo.isCompleted = completed
+        interactor.updateTodo(id: id, todo: todo)
     }
 
     func didTappedEdit(_ todo: Todo, indexPath: IndexPath) {
-//        gaEvent(GADefine.Podo, action: GADefine.edit)
-//        interactor.updatePodoOnWriting(podo)
-//        view.showPodoOnWriting(podo, mode: interactor.writingMode)
-        view.showWritingExpandState()
+        analytics.log(.todo_edit)
+        self.todo = todo
+        self.writingMode = .edit
+        self.didSelect(indexPath: indexPath)
+        view.showTodoOnWriting(todo, mode: writingMode)
+        viewState = .expand
     }
 
     func didTappedDelete(indexPath: IndexPath) {
-//        gaEvent(GADefine.Podo, action: GADefine.delete)
-//        interactor.deletePodo(indexPath: indexPath)!
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onCompleted: { [weak self] in
-//                self?.view.deleteRows([indexPath], with: .fade)
-//                self?.view.reloadSections([0], with: .automatic)
-//            }, onError: { error in
-//                print(error)
-//            })
-//            .disposed(by: disposeBag)
+        analytics.log(.todo_delete)
+        guard let id = sections[indexPath.section].rows[indexPath.row].id else { return }
+        interactor.deleteTodo(id: id)
+//        view.deleteRows([indexPath], with: .fade)
+        view.reloadRows([indexPath], with: .automatic)
     }
 
     func didChangedShowDelayed(show: Bool) {
@@ -142,13 +175,38 @@ extension TodolistPresenter {
 }
 
 // MARK: - Interactor -> Presenter
+
 extension TodolistPresenter {
     func setTodolist(sections: [TodoSection]) {
         self.sections = sections
         view.reloadData()
     }
 
-    func updateTodo(id: Int, todo: Todo) {}
+    func createTodoDidFinished(todo: Todo) {
+        analytics.log(.todo_create(todo.title ?? ""))
+        resetTodoOnWriting()
+        viewState = .default
+        view.showTodoOnWriting(self.todo, mode: writingMode)
+        let updateDate = todo.startedAt ?? selectedDate
+        view.showTopView(updateDate)
+        selectedIndexPath = nil
+        interactor.fetchTodolist(updateDate, reload: true)
+    }
+
+    func updateTodoDidFinished(id: Int, todo: Todo) {
+        analytics.log(.todo_edit_done)
+        resetTodoOnWriting()
+        viewState = .default
+        view.showTodoOnWriting(self.todo, mode: writingMode)
+        selectedIndexPath = nil
+        interactor.fetchTodolist(selectedDate, reload: true)
+    }
+
+    func deleteTodoDidFinished() {
+        analytics.log(.todo_delete)
+        selectedIndexPath = nil
+        interactor.fetchTodolist(selectedDate, reload: true)
+    }
 }
 
 // MARK: - MonthCalendarViewDelegate
@@ -158,7 +216,9 @@ extension TodolistPresenter: MonthCalendarViewDelegate {
     func calendarView(_ calendarView: MonthCalendarView, didSelectDate date: Date) {
         selectedDate = date
         view.showTopView(date)
-        interactor.fetchTodolist(selectedDate)
+        didChangedDate(date: date)
+        view.showTodoOnWriting(todo, mode: writingMode)
+        interactor.fetchTodolist(selectedDate, reload: true)
     }
 }
 
@@ -176,7 +236,9 @@ extension TodolistPresenter: MainTopViewDelegate {
 
     func didSelectDate(date: Date) {
         selectedDate = date
-        interactor.fetchTodolist(selectedDate)
+        didChangedDate(date: date)
+        view.showTodoOnWriting(todo, mode: writingMode)
+        interactor.fetchTodolist(selectedDate, reload: true)
     }
 }
 
@@ -199,50 +261,19 @@ extension TodolistPresenter: WriteViewDelegate {
     }
 
     func didTappedDetail() {
-        view.showWritingExpandState()
+        if viewState == .default {
+            viewState = .expand
+        } else {
+            viewState = .default
+        }
     }
 
     func didTappedCreate() {
         interactor.createTodo(todo: todo)
-//        interactor.createPodo()!
-//            .do {
-//                gaEvent(GADefine.Podo, action: GADefine.create)
-//            }
-//            .flatMap { _ in
-//                self.interactor.fetchPodolist()!
-//            }
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(
-//                onNext: { _ in
-//                    self.view.showPodolist()
-//                    self.interactor.resetPodoOnWriting()
-//                    self.view.showPodoOnWriting(self.interactor.fetchPodoOnWriting(), mode: .create)
-//                    self.view.showDefaultState()
-//            }, onError: { error in
-//                print(error)
-//            })
-//            .disposed(by: disposeBag)
     }
 
     func didTappedEdit() {
-//        interactor.editPodo()!
-//            .do {
-//                gaEvent(GADefine.Podo, action: GADefine.editDone)
-//                self.view.reloadRows(self.interactor.needUpdateIndexPaths, with: .automatic)
-//            }
-//            .flatMap { _ in
-//                self.interactor.fetchPodolist()!
-//            }
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(
-//                onNext: { _ in
-//                    self.view.showPodolist()
-//                    self.interactor.resetPodoOnWriting()
-//                    self.view.showPodoOnWriting(self.interactor.fetchPodoOnWriting(), mode: .create)
-//                    self.view.showDefaultState()
-//            }, onError: { error in
-//                print(error)
-//            })
-//            .disposed(by: disposeBag)
+        guard let id = todo.id else { return }
+        interactor.updateTodo(id: id, todo: todo)
     }
 }

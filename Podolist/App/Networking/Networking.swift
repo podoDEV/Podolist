@@ -23,8 +23,8 @@ final class Networking<Target: TargetType>: MoyaProvider<Target> {
         super.init(manager: manager, plugins: plugins)
     }
 
-    func requestWithLog(
-        _ target: Target,
+    private func request(
+        target: Target,
         completion: @escaping (Result<Response, PodoError>) -> Void
     ) {
         let requestString = "\(target.method) \(target.path)"
@@ -61,10 +61,10 @@ final class Networking<Target: TargetType>: MoyaProvider<Target> {
     }
 
     func request<T: Codable>(
-        _ target: Target,
+        type: Target,
         completion: @escaping (Result<T, PodoError>) -> Void
     ) {
-        self.requestWithLog(target) { result in
+        self.request(target: type) { result in
             switch result {
             case .success(let response):
                 do {
@@ -73,6 +73,20 @@ final class Networking<Target: TargetType>: MoyaProvider<Target> {
                 } catch {
                     completion(.failure(.parsingError))
                 }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    func request(
+        type: Target,
+        completion: @escaping (Result<Void, PodoError>) -> Void
+    ) {
+        self.request(target: type) { result in
+            switch result {
+            case .success:
+                completion(.success(()))
             case .failure(let error):
                 completion(.failure(error))
             }

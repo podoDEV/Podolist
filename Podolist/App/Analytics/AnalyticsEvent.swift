@@ -39,15 +39,15 @@ extension AnalyticsEvent: EventType {
             }
         case .logout: return "로그아웃"
 
-        case .todo_create: return "일정 생성"
-        case .todo_edit: return "일정 수정"
-        case .todo_edit_done: return "일정 수정 완료"
-        case .todo_delete: return "일정 삭제"
+        case .todo_create: return "일정_생성"
+        case .todo_edit: return "일정_수정"
+        case .todo_edit_done: return "일정_수정_완료"
+        case .todo_delete: return "일정_삭제"
 
-        case .login_view: return "로그인 화면"
-        case .main_view: return "메인 화면"
-        case .calendar_view: return "캘린더 화면"
-        case .settings_view: return "설정 화면"
+        case .login_view: return "로그인_화면"
+        case .main_view: return "메인_화면"
+        case .calendar_view: return "캘린더_화면"
+        case .settings_view: return "설정_화면"
         }
     }
 
