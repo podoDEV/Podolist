@@ -16,6 +16,7 @@ protocol TodolistViewProtocol: AnyObject {
     func showTopView(_ date: Date)
     func showDefaultState()
     func showWritingExpandState()
+    func showWritingTitleState()
     func showTodoOnWriting(_ todo: Todo, mode: WritingMode)
     func showMonthCalendar(_ date: Date)
     func hideMonthCalendar()
@@ -105,6 +106,7 @@ final class TodolistViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        analytics.log(.main_view)
         presenter.viewDidLoad()
         showDefaultState()
     }
@@ -215,6 +217,7 @@ extension TodolistViewController: TodolistViewProtocol {
         UIView.animate(withDuration: 0.2) {
             self.writeView.frame = self.writeFrame
         }
+        writeView.updateUIWriting()
     }
 
     func showWritingExpandState() {
@@ -300,7 +303,7 @@ extension TodolistViewController {
             return
         }
         keyboardHeight = keyboardFrame.cgRectValue.height
-        showWritingTitleState()
+        presenter.keyboardWillShow()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

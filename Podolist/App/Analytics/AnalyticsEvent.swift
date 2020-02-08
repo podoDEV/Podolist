@@ -25,6 +25,8 @@ enum AnalyticsEvent {
     case main_view
     case calendar_view
     case settings_view
+    case about_view
+    case license_view
 }
 
 extension AnalyticsEvent: EventType {
@@ -48,6 +50,8 @@ extension AnalyticsEvent: EventType {
         case .main_view: return "메인_화면"
         case .calendar_view: return "캘린더_화면"
         case .settings_view: return "설정_화면"
+        case .about_view: return "앱정보_화면"
+        case .license_view: return "라이선스_화면"
         }
     }
 

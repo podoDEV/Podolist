@@ -46,6 +46,11 @@ final class TodoWriteView: BaseView {
         calendarView.isHidden = true
     }
 
+    func updateUIWriting() {
+        titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
+        titleView.expanded = false
+    }
+
     func updateUIToDetail() {
         titleView.frame = CGRect(x: 8, y: 8, width: frame.width - 16, height: 32)
         titleView.expanded = true

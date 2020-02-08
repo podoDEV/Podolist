@@ -67,7 +67,7 @@ private extension SettingInteractor {
 //        ]
 //    }
 
-    func makeSettingAccountRow(account: Account) -> SettingAccountRow {
+    func makeAccountRow(account: Account) -> SettingAccountRow {
         return SettingAccountRow(
             type: .account,
             title: "",

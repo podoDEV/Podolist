@@ -13,6 +13,11 @@ import SnapKit
 class LicenseViewController: BaseViewController {
     private var licenseView: UITextView!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        analytics.log(.license_view)
+    }
+
     override func setupSubviews() {
         view.backgroundColor = .white
         title = "setting.license".localized

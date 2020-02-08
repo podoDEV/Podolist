@@ -15,6 +15,7 @@ enum WritingMode {
 enum WritingViewState {
     case `default`
     case expand
+    case writing
 }
 
 protocol TodolistPresenterProtocol: class {
@@ -34,6 +35,7 @@ protocol TodolistPresenterProtocol: class {
     func didTappedEdit(_ todo: Todo, indexPath: IndexPath)
     func didTappedDelete(indexPath: IndexPath)
     func didChangedShowDelayed(show: Bool)
+    func keyboardWillShow()
 
     // MARK: - Interactor -> Presenter
     
@@ -64,6 +66,8 @@ final class TodolistPresenter: NSObject, TodolistPresenterProtocol {
                 view.showDefaultState()
             case .expand:
                 view.showWritingExpandState()
+            case .writing:
+                view.showWritingTitleState()
             }
         }
     }
@@ -139,8 +143,9 @@ extension TodolistPresenter {
     }
 
     func resetTodoOnWriting() {
-        self.writingMode = .create
-        self.todo = Todo()
+        writingMode = .create
+        todo = Todo()
+        didChangedDate(date: selectedDate)
     }
 
     func didChangedComplete(indexPath: IndexPath, completed: Bool) {
@@ -153,17 +158,15 @@ extension TodolistPresenter {
     func didTappedEdit(_ todo: Todo, indexPath: IndexPath) {
         analytics.log(.todo_edit)
         self.todo = todo
-        self.writingMode = .edit
-        self.didSelect(indexPath: indexPath)
+        writingMode = .edit
+        didSelect(indexPath: indexPath)
         view.showTodoOnWriting(todo, mode: writingMode)
         viewState = .expand
     }
 
     func didTappedDelete(indexPath: IndexPath) {
-        analytics.log(.todo_delete)
         guard let id = sections[indexPath.section].rows[indexPath.row].id else { return }
         interactor.deleteTodo(id: id)
-//        view.deleteRows([indexPath], with: .fade)
         view.reloadRows([indexPath], with: .automatic)
     }
 
@@ -172,6 +175,9 @@ extension TodolistPresenter {
         view.reloadSections([0], with: .automatic)
     }
 
+    func keyboardWillShow() {
+        viewState = .writing
+    }
 }
 
 // MARK: - Interactor -> Presenter
@@ -184,13 +190,13 @@ extension TodolistPresenter {
 
     func createTodoDidFinished(todo: Todo) {
         analytics.log(.todo_create(todo.title ?? ""))
+        selectedDate = todo.startedAt ?? selectedDate
         resetTodoOnWriting()
         viewState = .default
         view.showTodoOnWriting(self.todo, mode: writingMode)
-        let updateDate = todo.startedAt ?? selectedDate
-        view.showTopView(updateDate)
+        view.showTopView(selectedDate)
         selectedIndexPath = nil
-        interactor.fetchTodolist(updateDate, reload: true)
+        interactor.fetchTodolist(selectedDate, reload: true)
     }
 
     func updateTodoDidFinished(id: Int, todo: Todo) {
@@ -261,7 +267,7 @@ extension TodolistPresenter: WriteViewDelegate {
     }
 
     func didTappedDetail() {
-        if viewState == .default {
+        if viewState == .default || viewState == .writing {
             viewState = .expand
         } else {
             viewState = .default

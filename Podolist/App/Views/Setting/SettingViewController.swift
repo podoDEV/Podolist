@@ -27,6 +27,7 @@ class SettingViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        analytics.log(.settings_view)
         presenter?.viewDidLoad()
     }
 

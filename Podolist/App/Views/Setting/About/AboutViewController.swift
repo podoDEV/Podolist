@@ -36,6 +36,11 @@ class AboutViewController: BaseViewController {
     private var descriptionLabel: UILabel!
     private var copyrightLabel: UILabel!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        analytics.log(.about_view)
+    }
+
     override func setupSubviews() {
         title = "setting.about".localized
         view.backgroundColor = .white
@@ -93,7 +98,6 @@ class AboutViewController: BaseViewController {
             $0.top.equalTo(versionLabel.snp.bottom).offset(Metric.descriptionTop)
             $0.leading.equalToSuperview().offset(Metric.descriptionLeading)
             $0.trailing.equalToSuperview().offset(-Metric.descriptionLeading)
-//            $0.bottom.equalTo(copyrightLabel.snp.top).offset(Metric.descriptionBottom)
         }
         copyrightLabel.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-Metric.copyrightBottom)
