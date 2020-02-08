@@ -61,13 +61,13 @@ class TodolistRowCell: UITableViewCell {
             completeContainerView.addSubview($0)
         }
         titleContainerView = UIView().also {
-            $0.layer.cornerRadius = 17.25
+            $0.layer.cornerRadius = 16.5
             $0.clipsToBounds = true
             addSubview($0)
         }
         titleLabel = UILabel().also {
             $0.textColor = .white
-            $0.font = .appFontR(size: 12)
+            $0.font = .appFontR(size: 13)
             $0.numberOfLines = 0
             titleContainerView.addSubview($0)
         }

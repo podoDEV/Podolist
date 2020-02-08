@@ -38,22 +38,22 @@ class Todo: Codable {
 
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(Int.self, forKey: .id)
-        title = try values.decodeIfPresent(String.self, forKey: .title)
-        isCompleted = try values.decodeIfPresent(Bool.self, forKey: .isCompleted)
-        if let startedAt = try values.decodeIfPresent(Int.self, forKey: .startedAt) {
+        id = try? values.decodeIfPresent(Int.self, forKey: .id)
+        title = try? values.decodeIfPresent(String.self, forKey: .title)
+        isCompleted = try? values.decodeIfPresent(Bool.self, forKey: .isCompleted)
+        if let startedAt = try? values.decodeIfPresent(Int.self, forKey: .startedAt) {
             self.startedAt = Date(seconds: TimeInterval(startedAt))
         }
-        if let endedAt = try values.decodeIfPresent(Int.self, forKey: .endedAt) {
+        if let endedAt = try? values.decodeIfPresent(Int.self, forKey: .endedAt) {
             self.endedAt = Date(seconds: TimeInterval(endedAt))
         }
-        if let dueAt = try values.decodeIfPresent(Int.self, forKey: .dueAt) {
+        if let dueAt = try? values.decodeIfPresent(Int.self, forKey: .dueAt) {
             self.dueAt = Date(seconds: TimeInterval(dueAt))
         }
-        if let updatedAt = try values.decodeIfPresent(Int.self, forKey: .updatedAt) {
+        if let updatedAt = try? values.decodeIfPresent(Int.self, forKey: .updatedAt) {
             self.updatedAt = Date(seconds: TimeInterval(updatedAt))
         }
-        priority = try values.decodeIfPresent(Priority.self, forKey: .priority)
+        priority = try? values.decodeIfPresent(Priority.self, forKey: .priority)
     }
 
     var asParameters: [String: Any] {

@@ -2,7 +2,8 @@
 //  Localizable.strings
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/28.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 "login.kakao" = "카카오톡으로 로그인하기";
@@ -19,7 +20,7 @@
 "priority.low" = "~";
 "priority.none" = "-";
 
-"list.delayedItems" = "연기된 할일";
+"list.delayedItems" = "지연된 할일";
 "list.items" = "오늘 할일";
 
 "setting" = "설정";

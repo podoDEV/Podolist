@@ -44,6 +44,7 @@ final class MainTopView: BaseView {
         settingButton = UIButton().also {
             $0.clipsToBounds = true
             $0.addTarget(self, action: #selector(didTappedSetting), for: .touchUpInside)
+            $0.setImage(UIImage(named: "ic_setting"), for: .normal)
             addSubview($0)
         }
         titleView = UIView().also {
@@ -60,7 +61,7 @@ final class MainTopView: BaseView {
             titleView.addSubview($0)
         }
         yearLabel = UILabel().also {
-            $0.font = .appFontM(size: 18)
+            $0.font = .appFontM(size: 20)
             $0.textColor = .white
             titleView.addSubview($0)
         }
@@ -93,9 +94,8 @@ final class MainTopView: BaseView {
         settingButton.translatesAutoresizingMaskIntoConstraints = false
         settingButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
         settingButton.bottomAnchor.constraint(equalTo: self.calendarView.topAnchor, constant: -16).isActive = true
-        settingButton.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        settingButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         settingButton.widthAnchor.constraint(equalTo: settingButton.heightAnchor).isActive = true
-        settingButton.layer.cornerRadius = 12
 
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true

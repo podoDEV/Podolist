@@ -22,7 +22,7 @@ final class MemberService: MemberServiceType {
     }
 
     func me(_ completion: @escaping (Result<Account, PodoError>) -> Void) {
-        networking.request(.me) { [weak self] (result: (Result<Account, PodoError>)) -> Void in
+        networking.request(type: .me) { [weak self] (result: (Result<Account, PodoError>)) -> Void in
             switch result {
             case .success(let account):
                 self?.current = account

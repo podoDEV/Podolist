@@ -75,7 +75,7 @@ class MonthCalendarView: BaseView {
 
     deinit {
         NotificationCenter.default.removeObserver(self,
-                                                  name: .didSelected,
+                                                  name: .didMonthSelected,
                                                   object: nil)
     }
 
@@ -98,7 +98,7 @@ class MonthCalendarView: BaseView {
         addSubview(navigateView)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onSelected(notification:)),
-                                               name: .didSelected,
+                                               name: .didMonthSelected,
                                                object: nil)
     }
 

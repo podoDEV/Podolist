@@ -32,7 +32,7 @@ class WeekCalendarView: BaseView {
 
     deinit {
         NotificationCenter.default.removeObserver(self,
-                                                  name: .didSelected,
+                                                  name: .didWeekSelected,
                                                   object: nil)
     }
 
@@ -42,7 +42,7 @@ class WeekCalendarView: BaseView {
         addSubview(calendarView)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onSelected(notification:)),
-                                               name: .didSelected,
+                                               name: .didWeekSelected,
                                                object: nil)
     }
 

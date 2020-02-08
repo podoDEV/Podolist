@@ -24,18 +24,20 @@ class SettingInteractor: SettingInteractorProtocol {
 }
 
 // MARK: - Presenter -> Interactor
+
 extension SettingInteractor {
     func fetchSections() {
-        memberService.me { [weak self] result in
-            guard let `self` = self else { return }
-            switch result {
-            case .success(let account):
-                let rows = self.makeSection(account: account)
-                self.presenter?.didFetchRows(rows: rows)
-            case .failure:
-                break
-            }
-        }
+        self.presenter?.didFetchRows(rows: self.makeSection())
+//        memberService.me { [weak self] result in
+//            guard let `self` = self else { return }
+//            switch result {
+//            case .success(let account):
+//                let rows = self.makeSection(account: account)
+//                self.presenter?.didFetchRows(rows: rows)
+//            case .failure:
+//                break
+//            }
+//        }
     }
 
     func logout() {
@@ -46,9 +48,8 @@ extension SettingInteractor {
 }
 
 private extension SettingInteractor {
-    func makeSection(account: Account) -> [SettingRowProtocol] {
+    func makeSection() -> [SettingRowProtocol] {
         return [
-            makeSettingAccountRow(account: account),
             makeAboutRow(),
             makeLicenseRow(),
             makeFeedbackRow(),
@@ -56,7 +57,17 @@ private extension SettingInteractor {
         ]
     }
 
-    func makeSettingAccountRow(account: Account) -> SettingAccountRow {
+//    func makeSection(account: Account) -> [SettingRowProtocol] {
+//        return [
+//            makeSettingAccountRow(account: account),
+//            makeAboutRow(),
+//            makeLicenseRow(),
+//            makeFeedbackRow(),
+//            makeLogoutRow()
+//        ]
+//    }
+
+    func makeAccountRow(account: Account) -> SettingAccountRow {
         return SettingAccountRow(
             type: .account,
             title: "",

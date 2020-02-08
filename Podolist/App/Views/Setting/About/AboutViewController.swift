@@ -18,14 +18,14 @@ class AboutViewController: BaseViewController {
         static let logoTop = 200.f
         static let logoHeight = 94.f
         static let logoWidth = 86.f
-        static let nameTop = 10.f
+        static let nameTop = 30.f
         static let nameHeight = 20.f
-        static let versionTop = 5.f
+        static let versionTop = 7.f
         static let versionHeight = 20.f
         static let descriptionTop = 50.f
         static let descriptionLeading = 40.f
         static let descriptionBottom = 60.f
-        static let copyrightBottom = 24.f
+        static let copyrightBottom = 30.f
     }
 
     // MARK: - Subviews
@@ -36,8 +36,14 @@ class AboutViewController: BaseViewController {
     private var descriptionLabel: UILabel!
     private var copyrightLabel: UILabel!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        analytics.log(.about_view)
+    }
+
     override func setupSubviews() {
         title = "setting.about".localized
+        view.backgroundColor = .white
         logoView = UIImageView().also {
             $0.image = InterfaceImage.logo.normalImage
             view.addSubview($0)
@@ -45,21 +51,22 @@ class AboutViewController: BaseViewController {
         nameLabel = UILabel().also {
             $0.text = "common.podolist".localized
             $0.textColor = .black
-            $0.font = .appFontM(size: 16)
+            $0.font = .appFontM(size: 17)
             view.addSubview($0)
         }
         versionLabel = UILabel().also {
             $0.text = AppUtils.versionName()
             $0.textColor = .gray3
-            $0.font = .appFontL(size: 14)
+            $0.font = .appFontL(size: 15)
             view.addSubview($0)
         }
         descriptionLabel = UILabel().also {
             $0.text = String(urlOfResourceFile: "intro.txt")
             $0.textColor = .gray3
-            $0.font = .appFontL(size: 13)
+            $0.font = .appFontL(size: 14)
             $0.numberOfLines = 0
             $0.lineBreakMode = .byTruncatingTail
+            $0.textAlignment = .center
             view.addSubview($0)
         }
         copyrightLabel = UILabel().also {
@@ -88,10 +95,9 @@ class AboutViewController: BaseViewController {
             $0.centerX.equalToSuperview()
         }
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(versionLabel.snp.bottom)
+            $0.top.equalTo(versionLabel.snp.bottom).offset(Metric.descriptionTop)
             $0.leading.equalToSuperview().offset(Metric.descriptionLeading)
             $0.trailing.equalToSuperview().offset(-Metric.descriptionLeading)
-            $0.bottom.equalTo(copyrightLabel.snp.top).offset(Metric.descriptionBottom)
         }
         copyrightLabel.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-Metric.copyrightBottom)

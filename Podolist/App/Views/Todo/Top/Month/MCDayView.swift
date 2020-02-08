@@ -90,6 +90,6 @@ class MCDayView: BaseView {
     }
 
     @objc func onSelected() {
-        NotificationCenter.default.post(name: .didSelected, object: self.date)
+        NotificationCenter.default.post(name: .didMonthSelected, object: date)
     }
 }

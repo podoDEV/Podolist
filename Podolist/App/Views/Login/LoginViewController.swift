@@ -41,6 +41,11 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
 
     var presenter: LoginPresenterProtocol!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        analytics.log(.login_view)
+    }
+
     override func setupSubviews() {
         logoView = UIImageView().also {
             $0.image = InterfaceImage.logo.normalImage

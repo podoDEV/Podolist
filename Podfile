@@ -13,11 +13,12 @@ def common
     pod 'Umbrella'
     pod 'Umbrella/Firebase'
     pod 'CocoaLumberjack/Swift'
-    pod 'Firebase/Analytics'
 
-    # Crashlytics
+    # SDK
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Firebase/Core'
+    pod 'Firebase/Analytics'
 
     # Etc
     pod 'SwiftLint'

@@ -1,5 +1,5 @@
 //
-//  AppInjector.swift
+//  ApplicationContainer.swift
 //  Podolist
 //
 //  Created by hb1love on 2019/10/19.
@@ -21,13 +21,12 @@ struct AppDependency {
     let configureAppearance: () -> Void
 }
 
-struct ApplicationInjector {
+struct ApplicationContainer {
     static func resolve() -> AppDependency {
         let navigationController = UINavigationController()
         let window = UIWindow(frame: UIScreen.main.bounds).also {
             $0.rootViewController = navigationController
             $0.backgroundColor = .white
-            $0.makeKeyAndVisible()
         }
         let wireFrame = AppWireframe(
             window: window,
@@ -88,6 +87,5 @@ struct ApplicationInjector {
 
     static func configureAppearance() {
         UINavigationBar.appearance().shadowImage = UIImage()
-//        UINavigationBar.appearance().barStyle = .blackOpaque
     }
 }

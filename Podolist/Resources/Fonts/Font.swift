@@ -1,8 +1,9 @@
 //
-//  Fonts.swift
+//  Font.swift
 //  Podolist
 //
-//  Copyright © 2018년 podo. All rights reserved.
+//  Created by hb1love on 2019/10/28.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
@@ -31,20 +32,5 @@ extension UIFont {
 
     class func appFontR(size: CGFloat) -> UIFont {
         return UIFont(name: "NotoSans-Regular", size: size)!
-    }
-
-    class func preferredFont(textStyle: PodolistFonts) -> UIFont {
-        switch textStyle {
-        case .logo:
-            return UIFont.boldSystemFont(ofSize: 36.0)
-        case .navigation:
-            return UIFont.appFontR(size: 18.0)
-        case .podoTitle:
-            return UIFont.appFontR(size: 15.0)
-        case .podoSubTitle:
-            return UIFont.appFontR(size: 14.0)
-        default:
-            return UIFont.appFontM(size: 15.0)
-        }
     }
 }
