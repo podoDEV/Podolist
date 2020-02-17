@@ -2,10 +2,11 @@
 //  Priority.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/18.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
-enum Priority: String {
+enum Priority: String, Codable {
     case urgent
     case high
     case medium
@@ -14,19 +15,18 @@ enum Priority: String {
 }
 
 extension Priority {
-
     func toString() -> String {
         switch self {
         case .urgent:
-            return InterfaceString.Priority.Urgent
+            return "priority.urgent".localized
         case .high:
-            return InterfaceString.Priority.High
+            return "priority.high".localized
         case .medium:
-            return InterfaceString.Priority.Medium
+            return "priority.medium".localized
         case .low:
-            return InterfaceString.Priority.Low
+            return "priority.low".localized
         case .none:
-            return InterfaceString.Priority.None
+            return "priority.none".localized
         }
     }
 

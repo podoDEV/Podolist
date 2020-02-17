@@ -32,17 +32,17 @@ class WeekCalendarView: BaseView {
 
     deinit {
         NotificationCenter.default.removeObserver(self,
-                                                  name: .didSelected,
+                                                  name: .didWeekSelected,
                                                   object: nil)
     }
 
-    override func setup() {
+    override func setupSubviews() {
         calendarView.update(DateInRegion(date))
         addSubview(weekLabel)
         addSubview(calendarView)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onSelected(notification:)),
-                                               name: .didSelected,
+                                               name: .didWeekSelected,
                                                object: nil)
     }
 

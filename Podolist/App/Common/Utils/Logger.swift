@@ -2,7 +2,8 @@
 //  Logger.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/18.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import CocoaLumberjack
@@ -98,21 +99,4 @@ final class Logger {
             .map { String(describing: $0) }
             .joined(separator: " ")
     }
-
-}
-
-func gaAction(_ value: String) {
-    guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-    tracker.set(kGAIEventAction, value: value)
-
-    guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
-    tracker.send(builder.build() as [NSObject: AnyObject])
-}
-
-func gaScreen(_ value: String) {
-    guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-    tracker.set(kGAIScreenName, value: value)
-
-    guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
-    tracker.send(builder.build() as [NSObject: AnyObject])
 }

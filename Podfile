@@ -1,24 +1,28 @@
-# Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '11.0'
 workspace 'Podolist'
 
 inhibit_all_warnings!
 use_frameworks!
 
 def common
-    # Rx
-    pod 'RxSwift', '~> 4.4.0'
-    pod 'RxCocoa', '~> 4.4.0'
-
     # Networking
-    pod 'Alamofire', '~> 4.7.3'
-    pod 'SwiftyJSON', '~> 4.2.0'
+    pod 'Alamofire'
+    pod 'Moya'
 
     # Logging
+    pod 'Umbrella'
+    pod 'Umbrella/Firebase'
     pod 'CocoaLumberjack/Swift'
+
+    # SDK
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'Firebase/Core'
+    pod 'Firebase/Analytics'
 
     # Etc
     pod 'SwiftLint'
+    pod 'Swinject'
     pod 'Scope'
     pod 'KeychainAccess', '~> 3.1.2'
 end
@@ -26,10 +30,6 @@ end
 def ui
     pod 'SnapKit'
     pod 'PodoCalendar', '~> 0.2.7'
-end
-
-def analytics
-    pod 'GoogleAnalytics'
 end
 
 def spec
@@ -40,13 +40,6 @@ end
 target 'Podolist' do
     common
     ui
-    analytics
-end
-
-target 'PodolistTest' do
-    common
-    ui
-    analytics
 end
 
 target 'PodolistTests' do

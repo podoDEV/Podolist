@@ -2,18 +2,19 @@
 //  PodoWritePriorityView.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/27.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
 
-class PodoWritePriorityView: BaseView {
+final class PodoWritePriorityView: BaseView {
 
     weak var delegate: WriteViewDelegate?
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
-            titleLabel.text = InterfaceString.Write.Priority
+            titleLabel.text = "write.priority".localized
             titleLabel.textColor = .appColor1
             titleLabel.font = .appFontM(size: 11)
         }
@@ -26,8 +27,7 @@ class PodoWritePriorityView: BaseView {
         }
     }
 
-    func update(_ priority: Priority) {
-        // detailButton init
+    func update(_ priority: Priority?) {
         priorityView.update(priority)
     }
 }

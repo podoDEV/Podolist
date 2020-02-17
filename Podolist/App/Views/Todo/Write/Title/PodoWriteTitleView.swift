@@ -2,7 +2,8 @@
 //  PodoWriteTitleView.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/27.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 class PodoWriteTitleView: BaseView {
@@ -35,21 +36,30 @@ class PodoWriteTitleView: BaseView {
                 UIView.animate(withDuration: 0.1) {
                     self.createButton.isEnabled = true
                     self.createButton.backgroundColor = .appColor1
-//                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
                 }
             } else {
                 UIView.animate(withDuration: 0.1) {
                     self.createButton.isEnabled = false
                     self.createButton.backgroundColor = .grayE
-//                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
                 }
             }
         }
     }
     var mode: WritingMode?
+    var expanded: Bool = false {
+        didSet {
+            if expanded {
+                detailButton.transform = CGAffineTransform(rotationAngle: .pi / 4)
+            } else {
+                detailButton.transform = .identity
+            }
+        }
+    }
 
     func update(_ title: String?, mode: WritingMode) {
-        // detailButton init
+        createButton.isEnabled = true
         let text = title ?? ""
         titleField.text = text
         canCreate = !text.isEmpty
@@ -76,7 +86,8 @@ extension PodoWriteTitleView {
         delegate?.didTappedDetail()
     }
 
-    @IBAction func createAction(_ sender: Any) {
+    @IBAction func createAction(_ sender: UIButton) {
+        sender.isEnabled = false
         if self.mode == .edit {
             delegate?.didTappedEdit()
         } else {

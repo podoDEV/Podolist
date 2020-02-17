@@ -38,7 +38,7 @@ class MCNavigateView: BaseView {
         return view
     }()
 
-    override func setup() {
+    override func setupSubviews() {
         [prevButton, nextButton].forEach(addSubview)
     }
 

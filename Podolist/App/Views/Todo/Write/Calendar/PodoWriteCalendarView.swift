@@ -2,19 +2,20 @@
 //  PodoWriteCalendarView.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/27.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
 import PodoCalendar
 
-class PodoWriteCalendarView: BaseView {
+final class PodoWriteCalendarView: BaseView {
 
     weak var delegate: WriteViewDelegate?
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
-            titleLabel.text = InterfaceString.Write.Date
+            titleLabel.text = "write.date".localized
             titleLabel.textColor = .appColor1
             titleLabel.font = .appFontM(size: 11)
         }
@@ -27,8 +28,8 @@ class PodoWriteCalendarView: BaseView {
         }
     }
 
-    func update(_ date: Date) {
-        calendarView.update(date)
+    func update(_ date: Date?) {
+        calendarView.update(date ?? Date())
     }
 }
 

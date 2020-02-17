@@ -47,7 +47,7 @@ class WCDayView: BaseView {
         }
     }
 
-    override func setup() {
+    override func setupSubviews() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(onSelected))
         addGestureRecognizer(tap)
         addSubview(backgroundView)
@@ -80,10 +80,11 @@ class WCDayView: BaseView {
     }
 
     @objc func onSelected() {
-        NotificationCenter.default.post(name: .didSelected, object: self.date)
+        NotificationCenter.default.post(name: .didWeekSelected, object: self.date)
     }
 }
 
 extension NSNotification.Name {
-    static let didSelected = Notification.Name("did_selected")
+    static let didMonthSelected = Notification.Name("did_selected_month_date")
+    static let didWeekSelected = Notification.Name("did_selected_week_date")
 }

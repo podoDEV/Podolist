@@ -2,36 +2,30 @@
 //  BaseView.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/19.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
 import UIKit
 
 class BaseView: UIView {
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-        setupConstraints()
+    convenience init() {
+        self.init(frame: .zero)
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setupSubviews()
         setupConstraints()
     }
 
-    init() {
-        super.init(frame: .zero)
-        setup()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupSubviews()
         setupConstraints()
     }
 
-    func setup() {
-
-    }
-
-    func setupConstraints() {
-
-    }
+    func setupSubviews() {}
+    func setupConstraints() {}
 }

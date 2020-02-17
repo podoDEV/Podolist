@@ -75,11 +75,11 @@ class MonthCalendarView: BaseView {
 
     deinit {
         NotificationCenter.default.removeObserver(self,
-                                                  name: .didSelected,
+                                                  name: .didMonthSelected,
                                                   object: nil)
     }
 
-    override func setup() {
+    override func setupSubviews() {
         date = Date()
         calendarView.update(DateInRegion(self.date!))
         gradient.startPoint = CGPoint(x: 0.5, y: 0)
@@ -98,7 +98,7 @@ class MonthCalendarView: BaseView {
         addSubview(navigateView)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onSelected(notification:)),
-                                               name: .didSelected,
+                                               name: .didMonthSelected,
                                                object: nil)
     }
 

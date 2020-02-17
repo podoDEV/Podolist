@@ -44,7 +44,7 @@ class MCDayView: BaseView {
         }
     }
 
-    override func setup() {
+    override func setupSubviews() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(onSelected))
         addGestureRecognizer(tap)
         addSubview(backgroundView)
@@ -90,6 +90,6 @@ class MCDayView: BaseView {
     }
 
     @objc func onSelected() {
-        NotificationCenter.default.post(name: .didSelected, object: self.date)
+        NotificationCenter.default.post(name: .didMonthSelected, object: date)
     }
 }

@@ -2,22 +2,27 @@
 //  UITableView+Additions.swift
 //  Podolist
 //
-//  Copyright © 2018 podo. All rights reserved.
+//  Created by hb1love on 2019/10/18.
+//  Copyright © 2019 podo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol TableViewCellType {
     static var identifier: String { get }
 }
 
-extension UITableViewCell: TableViewCellType {
+extension TableViewCellType where Self: UITableViewCell {
     static var identifier: String { return String(describing: self.self) }
 }
 
-extension UITableViewHeaderFooterView: TableViewCellType {
+extension TableViewCellType where Self: UITableViewHeaderFooterView {
     static var identifier: String { return String(describing: self.self) }
 }
+
+extension UITableViewCell: TableViewCellType {}
+
+extension UITableViewHeaderFooterView: TableViewCellType {}
 
 extension UITableView {
 
