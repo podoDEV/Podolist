@@ -6,6 +6,8 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import Core
+
 class AppWireframe: BaseWireframe {
     var window: UIWindow
     var navigationController: UINavigationController
@@ -20,11 +22,8 @@ class AppWireframe: BaseWireframe {
 
     func start() {
         window.rootViewController = navigationController
-        guard let authService = container.resolve(AuthServiceType.self) else {
-            fatalError("AuthServiceType not invoked")
-        }
         var viewController: UIViewController
-        if authService.current == nil {
+        if Core.authService.current == nil {
             viewController = LoginWireFrame.createLoginModule()
         } else {
             viewController = TodolistWireFrame.createTodolistModule()

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Core
 import Scope
 import SnapKit
 
@@ -56,7 +56,7 @@ class TodolistRowCell: UITableViewCell {
             completeContainerView.addSubview($0)
         }
         completeImageView = UIImageView().also {
-            $0.image = InterfaceImage.complete.normalImage
+            $0.image = InterfaceImage.complete.image
             $0.isUserInteractionEnabled = false
             completeContainerView.addSubview($0)
         }
@@ -72,13 +72,13 @@ class TodolistRowCell: UITableViewCell {
             titleContainerView.addSubview($0)
         }
         editImageView = UIButton().also {
-            $0.setImage(UIImage(named: "ic_edit"), for: .normal)
+            $0.setImage(InterfaceImage.edit.image, for: .normal)
             $0.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
             $0.addTarget(self, action: #selector(didTappedEdit), for: .touchUpInside)
             titleContainerView.addSubview($0)
         }
         deleteImageView = UIButton().also {
-            $0.setImage(UIImage(named: "ic_delete"), for: .normal)
+            $0.setImage(InterfaceImage.delete.image, for: .normal)
             $0.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
             $0.addTarget(self, action: #selector(didTappedDelete), for: .touchUpInside)
             titleContainerView.addSubview($0)

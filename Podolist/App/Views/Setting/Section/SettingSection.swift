@@ -17,7 +17,6 @@ enum SettingRowType: String {
 protocol SettingRowProtocol {
     var type: SettingRowType { get set }
     var title: String { get set }
-    var image: UIImage? { get set }
 }
 
 protocol SettingAccountRowProtocol: SettingRowProtocol {
@@ -29,13 +28,11 @@ protocol SettingAccountRowProtocol: SettingRowProtocol {
 struct SettingRow: SettingRowProtocol {
     var type: SettingRowType
     var title: String
-    var image: UIImage?
 }
 
 struct SettingAccountRow: SettingAccountRowProtocol {
     var type: SettingRowType
     var title: String
-    var image: UIImage?
 
     var name: String
     var email: String?

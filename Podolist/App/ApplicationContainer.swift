@@ -7,12 +7,10 @@
 //
 
 import UIKit
+import Core
 import Firebase
 import KakaoOpenSDK
-import Swinject
 import Umbrella
-
-let container = Container()
 
 struct AppDependency {
     let window: UIWindow
@@ -32,33 +30,6 @@ struct ApplicationContainer {
             window: window,
             navigationController: navigationController
         )
-        container
-            .register(AuthNetworking.self) { _ in AuthNetworking(plugins: []) }
-            .inObjectScope(.container)
-        container
-            .register(AuthServiceType.self) { r in
-                let networking = r.resolve(AuthNetworking.self)!
-                return AuthService(networking: networking)
-            }
-            .inObjectScope(.container)
-        container
-            .register(TodoNetworking.self) { r in
-                let authService = r.resolve(AuthServiceType.self)!
-                return TodoNetworking(plugins: [AuthPlugin(authService: authService)])
-            }
-            .inObjectScope(.container)
-        container
-            .register(MemberServiceType.self) { r in
-                let networking = r.resolve(AuthNetworking.self)!
-                return MemberService(networking: networking)
-            }
-            .inObjectScope(.container)
-        container
-            .register(TodoServiceType.self) { r in
-                let networking = r.resolve(TodoNetworking.self)!
-                return TodoService(networking: networking)
-            }
-            .inObjectScope(.container)
         return AppDependency(
             window: window,
             wireframe: wireFrame,
@@ -68,8 +39,13 @@ struct ApplicationContainer {
     }
 
     static func configureSDKs() {
+        configureModule()
         configureAnalytics()
         configureOAuth()
+    }
+
+    static func configureModule() {
+        Core.setup()
     }
 
     static func configureAnalytics() {

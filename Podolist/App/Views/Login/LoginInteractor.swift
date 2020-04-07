@@ -6,6 +6,8 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import Core
+
 protocol LoginInteractorProtocol: class {
     // MARK: - Presenter -> Interactor
     func kakaoLogin()
@@ -57,7 +59,7 @@ private extension LoginInteractor {
     func getkakaoSession(_ completion: @escaping (String?) -> Void) {
         guard let session = KOSession.shared() else {
             completion(nil)
-            log.d("Invalid kakao session")
+            log.debug("Invalid kakao session")
             return
         }
 
@@ -67,7 +69,7 @@ private extension LoginInteractor {
 
         session.open { error in
             guard session.isOpen() else {
-                log.d("Invalid kakao state")
+                log.debug("Invalid kakao state")
                 completion(nil)
                 return
             }

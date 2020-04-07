@@ -7,6 +7,7 @@
 //
 
 import MessageUI
+import Core
 
 protocol SettingPresenterProtocol: AnyObject {
     // MARK: - View -> Presenter

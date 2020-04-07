@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Core
 
 protocol MCNavigateViewDelegate: NSObjectProtocol {
     func navigate(to direction: MCCalendarView.Direction)
@@ -17,7 +18,7 @@ class MCNavigateView: BaseView {
 
     lazy var prevButton: UIButton = {
         var view = UIButton()
-        view.setImage(UIImage(named: "ic_prevMonth" ), for: .normal)
+        view.setImage(InterfaceImage.prevMonthButton.image, for: .normal)
         view.setTitleColor(.white, for: .normal)
         view.imageEdgeInsets =  UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         view.titleLabel?.font = .appFontL(size: 14)
@@ -28,7 +29,7 @@ class MCNavigateView: BaseView {
 
     lazy var nextButton: UIButton = {
         var view = UIButton()
-        view.setImage(UIImage(named: "ic_nextMonth"), for: .normal)
+        view.setImage(InterfaceImage.nextMonthButton.image, for: .normal)
         view.setTitleColor(.white, for: .normal)
         view.imageEdgeInsets =  UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         view.titleLabel?.font = .appFontL(size: 14)

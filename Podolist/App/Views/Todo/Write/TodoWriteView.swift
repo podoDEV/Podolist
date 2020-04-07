@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Core
 
 protocol WriteViewDelegate: class {
     func textFieldDidChange(text: String)

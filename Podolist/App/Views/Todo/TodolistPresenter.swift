@@ -6,6 +6,7 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import Core
 
 enum WritingMode {
     case create

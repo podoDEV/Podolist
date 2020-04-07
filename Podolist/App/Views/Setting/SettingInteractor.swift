@@ -6,6 +6,8 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import Core
+
 protocol SettingInteractorProtocol: AnyObject {
     // MARK: - Presenter -> Interactor
     func fetchSections()
@@ -28,16 +30,6 @@ class SettingInteractor: SettingInteractorProtocol {
 extension SettingInteractor {
     func fetchSections() {
         self.presenter?.didFetchRows(rows: self.makeSection())
-//        memberService.me { [weak self] result in
-//            guard let `self` = self else { return }
-//            switch result {
-//            case .success(let account):
-//                let rows = self.makeSection(account: account)
-//                self.presenter?.didFetchRows(rows: rows)
-//            case .failure:
-//                break
-//            }
-//        }
     }
 
     func logout() {
@@ -57,21 +49,10 @@ private extension SettingInteractor {
         ]
     }
 
-//    func makeSection(account: Account) -> [SettingRowProtocol] {
-//        return [
-//            makeSettingAccountRow(account: account),
-//            makeAboutRow(),
-//            makeLicenseRow(),
-//            makeFeedbackRow(),
-//            makeLogoutRow()
-//        ]
-//    }
-
     func makeAccountRow(account: Account) -> SettingAccountRow {
         return SettingAccountRow(
             type: .account,
             title: "",
-            image: nil,
             name: account.name ?? "",
             email: account.email,
             imageUrl: account.profileImageUrl
@@ -81,32 +62,28 @@ private extension SettingInteractor {
     func makeAboutRow() -> SettingRow {
         return SettingRow(
             type: .about,
-            title: "setting.about".localized,
-            image: UIImage(named: "ic_about")!
+            title: "setting.about".localized
         )
     }
 
     func makeLicenseRow() -> SettingRow {
         return SettingRow(
             type: .license,
-            title: "setting.license".localized,
-            image: UIImage(named: "ic_license")!
+            title: "setting.license".localized
         )
     }
 
     func makeFeedbackRow() -> SettingRow {
         return SettingRow(
             type: .feedback,
-            title: "setting.feedback".localized,
-            image: UIImage(named: "ic_sendFeedback")!
+            title: "setting.feedback".localized
         )
     }
 
     func makeLogoutRow() -> SettingRow {
         return SettingRow(
             type: .logout,
-            title: "setting.logout".localized,
-            image: UIImage(named: "ic_logout")!
+            title: "setting.logout".localized
         )
     }
 }

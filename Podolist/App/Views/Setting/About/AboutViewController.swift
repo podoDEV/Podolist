@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 import Scope
 import SnapKit
 
@@ -45,7 +46,7 @@ class AboutViewController: BaseViewController {
         title = "setting.about".localized
         view.backgroundColor = .white
         logoView = UIImageView().also {
-            $0.image = InterfaceImage.logo.normalImage
+            $0.image = InterfaceImage.logo.image
             view.addSubview($0)
         }
         nameLabel = UILabel().also {

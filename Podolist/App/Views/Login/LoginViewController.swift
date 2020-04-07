@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 import Scope
 import SnapKit
 
@@ -48,11 +49,11 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
 
     override func setupSubviews() {
         logoView = UIImageView().also {
-            $0.image = InterfaceImage.logo.normalImage
+            $0.image = InterfaceImage.logo.image
             view.addSubview($0)
         }
         logoView2 = UIImageView().also {
-            $0.image = InterfaceImage.logo2.normalImage
+            $0.image = InterfaceImage.logo2.image
             view.addSubview($0)
         }
         providerStackView = UIStackView().also {
@@ -67,7 +68,7 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
             $0.clipsToBounds = true
             $0.addTarget(self, action: #selector(didTapLogin(_:)), for: .touchUpInside)
             $0.configure(
-                image: InterfaceImage.kakaologin.normalImage,
+                image: InterfaceImage.kakaologin.image,
                 title: "login.kakao".localized,
                 color: .kakaoLogin
             )

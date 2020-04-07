@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 import Scope
 import SnapKit
 
@@ -22,7 +23,7 @@ final class SettingAccountCell: BaseTableViewCell, SettingCellType {
         selectionStyle = .none
         thumbnailView = UIImageView().also {
             $0.clipsToBounds = true
-            $0.image = UIImage(named: "ic_profile")
+            $0.image = InterfaceImage.profile.image
             contentView.addSubview($0)
         }
         nameLabel = UILabel().also {
@@ -59,10 +60,9 @@ final class SettingAccountCell: BaseTableViewCell, SettingCellType {
     func configure(with item: SettingRowProtocol) {
         if let item = item as? SettingAccountRowProtocol {
             ImageLoader.image(for: item.imageUrl) { [weak self] image in
-                self?.thumbnailView.image = image ?? UIImage(named: "ic_profile")
+                self?.thumbnailView.image = image ?? InterfaceImage.profile.image
             }
             nameLabel.text = item.name
-//            emailLabel.text = item.email
         }
     }
 }

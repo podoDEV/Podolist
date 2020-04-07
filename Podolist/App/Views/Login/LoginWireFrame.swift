@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 
 protocol LoginWireFrameProtocol {
     // Presenter -> WireFrame
@@ -33,7 +34,7 @@ class LoginWireFrame: BaseWireframe, LoginWireFrameProtocol {
 
 extension LoginWireFrame {
     static func createLoginModule() -> LoginViewController {
-        let authService = container.resolve(AuthServiceType.self)!
+        let authService = Core.authService
         let view = LoginViewController()
         let wireframe = LoginWireFrame()
         let interactor = LoginInteractor(

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 import Scope
 import SnapKit
 
@@ -61,15 +62,20 @@ final class SettingCell: BaseTableViewCell, SettingCellType {
     }
 
     func configure(with item: SettingRowProtocol) {
-        thumbnailView.image = item.image
+        var thumbnailImage: UIImage?
+        switch item.type {
+        case .about:
+            thumbnailImage = InterfaceImage.about.image
+        case .license:
+            thumbnailImage = InterfaceImage.license.image
+        case .feedback:
+            thumbnailImage = InterfaceImage.feedback.image
+        case .logout:
+            thumbnailImage = InterfaceImage.logout.image
+        default:
+            break
+        }
+        thumbnailView.image = thumbnailImage
         titleLabel.text = item.title
-
-//        switch item.type {
-//        case .about,
-//             .license:
-//            accessoryType = .disclosureIndicator
-//        default:
-//            break
-//        }
     }
 }

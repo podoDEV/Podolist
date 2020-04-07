@@ -8,7 +8,9 @@
 
 import UIKit
 import UserNotifications
+import Core
 import KakaoOpenSDK
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -55,12 +57,12 @@ private extension AppDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        log.i("The notification \"\(notification.request.identifier)\" is presenting. \"\(notification.request.content.body)\"")
+        log.info("The notification \"\(notification.request.identifier)\" is presenting. \"\(notification.request.content.body)\"")
         completionHandler([.alert, .badge, .sound])
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        log.i("The user responded to the notification \"\(response.notification.request.identifier)\" at \"\(response.notification.date.description(with: .current))\".")
+        log.info("The user responded to the notification \"\(response.notification.request.identifier)\" at \"\(response.notification.date.description(with: .current))\".")
         UIApplication.shared.applicationIconBadgeNumber = 0
         completionHandler()
     }

@@ -6,6 +6,8 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import Core
+
 protocol PriorityViewDelegate: AnyObject {
     func didChangedPriority(priority: Priority)
 }

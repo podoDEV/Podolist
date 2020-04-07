@@ -6,13 +6,15 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import Core
+
 class PodoWriteTitleView: BaseView {
 
     weak var delegate: WriteViewDelegate?
 
     @IBOutlet weak var detailButton: UIButton! {
         didSet {
-            detailButton.setImage(InterfaceImage.add.image(.normal), for: .normal)
+            detailButton.setImage(InterfaceImage.add.image, for: .normal)
         }
     }
     @IBOutlet weak var titleField: UITextField! {
@@ -27,7 +29,7 @@ class PodoWriteTitleView: BaseView {
             createButton.clipsToBounds = true
             createButton.isEnabled = false
             createButton.backgroundColor = .grayE
-            createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+            createButton.setImage(InterfaceImage.create.image, for: .normal)
         }
     }
     var canCreate: Bool! {
@@ -36,13 +38,13 @@ class PodoWriteTitleView: BaseView {
                 UIView.animate(withDuration: 0.1) {
                     self.createButton.isEnabled = true
                     self.createButton.backgroundColor = .appColor1
-                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+                    self.createButton.setImage(InterfaceImage.create.image, for: .normal)
                 }
             } else {
                 UIView.animate(withDuration: 0.1) {
                     self.createButton.isEnabled = false
                     self.createButton.backgroundColor = .grayE
-                    self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+                    self.createButton.setImage(InterfaceImage.create.image, for: .normal)
                 }
             }
         }
@@ -66,9 +68,9 @@ class PodoWriteTitleView: BaseView {
         self.mode = mode
         switch mode {
         case .create:
-            self.createButton.setImage(InterfaceImage.create.image(.normal), for: .normal)
+            self.createButton.setImage(InterfaceImage.create.image, for: .normal)
         case .edit:
-            self.createButton.setImage(UIImage(named: "ic_edit"), for: .normal)
+            self.createButton.setImage(InterfaceImage.edit.image, for: .normal)
         }
     }
 }

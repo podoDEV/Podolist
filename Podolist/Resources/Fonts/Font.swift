@@ -8,15 +8,7 @@
 
 import UIKit
 
-enum PodolistFonts {
-    case logo
-    case navigation
-    case podoTitle
-    case podoSubTitle
-    case etc
-}
-
-extension UIFont {
+public extension UIFont {
 
     class func appFontB(size: CGFloat) -> UIFont {
         return UIFont(name: "NotoSans-Bold", size: size)!

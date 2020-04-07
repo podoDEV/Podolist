@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 import SnapKit
 
 protocol MainTopViewDelegate: AnyObject {
@@ -44,7 +45,7 @@ final class MainTopView: BaseView {
         settingButton = UIButton().also {
             $0.clipsToBounds = true
             $0.addTarget(self, action: #selector(didTappedSetting), for: .touchUpInside)
-            $0.setImage(UIImage(named: "ic_setting"), for: .normal)
+            $0.setImage(InterfaceImage.setting.image, for: .normal)
             addSubview($0)
         }
         titleView = UIView().also {
@@ -66,7 +67,7 @@ final class MainTopView: BaseView {
             titleView.addSubview($0)
         }
         dropdownView = UIImageView().also {
-            $0.image = InterfaceImage.dropdown.normalImage
+            $0.image = InterfaceImage.dropdown.image
             titleView.addSubview($0)
         }
         calendarView = WeekCalendarView().also {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 
 class BaseViewController: UIViewController {
     var safeAreaInset: UIEdgeInsets = .zero {

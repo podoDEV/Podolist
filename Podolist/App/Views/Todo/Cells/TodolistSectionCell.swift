@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 import SnapKit
 
 class TodolistSectionCell: UITableViewHeaderFooterView {
@@ -88,9 +89,9 @@ class TodolistSectionCell: UITableViewHeaderFooterView {
             caretImageView.isHidden = false
             caretButton.isHidden = false
             if sectionItem.visible {
-                caretImageView.image = UIImage(named: "ic_caretDelayedClose")
+                caretImageView.image = InterfaceImage.caretClose.image
             } else {
-                caretImageView.image = UIImage(named: "ic_caretDelayedOpen")
+                caretImageView.image = InterfaceImage.caretOpen.image
             }
         } else {
             caretImageView.isHidden = true

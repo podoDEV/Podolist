@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 
 protocol TodolistWireFrameProtocol {
     // MARK: - Presenter -> WireFrame
@@ -33,7 +34,7 @@ class TodolistWireFrame: BaseWireframe {
 
 extension TodolistWireFrame: TodolistWireFrameProtocol {
     static func createTodolistModule() -> UINavigationController {
-        let todoService = container.resolve(TodoServiceType.self)!
+        let todoService = Core.todoService
         let view = TodolistViewController()
         let wireframe = TodolistWireFrame()
         let interactor = TodolistInteractor(todoService: todoService)

@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import Core
 
 protocol SettingWireFrameProtocol {
     // Presenter -> WireFrame
@@ -84,8 +85,8 @@ extension SettingWireFrame: MFMailComposeViewControllerDelegate {
 
 extension SettingWireFrame {
     static func createSettingModule() -> SettingViewController {
-        let authService = container.resolve(AuthServiceType.self)!
-        let memberService = container.resolve(MemberServiceType.self)!
+        let authService = Core.authService
+        let memberService = Core.memberService
         let view = SettingViewController()
         let wireframe = SettingWireFrame()
         let interactor = SettingInteractor(

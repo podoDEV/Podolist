@@ -5,6 +5,7 @@
 //  Copyright © 2018 podo. All rights reserved.
 //
 
+import Core
 import SwiftDate
 
 protocol MCCalendarViewDelegate: NSObjectProtocol {

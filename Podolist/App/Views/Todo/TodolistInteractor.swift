@@ -6,6 +6,8 @@
 //  Copyright © 2019 podo. All rights reserved.
 //
 
+import Core
+
 protocol TodolistInteractorProtocol: AnyObject {
 
     // MARK: - Presenter -> Interactor
@@ -50,7 +52,7 @@ extension TodolistInteractor {
                 let sections = self.updateSections(date: date, todolist: todolist)
                 self.presenter?.setTodolist(sections: sections)
             case .failure(let error):
-                log.d(error)
+                log.debug(error)
             }
         }
     }
@@ -61,7 +63,7 @@ extension TodolistInteractor {
             case .success(let todo):
                 self?.presenter?.createTodoDidFinished(todo: todo)
             case .failure(let error):
-                log.d(error)
+                log.debug(error)
             }
         }
     }
@@ -72,7 +74,7 @@ extension TodolistInteractor {
             case .success(let todo):
                 self?.presenter?.updateTodoDidFinished(id: id, todo: todo)
             case .failure(let error):
-                log.d(error)
+                log.debug(error)
             }
         }
     }
@@ -83,7 +85,7 @@ extension TodolistInteractor {
             case .success:
                 self?.presenter?.deleteTodoDidFinished()
             case .failure(let error):
-                log.d(error)
+                log.debug(error)
             }
         }
     }
@@ -102,6 +104,7 @@ private extension TodolistInteractor {
                     title: "list.delayedItems".localized,
                     color: .delayedItems,
                     rows: delayed,
+                    editable: false,
                     visible: showDelayedItems
                 )
             )
