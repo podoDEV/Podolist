@@ -7,7 +7,7 @@
 //
 
 public enum PodoError: Error {
-    case unknown
-    case parsingError
-    case requestFailed
+  case unknown
+  case parsingError
+  case requestFailed
 }

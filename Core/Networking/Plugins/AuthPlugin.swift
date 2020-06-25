@@ -9,17 +9,17 @@
 import Moya
 
 public struct AuthPlugin: PluginType {
-    private let authService: AuthServiceType
-
-    public init(authService: AuthServiceType) {
-        self.authService = authService
+  private let authService: AuthServiceType
+  
+  public init(authService: AuthServiceType) {
+    self.authService = authService
+  }
+  
+  public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+    var request = request
+    if let session = self.authService.current {
+      request.addValue("SESSIONID=" + session + ";", forHTTPHeaderField: "Cookie")
     }
-
-    public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-        var request = request
-        if let session = self.authService.current {
-            request.addValue("SESSIONID=" + session + ";", forHTTPHeaderField: "Cookie")
-        }
-        return request
-    }
+    return request
+  }
 }

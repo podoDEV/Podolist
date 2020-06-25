@@ -7,5 +7,5 @@
 //
 
 public class AccessToken {
-    public var id: String?
+  public var id: String?
 }
