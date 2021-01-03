@@ -18,7 +18,16 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "group:Podolist.xcodeproj">
+      location = "group:Pods/../Podolist/Podolist.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Features/Features.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Core/Core.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Resources/Resources.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

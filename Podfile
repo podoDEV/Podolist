@@ -1,4 +1,4 @@
-platform :ios, '11.0'
+platform :ios, '13.0'
 workspace 'Podolist'
 
 inhibit_all_warnings!
@@ -26,32 +26,49 @@ def sdk
   pod 'Crashlytics'
   pod 'Firebase/Core'
   pod 'Firebase/Analytics'
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKAuth'
+  pod 'KakaoSDKUser'
 end
 
-def ui_common
+def ui
   pod 'SnapKit'
-end
-
-def ui_app
-  ui_common
   pod 'PodoCalendar', '~> 0.2.7'
 end
 
 target 'Podolist' do
+  project 'Podolist/Podolist'
   common
   networking
   logging
   sdk
-  ui_app
+  ui
 end
 
 target 'PodolistWidget' do
+  project 'Podolist/Podolist'
   common
-  ui_common
+  logging
+  ui
+end
+
+target 'Features' do
+  project 'Features/Features'
+  common
+  logging
+  sdk
+  ui
+end
+
+target 'Services' do
+  project 'Features/Features'
+  common
+  networking
   logging
 end
 
 target 'Core' do
+  project 'Core/Core'
   common
   networking
   logging
