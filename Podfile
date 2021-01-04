@@ -22,10 +22,6 @@ def logging
 end
 
 def sdk
-  pod 'Fabric'
-  pod 'Crashlytics'
-  pod 'Firebase/Core'
-  pod 'Firebase/Analytics'
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
@@ -38,6 +34,11 @@ end
 
 target 'Podolist' do
   project 'Podolist/Podolist'
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
   common
   networking
   logging

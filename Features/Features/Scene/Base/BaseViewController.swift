@@ -16,6 +16,7 @@ public class BaseViewController: UIViewController {
     super.viewDidLoad()
     setupSubviews()
     setupNavigationBar()
+    setupConstraints()
   }
 
   public func setupSubviews() {}

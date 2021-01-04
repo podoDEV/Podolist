@@ -18,11 +18,9 @@ public class FeaturesModuleFactory {
   }
 
   public static var todoVC: TodolistViewController {
-//    let presenter = LoginPresenter(authService: ServicesModuleFactory.authService)
-//    let presenter = TodolistPresenter
-//    let vc = TodolistViewController(presenter: presenter)
-//    presenter.view = vc
-    let vc = TodolistViewController()
+    let presenter = TodolistPresenter(todoService: ServicesModuleFactory.todoService)
+    let vc = TodolistViewController(presenter: presenter)
+    presenter.view = vc
     return vc
   }
 

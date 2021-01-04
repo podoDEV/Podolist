@@ -16,9 +16,9 @@
 		2D7BD12F2429F1A0002BAE28 /* PodolistWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2D7BD1242429F19F002BAE28 /* PodolistWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2D7BD1382429F2D5002BAE28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DBD51D82425B7E7005BB014 /* InfoPlist.strings */; };
 		2D7BD13B2429F3A6002BAE28 /* TodoRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D888B622425024A00477308 /* TodoRowCell.swift */; };
-		2DBBBD55238585990068648A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DBBBD54238585990068648A /* GoogleService-Info.plist */; };
 		B102053220FB6BF0B618652C /* Pods_PodolistWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0B675359256BD60EF9A564 /* Pods_PodolistWidget.framework */; };
 		CF27ECCE5AFDD750647BF84F /* Pods_Podolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */; };
+		D808DBBE25A37C15009555B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D808DBBD25A37C15009555B8 /* GoogleService-Info.plist */; };
 		D8261D7125A082010056672A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8261D7025A082010056672A /* Core.framework */; };
 		D8261D7225A082010056672A /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8261D7025A082010056672A /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8261D7425A082040056672A /* Features.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8261D7325A082040056672A /* Features.framework */; };
@@ -96,7 +96,6 @@
 		2D888B4B2424F9C200477308 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		2D888B5D2424FAC200477308 /* Podolist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Podolist.entitlements; sourceTree = "<group>"; };
 		2D888B622425024A00477308 /* TodoRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRowCell.swift; sourceTree = "<group>"; };
-		2DBBBD54238585990068648A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DBD51D72425B7E7005BB014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2DBD51D92425B7EB005BB014 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2DE08123214804FF004FD99C /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = lib/KakaoOpenSDK.framework; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodolistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B42F9C4056FE958AEE00327 /* Pods-PodolistWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistWidget.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PodolistWidget/Pods-PodolistWidget.release.xcconfig"; sourceTree = "<group>"; };
 		9A3BEFF9E4CAAABB4CFF2E2B /* Pods-Podolist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug.xcconfig"; sourceTree = "<group>"; };
+		D808DBBD25A37C15009555B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8261B4625A064EF0056672A /* Base.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.release.xcconfig; sourceTree = "<group>"; };
 		D8261B4825A064F90056672A /* Base.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.debug.xcconfig; sourceTree = "<group>"; };
 		D8261D7025A082010056672A /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,9 +282,9 @@
 			isa = PBXGroup;
 			children = (
 				2DE08125214807D9004FD99C /* Podolist-Bridging-Header.h */,
-				2DBBBD54238585990068648A /* GoogleService-Info.plist */,
 				2D0F205F2143984A00B8BDF2 /* Info.plist */,
 				2D888B5D2424FAC200477308 /* Podolist.entitlements */,
+				D808DBBD25A37C15009555B8 /* GoogleService-Info.plist */,
 				D8261B4825A064F90056672A /* Base.debug.xcconfig */,
 				D8261B4625A064EF0056672A /* Base.release.xcconfig */,
 			);
@@ -312,9 +312,9 @@
 				2D0F1FF52143934100B8BDF2 /* Resources */,
 				AFB8F89423EC15721A403CD7 /* [CP] Embed Pods Frameworks */,
 				2D0F208F21440D5800B8BDF2 /* SwiftLint Script */,
-				2D775869235AEADB001EC37A /* Crashlytics Script */,
 				2D888B572424F9C200477308 /* Embed App Extensions */,
 				2D888BA12425224600477308 /* Embed Frameworks */,
+				D808DBE025A37C8A009555B8 /* Crashlytics Script */,
 			);
 			buildRules = (
 			);
@@ -391,7 +391,7 @@
 			files = (
 				D8261F1C25A1E5E40056672A /* Images.xcassets in Resources */,
 				D8261EA625A0C59F0056672A /* Launch.xib in Resources */,
-				2DBBBD55238585990068648A /* GoogleService-Info.plist in Resources */,
+				D808DBBE25A37C15009555B8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,24 +420,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		2D775869235AEADB001EC37A /* Crashlytics Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Crashlytics Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/upload-symbols\" -gsp \"${PROJECT_DIR}/Podolist/Supporting Files/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
 		};
 		649D69276443D5FBEB57014D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -495,6 +477,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Podolist/Pods-Podolist-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D808DBE025A37C8A009555B8 /* Crashlytics Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -641,7 +641,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Config/Podolist-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -713,7 +713,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist.test.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist.release.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -890,10 +890,10 @@
 					"\"KeychainAccess\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.podo.podolist.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Supporting Files/Podolist-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Config/Podolist-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

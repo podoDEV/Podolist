@@ -3,7 +3,7 @@ import UIKit
 import Core
 import SnapKit
 
-class TodolistSectionCell: UITableViewHeaderFooterView {
+class TodolistHeaderCell: UITableViewHeaderFooterView {
 
   // MARK: - Constants
   
@@ -71,30 +71,34 @@ class TodolistSectionCell: UITableViewHeaderFooterView {
       $0.centerX.centerY.equalToSuperview()
     }
   }
-  
-  func configure(_ sectionItem: TodoSection) {
-    titleLabel.text = sectionItem.title
-    titleLabel.textColor = sectionItem.color
-    editable = sectionItem.editable
-    visible = sectionItem.visible
 
-    if sectionItem.editable {
-      caretImageView.isHidden = false
-      caretButton.isHidden = false
-      if sectionItem.visible {
-        caretImageView.image = "ic_caretDelayedClose".uiImage
-      } else {
-        caretImageView.image = "ic_caretDelayedOpen".uiImage
-      }
-    } else {
-      caretImageView.isHidden = true
-      caretButton.isHidden = true
-    }
+  func configure(_ model: TodolistHeaderCellModel) {
 
   }
+  
+//  func configure(_ sectionItem: TodoSection) {
+//    titleLabel.text = sectionItem.title
+//    titleLabel.textColor = sectionItem.color
+//    editable = sectionItem.editable
+//    visible = sectionItem.visible
+//
+//    if sectionItem.editable {
+//      caretImageView.isHidden = false
+//      caretButton.isHidden = false
+//      if sectionItem.visible {
+//        caretImageView.image = "ic_caretDelayedClose".uiImage
+//      } else {
+//        caretImageView.image = "ic_caretDelayedOpen".uiImage
+//      }
+//    } else {
+//      caretImageView.isHidden = true
+//      caretButton.isHidden = true
+//    }
+//
+//  }
 }
 
-private extension TodolistSectionCell {
+private extension TodolistHeaderCell {
   @objc func didTappedCaret() {
     guard var visible = self.visible else { return }
     visible.toggle()

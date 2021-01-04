@@ -14,7 +14,6 @@
 		D8261C1425A072540056672A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C0F25A072540056672A /* ImageLoader.swift */; };
 		D8261C7325A072F40056672A /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C7225A072F40056672A /* UIColor+Additions.swift */; };
 		D8261C7825A073600056672A /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C7725A073600056672A /* Date+Formatter.swift */; };
-		D8261C7F25A073960056672A /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C7E25A073960056672A /* String+Additions.swift */; };
 		D8261C8525A073DE0056672A /* Int+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C8325A073DE0056672A /* Int+Additions.swift */; };
 		D8261C8625A073DE0056672A /* Scope+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C8425A073DE0056672A /* Scope+Additions.swift */; };
 		D8261C8D25A0746A0056672A /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C8C25A0746A0056672A /* UITableView+Cell.swift */; };
@@ -37,7 +36,6 @@
 		D8261C0F25A072540056672A /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		D8261C7225A072F40056672A /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		D8261C7725A073600056672A /* Date+Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
-		D8261C7E25A073960056672A /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
 		D8261C8325A073DE0056672A /* Int+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Additions.swift"; sourceTree = "<group>"; };
 		D8261C8425A073DE0056672A /* Scope+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scope+Additions.swift"; sourceTree = "<group>"; };
 		D8261C8C25A0746A0056672A /* UITableView+Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				D8261C8C25A0746A0056672A /* UITableView+Cell.swift */,
 				D8261C8325A073DE0056672A /* Int+Additions.swift */,
 				D8261C8425A073DE0056672A /* Scope+Additions.swift */,
-				D8261C7E25A073960056672A /* String+Additions.swift */,
 				D8261C7725A073600056672A /* Date+Formatter.swift */,
 				D8261C7225A072F40056672A /* UIColor+Additions.swift */,
 				D8261D6225A07D420056672A /* Calendar+Extensions.swift */,
@@ -298,7 +295,6 @@
 				D8261C1025A072540056672A /* Logger.swift in Sources */,
 				D8261C8D25A0746A0056672A /* UITableView+Cell.swift in Sources */,
 				D8261D6A25A07E7A0056672A /* CoreModuleFactory.swift in Sources */,
-				D8261C7F25A073960056672A /* String+Additions.swift in Sources */,
 				D8261C7325A072F40056672A /* UIColor+Additions.swift in Sources */,
 				D8261C9725A074DF0056672A /* AuthPlugin.swift in Sources */,
 				D8261D6325A07D420056672A /* Calendar+Extensions.swift in Sources */,

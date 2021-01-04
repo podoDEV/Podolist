@@ -3,7 +3,8 @@ import UIKit
 import Services
 
 enum TodolistSectionModel {
-  case todos(items: [TodolistSectionItem])
+  case delayed(header: TodolistHeaderItem, items: [TodolistSectionItem])
+  case todo(header: TodolistHeaderItem, items: [TodolistSectionItem])
 }
 extension TodolistSectionModel {
   typealias Item = TodolistSectionItem
@@ -11,18 +12,23 @@ extension TodolistSectionModel {
   var items: [Item] {
     get {
       switch self {
-      case let .todos(items): return items
+      case let .delayed(_, items): return items
+      case let .todo(_, items): return items
       }
     } set {
       switch self {
-      case .todos: self = .todos(items: newValue)
+      case let .delayed(header, _): self = .delayed(header: header, items: newValue)
+      case let .todo(header, _): self = .todo(header: header, items: newValue)
       }
     }
   }
 }
 
-enum TodolistSectionItem {
+enum TodolistHeaderItem {
   case header(TodolistHeaderCellModel)
+}
+
+enum TodolistSectionItem {
   case todo(TodolistRowCellModel)
 }
 

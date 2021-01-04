@@ -44,12 +44,12 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
     analytics.log(.login_view)
   }
 
-  override func setupSubviews() {
+  public override func setupSubviews() {
     logoView = UIImageView().also {
       $0.image = "ic_logo".uiImage
       view.addSubview($0)
@@ -86,7 +86,7 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
     }
   }
 
-  override func setupConstraints() {
+  public override func setupConstraints() {
     logoView.snp.makeConstraints {
       $0.width.equalTo(Metric.logo1Width)
       $0.height.equalTo(Metric.logo1Height)

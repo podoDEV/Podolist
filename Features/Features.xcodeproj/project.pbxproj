@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		0E953D5548AF8DBC56B3C460 /* Pods_Features.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A90A46B108106F45B4CEF35 /* Pods_Features.framework */; };
 		15618560E7A154581F07A490 /* Pods_Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF40D64BF80E9C5304F752E /* Pods_Services.framework */; };
+		D808DBBA25A35725009555B8 /* TodolistCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D808DBB925A35725009555B8 /* TodolistCompressor.swift */; };
 		D8261B6125A067490056672A /* Features.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8261B5725A067490056672A /* Features.framework */; };
 		D8261B6625A067490056672A /* FeaturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261B6525A067490056672A /* FeaturesTests.swift */; };
 		D8261B6825A067490056672A /* Features.h in Headers */ = {isa = PBXBuildFile; fileRef = D8261B5A25A067490056672A /* Features.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8261C4925A072860056672A /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C1B25A072860056672A /* UIView+Additions.swift */; };
 		D8261C4B25A072860056672A /* UIAlertController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C1D25A072860056672A /* UIAlertController+Additions.swift */; };
 		D8261C5025A072860056672A /* CAGradientLayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C2225A072860056672A /* CAGradientLayer+Additions.swift */; };
-		D8261CC725A075260056672A /* InterfaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261CA925A075260056672A /* InterfaceImage.swift */; };
 		D8261CCA25A075260056672A /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261CAE25A075260056672A /* AppUtils.swift */; };
 		D8261CCB25A075260056672A /* CalendarUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261CAF25A075260056672A /* CalendarUtil.swift */; };
 		D8261D5225A07C540056672A /* FeaturesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261D5125A07C540056672A /* FeaturesModule.swift */; };
@@ -85,7 +85,6 @@
 		D8261EA025A0C5520056672A /* TodolistSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261E6E25A0C5520056672A /* TodolistSection.swift */; };
 		D8261EA125A0C5520056672A /* TodolistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261E6F25A0C5520056672A /* TodolistPresenter.swift */; };
 		D8261EA225A0C5520056672A /* TodolistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261E7025A0C5520056672A /* TodolistViewController.swift */; };
-		D8261EA925A193FE0056672A /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8261EA825A193FE0056672A /* KakaoOpenSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +137,7 @@
 		5BF40D64BF80E9C5304F752E /* Pods_Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C72BB19D2AC2FF250E8461 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		CA046CFC25BF2B9C86AA0271 /* Pods-Features.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Features.debug.xcconfig"; path = "Target Support Files/Pods-Features/Pods-Features.debug.xcconfig"; sourceTree = "<group>"; };
+		D808DBB925A35725009555B8 /* TodolistCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistCompressor.swift; sourceTree = "<group>"; };
 		D8261B5725A067490056672A /* Features.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Features.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8261B5A25A067490056672A /* Features.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Features.h; sourceTree = "<group>"; };
 		D8261B5B25A067490056672A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,7 +147,6 @@
 		D8261C1B25A072860056672A /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		D8261C1D25A072860056672A /* UIAlertController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Additions.swift"; sourceTree = "<group>"; };
 		D8261C2225A072860056672A /* CAGradientLayer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Additions.swift"; sourceTree = "<group>"; };
-		D8261CA925A075260056672A /* InterfaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceImage.swift; sourceTree = "<group>"; };
 		D8261CAE25A075260056672A /* AppUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		D8261CAF25A075260056672A /* CalendarUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarUtil.swift; sourceTree = "<group>"; };
 		D8261D5125A07C540056672A /* FeaturesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesModule.swift; sourceTree = "<group>"; };
@@ -227,7 +226,6 @@
 			files = (
 				0E953D5548AF8DBC56B3C460 /* Pods_Features.framework in Frameworks */,
 				D8261E0525A0B5DF0056672A /* Services.framework in Frameworks */,
-				D8261EA925A193FE0056672A /* KakaoOpenSDK.framework in Frameworks */,
 				D8261D5F25A07CC60056672A /* Resources.framework in Frameworks */,
 				D8261E0F25A0B5F70056672A /* Core.framework in Frameworks */,
 			);
@@ -309,7 +307,6 @@
 			children = (
 				D8261D0A25A077BC0056672A /* Config */,
 				D8261C1A25A072860056672A /* Extensions */,
-				D8261CA325A075260056672A /* Resources */,
 				D8261E2C25A0C4E20056672A /* Scene */,
 				D8261CAD25A075260056672A /* Utils */,
 				D8261D5125A07C540056672A /* FeaturesModule.swift */,
@@ -335,22 +332,6 @@
 				D8261C2225A072860056672A /* CAGradientLayer+Additions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D8261CA325A075260056672A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D8261CA825A075260056672A /* Images */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		D8261CA825A075260056672A /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				D8261CA925A075260056672A /* InterfaceImage.swift */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		D8261CAD25A075260056672A /* Utils */ = {
@@ -520,6 +501,7 @@
 				D8261E7025A0C5520056672A /* TodolistViewController.swift */,
 				D8261E6F25A0C5520056672A /* TodolistPresenter.swift */,
 				D8261E6925A0C5520056672A /* TodolistInteractor.swift */,
+				D808DBB925A35725009555B8 /* TodolistCompressor.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -846,8 +828,8 @@
 				D8261E9125A0C5520056672A /* MCWeekView.swift in Sources */,
 				D8261D5225A07C540056672A /* FeaturesModule.swift in Sources */,
 				D8261C4925A072860056672A /* UIView+Additions.swift in Sources */,
-				D8261CC725A075260056672A /* InterfaceImage.swift in Sources */,
 				D8261C5025A072860056672A /* CAGradientLayer+Additions.swift in Sources */,
+				D808DBBA25A35725009555B8 /* TodolistCompressor.swift in Sources */,
 				D8261E8125A0C5520056672A /* SettingPresenter.swift in Sources */,
 				D8261EA125A0C5520056672A /* TodolistPresenter.swift in Sources */,
 				D8261E7425A0C5520056672A /* BaseTableViewCell.swift in Sources */,
