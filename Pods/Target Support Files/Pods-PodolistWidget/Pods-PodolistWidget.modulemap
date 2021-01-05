@@ -1,0 +1,6 @@
+framework module Pods_PodolistWidget {
+  umbrella header "Pods-PodolistWidget-umbrella.h"
+
+  export *
+  module * { export * }
+}

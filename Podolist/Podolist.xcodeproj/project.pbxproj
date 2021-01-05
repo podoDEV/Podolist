@@ -16,9 +16,11 @@
 		2D7BD12F2429F1A0002BAE28 /* PodolistWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2D7BD1242429F19F002BAE28 /* PodolistWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2D7BD1382429F2D5002BAE28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DBD51D82425B7E7005BB014 /* InfoPlist.strings */; };
 		2D7BD13B2429F3A6002BAE28 /* TodoRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D888B622425024A00477308 /* TodoRowCell.swift */; };
+		918A4F9E25A4BB130003723C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 918A4F9B25A4BB130003723C /* GoogleService-Info.plist */; };
+		918A4F9F25A4BB130003723C /* Base.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 918A4F9C25A4BB130003723C /* Base.release.xcconfig */; };
+		918A4FA025A4BB130003723C /* Base.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 918A4F9D25A4BB130003723C /* Base.debug.xcconfig */; };
 		B102053220FB6BF0B618652C /* Pods_PodolistWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0B675359256BD60EF9A564 /* Pods_PodolistWidget.framework */; };
 		CF27ECCE5AFDD750647BF84F /* Pods_Podolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33037E0FDDED5FAF188DD2AF /* Pods_Podolist.framework */; };
-		D808DBBE25A37C15009555B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D808DBBD25A37C15009555B8 /* GoogleService-Info.plist */; };
 		D8261D7125A082010056672A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8261D7025A082010056672A /* Core.framework */; };
 		D8261D7225A082010056672A /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8261D7025A082010056672A /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8261D7425A082040056672A /* Features.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8261D7325A082040056672A /* Features.framework */; };
@@ -104,10 +106,10 @@
 		6A8D8DDD5D4920A884D75BF4 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A024287D15E7D1C089CD335 /* Pods_PodolistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodolistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B42F9C4056FE958AEE00327 /* Pods-PodolistWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodolistWidget.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PodolistWidget/Pods-PodolistWidget.release.xcconfig"; sourceTree = "<group>"; };
+		918A4F9B25A4BB130003723C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../config/podolist/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		918A4F9C25A4BB130003723C /* Base.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Base.release.xcconfig; path = ../../../../config/podolist/Base.release.xcconfig; sourceTree = "<group>"; };
+		918A4F9D25A4BB130003723C /* Base.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Base.debug.xcconfig; path = ../../../../config/podolist/Base.debug.xcconfig; sourceTree = "<group>"; };
 		9A3BEFF9E4CAAABB4CFF2E2B /* Pods-Podolist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podolist.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Podolist/Pods-Podolist.debug.xcconfig"; sourceTree = "<group>"; };
-		D808DBBD25A37C15009555B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D8261B4625A064EF0056672A /* Base.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.release.xcconfig; sourceTree = "<group>"; };
-		D8261B4825A064F90056672A /* Base.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.debug.xcconfig; sourceTree = "<group>"; };
 		D8261D7025A082010056672A /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8261D7325A082040056672A /* Features.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Features.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8261D7625A0820C0056672A /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,12 +283,12 @@
 		D8261B4225A064A20056672A /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				918A4F9D25A4BB130003723C /* Base.debug.xcconfig */,
+				918A4F9C25A4BB130003723C /* Base.release.xcconfig */,
+				918A4F9B25A4BB130003723C /* GoogleService-Info.plist */,
 				2DE08125214807D9004FD99C /* Podolist-Bridging-Header.h */,
 				2D0F205F2143984A00B8BDF2 /* Info.plist */,
 				2D888B5D2424FAC200477308 /* Podolist.entitlements */,
-				D808DBBD25A37C15009555B8 /* GoogleService-Info.plist */,
-				D8261B4825A064F90056672A /* Base.debug.xcconfig */,
-				D8261B4625A064EF0056672A /* Base.release.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -391,7 +393,9 @@
 			files = (
 				D8261F1C25A1E5E40056672A /* Images.xcassets in Resources */,
 				D8261EA625A0C59F0056672A /* Launch.xib in Resources */,
-				D808DBBE25A37C15009555B8 /* GoogleService-Info.plist in Resources */,
+				918A4FA025A4BB130003723C /* Base.debug.xcconfig in Resources */,
+				918A4F9F25A4BB130003723C /* Base.release.xcconfig in Resources */,
+				918A4F9E25A4BB130003723C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +556,7 @@
 /* Begin XCBuildConfiguration section */
 		2D0F201E2143934700B8BDF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8261B4625A064EF0056672A /* Base.release.xcconfig */;
+			baseConfigurationReference = 918A4F9C25A4BB130003723C /* Base.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -621,7 +625,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -630,6 +633,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -643,7 +647,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Config/Podolist-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -797,7 +801,7 @@
 		};
 		2DE90BE4215405DD00BF8588 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8261B4825A064F90056672A /* Base.debug.xcconfig */;
+			baseConfigurationReference = 918A4F9D25A4BB130003723C /* Base.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -873,7 +877,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/lib",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Podolist/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -895,7 +898,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "./Podolist/Config/Podolist-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};

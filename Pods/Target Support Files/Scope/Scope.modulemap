@@ -1,0 +1,6 @@
+framework module Scope {
+  umbrella header "Scope-umbrella.h"
+
+  export *
+  module * { export * }
+}

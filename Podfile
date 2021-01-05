@@ -34,11 +34,8 @@ end
 
 target 'Podolist' do
   project 'Podolist/Podolist'
-  pod 'Fabric'
-  pod 'Crashlytics'
-  pod 'Firebase/Core'
   pod 'Firebase/Crashlytics'
-  pod 'Firebase/Analytics'
+#  pod 'Firebase/Analytics'
   common
   networking
   logging
