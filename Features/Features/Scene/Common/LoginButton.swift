@@ -8,7 +8,7 @@ final class LoginButton: UIButton {
   // MARK: - Constants
 
   private struct Metric {
-    static let height = 28.f
+    static let height = 20.f
     static let textLeading = 6.f
   }
 
@@ -38,7 +38,7 @@ final class LoginButton: UIButton {
       containerView.addSubview($0)
     }
     textLabel = UILabel().also {
-      $0.font = .preferredFont(type: .notoSansRegular, size: 14)
+      $0.font = .preferredFont(type: .notoSansMedium, size: 14)
       $0.textColor = .black
       $0.sizeToFit()
       containerView.addSubview($0)

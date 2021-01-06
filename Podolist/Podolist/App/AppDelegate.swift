@@ -1,7 +1,8 @@
 
 import UIKit
-import Core
 import UserNotifications
+import AuthenticationServices
+import Core
 import KakaoSDKAuth
 import KakaoSDKUser
 import Firebase
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.dependency.configureAppearance()
     self.window = self.dependency.configureWindow()
     setupPushNotification()
+    setupNotificationObservers()
 
 //    self.dependency.wireframe.start()
     return true
@@ -39,6 +41,17 @@ private extension AppDelegate {
       }
     }
     UIApplication.shared.registerForRemoteNotifications()
+  }
+  
+  func setupNotificationObservers() {
+    NotificationCenter.default.addObserver(
+      forName:  ASAuthorizationAppleIDProvider.credentialRevokedNotification,
+      object: nil,
+      queue: nil
+    ) { _ in
+      print("Revoked Notification")
+      // 로그인 페이지로 이동
+    }
   }
 }
 

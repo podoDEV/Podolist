@@ -1,5 +1,6 @@
 
 import UIKit
+import AuthenticationServices
 import Core
 import Scope
 import SnapKit
@@ -19,15 +20,17 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
     static let logo2Height = 31.f
     static let stackLeadingTrailing = 60.f
     static let stackBottom = 60.f
-    static let stackSpacing = 40.f
-    static let buttonHeight = 40.f
+    static let stackSpacing = 16.f
+    static let buttonHeight = 44.f
   }
 
   // MARK: - Subviews
 
-  private var logoView: UIImageView!
-  private var logoView2: UIImageView!
+//  private var logoView: UIImageView!
+//  private var logoView2: UIImageView!
+  private var logoLabel: UILabel!
   private var providerStackView: UIStackView!
+  private var appleLoginButton: ASAuthorizationAppleIDButton!
   private var kakaoLoginButton: LoginButton!
   private var anonymousLoginButton: UIButton!
 
@@ -50,12 +53,19 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
   }
 
   public override func setupSubviews() {
-    logoView = UIImageView().also {
-      $0.image = "ic_logo".uiImage
-      view.addSubview($0)
-    }
-    logoView2 = UIImageView().also {
-      $0.image = "ic_logo2".uiImage
+//    logoView = UIImageView().also {
+//      $0.image = "ic_logo".uiImage
+//      view.addSubview($0)
+//    }
+//    logoView2 = UIImageView().also {
+//      $0.image = "ic_logo2".uiImage
+//      view.addSubview($0)
+//    }
+    logoLabel = UILabel().also {
+      $0.text = "podolist"
+      $0.font = .preferredFont(type: .notoSansMedium, size: 32)
+      $0.textColor = .loginLogo
+      $0.textAlignment = .center
       view.addSubview($0)
     }
     providerStackView = UIStackView().also {
@@ -65,8 +75,12 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
       $0.spacing = Metric.stackSpacing
       view.addSubview($0)
     }
+    appleLoginButton = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black).also {
+      $0.addTarget(self, action: #selector(didTapAppleLogin), for: .touchUpInside)
+      providerStackView.addArrangedSubview($0)
+    }
     kakaoLoginButton = LoginButton().also {
-      $0.layer.cornerRadius = 20
+      $0.layer.cornerRadius = 6
       $0.clipsToBounds = true
       $0.addTarget(self, action: #selector(didTapLogin(_:)), for: .touchUpInside)
       $0.configure(
@@ -87,22 +101,29 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
   }
 
   public override func setupConstraints() {
-    logoView.snp.makeConstraints {
-      $0.width.equalTo(Metric.logo1Width)
-      $0.height.equalTo(Metric.logo1Height)
+//    logoView.snp.makeConstraints {
+//      $0.width.equalTo(Metric.logo1Width)
+//      $0.height.equalTo(Metric.logo1Height)
+//      $0.centerX.equalToSuperview()
+//      $0.centerY.equalToSuperview().offset(-100)
+//    }
+//    logoView2.snp.makeConstraints {
+//      $0.width.equalTo(Metric.logo2Width)
+//      $0.height.equalTo(Metric.logo2Height)
+//      $0.top.equalTo(logoView.snp.bottom).offset(24)
+//      $0.centerX.equalToSuperview()
+//    }
+    logoLabel.snp.makeConstraints {
       $0.centerX.equalToSuperview()
-      $0.centerY.equalToSuperview().offset(-100)
-    }
-    logoView2.snp.makeConstraints {
-      $0.width.equalTo(Metric.logo2Width)
-      $0.height.equalTo(Metric.logo2Height)
-      $0.top.equalTo(logoView.snp.bottom).offset(24)
-      $0.centerX.equalToSuperview()
+      $0.centerY.equalToSuperview().offset(-40)
     }
     providerStackView.snp.makeConstraints {
       $0.leading.equalToSuperview().offset(Metric.stackLeadingTrailing)
       $0.trailing.equalToSuperview().offset(-Metric.stackLeadingTrailing)
       $0.bottom.equalToSuperview().offset(-Metric.stackBottom)
+    }
+    appleLoginButton.snp.makeConstraints {
+      $0.height.equalTo(Metric.buttonHeight)
     }
     kakaoLoginButton.snp.makeConstraints {
       $0.height.equalTo(Metric.buttonHeight)
@@ -110,6 +131,17 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
     anonymousLoginButton.snp.makeConstraints {
       $0.height.equalTo(Metric.buttonHeight)
     }
+  }
+  
+  @objc func didTapAppleLogin() {
+    let appleIDProvider = ASAuthorizationAppleIDProvider()
+    let request = appleIDProvider.createRequest()
+    request.requestedScopes = [.email]
+    
+    let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+    authorizationController.delegate = self
+    authorizationController.presentationContextProvider = self
+    authorizationController.performRequests()
   }
 
   @objc func didTapLogin(_ sender: Any) {
@@ -122,5 +154,30 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
     default:
       break
     }
+  }
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
+  public func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+    view.window!
+  }
+  
+  public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+    switch authorization.credential {
+    case let appleIDCredential as ASAuthorizationAppleIDCredential:
+      let userIdentifier = appleIDCredential.user
+      let fullName = appleIDCredential.fullName
+      let email = appleIDCredential.email
+      
+      print("User ID : \(userIdentifier)")
+      print("User Email : \(email ?? "")")
+      print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
+    default:
+      break
+    }
+  }
+  
+  public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    log.warning(error)
   }
 }

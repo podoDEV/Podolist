@@ -1,54 +1,17 @@
 
 import UIKit
+import SwiftUI
 
 public extension UIColor {
-
-  /// HEX: 4B45EA, RGB: 75,69,234
-//  static let primary = UIColor(hex: "4B45EA", alpha: 1)
-//  /// HEX: 546BE5, RGB: 84,107,229
-//  static let secondary1 = UIColor(hex: "546BE5", alpha: 1)
-//  /// HEX: 6971EA, RGB: 105,113,234
-//  static let secondary2 = UIColor(hex: "6971EA", alpha: 1)
-//  /// HEX: A9B4F2, RGB: 169,180,242
-//  static let secondary3 = UIColor(hex: "A9B4F2", alpha: 1)
-//  /// HEX: C3C6F7, RGB: 195,198,247
-//  static let secondary4 = UIColor(hex: "C3C6F7", alpha: 1)
-//  /// HEX: ECECFD, RGB: 236,236,253
-//  static let secondary5 = UIColor(hex: "ECECFD", alpha: 1)
-//  /// HEX: FAFBFF, RGB: 250,251,255
-//  static let secondary6 = UIColor(hex: "FAFBFF", alpha: 1)
-//  /// HEX: FFFFFF, RGB: 255,255,255
-//  static let background1 = UIColor(hex: "FFFFFF", alpha: 1)
-//  /// HEX: EAEAEA, RGB: 234,234,234
-//  static let background2 = UIColor(hex: "EAEAEA", alpha: 1)
-//  /// HEX: F2F2F2, RGB: 242,242,242
-//  static let background3 = UIColor(hex: "F2F2F2", alpha: 1)
-//  /// HEX: E6E6E9, RGB: 230,230,233
-//  static let background4 = UIColor(hex: "E6E6E9", alpha: 1)
-//  /// HEX: E9E9E9, RGB: 233,233,233
-//  static let background5 = UIColor(hex: "E9E9E9", alpha: 1)
-//  
-//  /// HEX: 323232, RGB: 50,50,50
-//  static let primaryText = UIColor(hex: "323232", alpha: 1)
-//  /// HEX: 141414, RGB: 20,20,20
-//  static let secondaryText1 = UIColor(hex: "141414", alpha: 1)
-//  /// HEX: 707070, RGB: 112,112,112
-//  static let secondaryText2 = UIColor(hex: "707070", alpha: 1)
-//  /// HEX: 8E8E8E, RGB: 142,142,142
-//  static let secondaryText3 = UIColor(hex: "8E8E8E", alpha: 1)
-//  /// HEX: BBBBBB, RGB: 187,187,187
-//  static let secondaryText4 = UIColor(hex: "BBBBBB", alpha: 1)
-//  /// HEX: 716F77, RGB: 113,111,119
-//  static let secondaryText5 = UIColor(hex: "716F77", alpha: 1)
-//  /// HEX: 777777, RGB: 119,119,119
-//  static let secondaryText6 = UIColor(hex: "777777", alpha: 1)
-//
-//  /// HEX: 4FD183, RGB: 79,209,131
-//  static let properTextColor = UIColor(hex: "4FD183", alpha: 1)
-//  static let properBackgroundColor = UIColor(hex: "4FD183", alpha: 0.1)
-//  /// HEX: FF736E, RGB: 255,115,110
-//  static let warningTextColor = UIColor(hex: "FF736E", alpha: 1)
-//  static let warningBackgroundColor = UIColor(hex: "FF736E", alpha: 0.1)
+  static var loginLogo: UIColor = .init(
+    light: .init(hex: 0x9E30FE),
+    dark: .init(hex: 0x9E30FE)
+  )
+  
+  static var todoBackground: UIColor = .init(
+    light: .init(r: 158, g: 48, b: 254, a: 1),
+    dark: .init(hex: 0x9E30FE)
+  )
   
   static let appColor1 = UIColor(hex: 0x9E30FE)
   static let appColor2 = UIColor(hex: 0xC32BFF) // 그라데이션 fill
@@ -82,33 +45,42 @@ public extension UIColor {
   static let grayE = UIColor(hex: 0xEEEEEE)
   static let grayF4 = UIColor(hex: 0xF4F4F4)
   static let modalBackground = UIColor(white: 0x000000, alpha: 0.7)
-  static let separatorColor = UIColor(red: 230, green: 230, blue: 230, alpha: 1)
+  static let separatorColor = UIColor(r: 230, g: 230, b: 230, a: 1)
 
-  static let normalSunday = UIColor(red: 208, green: 2, blue: 27, alpha: 1)
-  static let otherMonthSunday = UIColor(red: 208, green: 2, blue: 27, alpha: 0.5)
+  static let normalSunday = UIColor(r: 208, g: 2, b: 27, a: 1)
+  static let otherMonthSunday = UIColor(r: 208, g: 2, b: 27, a: 0.5)
 }
 
 public extension UIColor {
-  convenience init(red: Int, green: Int, blue: Int, alpha: Float) {
-    assert(red >= 0 && red <= 255, "Invalid red component")
-    assert(green >= 0 && green <= 255, "Invalid green component")
-    assert(blue >= 0 && blue <= 255, "Invalid blue component")
+  convenience init(r: Int, g: Int, b: Int, a: Float) {
+    assert(r >= 0 && r <= 255, "Invalid red component")
+    assert(g >= 0 && g <= 255, "Invalid green component")
+    assert(b >= 0 && b <= 255, "Invalid blue component")
 
     self.init(
-      red: CGFloat(red) / 255.0,
-      green: CGFloat(green) / 255.0,
-      blue: CGFloat(blue) / 255.0,
-      alpha: CGFloat(alpha)
+      red: CGFloat(r) / 255.0,
+      green: CGFloat(g) / 255.0,
+      blue: CGFloat(b) / 255.0,
+      alpha: CGFloat(a)
     )
   }
 
   convenience init(hex: Int, alpha: Float = 1.0) {
     self.init(
-      red: (hex >> 16) & 0xff,
-      green: (hex >> 8) & 0xff,
-      blue: hex & 0xff,
-      alpha: alpha
+      r: (hex >> 16) & 0xff,
+      g: (hex >> 8) & 0xff,
+      b: hex & 0xff,
+      a: alpha
     )
   }
+  
+  convenience init(light: UIColor, dark: UIColor) {
+    self.init { traitCollection in
+      if traitCollection.userInterfaceStyle == .dark {
+        return dark
+      } else {
+        return light
+      }
+    }
+  }
 }
-
