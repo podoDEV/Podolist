@@ -49,7 +49,8 @@ final class CompositionRoot {
       naviController.viewControllers = [FeaturesModuleFactory.todoVC]
       rootViewController = naviController
     }
-    return UIWindow(frame: UIScreen.main.bounds).also {
+    return self.window.also {
+      $0.frame = UIScreen.main.bounds
       $0.rootViewController = rootViewController
       $0.backgroundColor = .white
       $0.makeKeyAndVisible()
@@ -61,6 +62,8 @@ extension CompositionRoot:
   FeaturesConfiguration,
   ServicesConfiguration,
   CoreConfiguration {
+  
+  static var window = UIWindow()
 
   static var baseUrl: String = {
     #if DEBUG

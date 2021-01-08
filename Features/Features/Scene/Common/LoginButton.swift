@@ -5,16 +5,14 @@ import SnapKit
 
 final class LoginButton: UIButton {
 
-  // MARK: - Constants
-
-  private struct Metric {
+  private struct Const {
     static let height = 20.f
-    static let textLeading = 6.f
+    static let spacing = 4.f
   }
 
   // MARK: - Subviews
 
-  private var containerView: UIView!
+  private var containerView: UIStackView!
   private var iconImage: UIImageView!
   private var textLabel: UILabel!
 
@@ -29,35 +27,34 @@ final class LoginButton: UIButton {
   }
 
   func setupSubviews() {
-    containerView = UIView().also {
-      $0.isUserInteractionEnabled = false
+    containerView = UIStackView().also {
+      $0.axis = .horizontal
+      $0.alignment = .center
+      $0.distribution = .fill
       $0.backgroundColor = .clear
+      $0.spacing = Const.spacing
       addSubview($0)
     }
     iconImage = UIImageView().also {
-      containerView.addSubview($0)
+      containerView.addArrangedSubview($0)
     }
     textLabel = UILabel().also {
       $0.font = .preferredFont(type: .notoSansMedium, size: 14)
-      $0.textColor = .black
-      $0.sizeToFit()
-      containerView.addSubview($0)
+      $0.textColor = .init(hex: 0x000000)
+      $0.numberOfLines = 1
+      containerView.addArrangedSubview($0)
     }
   }
 
   func setupConstraints() {
     containerView.snp.makeConstraints {
-      $0.height.equalTo(iconImage.snp.height)
-      $0.center.equalTo(snp.center)
+      $0.center.equalToSuperview()
     }
     iconImage.snp.makeConstraints {
-      $0.leading.equalTo(containerView.snp.leading)
-      $0.height.width.equalTo(Metric.height)
+      $0.width.height.equalTo(Const.height)
     }
     textLabel.snp.makeConstraints {
-      $0.leading.equalTo(iconImage.snp.trailing).offset(Metric.textLeading)
-      $0.trailing.equalTo(containerView.snp.trailing)
-      $0.height.equalTo(Metric.height)
+      $0.height.equalTo(Const.height)
     }
   }
 

@@ -24,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window = self.dependency.configureWindow()
     setupPushNotification()
     setupNotificationObservers()
-
-//    self.dependency.wireframe.start()
     return true
   }
 }

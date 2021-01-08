@@ -6,10 +6,10 @@ import Scope
 import SnapKit
 
 protocol LoginViewProtocol: AnyObject {
-
+  func completeLogin()
 }
 
-public class LoginViewController: BaseViewController, LoginViewProtocol {
+public class LoginViewController: BaseViewController {
 
   // MARK: - Constants
   
@@ -86,7 +86,7 @@ public class LoginViewController: BaseViewController, LoginViewProtocol {
       $0.configure(
         image: "ic_kakaoLogin".uiImage,
         title: "login.kakao".localized,
-        color: .kakaoLogin
+        color: .kakaoLoginBackground
       )
       providerStackView.addArrangedSubview($0)
     }
@@ -166,12 +166,8 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     switch authorization.credential {
     case let appleIDCredential as ASAuthorizationAppleIDCredential:
       let userIdentifier = appleIDCredential.user
-      let fullName = appleIDCredential.fullName
-      let email = appleIDCredential.email
-      
-      print("User ID : \(userIdentifier)")
-      print("User Email : \(email ?? "")")
-      print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
+//      let fullName = appleIDCredential.fullName
+      presenter.didTapAppleLogin(id: userIdentifier)
     default:
       break
     }
@@ -179,5 +175,11 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
   
   public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
     log.warning(error)
+  }
+}
+
+extension LoginViewController: LoginViewProtocol {
+  func completeLogin() {
+    FeaturesModuleFactory.config?.window.rootViewController = UINavigationController(rootViewController: FeaturesModuleFactory.todoVC)
   }
 }

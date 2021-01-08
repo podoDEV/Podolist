@@ -2,16 +2,110 @@
 import UIKit
 import SwiftUI
 
+// MARK: - Login
 public extension UIColor {
+  
   static var loginLogo: UIColor = .init(
     light: .init(hex: 0x9E30FE),
     dark: .init(hex: 0x9E30FE)
   )
   
+  static var kakaoLoginBackground: UIColor = .init(
+    light: .init(r: 255, g: 232, b: 18, a: 1),
+    dark: .init(r: 255, g: 232, b: 18, a: 1)
+  )
+}
+
+// MARK: - Todo
+public extension UIColor {
   static var todoBackground: UIColor = .init(
     light: .init(r: 158, g: 48, b: 254, a: 1),
-    dark: .init(hex: 0x9E30FE)
+    dark: .init(r: 158, g: 48, b: 254, a: 1)
   )
+  
+  static var todoText: UIColor = .init(
+    light: .init(r: 255, g: 255, b: 255, a: 1),
+    dark: .init(r: 255, g: 255, b: 255, a: 1)
+  )
+  
+  static var todoDoneBackground: UIColor = .init(
+    light: .init(r: 222, g: 185, b: 255, a: 1),
+    dark: .init(r: 222, g: 185, b: 255, a: 1)
+  )
+  
+  static var delayedText: UIColor = .init(
+    light: .init(r: 208, g: 2, b: 27, a: 1),
+    dark: .init(r: 208, g: 2, b: 27, a: 1)
+  )
+  
+  static var todayText: UIColor = .init(
+    light: .init(r: 0, g: 0, b: 0, a: 1),
+    dark: .init(r: 0, g: 0, b: 0, a: 1)
+  )
+  
+  static var priorityUrgent: UIColor = .init(
+    light: .init(r: 255, g: 0, b: 0, a: 1),
+    dark: .init(r: 255, g: 0, b: 0, a: 1)
+  )
+  
+  static var priorityHigh: UIColor = .init(
+    light: .init(r: 254, g: 166, b: 35, a: 1),
+    dark: .init(r: 254, g: 166, b: 35, a: 1)
+  )
+  
+  static var priorityMedium: UIColor = .init(
+    light: .init(r: 126, g: 211, b: 33, a: 1),
+    dark: .init(r: 126, g: 211, b: 33, a: 1)
+  )
+  
+  static var priorityLow: UIColor = .init(
+    light: .init(r: 80, g: 227, b: 194, a: 1),
+    dark: .init(r: 80, g: 227, b: 194, a: 1)
+  )
+  
+  static var priorityNone: UIColor = .init( // deprecated
+    light: .init(hex: 0x4A90E2),
+    dark: .init(hex: 0x4A90E2)
+  )
+  
+  static var priortyDone: UIColor = .init(
+    light: .init(r: 215, g: 215, b: 215, a: 1),
+    dark: .init(r: 215, g: 215, b: 215, a: 1)
+  )
+}
+
+// MARK: - Calendar
+public extension UIColor {
+  static var calendarText: UIColor = .init(
+    light: .init(r: 255, g: 255, b: 255, a: 1),
+    dark: .init(r: 255, g: 255, b: 255, a: 1)
+  )
+  
+  static var selectedDate: UIColor = .init(
+    light: .init(r: 144, g: 19, b: 254, a: 1),
+    dark: .init(r: 144, g: 19, b: 254, a: 1)
+  )
+  
+  static var selectedDateBackground: UIColor = .init(
+    light: .init(r: 255, g: 255, b: 255, a: 1),
+    dark: .init(r: 255, g: 255, b: 255, a: 1)
+  )
+  
+  static var sunday: UIColor = .init(
+    light: .init(r: 255, g: 0, b: 0, a: 1),
+    dark: .init(r: 255, g: 0, b: 0, a: 1)
+  )
+  
+  static var otherMonthDate: UIColor = .init(
+    light: .init(r: 255, g: 255, b: 255, a: 0.5),
+    dark: .init(r: 255, g: 255, b: 255, a: 0.5)
+  )
+  
+  static var otherMonthSunday: UIColor = .init(
+    light: .init(r: 208, g: 2, b: 27, a: 0.5),
+    dark: .init(r: 208, g: 2, b: 27, a: 0.5)
+  )
+  
   
   static let appColor1 = UIColor(hex: 0x9E30FE)
   static let appColor2 = UIColor(hex: 0xC32BFF) // 그라데이션 fill
@@ -48,7 +142,6 @@ public extension UIColor {
   static let separatorColor = UIColor(r: 230, g: 230, b: 230, a: 1)
 
   static let normalSunday = UIColor(r: 208, g: 2, b: 27, a: 1)
-  static let otherMonthSunday = UIColor(r: 208, g: 2, b: 27, a: 0.5)
 }
 
 public extension UIColor {

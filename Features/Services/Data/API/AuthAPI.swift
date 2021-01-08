@@ -36,9 +36,14 @@ extension AuthAPI: TargetType {
     switch self {
     case .login(let provider):
       switch provider {
-      case .kakao(let accessToken):
+      case .apple(let id):
         return .requestParameters(
-          parameters: ["accessToken": accessToken],
+          parameters: ["id": id],
+          encoding: JSONEncoding.default
+        )
+      case .kakao(let id):
+        return .requestParameters(
+          parameters: ["id": id],
           encoding: JSONEncoding.default
         )
       case .anonymous(let uuid):

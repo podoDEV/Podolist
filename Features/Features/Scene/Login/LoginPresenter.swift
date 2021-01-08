@@ -4,6 +4,7 @@ import Core
 import Services
 import KakaoSDKCommon
 import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginPresenter {
   private let authService: AuthServiceType
@@ -12,15 +13,29 @@ class LoginPresenter {
   init(authService: AuthServiceType) {
     self.authService = authService
   }
+  
+  func didTapAppleLogin(id: String) {
+    let provider = AuthProvider.apple(id)
+    authService.authorize(provider) { [weak self] result in
+      switch result {
+      case .success:
+        analytics.log(.login(provider.rawValue()))
+        self?.view?.completeLogin()
+      case .failure:
+        break
+      }
+    }
+  }
 
   func didTapKakaoLogin() {
-    getkakaoSession { [weak self] token in
-      guard let token = token else { return }
-      let provider = AuthProvider.kakao(token)
+    getkakaoSession { [weak self] id in
+      guard let id = id else { return }
+      let provider = AuthProvider.kakao(id)
       self?.authService.authorize(provider) { [weak self] result in
         switch result {
         case .success:
           analytics.log(.login(provider.rawValue()))
+          self?.view?.completeLogin()
         case .failure:
           break
         }
@@ -36,26 +51,29 @@ class LoginPresenter {
       switch result {
       case .success:
         analytics.log(.login(provider.rawValue()))
-      //            self?.presenter?.completeLogin()
+        self?.view?.completeLogin()
       case .failure:
         break
       }
     }
-  }
-
-  func completeLogin() {
-//    wireframe.navigate(to: .todo)
   }
 }
 
 private extension LoginPresenter {
   func getkakaoSession(_ completion: @escaping (String?) -> Void) {
     if AuthApi.isKakaoTalkLoginAvailable() {
-      AuthApi.shared.loginWithKakaoTalk { (oauthToken, error) in
+      AuthApi.shared.loginWithKakaoTalk { (_, error) in
         if let error = error {
           log.debug(error)
         } else {
-          completion(oauthToken?.accessToken)
+          UserApi.shared.me() {(user, error) in
+            if let error = error {
+              print(error)
+            }
+            else {
+              completion(user?.id.toString)
+            }
+          }
         }
       }
     }
